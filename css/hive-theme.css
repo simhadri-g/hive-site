@@ -168,7 +168,7 @@
 }
 
 .feature-intro{
-    box-shadow: 0px 3px #206cd6;
+
     color: black;
     margin: 30px;
     padding: 40px;
@@ -198,6 +198,20 @@
      font-size: 30px;
      font-weight: 300;
 }
+.section-header-text{
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+}
+.section-header-style{
+     border: 3px solid;
+     padding: 0.5em 0.5em;
+     margin: 10px;
+     box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+     position: relative;
+     background: #206cd6;
+     }
 
 /* CSS */
  .custom-button {

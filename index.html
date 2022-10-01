@@ -120,25 +120,30 @@ facilitates reading, writing, and managing petabytes of data residing in distrib
 </div>
 <script src=https://simhadri-g.github.io/hive-site/js/script.js></script>
 </banner><features class="container text-style white-background">
+<div>
 <div class="row feature-intro">
-<h2 class=topic-text-style style=text-align:center>What is Hive?</h2>
+<div class="row section-header-style">
+<h2 class=section-header-text style=text-align:center>What is Hive?</h2>
+</div>
 <p>
 Apache Hive is a distributed, fault-tolerant data warehouse system that enables analytics at a massive scale.
 Hive Metastore(HMS) provides a central repository of metadata that can easily be analyzed to make informed,
-data driven decisions and therefore it is a critical component of many data lake architectures.
+data driven decisions, and therefore it is a critical component of many data lake architectures.
 Hive is built on top of Apache Hadoop and supports storage on S3, adls, gs etc though hdfs.
 Hive allows users to read, write, and manage petabytes of data using SQL.
 </p>
 </div>
+<div class="row section-header-style">
+<h2 class=section-header-text style=text-align:center>Key Features</h2>
+</div>
 <div class="row divs"><hs2terminal class=col-md>
-<div id=termynal data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700>
+<div id=hs2 data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700>
 <span data-ty=input>beeline -u "jdbc:hive2://host:10001/default"</span>
 <span data-ty>Connected to: Apache Hive </span>
 <span data-ty></span>
 <span data-ty=input>jdbc:hive2://host:10001/>select count(*) from test_t1;</span>
 <span data-ty></span>
 </div>
-<script src=https://simhadri-g.github.io/hive-site/js/termynal.js></script>
 </hs2terminal><div class="col-md feature-border">
 <h2 class=topic-text-style>Hive-Server 2 (HS2)</h2>
 <p>
@@ -164,18 +169,15 @@ In fact, a whole ecosystem of tools, open-source and otherwise, are built around
 </a>
 </div>
 <div class=col-md>
-<a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site/images/hms.jpg width=600 height=300 alt="Apache Software Foundation"></a>
+<a href=https://cwiki.apache.org/confluence/display/hive/design>
+<img src=https://simhadri-g.github.io/hive-site/images/HMS.png width=600 height=400 alt="Apache Software Foundation"></a>
 </a>
 </div>
 </div>
 <div class="row divs">
 <div class=col-md>
-<a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=250 height=250 alt="Apache Software Foundation"></a>
-</a>
-<a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site/images/acid.png width=250 height=300 alt="Apache Software Foundation"></a>
+<a href=https://cwiki.apache.org/confluence/display/hive/hive+transactions>
+<img src=https://simhadri-g.github.io/hive-site/images/hiveAcid.svg width=300 height=300 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class="col-md feature-border">
@@ -199,7 +201,7 @@ Query-based and MR-based data compactions are supported out-of-the-box.
 </a>
 </div>
 <div class=col-md><compaction class=col-md>
-<div id=termynal data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700>
+<div id=comp data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700>
 <span data-ty=input>jdbc:hive2://.../default>ALTER TABLE test COMPACT "MAJOR";</span>
 <span data-ty>Done!</span>
 <span data-ty=input>jdbc:hive2://.../default>ALTER TABLE test COMPACT "MINOR";</span>
@@ -207,7 +209,6 @@ Query-based and MR-based data compactions are supported out-of-the-box.
 <span data-ty=input>jdbc:hive2://.../default> SHOW COMPACTIONS;</span>
 <span data-ty>Done!</span>
 </div>
-<script src=https://simhadri-g.github.io/hive-site/js/termynal.js></script>
 </compaction></div>
 </div>
 <div class="row divs">
@@ -258,15 +259,14 @@ introduced in Hive 2.0 that makes Hive faster by using persistent query infrastr
 <div class="col-md feature-border">
 <h2 class=topic-text-style>Query planner and Cost based Optimizer</h2>
 <p>
-Hive used Apache Calcite's cost based query optimizer (CBO) and query execution framework to optimize sql queries.
+Hive uses Apache Calcite's cost based query optimizer (CBO) and query execution framework to optimize sql queries.
 </p>
 <a href=https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive class=icon-block>
 <button class="custom-button feature-button-style" role=button>Learn More</button>
 </a>
 </div>
 <div class=col-md><explain>
-<script src=https://simhadri-g.github.io/hive-site/js/termynal.js></script>
-<div id=termynal data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=70><span data-ty=input>jdbc:hive2://localhost:10001/> explain select * from test;</span>
+<div id=explain data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=70><span data-ty=input>jdbc:hive2://localhost:10001/> explain select * from test;</span>
 <span data-ty>+---------------------------------------------+</span>
 <span data-ty> Explain </span></span>
 <span data-ty>+---------------------------------------------+</span>
@@ -287,7 +287,9 @@ Hive used Apache Calcite's cost based query optimizer (CBO) and query execution 
 <span data-ty> ListSink </span>
 <span data-ty>+---------------------------------------------+</span>
 </div>
+<script src=https://simhadri-g.github.io/hive-site/js/termynal.js data-termynal-container=#explain></script>
 </explain></div>
+</div>
 </div>
 </features>
 </div><footer class="black-background static-bottom" style=padding:30px>
