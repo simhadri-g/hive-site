@@ -22,7 +22,9 @@
 <meta name=theme-color content="#ffffff">
 </head>
 <body>
-<body><header><menu style=background:#000;margin:0>
+<body>
+<header>
+<menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
 <img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
@@ -99,7 +101,8 @@ ASF
 </div>
 </div>
 </nav>
-</menu></header><div class=content><banner>
+</menu></header><div class=content>
+<banner>
 <div id=large-header class=large-header>
 <canvas id=canvas></canvas>
 <div class=main-title>
@@ -119,7 +122,8 @@ facilitates reading, writing, and managing petabytes of data residing in distrib
 </div>
 </div>
 <script src=https://simhadri-g.github.io/hive-site/js/script.js></script>
-</banner><features class="container text-style white-background">
+</banner>
+<features class="container text-style white-background">
 <div>
 <div class="row feature-intro">
 <div class="row section-header-style">
@@ -136,7 +140,8 @@ Hive allows users to read, write, and manage petabytes of data using SQL.
 <div class="row section-header-style">
 <h2 class=section-header-text style=text-align:center>Key Features</h2>
 </div>
-<div class="row divs"><hs2terminal class=col-md>
+<div class="row divs">
+<hs2terminal class=col-md>
 <div id=hs2 data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700>
 <span data-ty=input>beeline -u "jdbc:hive2://host:10001/default"</span>
 <span data-ty>Connected to: Apache Hive </span>
@@ -170,7 +175,7 @@ In fact, a whole ecosystem of tools, open-source and otherwise, are built around
 </div>
 <div class=col-md>
 <a href=https://cwiki.apache.org/confluence/display/hive/design>
-<img src=https://simhadri-g.github.io/hive-site/images/HMS.png width=600 height=400 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io/hive-site/images/HMS.jpg width=600 height=400 alt="Apache Software Foundation"></a>
 </a>
 </div>
 </div>
@@ -200,7 +205,8 @@ Query-based and MR-based data compactions are supported out-of-the-box.
 <button class="custom-button feature-button-style" role=button>Learn More</button>
 </a>
 </div>
-<div class=col-md><compaction class=col-md>
+<div class=col-md>
+<compaction class=col-md>
 <div id=comp data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700>
 <span data-ty=input>jdbc:hive2://.../default>ALTER TABLE test COMPACT "MAJOR";</span>
 <span data-ty>Done!</span>
@@ -265,7 +271,8 @@ Hive uses Apache Calcite's cost based query optimizer (CBO) and query execution 
 <button class="custom-button feature-button-style" role=button>Learn More</button>
 </a>
 </div>
-<div class=col-md><explain>
+<div class=col-md>
+<explain>
 <div id=explain data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=70><span data-ty=input>jdbc:hive2://localhost:10001/> explain select * from test;</span>
 <span data-ty>+---------------------------------------------+</span>
 <span data-ty> Explain </span></span>
@@ -292,7 +299,8 @@ Hive uses Apache Calcite's cost based query optimizer (CBO) and query execution 
 </div>
 </div>
 </features>
-</div><footer class="black-background static-bottom" style=padding:30px>
+</div>
+<footer class="black-background static-bottom" style=padding:30px>
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
