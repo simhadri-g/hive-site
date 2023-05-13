@@ -67,7 +67,7 @@ Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://hive.apache.org/developement/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/developement/quickstart/>Quickstart with docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/developement/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
@@ -114,49 +114,51 @@ ASF
 <div class=docs>
 <h3 id=introduction>Introduction</h3>
 <hr>
-<p>Run Apache Hive inside docker container in pseudo-distributed mode, provide the following</p>
-<ul>
-<li>Quick-start/Debugging/Prepare a test env for Hive</li>
-</ul>
+<p>Run Apache Hive inside docker container in pseudo-distributed mode, inorder to provide the following Quick-start/Debugging/Prepare a test env for Hive</p>
 <h3 id=quickstart>Quickstart</h3>
 <hr>
-<h5 id=step-1--pull-the-image>Step 1: Pull the image</h5>
-<p>DockerHub: <a href=https://hub.docker.com/r/apache/hive/tags>https://hub.docker.com/r/apache/hive/tags</a></p>
-<p>Currently, there are 3 images released:</p>
+<h5 id=step-1-pull-the-image><strong>STEP 1: Pull the image</strong></h5>
+<ul>
+<li>Pull the image from DockerHub: <a href=https://hub.docker.com/r/apache/hive/tags>https://hub.docker.com/r/apache/hive/tags</a>. Currently, there are 3 images released:
 <ul>
 <li>4.0.0-alpha-2</li>
 <li>4.0.0-alpha-1</li>
 <li>3.1.3</li>
 </ul>
+</li>
+</ul>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker pull apache/hive:4.0.0-alpha-2
-</code></pre></div><h5 id=step-2-export-the-hive-version>STEP 2: Export the Hive version</h5>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>export HIVE_VERSION<span style=color:#f92672>=</span>&lt;Hive Tag/Image Version&gt;
-</code></pre></div><p>Example:</p>
+</code></pre></div><p><code> </code></p>
+<h5 id=step-2-export-the-hive-version><strong>STEP 2: Export the Hive version</strong></h5>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>export HIVE_VERSION<span style=color:#f92672>=</span>4.0.0-alpha-2
-</code></pre></div><h5 id=step-3--launch-the-hiveserver2-with-an-embedded-metastore>STEP 3: Launch the HiveServer2 with an embedded Metastore.</h5>
+</code></pre></div><p><code> </code></p>
+<h5 id=step-3--launch-the-hiveserver2-with-an-embedded-metastore><strong>STEP 3: Launch the HiveServer2 with an embedded Metastore.</strong></h5>
 <p>This is lightweight and for a quick setup, it uses Derby as metastore db.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run -d -p 10000:10000 -p 10002:10002 --env SERVICE_NAME<span style=color:#f92672>=</span>hiveserver2 --name hive4 apache/hive:<span style=color:#e6db74>${</span>HIVE_VERSION<span style=color:#e6db74>}</span>
-</code></pre></div><h5 id=step-4-connect-to-beeline>STEP 4: Connect to beeline</h5>
+</code></pre></div><p><code> </code></p>
+<h5 id=step-4-connect-to-beeline><strong>STEP 4: Connect to beeline</strong></h5>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker exec -it hiveserver2 beeline -u <span style=color:#e6db74>&#39;jdbc:hive2://hiveserver2:10000/&#39;</span>
-</code></pre></div><h5 id=note-launch-standalone-metastore>Note: Launch Standalone Metastore</h5>
-<p>To use standalone Metastore with Derby,</p>
+</code></pre></div><p><code> </code></p>
+<h5 id=note-launch-standalone-metastore-to-use-standalone-metastore-with-derby>Note: Launch Standalone Metastore To use standalone Metastore with Derby,</h5>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run -d -p 9083:9083 --env SERVICE_NAME<span style=color:#f92672>=</span>metastore --name metastore-standalone apache/hive:<span style=color:#e6db74>${</span>HIVE_VERSION<span style=color:#e6db74>}</span>
-</code></pre></div><h2 id=detailed-setup>Detailed Setup</h2>
+</code></pre></div><p><code> </code></p>
+<h2 id=detailed-setup>Detailed Setup</h2>
 <hr>
-<h4 id=build-image>Build image</h4>
+<h5 id=--build-image>- Build image</h5>
 <p>Apache Hive relies on Hadoop, Tez and some others to facilitate reading, writing, and managing large datasets.
-The <code>build.sh</code> provides ways to build the image against specified version of the dependent, as well as build from source.</p>
-<h5 id=build-from-source>Build from source</h5>
+The <a href=https://github.com/apache/hive/blob/master/packaging/src/docker/build.sh>/packaging/src/docker/build.sh</a> provides ways to build the image against specified version of the dependent, as well as build from source.</p>
+<h5 id=--build-from-source>- Build from source</h5>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mvn clean package -pl packaging -DskipTests -Pdocker
-</code></pre></div><h5 id=build-with-specified-version>Build with specified version</h5>
+</code></pre></div><p><code> </code></p>
+<h5 id=--build-with-specified-version>- Build with specified version</h5>
 <p>There are some arguments to specify the component version:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>-hadoop &lt;hadoop version&gt;
 -tez &lt;tez version&gt;
 -hive &lt;hive version&gt; 
 </code></pre></div><p>If the version is not provided, it will read the version from current <code>pom.xml</code>:
-<code>project.version</code>, <code>hadoop.version</code> and <code>tez.version</code> for Hive, Hadoop and Tez respectively.</p>
-<p>For example, the following command uses Hive 3.1.3, Hadoop <code>hadoop.version</code> and Tez <code>tez.version</code> to build the image,</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>./build.sh -hive 3.1.3
+<code>project.version</code>, <code>hadoop.version</code> and <code>tez.version</code> for Hive, Hadoop and Tez respectively.
+For example, the following command uses Hive 4.0.0-alpha-2, Hadoop <code>hadoop.version</code> and Tez <code>tez.version</code> to build the image,</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>./build.sh -hive 4.0.0-alpha-2
 </code></pre></div><p>If the command does not specify the Hive version, it will use the local <code>apache-hive-${project.version}-bin.tar.gz</code>(will trigger a build if it doesn&rsquo;t exist),
 together with Hadoop 3.1.0 and Tez 0.10.1 to build the image,</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>./build.sh -hadoop 3.1.0 -tez 0.10.1
@@ -164,13 +166,12 @@ together with Hadoop 3.1.0 and Tez 0.10.1 to build the image,</p>
 <h3 id=run-services>Run services</h3>
 <hr>
 <p>Before going further, we should define the environment variable <code>HIVE_VERSION</code> first.
-For example, if <code>-hive 3.1.3</code> is specified to build the image,</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>export HIVE_VERSION<span style=color:#f92672>=</span>3.1.3
+For example, if <code>-hive 4.0.0-alpha-2</code> is specified to build the image,</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>export HIVE_VERSION<span style=color:#f92672>=</span>4.0.0-alpha-2
 </code></pre></div><p>or assuming that you&rsquo;re relying on current <code>project.version</code> from pom.xml,</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>export HIVE_VERSION<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>mvn -f pom.xml -q help:evaluate -Dexpression<span style=color:#f92672>=</span>project.version -DforceStdout<span style=color:#66d9ef>)</span>
-</code></pre></div><ul>
-<li>Metastore</li>
-</ul>
+</code></pre></div><p><code> </code></p>
+<h5 id=--metastore><strong>- Metastore</strong></h5>
 <p>For a quick start, launch the Metastore with Derby,</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker run -d -p 9083:9083 --env SERVICE_NAME<span style=color:#f92672>=</span>metastore --name metastore-standalone apache/hive:<span style=color:#e6db74>${</span>HIVE_VERSION<span style=color:#e6db74>}</span>
 </code></pre></div><p>Everything would be lost when the service is down. In order to save the Hive table&rsquo;s schema and data, start the container with an external Postgres and Volume to keep them,</p>
@@ -183,9 +184,8 @@ For example, if <code>-hive 3.1.3</code> is specified to build the image,</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell> docker run -d -p 9083:9083 --env SERVICE_NAME<span style=color:#f92672>=</span>metastore <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>      --env DB_DRIVER<span style=color:#f92672>=</span>postgres -v /opt/hive/conf:/hive_custom_conf --env HIVE_CUSTOM_CONF_DIR<span style=color:#f92672>=</span>/hive_custom_conf <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>      --name metastore apache/hive:<span style=color:#e6db74>${</span>HIVE_VERSION<span style=color:#e6db74>}</span>
-</code></pre></div><ul>
-<li>HiveServer2</li>
-</ul>
+</code></pre></div><p><code> </code></p>
+<h5 id=--hiveserver2><strong>- HiveServer2</strong></h5>
 <p>Launch the HiveServer2 with an embedded Metastore,</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell> docker run -d -p 10000:10000 -p 10002:10002 --env SERVICE_NAME<span style=color:#f92672>=</span>hiveserver2 --name hiveserver2-standalone apache/hive:<span style=color:#e6db74>${</span>HIVE_VERSION<span style=color:#e6db74>}</span>
 </code></pre></div><p>or specify a remote Metastore if it&rsquo;s available,</p>
@@ -199,21 +199,22 @@ For example, if <code>-hive 3.1.3</code> is specified to build the image,</p>
 </span><span style=color:#ae81ff></span>   --mount source<span style=color:#f92672>=</span>warehouse,target<span style=color:#f92672>=</span>/opt/hive/data/warehouse <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>   --env IS_RESUME<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>   --name hiveserver2 apache/hive:<span style=color:#e6db74>${</span>HIVE_VERSION<span style=color:#e6db74>}</span>
-</code></pre></div><ul>
-<li>HiveServer2, Metastore</li>
-</ul>
+</code></pre></div><p><code> </code></p>
+<h5 id=--hiveserver2-metastore><strong>- HiveServer2, Metastore</strong></h5>
 <p>To get a quick overview of both HiveServer2 and Metastore, you can run:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>    cd packaging/src/docker
     docker compose up -d
-</code></pre></div><p>Volumes are used to persist data generated by Hive inside Postgres and HiveServer2 containers,</p>
+</code></pre></div><p>Volumes are used to persist data generated by Hive inside Postgres and HiveServer2 containers:</p>
 <ul>
-<li>
-<p>hive_db</p>
-<p>The volume persists the metadata of Hive tables inside Postgres container.</p>
+<li>hive_db
+<ul>
+<li>The volume persists the metadata of Hive tables inside Postgres container.</li>
+</ul>
 </li>
-<li>
-<p>warehouse</p>
-<p>The volume stores tables' files inside HiveServer2 container.</p>
+<li>warehouse
+<ul>
+<li>The volume stores tables' files inside HiveServer2 container.</li>
+</ul>
 </li>
 </ul>
 <h3 id=usage>Usage</h3>
