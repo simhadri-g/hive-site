@@ -319,19 +319,19 @@ Hive uses Apache Calcite's cost based query optimizer (CBO) and query execution 
 </div>
 <div class="row divs">
 <div class=col-md>
-<explain>
+<repl>
 <div id=repl data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700>
 <span data-ty=input>jdbc:hive2://> repl dump src with (</span>
-<span data-ty=input>. . . . . . .> 'hive.repl.dump.version'= '2',</span>
-<span data-ty=input>. . . . . . .> 'hive.repl.rootdir'= 'hdfs://<host>:<port>/user/hive/replDir/d1'</span>
-<span data-ty=input>. . . . . . .> );</span>
+<span data-ty=input> 'hive.repl.dump.version'= '2',</span>
+<span data-ty=input> 'hive.repl.rootdir'= hdfs://host:port/user/hive/replDir/d1"</span>
+<span data-ty=input> );</span>
 <span data-ty>Done!</span>
 <span data-ty=input>jdbc:hive2://> repl load src into tgt with (</span>
-<span data-ty=input>. . . . . . .> 'hive.repl.rootdir'= 'hdfs://<host>:<port>/user/hive/replDir/d1'</span>
-<span data-ty=input>. . . . . . .> );</span>
+<span data-ty=input> 'hive.repl.rootdir'= 'hdfs://host:port/user/hive/replDir/d1'</span>
+<span data-ty=input> );</span>
 <span data-ty>Done!</span>
 </div>
-</explain>
+</repl>
 </div>
 <div class="col-md feature-border">
 <h2 class=topic-text-style>Hive Replication</h2>
