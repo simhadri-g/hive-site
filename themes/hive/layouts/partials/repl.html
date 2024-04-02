@@ -18,14 +18,12 @@
 
 <repl>
     <div id="repl" data-termynal data-termynal data-ty-typeDelay="40" data-ty-lineDelay="700">
-        <span data-ty="input">jdbc:hive2://> repl dump src with (</span>
-        <span data-ty="input"> 'hive.repl.dump.version'= '2',</span>
-        <span data-ty="input"> 'hive.repl.rootdir'= hdfs://host:port/user/hive/replDir/d1"</span>
-        <span data-ty="input"> );</span>
+        <span data-ty="input">jdbc:hive2://>repl dump src with ('hive.repl.dump.version'= '2','hive.repl.rootdir'= hdfs://host:port/user/hive/replDir/d1");</span>
         <span data-ty>Done!</span>
-        <span data-ty="input">jdbc:hive2://> repl load src into tgt with (</span>
-        <span data-ty="input">   'hive.repl.rootdir'= 'hdfs://host:port/user/hive/replDir/d1'</span>
-        <span data-ty="input"> );</span>
+        <span data-ty="input">jdbc:hive2://>repl load src into tgt with
+            'hive.repl.rootdir'= 'hdfs://host:port/user/hive/replDir/d1'
+         );
+        </span>
         <span data-ty>Done!</span>
     </div>
 </repl>
