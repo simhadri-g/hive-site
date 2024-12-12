@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : Storage Based Authorization in the Metastore Server</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io//css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/hive-theme.css>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
 <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
-<link rel=stylesheet href=https://simhadri-g.github.io//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site/images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io/hive-site/images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io/hive-site/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://simhadri-g.github.io/> <img src=https://simhadri-g.github.io//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://simhadri-g.github.io/>Apache Hive</a>
+<a href=https://simhadri-g.github.io/hive-site> <img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -129,19 +129,19 @@ ASF
 </li>
 </ul>
 <h1 id=storage-based-authorization-in-the-metastore-server>Storage Based Authorization in the Metastore Server</h1>
-<p>The metastore server security feature with storage based authorization was added to Hive in release 0.10. This feature was introduced previously in <a href=https://simhadri-g.github.io/docs/latest/hcatalog-authorization_34014782/>HCatalog</a>.</p>
+<p>The metastore server security feature with storage based authorization was added to Hive in release 0.10. This feature was introduced previously in <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-authorization_34014782/>HCatalog</a>.</p>
 <p>Version 0.10.0</p>
 <p><a href=https://issues.apache.org/jira/browse/HIVE-3705>HIVE-3705</a> added metastore server security to Hive in release 0.10.0.</p>
 <ul>
-<li>For additional information about storage based authorization in the metastore server, see the HCatalog document <a href=https://simhadri-g.github.io/docs/latest/hcatalog-authorization_34014782/>Storage Based Authorization</a>.</li>
-<li>For an overview of Hive authorization models and other security options, see the <a href=https://simhadri-g.github.io/docs/latest/languagemanual-authorization_27362032/>Authorization</a> document.</li>
+<li>For additional information about storage based authorization in the metastore server, see the HCatalog document <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-authorization_34014782/>Storage Based Authorization</a>.</li>
+<li>For an overview of Hive authorization models and other security options, see the <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-authorization_27362032/>Authorization</a> document.</li>
 </ul>
 <h2 id=the-need-for-metastore-server-security>The Need for Metastore Server Security</h2>
 <p>When multiple clients access the same metastore in a backing database, such as MySQL, the database connection credentials may be visible in the <code>hive-site.xml</code> configuration file. A malicious or incompetent user could cause serious damage to metadata even though the underlying data is protected by HDFS access controls.</p>
 <p>Also, when a Hive metastore server uses Thrift to communicate with clients and has a backing database for metadata storage and persistence, the authentication and authorization done on the client side cannot guarantee security on the metastore side. To provide security for metadata, Hive release 0.10 added authorization capability to the metastore. (See <a href=https://issues.apache.org/jira/browse/HIVE-3705>HIVE-3705</a>.) </p>
 <h2 id=storage-based-authorization>Storage Based Authorization</h2>
 <p>When metastore server security is configured to use Storage Based Authorization, it uses the file system permissions for folders corresponding to the different metadata objects as the source of truth for the authorization policy. Use of Storage Based Authorization in metastore is recommended.</p>
-<p>See details in the HCatalog <a href=https://simhadri-g.github.io/docs/latest/hcatalog-authorization_34014782/>Storage Based Authorization document</a>.</p>
+<p>See details in the HCatalog <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-authorization_34014782/>Storage Based Authorization document</a>.</p>
 <p>Starting in Hive 0.14, storage based authorization authorizes read privilege on database and tables. The <code>get_database</code> api call needs database directory read privilege. The <code>get_table_*</code> calls that fetch table information and <code>get_partition_*</code> calls to list the partitions of a table require read privilege on the table directory. It is enabled by default with storage based authorization. See hive.security.metastore.authorization.auth.reads in the next section on configuration.</p>
 <h2 id=configuration-parameters-for-metastore-security>Configuration Parameters for Metastore Security</h2>
 <p>To enable Hive metastore server security, set these parameters in <code>hive-site.xml</code>:</p>
@@ -202,7 +202,7 @@ When this is set to true, Hive metastore authorization also checks for read acce
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io/hive-site/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -226,7 +226,7 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/ style=color:grey>
+<a href=https://simhadri-g.github.io/hive-site style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>

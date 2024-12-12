@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : WebHCat UsingWebHCat</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io//css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/hive-theme.css>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
 <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
-<link rel=stylesheet href=https://simhadri-g.github.io//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site/images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io/hive-site/images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io/hive-site/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://simhadri-g.github.io/> <img src=https://simhadri-g.github.io//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://simhadri-g.github.io/>Apache Hive</a>
+<a href=https://simhadri-g.github.io/hive-site> <img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -142,7 +142,7 @@ ASF
 <p>The HCatalog project graduated from the Apache incubator and merged with the Hive project on March 26, 2013.<br>
 Hive version 0.11.0 is the first release that includes HCatalog and its REST API, WebHCat.</p>
 <h2 id=introduction-to-webhcat>Introduction to WebHCat</h2>
-<p>This document describes the HCatalog REST API, <em>WebHCat</em>, which was previously called <em>Templeton</em>. If you are looking for a Hive GUI instead of an API, see <a href=https://simhadri-g.github.io/docs/latest/hivewebinterface_27362110/>Hive Web Interface</a> (removed in release 2.2.0).</p>
+<p>This document describes the HCatalog REST API, <em>WebHCat</em>, which was previously called <em>Templeton</em>. If you are looking for a Hive GUI instead of an API, see <a href=https://simhadri-g.github.io/hive-site/docs/latest/hivewebinterface_27362110/>Hive Web Interface</a> (removed in release 2.2.0).</p>
 <p>As shown in the figure below, developers make HTTP requests to access <a href=http://hadoop.apache.org/>Hadoop</a> <a href=http://hadoop.apache.org/docs/stable/mapred_tutorial.html>MapReduce</a> (or <a href=http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html>YARN</a>), <a href=http://pig.apache.org/>Pig</a>, <a href=http://hive.apache.org/>Hive</a>, and <a href=#hcatalog-ddl>HCatalog DDL</a> from within applications. Data and code used by this API are maintained in <a href=http://hadoop.apache.org/docs/stable/hdfs_user_guide.html>HDFS</a>. HCatalog DDL commands are executed directly when requested. MapReduce, Pig, and Hive jobs are placed in queue by WebHCat (Templeton) servers and can be monitored for progress or stopped as required. Developers specify a location in HDFS into which Pig, Hive, and MapReduce results should be placed.</p>
 <p><img src=attachments/34015492/34177184.jpg alt></p>
 <p>WebHCat or Templeton?</p>
@@ -153,7 +153,7 @@ Hive version 0.11.0 is the first release that includes HCatalog and its REST API
 <p>where &ldquo;<em>yourserver</em>&rdquo; is replaced with your server name, and &ldquo;<em>resource</em>&rdquo; is replaced with the HCatalog resource name.</p>
 <p>For example, to check if the server is running you could access the following URL:</p>
 <p><code>ht``tp://www.myserver.com/templeton/v1/status</code></p>
-<p>See <a href=https://simhadri-g.github.io/docs/latest/webhcat-reference_34015762/>Reference: WebHCat Resources</a> for information about the individual REST resources.</p>
+<p>See <a href=https://simhadri-g.github.io/hive-site/docs/latest/webhcat-reference_34015762/>Reference: WebHCat Resources</a> for information about the individual REST resources.</p>
 <h2 id=security>Security</h2>
 <p>The current version supports two types of security:</p>
 <ul>
@@ -203,13 +203,13 @@ Hive version 0.11.0 is the first release that includes HCatalog and its REST API
 <li><strong>tempelton-console-error.log</strong> is what Java writes to stderr, similar to &ldquo;hcat.err&rdquo;.</li>
 </ul>
 <p>In the tempelton-log4j.properties file you can set the location of these logs using the variable templeton.log.dir. This log4j.properties file is set in the server startup script.</p>
-<p>Hive log files are described in the <a href=#hive-logging>Hive Logging</a> section of <a href=https://simhadri-g.github.io/docs/latest/gettingstarted_27362090/>Getting Started</a>.</p>
+<p>Hive log files are described in the <a href=#hive-logging>Hive Logging</a> section of <a href=https://simhadri-g.github.io/hive-site/docs/latest/gettingstarted_27362090/>Getting Started</a>.</p>
 <h2 id=project-name>Project Name</h2>
 <p>The original work to add REST APIs to HCatalog was called Templeton. For backward compatibility the name still appears in URLs, log file names, etc. The Templeton name is taken from a character in the award-winning children&rsquo;s novel Charlotte&rsquo;s Web, by E. B. White. The novel&rsquo;s protagonist is a pig named Wilbur. Templeton is a rat who helps Wilbur by running errands and making deliveries as requested by Charlotte while spinning her web.</p>
 <p> </p>
 <p><strong>Navigation Links</strong>
-Next: <a href=https://simhadri-g.github.io/docs/latest/webhcat-installwebhcat_34015585/>WebHCat Installation</a></p>
-<p>General: <a href=https://simhadri-g.github.io/docs/latest/webhcat_33299069/>WebHCat Manual</a> – <a href=https://simhadri-g.github.io/docs/latest/hcatalog_33299065/>HCatalog Manual</a> – <a href=https://simhadri-g.github.io/docs/latest/home_27362069/>Hive Wiki Home</a> – <a href=http://hive.apache.org/>Hive Project Site</a></p>
+Next: <a href=https://simhadri-g.github.io/hive-site/docs/latest/webhcat-installwebhcat_34015585/>WebHCat Installation</a></p>
+<p>General: <a href=https://simhadri-g.github.io/hive-site/docs/latest/webhcat_33299069/>WebHCat Manual</a> – <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog_33299065/>HCatalog Manual</a> – <a href=https://simhadri-g.github.io/hive-site/docs/latest/home_27362069/>Hive Wiki Home</a> – <a href=http://hive.apache.org/>Hive Project Site</a></p>
 <h2 id=attachments>Attachments:</h2>
 <p><img src=images/icons/bullet_blue.gif alt></p>
 </div>
@@ -218,7 +218,7 @@ Next: <a href=https://simhadri-g.github.io/docs/latest/webhcat-installwebhcat_34
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io/hive-site/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -242,7 +242,7 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/ style=color:grey>
+<a href=https://simhadri-g.github.io/hive-site style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>

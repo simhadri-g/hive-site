@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : Hive APIs Overview</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io//css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/hive-theme.css>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
 <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
-<link rel=stylesheet href=https://simhadri-g.github.io//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site/images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io/hive-site/images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io/hive-site/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://simhadri-g.github.io/> <img src=https://simhadri-g.github.io//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://simhadri-g.github.io/>Apache Hive</a>
+<a href=https://simhadri-g.github.io/hive-site> <img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -146,23 +146,23 @@ ASF
 <h2 id=hcatclient-java>HCatClient (Java)</h2>
 <p>Operation based Java API that presents a number of DDL type operations, however it is not as comprehensive as the Metastore API. The HCatClient was intended to be the Java based entry point to WebHCat HCatalog API although this was never realised. Currently <code>HCatClientHMSImpl</code> is the only concrete implementation of the API; it integrates directly with the Metastore using the Metastore API and does not utilise WebHCat whatsoever despite being packaged inside the WebHCat project. The <code>HCatClientHMSImpl</code> was originally provided as a reference implementation but it has over time gained traction as a public client. Anecdotally, it is now the preferred API for issuing DDL type operations from external programs; and feature contributions are encouraged. There is some minimal documentation on the HCatalog wiki in the form of a <a href=https://cwiki.apache.org/confluence/display/HCATALOG/Design+Document+-+Java+APIs+for+HCatalog+DDL+Commands>design document</a> describing the interface but not the implementation.</p>
 <h2 id=hcatalog-storage-handlers-java>HCatalog Storage Handlers (Java)</h2>
-<p>Operation based Java API. This is well <a href=https://simhadri-g.github.io/docs/latest/hcatalog-inputoutput_34013776/>documented on the wiki</a>.</p>
+<p>Operation based Java API. This is well <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-inputoutput_34013776/>documented on the wiki</a>.</p>
 <p>TODO</p>
 <p>Requires overview.</p>
 <h2 id=hcatalog-cli-command-line>HCatalog CLI (Command Line)</h2>
-<p>Query based API. This is well <a href=https://simhadri-g.github.io/docs/latest/hcatalog-cli_34013932/>documented on the wiki</a>.</p>
+<p>Query based API. This is well <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-cli_34013932/>documented on the wiki</a>.</p>
 <p>Hive community has been working deprecating Hive Cli. Hcatalog Cli is similar to Hive Cli and will be deprecated.</p>
 <h2 id=metastore-java>Metastore (Java)</h2>
 <p>A Thrift operation based API with Java bindings, described by the <code>IMetaStoreClient</code> interface. The API decouples the metastore storage layer from other Hive internals. Because Hive itself uses this internally, it is required to implement a comprehensive feature set which makes it attractive to developers who might find the other APIs lacking. It was not originally intended to be a public API although it became public in version 1.0.0 (<a href=https://issues.apache.org/jira/browse/HIVE-3280>HIVE-3280</a>) and there is a proposal that it be documented more fully (<a href=https://issues.apache.org/jira/browse/HIVE-9363>HIVE-9363</a>). Anecdotally, its use outside of the Hive project is not currently recommended.</p>
 <p>TODO: API usage</p>
 <p>There are numerous ways of instantiating the metastore API including: <code>HCatUtil.getHiveMetastoreClient()</code>, <code>new HiveMetaStoreClient.HiveMetaStoreClient(...)</code>. It may be useful to make some recommendations on the preferred approach.</p>
 <h2 id=webhcat-rest>WebHCat (REST)</h2>
-<p>WebHCat is a REST operation based API for <a href=https://simhadri-g.github.io/docs/latest/hcatalog_33299065/>HCatalog</a>. This is well <a href=https://simhadri-g.github.io/docs/latest/webhcat-reference_34015762/>documented on the wiki</a>.</p>
+<p>WebHCat is a REST operation based API for <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog_33299065/>HCatalog</a>. This is well <a href=https://simhadri-g.github.io/hive-site/docs/latest/webhcat-reference_34015762/>documented on the wiki</a>.</p>
 <p>This not actively maintained and likely not be supported in future releases. For job submission, consider using Oozie or similar tools. For DDL, use JDBC.</p>
 <h2 id=streaming-data-ingest-java>Streaming Data Ingest (Java)</h2>
-<p>Operation based Java API focused on the writing of continuous streams of data into transactional tables using Hive’s <a href=https://simhadri-g.github.io/docs/latest/hive-transactions_40509723/>ACID</a> feature. New data is inserted into tables using small batches and short-lived transactions. Documented <a href=https://simhadri-g.github.io/docs/latest/streaming-data-ingest_40509746/>on the wiki</a> and has <a href=http://htmlpreview.github.io/?https://github.com/apache/hive/blob/master/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/package.html>package level Javadoc</a>. Introduced in Hive version 0.13.0 (<a href=https://issues.apache.org/jira/browse/HIVE-5687>HIVE-5687</a>).</p>
+<p>Operation based Java API focused on the writing of continuous streams of data into transactional tables using Hive’s <a href=https://simhadri-g.github.io/hive-site/docs/latest/hive-transactions_40509723/>ACID</a> feature. New data is inserted into tables using small batches and short-lived transactions. Documented <a href=https://simhadri-g.github.io/hive-site/docs/latest/streaming-data-ingest_40509746/>on the wiki</a> and has <a href=http://htmlpreview.github.io/?https://github.com/apache/hive/blob/master/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/package.html>package level Javadoc</a>. Introduced in Hive version 0.13.0 (<a href=https://issues.apache.org/jira/browse/HIVE-5687>HIVE-5687</a>).</p>
 <h2 id=streaming-mutation-java>Streaming Mutation (Java)</h2>
-<p>Operation based Java API focused on mutating (insert/update/delete) records into transactional tables using Hive’s <a href=https://simhadri-g.github.io/docs/latest/hive-transactions_40509723/>ACID</a> feature. Large volumes of mutations are applied atomically in a single long-lived transaction. Documented <a href=https://simhadri-g.github.io/docs/latest/hcatalog-streaming-mutation-api_61337025/>on the wiki</a>. Scheduled for release in Hive version 2.0.0 (<a href=https://issues.apache.org/jira/browse/HIVE-10165>HIVE-10165</a><a href=https://issues.apache.org/jira/browse/HIVE-5687>).</a></p>
+<p>Operation based Java API focused on mutating (insert/update/delete) records into transactional tables using Hive’s <a href=https://simhadri-g.github.io/hive-site/docs/latest/hive-transactions_40509723/>ACID</a> feature. Large volumes of mutations are applied atomically in a single long-lived transaction. Documented <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-streaming-mutation-api_61337025/>on the wiki</a>. Scheduled for release in Hive version 2.0.0 (<a href=https://issues.apache.org/jira/browse/HIVE-10165>HIVE-10165</a><a href=https://issues.apache.org/jira/browse/HIVE-5687>).</a></p>
 <h2 id=hive-jdbc-jdbc>hive-jdbc (JDBC)</h2>
 <p>JDBC API supported by Hive. It supports most of the functionality in JDBC spec.</p>
 <h2 id=comments>Comments:</h2>
@@ -189,7 +189,7 @@ ASF
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io/hive-site/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -213,7 +213,7 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/ style=color:grey>
+<a href=https://simhadri-g.github.io/hive-site style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>

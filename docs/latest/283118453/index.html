@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : Hive Transactions (Hive ACID)</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io//css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/hive-theme.css>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
 <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
-<link rel=stylesheet href=https://simhadri-g.github.io//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site/images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io/hive-site/images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io/hive-site/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://simhadri-g.github.io/> <img src=https://simhadri-g.github.io//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://simhadri-g.github.io/>Apache Hive</a>
+<a href=https://simhadri-g.github.io/hive-site> <img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -164,9 +164,9 @@ ASF
 <h2 id=limitations>Limitations</h2>
 <ul>
 <li><em>BEGIN</em>, <em>COMMIT</em>, and <em>ROLLBACK</em> are not yet supported.  All language operations are auto-commit.</li>
-<li>Only <a href=https://simhadri-g.github.io/docs/latest/languagemanual-orc_31818911/>ORC file format</a> is supported. The feature has been built such that transactions can be used by any storage format that can determine how updates or deletes apply to base records (basically, that has an explicit or implicit row id), but so far the integration work has only been done for ORC.</li>
+<li>Only <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-orc_31818911/>ORC file format</a> is supported. The feature has been built such that transactions can be used by any storage format that can determine how updates or deletes apply to base records (basically, that has an explicit or implicit row id), but so far the integration work has only been done for ORC.</li>
 <li>By default transactions are configured to be off.  See the <a href=#configuration>Configuration</a> section below for a discussion of which values need to be set to configure it.</li>
-<li>Tables must be <a href=https://simhadri-g.github.io/docs/latest/languagemanual-ddl-bucketedtables_27362035/>bucketed</a> to make use of these features.  Tables in the same system not using transactions and ACID do not need to be bucketed.</li>
+<li>Tables must be <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-ddl-bucketedtables_27362035/>bucketed</a> to make use of these features.  Tables in the same system not using transactions and ACID do not need to be bucketed.</li>
 <li>Reading/writing to an ACID table from a non-ACID session is not allowed. In other words, the Hive transaction manager must be set to org.apache.hadoop.hive.ql.lockmgr.DbTxnManager in order to work with ACID tables.</li>
 <li>At this time only snapshot level isolation is supported.  When a given query starts it will be provided with a consistent snapshot of the data.  There is no support for dirty read, read committed, repeatable read, or serializable.  With the introduction of BEGIN the intention is to support snapshot isolation for the duration of transaction rather than just a single query.  Other isolation levels may be added depending on user requests.</li>
 <li>The existing ZooKeeper and in-memory lock managers are not compatible with transactions.  There is no intention to address this issue.  See <a href=#basic-design>Basic Design</a> below for a discussion of how locks are stored for transactions.</li>
@@ -176,13 +176,13 @@ ASF
 <h2 id=streaming-apis>Streaming APIs</h2>
 <p>Hive offers APIs for streaming data ingest and streaming mutation:</p>
 <ul>
-<li><a href=https://simhadri-g.github.io/docs/latest/streaming-data-ingest_40509746/>Hive HCatalog Streaming API</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/streaming-data-ingest_40509746/>Hive HCatalog Streaming API</a></li>
 <li><a href=https://cwiki.apache.org/confluence/display/Hive/Streaming+Data+Ingest+V2>Hive Streaming API</a> (Since Hive 3)</li>
-<li><a href=https://simhadri-g.github.io/docs/latest/283118454/>HCatalog Streaming Mutation API (Copy)</a> (available in Hive 2.0.0 and later)</li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/283118454/>HCatalog Streaming Mutation API (Copy)</a> (available in Hive 2.0.0 and later)</li>
 </ul>
 <p>A comparison of these two APIs is available in the <a href=#background>Background</a> section of the Streaming Mutation document.</p>
 <h2 id=grammar-changes>Grammar Changes</h2>
-<p><em>INSERT&mldr;VALUES, UPDATE</em>, and <em>DELETE</em> have been added to the SQL grammar, starting in <a href=https://issues.apache.org/jira/browse/HIVE-5317>Hive 0.14</a>.  See <a href=https://simhadri-g.github.io/docs/latest/languagemanual-dml_27362036/>LanguageManual DML</a> for details.</p>
+<p><em>INSERT&mldr;VALUES, UPDATE</em>, and <em>DELETE</em> have been added to the SQL grammar, starting in <a href=https://issues.apache.org/jira/browse/HIVE-5317>Hive 0.14</a>.  See <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-dml_27362036/>LanguageManual DML</a> for details.</p>
 <p>Several new commands have been added to Hive&rsquo;s DDL in support of ACID and transactions, plus some existing DDL has been modified.  </p>
 <p>A new command <em>SHOW TRANSACTIONS</em> has been added, see <a href=#show-transactions>Show Transactions</a> for details.</p>
 <p>A new command <em>SHOW COMPACTIONS</em> has been added, see <a href=#show-compactions>Show Compactions</a> for details.</p>
@@ -208,7 +208,7 @@ drwxr-xr-x   - ekoifman staff          0 2016-06-09 17:07 /user/hive/warehouse/t
 <ul>
 <li><strong>Minor</strong> compaction takes a set of existing delta files and rewrites them to a single delta file per bucket.</li>
 <li><strong>Major</strong> compaction takes one or more delta files and the base file for the bucket and rewrites them into a new base file per bucket.  Major compaction is more expensive but is more effective.</li>
-<li>More information about <strong>rebalance</strong> compaction can be found here: <a href=https://simhadri-g.github.io/docs/latest/rebalance-compaction_240884502/>Rebalance compaction</a></li>
+<li>More information about <strong>rebalance</strong> compaction can be found here: <a href=https://simhadri-g.github.io/hive-site/docs/latest/rebalance-compaction_240884502/>Rebalance compaction</a></li>
 </ul>
 <p>All compactions are done in the background. Minor and major compactions do not prevent concurrent reads and writes of the data. Rebalance compaction uses exclusive write lock, therefore it prevents concurrent writes. After a compaction the system waits until all readers of the old files have finished and then removes the old files.</p>
 <h4 id=initiator>Initiator</h4>
@@ -373,7 +373,7 @@ ALTER TABLE table\_name COMPACT 'major'
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io/hive-site/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -397,7 +397,7 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/ style=color:grey>
+<a href=https://simhadri-g.github.io/hive-site style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
