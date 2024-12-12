@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : LanguageManual DML</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io//css/hive-theme.css>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
 <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
-<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
-<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
-<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://simhadri-g.github.io//css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io//images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io//images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io//images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io//images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io//images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://hive.apache.org> <img src=https://hive.apache.org/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://hive.apache.org>Apache Hive</a>
+<a href=https://simhadri-g.github.io/> <img src=https://simhadri-g.github.io//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io//docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io//general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io//development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io//development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io//development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io//community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io//community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io//community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -193,7 +193,7 @@ ASF
 <li><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=82903069#LanguageManualDML-Delete">DELETE</a></li>
 <li><a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=82903069#LanguageManualDML-Merge">MERGE</a></li>
 </ul>
-<p><a href=https://hive.apache.org/docs/latest/languagemanual-importexport_27837968/>EXPORT and IMPORT</a> commands are also available (as of <a href=https://issues.apache.org/jira/browse/HIVE-1918>Hive 0.8</a>).</p>
+<p><a href=https://simhadri-g.github.io/docs/latest/languagemanual-importexport_27837968/>EXPORT and IMPORT</a> commands are also available (as of <a href=https://issues.apache.org/jira/browse/HIVE-1918>Hive 0.8</a>).</p>
 <h3 id=loading-files-into-tables>Loading files into tables</h3>
 <p>Hive does not do any transformation while loading data into tables. Load operations are currently pure copy/move operations that move datafiles into locations corresponding to Hive tables.</p>
 <h5 id=syntax>Syntax</h5>
@@ -254,7 +254,7 @@ LOAD DATA LOCAL INPATH 'filepath' INTO TABLE tab1;
 <li>If the keyword LOCAL is not given, <em>filepath</em> must refer to files within the same filesystem as the table&rsquo;s (or partition&rsquo;s) location.</li>
 <li>Hive does some minimal checks to make sure that the files being loaded match the target table. Currently it checks that if the table is stored in sequencefile format, the files being loaded are also sequencefiles, and vice versa.</li>
 <li>A bug that prevented loading a file when its name includes the &ldquo;+&rdquo; character is fixed in release 0.13.0 (<a href=https://issues.apache.org/jira/browse/HIVE-6048>HIVE-6048</a>).</li>
-<li>Please read <a href=https://hive.apache.org/docs/latest/compressedstorage_27362073/>CompressedStorage</a> if your datafile is compressed.</li>
+<li>Please read <a href=https://simhadri-g.github.io/docs/latest/compressedstorage_27362073/>CompressedStorage</a> if your datafile is compressed.</li>
 </ul>
 <h3 id=inserting-data-into-hive-tables-from-queries>Inserting data into Hive Tables from queries</h3>
 <p>Query Results can be inserted into tables by using the insert clause.</p>
@@ -295,7 +295,7 @@ An immutable table is protected against accidental updates due to a script load
 <li>Multiple insert clauses (also known as <em>Multi Table Insert</em>) can be specified in the same query.</li>
 <li>The output of each of the select statements is written to the chosen table (or partition). Currently the OVERWRITE keyword is mandatory and implies that the contents of the chosen table or partition are replaced with the output of corresponding select statement.</li>
 <li>The output format and serialization class is determined by the table&rsquo;s metadata (as specified via DDL commands on the table).</li>
-<li>As of <a href=https://issues.apache.org/jira/browse/HIVE-5317>Hive 0.14</a>, if a table has an OutputFormat that implements AcidOutputFormat and the system is configured to use a <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>transaction</a> manager that implements ACID, then INSERT OVERWRITE will be disabled for that table.  This is to avoid users unintentionally overwriting transaction history.  The same functionality can be achieved by using <a href=#truncate-table>TRUNCATE TABLE</a> (for non-partitioned tables) or <a href=#drop-partition>DROP PARTITION</a> followed by INSERT INTO.</li>
+<li>As of <a href=https://issues.apache.org/jira/browse/HIVE-5317>Hive 0.14</a>, if a table has an OutputFormat that implements AcidOutputFormat and the system is configured to use a <a href=https://simhadri-g.github.io/docs/latest/hive-transactions_40509723/>transaction</a> manager that implements ACID, then INSERT OVERWRITE will be disabled for that table.  This is to avoid users unintentionally overwriting transaction history.  The same functionality can be achieved by using <a href=#truncate-table>TRUNCATE TABLE</a> (for non-partitioned tables) or <a href=#drop-partition>DROP PARTITION</a> followed by INSERT INTO.</li>
 <li>As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-9353>1.1.0</a> the TABLE keyword is optional.</li>
 <li>As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-9481>1.2.0</a> each INSERT INTO T can take a column list like INSERT INTO T (z, x, c1).  See Description of <a href=https://issues.apache.org/jira/browse/HIVE-9481>HIVE-9481</a> for examples.</li>
 <li>As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-19908>3.1.0</a> INSERT OVERWRITE from a source with UNION ALL on full CRUD ACID tables is not allowed.</li>
@@ -359,14 +359,14 @@ INSERT OVERWRITE TABLE page\_view PARTITION(dt='2008-06-08', country)
 </code></pre><p>Here the <code>country</code> partition will be dynamically created by the last column from the <code>SELECT</code> clause (i.e. <code>pvs.cnt</code>). Note that the name is not used. In <code>nonstrict</code> mode the <code>dt</code> partition could also be dynamically created.</p>
 <h6 id=additional-documentation>Additional Documentation</h6>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/dynamicpartitions_27823715/>Design Document</a>
+<li><a href=https://simhadri-g.github.io/docs/latest/dynamicpartitions_27823715/>Design Document</a>
 <ul>
 <li><a href=https://issues.apache.org/jira/secure/attachment/12437909/dp_design.txt>Original design doc</a></li>
 <li><a href=https://issues.apache.org/jira/browse/HIVE-936>HIVE-936</a></li>
 </ul>
 </li>
 <li><a href=#tutorial:-dynamic-partition-insert>Tutorial: Dynamic-Partition Insert</a></li>
-<li><a href=https://hive.apache.org/docs/latest/hcatalog-dynamicpartitions_34014006/>HCatalog Dynamic Partitioning</a>
+<li><a href=https://simhadri-g.github.io/docs/latest/hcatalog-dynamicpartitions_34014006/>HCatalog Dynamic Partitioning</a>
 <ul>
 <li><a href=#usage-with-pig>Usage with Pig</a></li>
 <li><a href=#usage-from-mapreduce>Usage from MapReduce</a></li>
@@ -403,7 +403,7 @@ row\_format
 <li>INSERT OVERWRITE statements to HDFS filesystem directories are the best way to extract large amounts of data from Hive. Hive can write to HDFS directories in parallel from within a map-reduce job.</li>
 <li>The directory is, as you would expect, OVERWRITten; in other words, if the specified path exists, it is clobbered and replaced with the output.</li>
 <li>As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-3682>0.11.0</a> the separator used can be specified; in earlier versions it was always the ^A character (\001). However, custom separators are only supported for LOCAL writes in Hive versions 0.11.0 to 1.1.0 – this bug is fixed in version 1.2.0 (see <a href=https://issues.apache.org/jira/browse/HIVE-5672>HIVE-5672</a>).</li>
-<li>In <a href=https://issues.apache.org/jira/browse/HIVE-5317>Hive 0.14</a>, inserts into <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>ACID</a> compliant tables will deactivate vectorization for the duration of the select and insert.  This will be done automatically.  ACID tables that have data inserted into them can still be queried using vectorization.</li>
+<li>In <a href=https://issues.apache.org/jira/browse/HIVE-5317>Hive 0.14</a>, inserts into <a href=https://simhadri-g.github.io/docs/latest/hive-transactions_40509723/>ACID</a> compliant tables will deactivate vectorization for the duration of the select and insert.  This will be done automatically.  ACID tables that have data inserted into them can still be queried using vectorization.</li>
 </ul>
 <h3 id=inserting-values-into-tables-from-sql>Inserting values into tables from SQL</h3>
 <p>The INSERT&mldr;VALUES statement can be used to insert data into tables directly from SQL.</p>
@@ -421,7 +421,7 @@ where a value is either null or any valid SQL literal
 <li>Each row listed in the VALUES clause is inserted into table <em>tablename</em>.</li>
 <li>Values must be provided for every column in the table. The standard SQL syntax that allows the user to insert values into only some columns is not yet supported. To mimic the standard SQL, nulls can be provided for columns the user does not wish to assign a value to.</li>
 <li>Dynamic partitioning is supported in the same way as for <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=82903069#LanguageManualDML-DynamicPartitionInserts">INSERT&mldr;SELECT</a>.</li>
-<li>If the table being inserted into supports <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>ACID</a> and a transaction manager that supports ACID is in use, this operation will be auto-committed upon successful completion.</li>
+<li>If the table being inserted into supports <a href=https://simhadri-g.github.io/docs/latest/hive-transactions_40509723/>ACID</a> and a transaction manager that supports ACID is in use, this operation will be auto-committed upon successful completion.</li>
 <li>Hive does not support literals for complex types (array, map, struct, union), so it is not possible to use them in INSERT INTO&mldr;VALUES clauses. This means that the user cannot insert data into a complex datatype column using the INSERT INTO&mldr;VALUES clause.</li>
 </ul>
 <h5 id=examples>Examples</h5>
@@ -445,7 +445,7 @@ INSERT INTO TABLE pageviews
 </code></pre><h3 id=update>Update</h3>
 <p>Version Information</p>
 <p>UPDATE is available starting in <a href=https://issues.apache.org/jira/browse/HIVE-5317>Hive 0.14</a>.</p>
-<p>Updates can only be performed on tables that support ACID. See <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>Hive Transactions</a> for details.</p>
+<p>Updates can only be performed on tables that support ACID. See <a href=https://simhadri-g.github.io/docs/latest/hive-transactions_40509723/>Hive Transactions</a> for details.</p>
 <h5 id=syntax-4>Syntax</h5>
 <pre tabindex=0><code>Standard Syntax:
 UPDATE tablename SET column = value [, column = value ...] [WHERE expression]
@@ -466,7 +466,7 @@ UPDATE tablename SET column = value [, column = value ...] [WHERE expression]
 <h3 id=delete>Delete</h3>
 <p>Version Information</p>
 <p>DELETE is available starting in <a href=https://issues.apache.org/jira/browse/HIVE-5317>Hive 0.14</a>.</p>
-<p>Deletes can only be performed on tables that support ACID. See <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>Hive Transactions</a> for details.</p>
+<p>Deletes can only be performed on tables that support ACID. See <a href=https://simhadri-g.github.io/docs/latest/hive-transactions_40509723/>Hive Transactions</a> for details.</p>
 <h5 id=syntax-5>Syntax</h5>
 <pre tabindex=0><code>Standard Syntax:
 DELETE FROM tablename [WHERE expression]
@@ -483,7 +483,7 @@ DELETE FROM tablename [WHERE expression]
 <h3 id=merge>Merge</h3>
 <p>Version Information</p>
 <p>MERGE is available starting in <a href=https://issues.apache.org/jira/browse/HIVE-10924>Hive 2.2</a>.</p>
-<p>Merge can only be performed on tables that support ACID. See <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>Hive Transactions</a> for details.</p>
+<p>Merge can only be performed on tables that support ACID. See <a href=https://simhadri-g.github.io/docs/latest/hive-transactions_40509723/>Hive Transactions</a> for details.</p>
 <h5 id=syntax-6>Syntax</h5>
 <pre tabindex=0><code>Standard Syntax:
 MERGE INTO &lt;target table&gt; AS T USING &lt;source expression/table&gt; AS S
@@ -515,7 +515,7 @@ WHEN NOT MATCHED [AND &lt;boolean expression4&gt;] THEN INSERT VALUES&lt;value l
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -539,7 +539,7 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://hive.apache.org style=color:grey>
+<a href=https://simhadri-g.github.io/ style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
