@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : LanguageManual Select</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
 <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site/images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site/images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site/images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site/images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site/images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://simhadri-g.github.io/hive-site> <img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site>Apache Hive</a>
+<a href=https://hive.apache.org> <img src=https://hive.apache.org/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://hive.apache.org>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -128,7 +128,7 @@ ASF
 </ul>
 </li>
 </ul>
-<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-groupby_27362038/>GROUP BY</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sortby_27362045/>SORT/ORDER/CLUSTER/DISTRIBUTE BY</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joins_27362039/>JOIN</a> (<a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joins_27362039/>Hive Joins</a>, <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joinoptimization_33293167/>Join Optimization</a>, <a href=https://simhadri-g.github.io/hive-site/docs/latest/outerjoinbehavior_35749927/>Outer Join Behavior</a>); <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-union_27362049/>UNION</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sampling_27362042/>TABLESAMPLE</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-subqueries_27362044/>Subqueries</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-virtualcolumns_27362048/>Virtual Columns</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-udf_27362046/>Operators and UDFs</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-lateralview_27362040/>LATERAL VIEW</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-windowingandanalytics_31819589/>Windowing, OVER, and Analytics</a>; <a href=https://simhadri-g.github.io/hive-site/docs/latest/common-table-expression_38572242/>Common Table Expressions</a></p>
+<p><a href=https://hive.apache.org/docs/latest/languagemanual-groupby_27362038/>GROUP BY</a>; <a href=https://hive.apache.org/docs/latest/languagemanual-sortby_27362045/>SORT/ORDER/CLUSTER/DISTRIBUTE BY</a>; <a href=https://hive.apache.org/docs/latest/languagemanual-joins_27362039/>JOIN</a> (<a href=https://hive.apache.org/docs/latest/languagemanual-joins_27362039/>Hive Joins</a>, <a href=https://hive.apache.org/docs/latest/languagemanual-joinoptimization_33293167/>Join Optimization</a>, <a href=https://hive.apache.org/docs/latest/outerjoinbehavior_35749927/>Outer Join Behavior</a>); <a href=https://hive.apache.org/docs/latest/languagemanual-union_27362049/>UNION</a>; <a href=https://hive.apache.org/docs/latest/languagemanual-sampling_27362042/>TABLESAMPLE</a>; <a href=https://hive.apache.org/docs/latest/languagemanual-subqueries_27362044/>Subqueries</a>; <a href=https://hive.apache.org/docs/latest/languagemanual-virtualcolumns_27362048/>Virtual Columns</a>; <a href=https://hive.apache.org/docs/latest/languagemanual-udf_27362046/>Operators and UDFs</a>; <a href=https://hive.apache.org/docs/latest/languagemanual-lateralview_27362040/>LATERAL VIEW</a>; <a href=https://hive.apache.org/docs/latest/languagemanual-windowingandanalytics_31819589/>Windowing, OVER, and Analytics</a>; <a href=https://hive.apache.org/docs/latest/common-table-expression_38572242/>Common Table Expressions</a></p>
 <h2 id=select-syntax>Select Syntax</h2>
 <pre tabindex=0><code>[WITH CommonTableExpression (, CommonTableExpression)*]    (Note: Only available starting with Hive 0.13.0)
 SELECT [ALL | DISTINCT] select\_expr, select\_expr, ...
@@ -142,8 +142,8 @@ SELECT [ALL | DISTINCT] select\_expr, select\_expr, ...
  [LIMIT [offset,] rows]
 
 </code></pre><ul>
-<li>A SELECT statement can be part of a <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-union_27362049/>union</a> query or a <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-subqueries_27362044/>subquery</a> of another query.</li>
-<li><code>table_reference</code> indicates the input to the query. It can be a regular table, <a href=#a-view>a view</a>, a <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joins_27362039/>join construct</a> or a <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-subqueries_27362044/>subquery</a>.</li>
+<li>A SELECT statement can be part of a <a href=https://hive.apache.org/docs/latest/languagemanual-union_27362049/>union</a> query or a <a href=https://hive.apache.org/docs/latest/languagemanual-subqueries_27362044/>subquery</a> of another query.</li>
+<li><code>table_reference</code> indicates the input to the query. It can be a regular table, <a href=#a-view>a view</a>, a <a href=https://hive.apache.org/docs/latest/languagemanual-joins_27362039/>join construct</a> or a <a href=https://hive.apache.org/docs/latest/languagemanual-subqueries_27362044/>subquery</a>.</li>
 <li>Table names and column names are case insensitive.
 <ul>
 <li>In Hive 0.12 and earlier, only alphanumeric and underscore characters are allowed in table and column names.</li>
@@ -169,10 +169,10 @@ SELECT [ALL | DISTINCT] select\_expr, select\_expr, ...
 SELECT query\_specifications;
 USE default;
 </code></pre><h3 id=where-clause>WHERE Clause</h3>
-<p>The WHERE condition is a <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-types_27838462/>boolean</a> expression. For example, the following query returns only those sales records which have an amount greater than 10 from the US region. Hive supports a number of <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-udf_27362046/>operators and UDFs</a> in the WHERE clause:</p>
+<p>The WHERE condition is a <a href=https://hive.apache.org/docs/latest/languagemanual-types_27838462/>boolean</a> expression. For example, the following query returns only those sales records which have an amount greater than 10 from the US region. Hive supports a number of <a href=https://hive.apache.org/docs/latest/languagemanual-udf_27362046/>operators and UDFs</a> in the WHERE clause:</p>
 <pre tabindex=0><code>SELECT * FROM sales WHERE amount &gt; 10 AND region = &quot;US&quot;
 
-</code></pre><p>As of Hive 0.13 some types of <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-subqueries_27362044/>subqueries</a> are supported in the WHERE clause.</p>
+</code></pre><p>As of Hive 0.13 some types of <a href=https://hive.apache.org/docs/latest/languagemanual-subqueries_27362044/>subqueries</a> are supported in the WHERE clause.</p>
 <h3 id=all-and-distinct-clauses>ALL and DISTINCT Clauses</h3>
 <p>The ALL and DISTINCT options specify whether duplicate rows should be returned. If none of these options are given, the default is ALL (all matching rows are returned). DISTINCT specifies removal of duplicate rows from the result set. Note, Hive supports SELECT DISTINCT * starting in release 1.1.0 (<a href=https://issues.apache.org/jira/browse/HIVE-9194>HIVE-9194</a>).</p>
 <pre tabindex=0><code>hive&gt; SELECT col1, col2 FROM t1
@@ -190,7 +190,7 @@ hive&gt; SELECT DISTINCT col1 FROM t1
 
 </code></pre><p>ALL and DISTINCT can also be used in a UNION clause – see <a href=#union-syntax>Union Syntax</a> for more information.</p>
 <h3 id=partition-based-queries>Partition Based Queries</h3>
-<p>In general, a SELECT query scans the entire table (other than for <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sampling_27362042/>sampling</a>). If a table created using the <a href=#partitioned-by>PARTITIONED BY</a> clause, a query can do <strong>partition pruning</strong> and scan only a fraction of the table relevant to the partitions specified by the query. Hive currently does partition pruning if the partition predicates are specified in the WHERE clause or the ON clause in a JOIN. For example, if table page_views is partitioned on column date, the following query retrieves rows for just days between 2008-03-01 and 2008-03-31.</p>
+<p>In general, a SELECT query scans the entire table (other than for <a href=https://hive.apache.org/docs/latest/languagemanual-sampling_27362042/>sampling</a>). If a table created using the <a href=#partitioned-by>PARTITIONED BY</a> clause, a query can do <strong>partition pruning</strong> and scan only a fraction of the table relevant to the partitions specified by the query. Hive currently does partition pruning if the partition predicates are specified in the WHERE clause or the ON clause in a JOIN. For example, if table page_views is partitioned on column date, the following query retrieves rows for just days between 2008-03-01 and 2008-03-31.</p>
 <pre tabindex=0><code>    SELECT page\_views.*
     FROM page\_views
     WHERE page\_views.date &gt;= '2008-03-01' AND page\_views.date &lt;= '2008-03-31'
@@ -201,9 +201,9 @@ hive&gt; SELECT DISTINCT col1 FROM t1
       ON (page\_views.user\_id = dim\_users.id AND page\_views.date &gt;= '2008-03-01' AND page\_views.date &lt;= '2008-03-31')
 
 </code></pre><ul>
-<li>See also <a href=https://simhadri-g.github.io/hive-site/docs/latest/partition-filter-syntax_103092177/>Partition Filter Syntax</a>.</li>
-<li>See also <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-groupby_27362038/>Group By</a>.</li>
-<li>See also <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sortby_27362045/>Sort By / Cluster By / Distribute By / Order By</a>.</li>
+<li>See also <a href=https://hive.apache.org/docs/latest/partition-filter-syntax_103092177/>Partition Filter Syntax</a>.</li>
+<li>See also <a href=https://hive.apache.org/docs/latest/languagemanual-groupby_27362038/>Group By</a>.</li>
+<li>See also <a href=https://hive.apache.org/docs/latest/languagemanual-sortby_27362045/>Sort By / Cluster By / Distribute By / Order By</a>.</li>
 </ul>
 <h3 id=having-clause>HAVING Clause</h3>
 <p>Hive added support for the HAVING clause in version 0.7.0. In older versions of Hive it is possible to achieve the same effect by using a subquery, e.g:</p>
@@ -236,23 +236,23 @@ hive&gt; SELECT DISTINCT col1 FROM t1
 </code></pre><h3 id=more-select-syntax>More Select Syntax</h3>
 <p>See the following documents for additional syntax and features of SELECT statements:</p>
 <ul>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-groupby_27362038/>GROUP BY</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sortby_27362045/>SORT/ORDER/CLUSTER/DISTRIBUTE BY</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joins_27362039/>JOIN</a>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-groupby_27362038/>GROUP BY</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-sortby_27362045/>SORT/ORDER/CLUSTER/DISTRIBUTE BY</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-joins_27362039/>JOIN</a>
 <ul>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joins_27362039/>Hive Joins</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joinoptimization_33293167/>Join Optimization</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/outerjoinbehavior_35749927/>Outer Join Behavior</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-joins_27362039/>Hive Joins</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-joinoptimization_33293167/>Join Optimization</a></li>
+<li><a href=https://hive.apache.org/docs/latest/outerjoinbehavior_35749927/>Outer Join Behavior</a></li>
 </ul>
 </li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-union_27362049/>UNION</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sampling_27362042/>TABLESAMPLE</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-subqueries_27362044/>Subqueries</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-virtualcolumns_27362048/>Virtual Columns</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-udf_27362046/>Operators and UDFs</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-lateralview_27362040/>LATERAL VIEW</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-windowingandanalytics_31819589/>Windowing, OVER, and Analytics</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/common-table-expression_38572242/>Common Table Expressions</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-union_27362049/>UNION</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-sampling_27362042/>TABLESAMPLE</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-subqueries_27362044/>Subqueries</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-virtualcolumns_27362048/>Virtual Columns</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-udf_27362046/>Operators and UDFs</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-lateralview_27362040/>LATERAL VIEW</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-windowingandanalytics_31819589/>Windowing, OVER, and Analytics</a></li>
+<li><a href=https://hive.apache.org/docs/latest/common-table-expression_38572242/>Common Table Expressions</a></li>
 </ul>
 <p> </p>
 <p> </p>
@@ -263,7 +263,7 @@ hive&gt; SELECT DISTINCT col1 FROM t1
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -287,7 +287,7 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>

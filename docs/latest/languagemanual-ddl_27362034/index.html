@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : LanguageManual DDL</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
 <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site/images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site/images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site/images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site/images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site/images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://simhadri-g.github.io/hive-site> <img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site>Apache Hive</a>
+<a href=https://hive.apache.org> <img src=https://hive.apache.org/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://hive.apache.org>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -410,11 +410,11 @@ constraint\_specification:
 The keyword &ldquo;<code>default</code>&rdquo; can be used for the default database.</li>
 </ul>
 <p>See <a href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-AlterTable>Alter Table</a> below for more information about table comments, table properties, and SerDe properties.</p>
-<p>See <a href=#type-system>Type System</a> and <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-types_27838462/>Hive Data Types</a> for details about the primitive and complex data types.</p>
+<p>See <a href=#type-system>Type System</a> and <a href=https://hive.apache.org/docs/latest/languagemanual-types_27838462/>Hive Data Types</a> for details about the primitive and complex data types.</p>
 <h4 id=managed-and-external-tables>Managed and External Tables</h4>
-<p>By default Hive creates managed tables, where files, metadata and statistics are managed by internal Hive processes. For details on the differences between managed and external table see <a href=https://simhadri-g.github.io/hive-site/docs/latest/managed-vs-external-tables_95654003/>Managed vs. External Tables</a>.</p>
+<p>By default Hive creates managed tables, where files, metadata and statistics are managed by internal Hive processes. For details on the differences between managed and external table see <a href=https://hive.apache.org/docs/latest/managed-vs-external-tables_95654003/>Managed vs. External Tables</a>.</p>
 <h4 id=storage-formats>Storage Formats</h4>
-<p>Hive supports built-in and custom-developed file formats. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/compressedstorage_27362073/>CompressedStorage</a> for details on compressed table storage.<br>
+<p>Hive supports built-in and custom-developed file formats. See <a href=https://hive.apache.org/docs/latest/compressedstorage_27362073/>CompressedStorage</a> for details on compressed table storage.<br>
 The following are some of the formats built-in to Hive:<br>
  </p>
 <table>
@@ -439,11 +439,11 @@ The following are some of the formats built-in to Hive:<br>
 </tr>
 <tr>
 <td>STORED AS PARQUET</td>
-<td>Stored as Parquet format for the <a href=https://simhadri-g.github.io/hive-site/docs/latest/parquet_38570914/>Parquet</a> columnar storage format in <a href=#hive-0-13-0-and-later>Hive 0.13.0 and later</a>; Use ROW FORMAT SERDE &mldr; STORED AS INPUTFORMAT &mldr; OUTPUTFORMAT syntax &mldr; in <a href=#hive-0-10,-0-11,-or-0-12>Hive 0.10, 0.11, or 0.12</a>.</td>
+<td>Stored as Parquet format for the <a href=https://hive.apache.org/docs/latest/parquet_38570914/>Parquet</a> columnar storage format in <a href=#hive-0-13-0-and-later>Hive 0.13.0 and later</a>; Use ROW FORMAT SERDE &mldr; STORED AS INPUTFORMAT &mldr; OUTPUTFORMAT syntax &mldr; in <a href=#hive-0-10,-0-11,-or-0-12>Hive 0.10, 0.11, or 0.12</a>.</td>
 </tr>
 <tr>
 <td>STORED AS AVRO</td>
-<td>Stored as Avro format in <a href=https://issues.apache.org/jira/browse/HIVE-6806>Hive 0.14.0 and later</a> (see <a href=https://simhadri-g.github.io/hive-site/docs/latest/avroserde_27850707/>Avro SerDe</a>).</td>
+<td>Stored as Avro format in <a href=https://issues.apache.org/jira/browse/HIVE-6806>Hive 0.14.0 and later</a> (see <a href=https://hive.apache.org/docs/latest/avroserde_27850707/>Avro SerDe</a>).</td>
 </tr>
 <tr>
 <td>STORED AS RCFILE</td>
@@ -455,11 +455,11 @@ The following are some of the formats built-in to Hive:<br>
 </tr>
 <tr>
 <td>STORED BY</td>
-<td>Stored by a non-native table format. To create or link to a non-native table, for example a table backed by <a href=https://simhadri-g.github.io/hive-site/docs/latest/hbaseintegration_27362089/>HBase</a> or <a href=https://simhadri-g.github.io/hive-site/docs/latest/druid-integration_65866491/>Druid</a> or <a href=https://simhadri-g.github.io/hive-site/docs/latest/accumulointegration_46633569/>Accumulo</a>. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/storagehandlers_27362063/>StorageHandlers</a> for more information on this option.</td>
+<td>Stored by a non-native table format. To create or link to a non-native table, for example a table backed by <a href=https://hive.apache.org/docs/latest/hbaseintegration_27362089/>HBase</a> or <a href=https://hive.apache.org/docs/latest/druid-integration_65866491/>Druid</a> or <a href=https://hive.apache.org/docs/latest/accumulointegration_46633569/>Accumulo</a>. See <a href=https://hive.apache.org/docs/latest/storagehandlers_27362063/>StorageHandlers</a> for more information on this option.</td>
 </tr>
 <tr>
 <td>INPUTFORMAT and OUTPUTFORMAT</td>
-<td>in the file_format to specify the name of a corresponding InputFormat and OutputFormat class as a string literal.For example, &lsquo;org.apache.hadoop.hive.contrib.fileformat.base64.Base64TextInputFormat&rsquo;. For LZO compression, the values to use are &lsquo;INPUTFORMAT &ldquo;com.hadoop.mapred.DeprecatedLzoTextInputFormat&rdquo; OUTPUTFORMAT &ldquo;<a href=http://org.apache.hadoop.hive.ql.io/>org.apache.hadoop.hive.ql.io</a>.HiveIgnoreKeyTextOutputFormat&rdquo;&rsquo; (see <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-lzo_33298193/>LZO Compression</a>).</td>
+<td>in the file_format to specify the name of a corresponding InputFormat and OutputFormat class as a string literal.For example, &lsquo;org.apache.hadoop.hive.contrib.fileformat.base64.Base64TextInputFormat&rsquo;. For LZO compression, the values to use are &lsquo;INPUTFORMAT &ldquo;com.hadoop.mapred.DeprecatedLzoTextInputFormat&rdquo; OUTPUTFORMAT &ldquo;<a href=http://org.apache.hadoop.hive.ql.io/>org.apache.hadoop.hive.ql.io</a>.HiveIgnoreKeyTextOutputFormat&rdquo;&rsquo; (see <a href=https://hive.apache.org/docs/latest/languagemanual-lzo_33298193/>LZO Compression</a>).</td>
 </tr>
 </tbody>
 </table>
@@ -468,10 +468,10 @@ The following are some of the formats built-in to Hive:<br>
 Use the SERDE clause to create a table with a custom SerDe. For more information on SerDes see:</p>
 <ul>
 <li><a href=#hive-serde>Hive SerDe</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/serde_27362059/>SerDe</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-storageformats_34013997/>HCatalog Storage Formats</a></li>
+<li><a href=https://hive.apache.org/docs/latest/serde_27362059/>SerDe</a></li>
+<li><a href=https://hive.apache.org/docs/latest/hcatalog-storageformats_34013997/>HCatalog Storage Formats</a></li>
 </ul>
-<p>You must specify a list of columns for tables that use a native SerDe. Refer to the <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-types_27838462/>Types</a> part of the User Guide for the allowable column types.<br>
+<p>You must specify a list of columns for tables that use a native SerDe. Refer to the <a href=https://hive.apache.org/docs/latest/languagemanual-types_27838462/>Types</a> part of the User Guide for the allowable column types.<br>
 A list of columns for tables that use a custom SerDe may be specified but Hive will query the SerDe to determine the actual list of columns for this table.</p>
 <p>For general information about SerDes, see <a href=https://cwiki.apache.org/confluence/display/Hive/DeveloperGuide#DeveloperGuide-HiveSerDe>Hive SerDe</a> in the Developer Guide. Also see <a href=https://cwiki.apache.org/confluence/display/Hive/SerDe>SerDe</a> for details about input and output processing.</p>
 <p>To change a table&rsquo;s SerDe or SERDEPROPERTIES, use the ALTER TABLE statement as described below in <a href=#add-serde-properties>Add SerDe Properties</a>.</p>
@@ -559,7 +559,7 @@ Closed</p>
 <p>For another example of creating an external table, see <a href=#loading-data>Loading Data</a> in the Tutorial.</p>
 <h4 id=create-table-as-select-ctas>Create Table As Select (CTAS)</h4>
 <p>Tables can also be created and populated by the results of a query in one create-table-as-select (CTAS) statement. The table created by CTAS is atomic, meaning that the table is not seen by other users until all the query results are populated. So other users will either see the table with the complete results of the query or will not see the table at all.</p>
-<p>There are two parts in CTAS, the SELECT part can be any <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-select_27362043/>SELECT statement</a> supported by HiveQL. The CREATE part of the CTAS takes the resulting schema from the SELECT part and creates the target table with other table properties such as the SerDe and storage format.</p>
+<p>There are two parts in CTAS, the SELECT part can be any <a href=https://hive.apache.org/docs/latest/languagemanual-select_27362043/>SELECT statement</a> supported by HiveQL. The CREATE part of the CTAS takes the resulting schema from the SELECT part and creates the target table with other table properties such as the SerDe and storage format.</p>
 <p>Starting with Hive 3.2.0, CTAS statements can define a partitioning specification for the target table (<a href=https://issues.apache.org/jira/browse/HIVE-20241>HIVE-20241</a>).</p>
 <p>CTAS has these restrictions:</p>
 <ul>
@@ -600,13 +600,13 @@ LIKE key\_value\_store [TBLPROPERTIES (property\_name=property\_value, ...)];
 
 </code></pre><p>In the example above, the page_view table is bucketed (clustered by) userid and within each bucket the data is sorted in increasing order of viewTime. Such an organization allows the user to do efficient sampling on the clustered column - in this case userid. The sorting property allows internal operators to take advantage of the better-known data structure while evaluating queries, also increasing efficiency. MAP KEYS and COLLECTION ITEMS keywords can be used if any of the columns are lists or maps.</p>
 <p>The CLUSTERED BY and SORTED BY creation commands do not affect how data is inserted into a table – only how it is read. This means that users must be careful to insert data correctly by specifying the number of reducers to be equal to the number of buckets, and using CLUSTER BY and SORT BY commands in their query.</p>
-<p>There is also an example of <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-ddl-bucketedtables_27362035/>creating and populating bucketed tables</a>.</p>
+<p>There is also an example of <a href=https://hive.apache.org/docs/latest/languagemanual-ddl-bucketedtables_27362035/>creating and populating bucketed tables</a>.</p>
 <h4 id=skewed-tables>Skewed Tables</h4>
 <p>Version information</p>
 <p>As of Hive 0.10.0 (<a href=https://issues.apache.org/jira/browse/HIVE-3072>HIVE-3072</a> and <a href=https://issues.apache.org/jira/browse/HIVE-3649>HIVE-3649</a>). See <a href=https://issues.apache.org/jira/browse/HIVE-3026>HIVE-3026</a> for additional JIRA tickets that implemented list bucketing in Hive 0.10.0 and 0.11.0.</p>
 <p>Design documents</p>
-<p>Read the <a href=https://simhadri-g.github.io/hive-site/docs/latest/skewed-join-optimization_27847852/>Skewed Join Optimization</a> and <a href=https://simhadri-g.github.io/hive-site/docs/latest/listbucketing_27846854/>List Bucketing</a> design documents for more information.</p>
-<p>This feature can be used to improve performance for tables where one or more columns have <a href=https://simhadri-g.github.io/hive-site/docs/latest/skewed-join-optimization_27847852/>skewed</a> values. By specifying the values that appear very often (heavy skew) Hive will split those out into separate files (or directories in case of <a href=https://simhadri-g.github.io/hive-site/docs/latest/listbucketing_27846854/>list bucketing</a>) automatically and take this fact into account during queries so that it can skip or include the whole file (or directory in case of <a href=https://simhadri-g.github.io/hive-site/docs/latest/listbucketing_27846854/>list bucketing</a>) if possible.</p>
+<p>Read the <a href=https://hive.apache.org/docs/latest/skewed-join-optimization_27847852/>Skewed Join Optimization</a> and <a href=https://hive.apache.org/docs/latest/listbucketing_27846854/>List Bucketing</a> design documents for more information.</p>
+<p>This feature can be used to improve performance for tables where one or more columns have <a href=https://hive.apache.org/docs/latest/skewed-join-optimization_27847852/>skewed</a> values. By specifying the values that appear very often (heavy skew) Hive will split those out into separate files (or directories in case of <a href=https://hive.apache.org/docs/latest/listbucketing_27846854/>list bucketing</a>) automatically and take this fact into account during queries so that it can skip or include the whole file (or directory in case of <a href=https://hive.apache.org/docs/latest/listbucketing_27846854/>list bucketing</a>) if possible.</p>
 <p>This can be specified on a per-table level during table creation.</p>
 <p>The following example shows one column with three skewed values, optionally with the STORED AS DIRECTORIES clause which specifies list bucketing.</p>
 <p><strong>Example:</strong></p>
@@ -780,7 +780,7 @@ serde\_properties:
   : (property\_name = property\_value, property\_name = property\_value, ... )
 
 </code></pre><p>These statements enable you to change a table&rsquo;s SerDe or add user-defined metadata to the table&rsquo;s SerDe object.</p>
-<p>The SerDe properties are passed to the table&rsquo;s SerDe when it is being initialized by Hive to serialize and deserialize data. So users can store any information required for their custom SerDe here. Refer to the <a href=https://simhadri-g.github.io/hive-site/docs/latest/serde_27362059/>SerDe documentation</a> and <a href=#hive-serde>Hive SerDe</a> in the Developer Guide for more information, and see <a href=#row-format,-storage-format,-and-serde>Row Format, Storage Format, and SerDe</a> above for details about setting a table&rsquo;s SerDe and SERDEPROPERTIES in a CREATE TABLE statement.</p>
+<p>The SerDe properties are passed to the table&rsquo;s SerDe when it is being initialized by Hive to serialize and deserialize data. So users can store any information required for their custom SerDe here. Refer to the <a href=https://hive.apache.org/docs/latest/serde_27362059/>SerDe documentation</a> and <a href=#hive-serde>Hive SerDe</a> in the Developer Guide for more information, and see <a href=#row-format,-storage-format,-and-serde>Row Format, Storage Format, and SerDe</a> above for details about setting a table&rsquo;s SerDe and SERDEPROPERTIES in a CREATE TABLE statement.</p>
 <p>Note that both <code>property_name</code> and <code>property_value</code> must be quoted.</p>
 <p><strong>Example:</strong></p>
 <pre tabindex=0><code>ALTER TABLE table\_name SET SERDEPROPERTIES ('field.delim' = ',');
@@ -809,7 +809,7 @@ serde\_properties:
 <pre tabindex=0><code>ALTER TABLE table\_name SKEWED BY (col\_name1, col\_name2, ...)
   ON ([(col\_name1\_value, col\_name2\_value, ...) [, (col\_name1\_value, col\_name2\_value), ...]
   [STORED AS DIRECTORIES];
-</code></pre><p>The STORED AS DIRECTORIES option determines whether a <a href=https://simhadri-g.github.io/hive-site/docs/latest/skewed-join-optimization_27847852/>skewed</a> table uses the <a href=https://simhadri-g.github.io/hive-site/docs/latest/listbucketing_27846854/>list bucketing</a> feature, which creates subdirectories for skewed values.</p>
+</code></pre><p>The STORED AS DIRECTORIES option determines whether a <a href=https://hive.apache.org/docs/latest/skewed-join-optimization_27847852/>skewed</a> table uses the <a href=https://hive.apache.org/docs/latest/listbucketing_27846854/>list bucketing</a> feature, which creates subdirectories for skewed values.</p>
 <h5 id=alter-table-not-skewed>Alter Table Not Skewed</h5>
 <pre tabindex=0><code>ALTER TABLE table\_name NOT SKEWED;
 </code></pre><p>The NOT SKEWED option makes the table non-skewed and turns off the list bucketing feature (since a list-bucketing table is always skewed). This affects partitions created after the ALTER statement, but has no effect on partitions created before the ALTER statement.</p>
@@ -860,10 +860,10 @@ ALTER TABLE table\_name ADD PARTITION (partCol = 'valueN') location 'locN';
 </code></pre><h5 id=dynamic-partitions>Dynamic Partitions</h5>
 <p>Partitions can be added to a table dynamically, using a Hive INSERT statement (or a Pig STORE statement). See these documents for details and examples:</p>
 <ul>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/dynamicpartitions_27823715/>Design Document for Dynamic Partitions</a></li>
+<li><a href=https://hive.apache.org/docs/latest/dynamicpartitions_27823715/>Design Document for Dynamic Partitions</a></li>
 <li><a href=#tutorial:-dynamic-partition-insert>Tutorial: Dynamic-Partition Insert</a></li>
 <li><a href=#hive-dml:-dynamic-partition-inserts>Hive DML: Dynamic Partition Inserts</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-dynamicpartitions_34014006/>HCatalog Dynamic Partitioning</a>
+<li><a href=https://hive.apache.org/docs/latest/hcatalog-dynamicpartitions_34014006/>HCatalog Dynamic Partitioning</a>
 <ul>
 <li><a href=#usage-with-pig>Usage with Pig</a></li>
 <li><a href=#usage-from-mapreduce>Usage from MapReduce</a></li>
@@ -885,7 +885,7 @@ ALTER TABLE table\_name\_2 EXCHANGE PARTITION (partition\_spec) WITH TABLE table
 -- multiple partitions
 ALTER TABLE table\_name\_2 EXCHANGE PARTITION (partition\_spec, partition\_spec2, ...) WITH TABLE table\_name\_1;
 </code></pre><p>This statement lets you move the data in a partition from a table to another table that has the same schema and does not already have that partition.<br>
-For further details on this feature, see <a href=https://simhadri-g.github.io/hive-site/docs/latest/exchange-partition_30755801/>Exchange Partition</a> and <a href=https://issues.apache.org/jira/browse/HIVE-4095>HIVE-4095</a>.</p>
+For further details on this feature, see <a href=https://hive.apache.org/docs/latest/exchange-partition_30755801/>Exchange Partition</a> and <a href=https://issues.apache.org/jira/browse/HIVE-4095>HIVE-4095</a>.</p>
 <h4 id=discover-partitions>Discover Partitions</h4>
 <p>Table property &ldquo;discover.partitions&rdquo; can now be specified to control automatic discovery and synchronization of partition metadata in Hive Metastore. </p>
 <p>When Hive Metastore Service (HMS) is started in remote service mode, a background thread (PartitionManagementTask) gets scheduled periodically every 300s (configurable via metastore.partition.management.task.frequency config) that looks for tables with &ldquo;discover.partitions&rdquo; table property set to true and performs MSCK REPAIR in sync mode. If the table is a transactional table, then Exclusive Lock is obtained for that table before performing MSCK REPAIR. With this table property, &ldquo;MSCK REPAIR TABLE table_name SYNC PARTITIONS&rdquo; is no longer required to be run manually. </p>
@@ -911,7 +911,7 @@ For further details on this feature, see <a href=https://simhadri-g.github.io/hi
 
 </code></pre><p>You can use ALTER TABLE DROP PARTITION to drop a partition for a table. This removes the data and metadata for this partition. The data is actually moved to the .Trash/Current directory if Trash is configured, unless PURGE is specified, but the metadata is completely lost (see <a href=#drop-table>Drop Table</a> above).</p>
 <p>Version Information: PROTECTION</p>
-<p>IGNORE PROTECTION is no longer available in versions 2.0.0 and later. This functionality is replaced by using one of the several security options available with Hive (see <a href=https://simhadri-g.github.io/hive-site/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL Standard Based Hive Authorization</a>). See <a href=https://issues.apache.org/jira/browse/HIVE-11145>HIVE-11145</a> for details.</p>
+<p>IGNORE PROTECTION is no longer available in versions 2.0.0 and later. This functionality is replaced by using one of the several security options available with Hive (see <a href=https://hive.apache.org/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL Standard Based Hive Authorization</a>). See <a href=https://issues.apache.org/jira/browse/HIVE-11145>HIVE-11145</a> for details.</p>
 <p>For tables that are protected by <a href=#no\_drop-cascade>NO_DROP CASCADE</a>, you can use the predicate IGNORE PROTECTION to drop a specified partition or set of partitions (for example, when splitting a table between two Hadoop clusters):</p>
 <pre tabindex=0><code>ALTER TABLE table\_name DROP [IF EXISTS] PARTITION partition\_spec IGNORE PROTECTION;
 
@@ -928,7 +928,7 @@ For further details on this feature, see <a href=https://simhadri-g.github.io/hi
 <pre tabindex=0><code>ALTER TABLE table\_name ARCHIVE PARTITION partition\_spec;
 ALTER TABLE table\_name UNARCHIVE PARTITION partition\_spec;
 
-</code></pre><p>Archiving is a feature to moves a partition&rsquo;s files into a Hadoop Archive (HAR). Note that only the file count will be reduced; HAR does not provide any compression. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-archiving_27362031/>LanguageManual Archiving</a> for more information</p>
+</code></pre><p>Archiving is a feature to moves a partition&rsquo;s files into a Hadoop Archive (HAR). Note that only the file count will be reduced; HAR does not provide any compression. See <a href=https://hive.apache.org/docs/latest/languagemanual-archiving_27362031/>LanguageManual Archiving</a> for more information</p>
 <h3 id=alter-either-table-or-partition>Alter Either Table or Partition</h3>
 <h4 id=alter-tablepartition-file-format>Alter Table/Partition File Format</h4>
 <pre tabindex=0><code>ALTER TABLE table\_name [PARTITION partition\_spec] SET FILEFORMAT file\_format;
@@ -946,7 +946,7 @@ ALTER TABLE table\_name UNARCHIVE PARTITION partition\_spec;
 <h4 id=alter-tablepartition-protections>Alter Table/Partition Protections</h4>
 <p>Version information</p>
 <p>As of Hive 0.7.0 (<a href=https://issues.apache.org/jira/browse/HIVE-1413>HIVE-1413</a>). The CASCADE clause for NO_DROP was added in HIVE 0.8.0 (<a href=https://issues.apache.org/jira/browse/HIVE-2605>HIVE-2605</a>).</p>
-<p>This functionality was removed in Hive 2.0.0. This functionality is replaced by using one of the several security options available with Hive (see <a href=https://simhadri-g.github.io/hive-site/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL Standard Based Hive Authorization</a>). See <a href=https://issues.apache.org/jira/browse/HIVE-11145>HIVE-11145</a> for details.</p>
+<p>This functionality was removed in Hive 2.0.0. This functionality is replaced by using one of the several security options available with Hive (see <a href=https://hive.apache.org/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL Standard Based Hive Authorization</a>). See <a href=https://issues.apache.org/jira/browse/HIVE-11145>HIVE-11145</a> for details.</p>
 <pre tabindex=0><code>ALTER TABLE table\_name [PARTITION partition\_spec] ENABLE|DISABLE NO\_DROP [CASCADE];
  
 ALTER TABLE table\_name [PARTITION partition\_spec] ENABLE|DISABLE OFFLINE;
@@ -955,20 +955,20 @@ ALTER TABLE table\_name [PARTITION partition\_spec] ENABLE|DISABLE OFFLINE;
 <p>If any partition in a table has NO_DROP enabled, the table cannot be dropped either. Conversely, if a table has NO_DROP enabled then partitions may be dropped, but with NO_DROP CASCADE partitions cannot be dropped either unless the <a href=#drop-partition-command>drop partition command</a> specifies IGNORE PROTECTION.</p>
 <h4 id=alter-tablepartition-compact>Alter Table/Partition Compact</h4>
 <p>Version information</p>
-<p>In Hive release <a href=https://issues.apache.org/jira/browse/HIVE-5317>0.13.0</a> and later when <a href=https://simhadri-g.github.io/hive-site/docs/latest/hive-transactions_40509723/>transactions</a> are being used, the ALTER TABLE statement can request <a href=#compaction>compaction</a> of a table or partition.<br>
-As of Hive release <a href=https://issues.apache.org/jira/browse/HIVE-13354>1.3.0 and 2.1.0</a> when <a href=https://simhadri-g.github.io/hive-site/docs/latest/hive-transactions_40509723/>transactions</a> are being used, the ALTER TABLE &mldr; COMPACT statement can include a <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions#HiveTransactions-TableProperties>TBLPROPERTIES</a> clause that is either to change compaction MapReduce job properties or to overwrite any other Hive table properties. More details can be found <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions#HiveTransactions-TableProperties>here</a>.<br>
-As of Hive release <a href="https://issues.apache.org/jira/browse/HIVE-27056?jql=project%20%3D%20HIVE%20AND%20fixVersion%20%3D%204.0.0-alpha-2">4.0.0-alpha-2</a> <a href=https://simhadri-g.github.io/hive-site/docs/latest/compaction-pooling_240884493/>compaction pooling</a> is available.<br>
-As of Hive release <a href="https://issues.apache.org/jira/browse/HIVE-27094?jql=project%20%3D%20HIVE%20AND%20fixVersion%20%3D%204.0.0">4.0.0</a> <a href=https://simhadri-g.github.io/hive-site/docs/latest/rebalance-compaction_240884502/>rebalance compaction</a> is available.</p>
+<p>In Hive release <a href=https://issues.apache.org/jira/browse/HIVE-5317>0.13.0</a> and later when <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>transactions</a> are being used, the ALTER TABLE statement can request <a href=#compaction>compaction</a> of a table or partition.<br>
+As of Hive release <a href=https://issues.apache.org/jira/browse/HIVE-13354>1.3.0 and 2.1.0</a> when <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>transactions</a> are being used, the ALTER TABLE &mldr; COMPACT statement can include a <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions#HiveTransactions-TableProperties>TBLPROPERTIES</a> clause that is either to change compaction MapReduce job properties or to overwrite any other Hive table properties. More details can be found <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions#HiveTransactions-TableProperties>here</a>.<br>
+As of Hive release <a href="https://issues.apache.org/jira/browse/HIVE-27056?jql=project%20%3D%20HIVE%20AND%20fixVersion%20%3D%204.0.0-alpha-2">4.0.0-alpha-2</a> <a href=https://hive.apache.org/docs/latest/compaction-pooling_240884493/>compaction pooling</a> is available.<br>
+As of Hive release <a href="https://issues.apache.org/jira/browse/HIVE-27094?jql=project%20%3D%20HIVE%20AND%20fixVersion%20%3D%204.0.0">4.0.0</a> <a href=https://hive.apache.org/docs/latest/rebalance-compaction_240884502/>rebalance compaction</a> is available.</p>
 <pre tabindex=0><code>ALTER TABLE table\_name [PARTITION (partition\_key = 'partition\_value' [, ...])]
   COMPACT 'compaction\_type'[AND WAIT]
    [CLUSTERED INTO n BUCKETS]
    [ORDER BY col\_list]
    [POOL 'pool\_name']
    [WITH OVERWRITE TBLPROPERTIES (&quot;property&quot;=&quot;value&quot; [, ...])];
-</code></pre><p>In general you do not need to request compactions when <a href=https://simhadri-g.github.io/hive-site/docs/latest/hive-transactions_40509723/>Hive transactions</a> are being used, because the system will detect the need for them and initiate the compaction. However, if compaction is turned off for a table or you want to compact the table at a time the system would not choose to, ALTER TABLE can initiate the compaction. By default the statement will enqueue a request for compaction and return. To watch the progress of the compaction, use <a href=#show-compactions>SHOW COMPACTIONS</a>. As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-15920>2.2.0</a> &ldquo;AND WAIT&rdquo; may be specified to have the operation block until compaction completes.</p>
+</code></pre><p>In general you do not need to request compactions when <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>Hive transactions</a> are being used, because the system will detect the need for them and initiate the compaction. However, if compaction is turned off for a table or you want to compact the table at a time the system would not choose to, ALTER TABLE can initiate the compaction. By default the statement will enqueue a request for compaction and return. To watch the progress of the compaction, use <a href=#show-compactions>SHOW COMPACTIONS</a>. As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-15920>2.2.0</a> &ldquo;AND WAIT&rdquo; may be specified to have the operation block until compaction completes.</p>
 <p>The compaction_type can be MAJOR, MINOR or REBALANCE. See the Basic Design section in <a href=#hive-transactions>Hive Transactions</a> for more information.</p>
-<p>More in formation on compaction pooling can be found here: <a href=https://simhadri-g.github.io/hive-site/docs/latest/compaction-pooling_240884493/>Compaction pooling</a></p>
-<p>More in formation on rebalance compaction pooling can be found here: <a href=https://simhadri-g.github.io/hive-site/docs/latest/rebalance-compaction_240884502/>Rebalance Compaction</a></p>
+<p>More in formation on compaction pooling can be found here: <a href=https://hive.apache.org/docs/latest/compaction-pooling_240884493/>Compaction pooling</a></p>
+<p>More in formation on rebalance compaction pooling can be found here: <a href=https://hive.apache.org/docs/latest/rebalance-compaction_240884502/>Rebalance Compaction</a></p>
 <p>The [CLUSTERED INTO n BUCKETS] and [ORDER BY col_list] clauses are only supported for REBALANCE compaction.</p>
 <h4 id=alter-tablepartition-concatenate>Alter Table/Partition Concatenate</h4>
 <p>Version information</p>
@@ -992,7 +992,7 @@ As of Hive release <a href="https://issues.apache.org/jira/browse/HIVE-27094?jql
 <pre tabindex=0><code>ALTER TABLE table\_name [PARTITION partition\_spec] CHANGE [COLUMN] col\_old\_name col\_new\_name column\_type
   [COMMENT col\_comment] [FIRST|AFTER column\_name] [CASCADE|RESTRICT];
 
-</code></pre><p>This command will allow users to change a column&rsquo;s name, <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-types_27838462/>data type</a>, comment, or position, or an arbitrary combination of them. The PARTITION clause is available in <a href=https://issues.apache.org/jira/browse/HIVE-7971>Hive 0.14.0</a> and later; see <a href=#upgrading-pre-hive-0-13-0-decimal-columns>Upgrading Pre-Hive 0.13.0 Decimal Columns</a> for usage. A patch for Hive 0.13 is also available (see <a href=https://issues.apache.org/jira/browse/HIVE-7971>HIVE-7971</a>).</p>
+</code></pre><p>This command will allow users to change a column&rsquo;s name, <a href=https://hive.apache.org/docs/latest/languagemanual-types_27838462/>data type</a>, comment, or position, or an arbitrary combination of them. The PARTITION clause is available in <a href=https://issues.apache.org/jira/browse/HIVE-7971>Hive 0.14.0</a> and later; see <a href=#upgrading-pre-hive-0-13-0-decimal-columns>Upgrading Pre-Hive 0.13.0 Decimal Columns</a> for usage. A patch for Hive 0.13 is also available (see <a href=https://issues.apache.org/jira/browse/HIVE-7971>HIVE-7971</a>).</p>
 <p>The CASCADE|RESTRICT clause is available in <a href=https://issues.apache.org/jira/browse/HIVE-8839>Hive 1.1.0</a>. ALTER TABLE CHANGE COLUMN with CASCADE command changes the columns of a table&rsquo;s metadata, and cascades the same change to all the partition metadata. RESTRICT is the default, limiting column change only to table metadata.</p>
 <p>ALTER TABLE CHANGE COLUMN CASCADE clause will override the table partition&rsquo;s column metadata regardless of the table or partition&rsquo;s <a href=#protection-mode>protection mode</a>. Use with discretion.</p>
 <p>The column change command will only modify Hive&rsquo;s metadata, and will not modify data. Users should make sure the actual data layout of the table/partition conforms with the metadata definition.</p>
@@ -1111,7 +1111,7 @@ table\_properties:
 </ul>
 <p>Version information</p>
 <p>Materialized view support is only available in Hive 3.0 and later.</p>
-<p>This section provides an introduction to Hive materialized views syntax. More information about materialized view support and usage in Hive can be found <a href=https://simhadri-g.github.io/hive-site/docs/latest/materialized-views_80447331/>here</a>.</p>
+<p>This section provides an introduction to Hive materialized views syntax. More information about materialized view support and usage in Hive can be found <a href=https://hive.apache.org/docs/latest/materialized-views_80447331/>here</a>.</p>
 <h3 id=create-materialized-view>Create Materialized View</h3>
 <pre tabindex=0><code>CREATE MATERIALIZED VIEW [IF NOT EXISTS] [db\_name.]materialized\_view\_name
   [DISABLE REWRITE]
@@ -1147,11 +1147,11 @@ AS SELECT ...;
 </code></pre><h2 id=createdropalterindex>Create/Drop/Alter Index</h2>
 <p>Version information</p>
 <p>As of Hive 0.7.</p>
-<p>Indexing Is Removed since 3.0! See <a href=https://simhadri-g.github.io/hive-site/docs/latest/indexdev_27362104/>Indexes design document</a></p>
+<p>Indexing Is Removed since 3.0! See <a href=https://hive.apache.org/docs/latest/indexdev_27362104/>Indexes design document</a></p>
 <p>This section provides a brief introduction to Hive indexes, which are documented more fully here:</p>
 <ul>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-indexing_31822176/>Overview of Hive Indexes</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/indexdev_27362104/>Indexes design document</a></li>
+<li><a href=https://hive.apache.org/docs/latest/languagemanual-indexing_31822176/>Overview of Hive Indexes</a></li>
+<li><a href=https://hive.apache.org/docs/latest/indexdev_27362104/>Indexes design document</a></li>
 </ul>
 <p>In Hive 0.12.0 and earlier releases, the index name is case-sensitive for CREATE INDEX and DROP INDEX statements. However, ALTER INDEX requires an index name that was created with lowercase letters (see <a href=https://issues.apache.org/jira/browse/HIVE-2752>HIVE-2752</a>). This bug is fixed in <a href=https://issues.apache.org/jira/browse/HIVE-2752>Hive 0.13.0</a> by making index names case-insensitive for all HiveQL statements. For releases prior to 0.13.0, the best practice is to use lowercase letters for all index names.</p>
 <h3 id=create-index>Create Index</h3>
@@ -1207,7 +1207,7 @@ CREATE TEMPORARY MACRO simple\_add (x int, y int) x + y;
 <pre tabindex=0><code>CREATE TEMPORARY FUNCTION function\_name AS class\_name;
 
 </code></pre><p>This statement lets you create a function that is implemented by the class_name. You can use this function in Hive queries as long as the session lasts. You can use any class that is in the class path of Hive. You can add jars to class path by executing &lsquo;ADD JAR&rsquo; statements. Please refer to the CLI section <a href=#hive-interactive-shell-commands>Hive Interactive Shell Commands</a>, including <a href=#hive-resources>Hive Resources</a>, for more information on how to add/delete files from the Hive classpath. Using this, you can register User Defined Functions (UDF&rsquo;s).</p>
-<p>Also see <a href=https://simhadri-g.github.io/hive-site/docs/latest/hiveplugins_27362098/>Hive Plugins</a> for general information about creating custom UDFs.</p>
+<p>Also see <a href=https://hive.apache.org/docs/latest/hiveplugins_27362098/>Hive Plugins</a> for general information about creating custom UDFs.</p>
 <h4 id=drop-temporary-function>Drop Temporary Function</h4>
 <p>You can unregister a UDF as follows:</p>
 <pre tabindex=0><code>DROP TEMPORARY FUNCTION [IF EXISTS] function\_name;
@@ -1233,7 +1233,7 @@ CREATE TEMPORARY MACRO simple\_add (x int, y int) x + y;
 <pre tabindex=0><code>RELOAD (FUNCTIONS|FUNCTION);
 </code></pre><p>As of <a href=https://issues.apache.org/jira/browse/HIVE-2573>HIVE-2573</a>, creating permanent functions in one Hive CLI session may not be reflected in HiveServer2 or other Hive CLI sessions, if they were started before the function was created. Issuing RELOAD FUNCTIONS within a HiveServer2 or HiveCLI session will allow it to pick up any changes to the permanent functions that may have been done by a different HiveCLI session. Due to backward compatibility reasons RELOAD FUNCTION; is also accepted.</p>
 <h2 id=createdropgrantrevoke-roles-and-privileges>Create/Drop/Grant/Revoke Roles and Privileges</h2>
-<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/45876173/>Hive deprecated authorization mode / Legacy Mode</a> has information about these DDL statements:</p>
+<p><a href=https://hive.apache.org/docs/latest/45876173/>Hive deprecated authorization mode / Legacy Mode</a> has information about these DDL statements:</p>
 <ul>
 <li><a href=#create-role>CREATE ROLE</a></li>
 <li><a href=#grant-role>GRANT ROLE</a></li>
@@ -1244,7 +1244,7 @@ CREATE TEMPORARY MACRO simple\_add (x int, y int) x + y;
 <li><a href=#show-role-grant>SHOW ROLE GRANT</a></li>
 <li><a href=#show-grant>SHOW GRANT</a></li>
 </ul>
-<p>For <a href=https://simhadri-g.github.io/hive-site/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL standard based authorization</a> in Hive 0.13.0 and later releases, see these DDL statements:</p>
+<p>For <a href=https://hive.apache.org/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL standard based authorization</a> in Hive 0.13.0 and later releases, see these DDL statements:</p>
 <ul>
 <li>Role Management Commands
 <ul>
@@ -1394,7 +1394,7 @@ SHOW TBLPROPERTIES tblname(&quot;foo&quot;);
 <h4 id=show-indexes>Show Indexes</h4>
 <p>Version information</p>
 <p>As of Hive 0.7.</p>
-<p>Indexing Is Removed since 3.0! See <a href=https://simhadri-g.github.io/hive-site/docs/latest/indexdev_27362104/>Indexes design document</a></p>
+<p>Indexing Is Removed since 3.0! See <a href=https://hive.apache.org/docs/latest/indexdev_27362104/>Indexes design document</a></p>
 <pre tabindex=0><code>SHOW [FORMATTED] (INDEX|INDEXES) ON table\_with\_index [(FROM|IN) db\_name];
 
 </code></pre><p>SHOW INDEXES shows all of the indexes on a certain column, as well as information about them: index name, table name, names of the columns used as keys, index table name, index type, and comment. If the FORMATTED keyword is used, then column titles are printed for each column.</p>
@@ -1431,12 +1431,12 @@ SHOW COLUMNS IN foo &quot;nomatch&quot;;
 <pre tabindex=0><code>SHOW FUNCTIONS [LIKE &quot;&lt;pattern&gt;&quot;];
 </code></pre><p>SHOW FUNCTIONS lists all the user defined and builtin functions, filtered by the the regular expression if specified with LIKE.</p>
 <h3 id=show-granted-roles-and-privileges>Show Granted Roles and Privileges</h3>
-<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/45876173/>Hive deprecated authorization mode / Legacy Mode</a> has information about these SHOW statements:</p>
+<p><a href=https://hive.apache.org/docs/latest/45876173/>Hive deprecated authorization mode / Legacy Mode</a> has information about these SHOW statements:</p>
 <ul>
 <li><a href=#show-role-grant>SHOW ROLE GRANT</a></li>
 <li><a href=#show-grant>SHOW GRANT</a></li>
 </ul>
-<p>In Hive 0.13.0 and later releases, <a href=https://simhadri-g.github.io/hive-site/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL standard based authorization</a> has these SHOW statements:</p>
+<p>In Hive 0.13.0 and later releases, <a href=https://hive.apache.org/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL standard based authorization</a> has these SHOW statements:</p>
 <ul>
 <li><a href=#show-role-grant>SHOW ROLE GRANT</a></li>
 <li><a href=#show-grant>SHOW GRANT</a></li>
@@ -1450,9 +1450,9 @@ SHOW LOCKS &lt;table\_name&gt; EXTENDED;
 SHOW LOCKS &lt;table\_name&gt; PARTITION (&lt;partition\_spec&gt;);
 SHOW LOCKS &lt;table\_name&gt; PARTITION (&lt;partition\_spec&gt;) EXTENDED;
 SHOW LOCKS (DATABASE|SCHEMA) database\_name;     -- (Note: Hive 0.13.0 and later; SCHEMA added in Hive 0.14.0)
-</code></pre><p>SHOW LOCKS displays the locks on a table or partition. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/locking_27362050/>Hive Concurrency Model</a> for information about locks.</p>
+</code></pre><p>SHOW LOCKS displays the locks on a table or partition. See <a href=https://hive.apache.org/docs/latest/locking_27362050/>Hive Concurrency Model</a> for information about locks.</p>
 <p>SHOW LOCKS (DATABASE|SCHEMA) is supported from Hive 0.13 for DATABASE (see <a href=https://issues.apache.org/jira/browse/HIVE-2093>HIVE-2093</a>) and Hive 0.14 for SCHEMA (see <a href=https://issues.apache.org/jira/browse/HIVE-6601>HIVE-6601</a>). SCHEMA and DATABASE are interchangeable – they mean the same thing.</p>
-<p>When <a href=https://simhadri-g.github.io/hive-site/docs/latest/hive-transactions_40509723/>Hive transactions</a> are being used, SHOW LOCKS returns this information (see <a href=https://issues.apache.org/jira/browse/HIVE-6460>HIVE-6460</a>):</p>
+<p>When <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>Hive transactions</a> are being used, SHOW LOCKS returns this information (see <a href=https://issues.apache.org/jira/browse/HIVE-6460>HIVE-6460</a>):</p>
 <ul>
 <li>database name</li>
 <li>table name</li>
@@ -1483,18 +1483,18 @@ SHOW LOCKS (DATABASE|SCHEMA) database\_name;     -- (Note: Hive 0.13.0 and later
 <p>Version information</p>
 <p>As of <a href=https://issues.apache.org/jira/browse/HIVE-6037>Hive 0.14.0</a>.</p>
 <pre tabindex=0><code>SHOW CONF &lt;configuration\_name&gt;;
-</code></pre><p>SHOW CONF returns a description of the specified <a href=https://simhadri-g.github.io/hive-site/docs/latest/configuration-properties_27842758/>configuration property</a>.</p>
+</code></pre><p>SHOW CONF returns a description of the specified <a href=https://hive.apache.org/docs/latest/configuration-properties_27842758/>configuration property</a>.</p>
 <ul>
 <li>default value</li>
 <li>required type</li>
 <li>description</li>
 </ul>
-<p>Note that SHOW CONF does not show the <em>current value</em> of a configuration property. For current property settings, use the &ldquo;set&rdquo; command in the CLI or a HiveQL script (see <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-commands_34838882/>Commands</a>) or in Beeline (see <a href=#beeline-hive-commands>Beeline Hive Commands</a>).</p>
+<p>Note that SHOW CONF does not show the <em>current value</em> of a configuration property. For current property settings, use the &ldquo;set&rdquo; command in the CLI or a HiveQL script (see <a href=https://hive.apache.org/docs/latest/languagemanual-commands_34838882/>Commands</a>) or in Beeline (see <a href=#beeline-hive-commands>Beeline Hive Commands</a>).</p>
 <h3 id=show-transactions>Show Transactions</h3>
 <p>Version information</p>
-<p>As of <a href=https://issues.apache.org/jira/browse/HIVE-6460>Hive 0.13.0</a> (see <a href=https://simhadri-g.github.io/hive-site/docs/latest/hive-transactions_40509723/>Hive Transactions</a>).</p>
+<p>As of <a href=https://issues.apache.org/jira/browse/HIVE-6460>Hive 0.13.0</a> (see <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>Hive Transactions</a>).</p>
 <pre tabindex=0><code>SHOW TRANSACTIONS;
-</code></pre><p>SHOW TRANSACTIONS is for use by administrators when <a href=https://simhadri-g.github.io/hive-site/docs/latest/hive-transactions_40509723/>Hive transactions</a> are being used. It returns a list of all currently open and aborted transactions in the system, including this information:</p>
+</code></pre><p>SHOW TRANSACTIONS is for use by administrators when <a href=https://hive.apache.org/docs/latest/hive-transactions_40509723/>Hive transactions</a> are being used. It returns a list of all currently open and aborted transactions in the system, including this information:</p>
 <ul>
 <li>transaction ID</li>
 <li>transaction state</li>
@@ -1704,14 +1704,14 @@ DESCRIBE default.src\_thrift lintString.$elem$.myint;
 <pre tabindex=0><code>ABORT TRANSACTIONS 0000007 0000008 0000010 0000015;
 </code></pre><p>This command can be used together with <a href=#show-transactions>SHOW TRANSACTIONS</a>. The latter can help figure out the candidate transaction IDs to be cleaned up.</p>
 <h1 id=scheduled-queries>Scheduled queries</h1>
-<p>Documentation is available on the <a href=https://simhadri-g.github.io/hive-site/docs/latest/scheduled-queries_145724128/>Scheduled Queries</a> page.</p>
+<p>Documentation is available on the <a href=https://hive.apache.org/docs/latest/scheduled-queries_145724128/>Scheduled Queries</a> page.</p>
 <h1 id=datasketches-integration>Datasketches integration</h1>
-<p>Documentation is available on the <a href=https://simhadri-g.github.io/hive-site/docs/latest/datasketches-integration_177050456/>Datasketches Integration</a> page</p>
+<p>Documentation is available on the <a href=https://hive.apache.org/docs/latest/datasketches-integration_177050456/>Datasketches Integration</a> page</p>
 <h1 id=hcatalog-and-webhcat-ddl>HCatalog and WebHCat DDL</h1>
 <p>For information about DDL in HCatalog and WebHCat, see:</p>
 <ul>
-<li><a href=#hcatalog-ddl>HCatalog DDL</a> in the <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog_33299065/>HCatalog manual</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/webhcat-reference-allddl_34016001/>WebHCat DDL Resources</a> in the <a href=https://simhadri-g.github.io/hive-site/docs/latest/webhcat_33299069/>WebHCat manual</a></li>
+<li><a href=#hcatalog-ddl>HCatalog DDL</a> in the <a href=https://hive.apache.org/docs/latest/hcatalog_33299065/>HCatalog manual</a></li>
+<li><a href=https://hive.apache.org/docs/latest/webhcat-reference-allddl_34016001/>WebHCat DDL Resources</a> in the <a href=https://hive.apache.org/docs/latest/webhcat_33299069/>WebHCat manual</a></li>
 </ul>
 <p>Save</p>
 <p>Save</p>
@@ -1721,7 +1721,7 @@ DESCRIBE default.src\_thrift lintString.$elem$.myint;
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -1745,7 +1745,7 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>

@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : Tutorial</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
 <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site/css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site/images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site/images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site/images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site/images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site/images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://simhadri-g.github.io/hive-site> <img src=https://simhadri-g.github.io/hive-site/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site>Apache Hive</a>
+<a href=https://hive.apache.org> <img src=https://hive.apache.org/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://hive.apache.org>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site/community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -139,8 +139,8 @@ ASF
 <h2 id=what-hive-is-not>What Hive Is NOT</h2>
 <p>Hive is not designed for online transaction processing.  It is best used for traditional data warehousing tasks.</p>
 <h2 id=getting-started>Getting Started</h2>
-<p>For details on setting up Hive, HiveServer2, and Beeline, please refer to the <a href=https://simhadri-g.github.io/hive-site/docs/latest/gettingstarted_27362090/>GettingStarted</a> guide.</p>
-<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/books-about-hive_61322063/>Books about Hive</a> lists some books that may also be helpful for getting started with Hive.</p>
+<p>For details on setting up Hive, HiveServer2, and Beeline, please refer to the <a href=https://hive.apache.org/docs/latest/gettingstarted_27362090/>GettingStarted</a> guide.</p>
+<p><a href=https://hive.apache.org/docs/latest/books-about-hive_61322063/>Books about Hive</a> lists some books that may also be helpful for getting started with Hive.</p>
 <p>In the following sections we provide a tutorial on the capabilities of the system. We start by describing the concepts of data types, tables, and partitions (which are very similar to what you would find in a traditional relational DBMS) and then illustrate the capabilities of Hive with the help of some examples.</p>
 <h2 id=data-units>Data Units</h2>
 <p>In the order of granularity - Hive data is organized into:</p>
@@ -160,7 +160,7 @@ ASF
 </ul>
 <p>Note that it is not necessary for tables to be partitioned or bucketed, but these abstractions allow the system to prune large quantities of data during query processing, resulting in faster query execution.</p>
 <h2 id=type-system>Type System</h2>
-<p>Hive supports primitive and complex data types, as described below. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-types_27838462/>Hive Data Types</a> for additional information.</p>
+<p>Hive supports primitive and complex data types, as described below. See <a href=https://hive.apache.org/docs/latest/languagemanual-types_27838462/>Hive Data Types</a> for additional information.</p>
 <h3 id=primitive-types>Primitive Types</h3>
 <ul>
 <li>Types are associated with the columns in the tables. The following Primitive types are supported:</li>
@@ -386,7 +386,7 @@ ASF
 <li>Offset = Recording a point in time as well as the time zone offset in the writer&rsquo;s time zone.</li>
 </ul>
 <h2 id=built-in-operators-and-functions>Built In Operators and Functions</h2>
-<p>The operators and functions listed below are not necessarily up to date. (<a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-udf_27362046/>Hive Operators and UDFs</a> has more current information.) In <a href=#beeline>Beeline</a> or the Hive <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-cli_27362033/>CLI</a>, use these commands to show the latest documentation:</p>
+<p>The operators and functions listed below are not necessarily up to date. (<a href=https://hive.apache.org/docs/latest/languagemanual-udf_27362046/>Hive Operators and UDFs</a> has more current information.) In <a href=#beeline>Beeline</a> or the Hive <a href=https://hive.apache.org/docs/latest/languagemanual-cli_27362033/>CLI</a>, use these commands to show the latest documentation:</p>
 <pre tabindex=0><code>SHOW FUNCTIONS;
 DESCRIBE FUNCTION &lt;function\_name&gt;;
 DESCRIBE FUNCTION EXTENDED &lt;function\_name&gt;;
@@ -771,7 +771,7 @@ DESCRIBE FUNCTION EXTENDED &lt;function\_name&gt;;
 </tbody>
 </table>
 <h2 id=language-capabilities>Language Capabilities</h2>
-<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual_27362030/>Hive&rsquo;s SQL</a> provides the basic SQL operations. These operations work on tables or partitions. These operations are:</p>
+<p><a href=https://hive.apache.org/docs/latest/languagemanual_27362030/>Hive&rsquo;s SQL</a> provides the basic SQL operations. These operations work on tables or partitions. These operations are:</p>
 <ul>
 <li>Ability to filter rows from a table using a WHERE clause.</li>
 <li>Ability to select certain columns from the table using a SELECT clause.</li>
@@ -784,7 +784,7 @@ DESCRIBE FUNCTION EXTENDED &lt;function\_name&gt;;
 <li>Ability to plug in custom scripts in the language of choice for custom map/reduce jobs.</li>
 </ul>
 <h1 id=usage-and-examples>Usage and Examples</h1>
-<p><strong>NOTE: Many of the following examples are out of date.  More up to date information can be found in the <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual_27362030/>LanguageManual</a>.</strong></p>
+<p><strong>NOTE: Many of the following examples are out of date.  More up to date information can be found in the <a href=https://hive.apache.org/docs/latest/languagemanual_27362030/>LanguageManual</a>.</strong></p>
 <p>The following examples highlight some salient features of the system. A detailed set of query test cases can be found at <a href=http://svn.apache.org/viewvc/hive/trunk/ql/src/test/queries/clientpositive/>Hive Query Test Cases</a> and the corresponding results can be found at <a href=http://svn.apache.org/viewvc/hive/trunk/ql/src/test/results/clientpositive/>Query Test Case Results</a>.</p>
 <ul>
 <li><a href=#creating,-showing,-altering,-and-dropping-tables>Creating, Showing, Altering, and Dropping Tables</a></li>
@@ -792,7 +792,7 @@ DESCRIBE FUNCTION EXTENDED &lt;function\_name&gt;;
 <li><a href=#querying-and-inserting-data>Querying and Inserting Data</a></li>
 </ul>
 <h2 id=creating-showing-altering-and-dropping-tables>Creating, Showing, Altering, and Dropping Tables</h2>
-<p>See <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-ddl_27362034/>Hive Data Definition Language</a> for detailed information about creating, showing, altering, and dropping tables.</p>
+<p>See <a href=https://hive.apache.org/docs/latest/languagemanual-ddl_27362034/>Hive Data Definition Language</a> for detailed information about creating, showing, altering, and dropping tables.</p>
 <h3 id=creating-tables>Creating Tables</h3>
 <p>An example statement that would create the page_view table mentioned above would be like:</p>
 <pre tabindex=0><code>    CREATE TABLE page\_view(viewTime INT, userid BIGINT,
@@ -921,7 +921,7 @@ Open</p>
 <pre tabindex=0><code>   LOAD DATA INPATH '/user/data/pv\_2008-06-08\_us.txt' INTO TABLE page\_view PARTITION(date='2008-06-08', country='US')
 
 </code></pre><p>It is assumed that the array and map fields in the input.txt files are null fields for these examples.</p>
-<p>See <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-dml_27362036/>Hive Data Manipulation Language</a> for more information about loading data into Hive tables, and see <a href=#external-tables>External Tables</a> for another example of creating an external table.</p>
+<p>See <a href=https://hive.apache.org/docs/latest/languagemanual-dml_27362036/>Hive Data Manipulation Language</a> for more information about loading data into Hive tables, and see <a href=#external-tables>External Tables</a> for another example of creating an external table.</p>
 <h2 id=querying-and-inserting-data>Querying and Inserting Data</h2>
 <ul>
 <li><a href=#simple-query>Simple Query</a></li>
@@ -938,7 +938,7 @@ Open</p>
 <li><a href=#custom-map/reduce-scripts>Custom Map/Reduce Scripts</a></li>
 <li><a href=#co-groups>Co-Groups</a></li>
 </ul>
-<p>The Hive query operations are documented in <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-select_27362043/>Select</a>, and the insert operations are documented in <a href=#inserting-data-into-hive-tables-from-queries>Inserting data into Hive Tables from queries</a> and <a href=#writing-data-into-the-filesystem-from-queries>Writing data into the filesystem from queries</a>.</p>
+<p>The Hive query operations are documented in <a href=https://hive.apache.org/docs/latest/languagemanual-select_27362043/>Select</a>, and the insert operations are documented in <a href=#inserting-data-into-hive-tables-from-queries>Inserting data into Hive Tables from queries</a> and <a href=#writing-data-into-the-filesystem-from-queries>Writing data into the filesystem from queries</a>.</p>
 <h3 id=simple-query>Simple Query</h3>
 <p>For all the active users, one can use the query of the following form:</p>
 <pre tabindex=0><code>    INSERT OVERWRITE TABLE user\_active
@@ -946,7 +946,7 @@ Open</p>
     FROM user
     WHERE user.active = 1;
 
-</code></pre><p>Note that unlike SQL, we always insert the results into a table. We will illustrate later how the user can inspect these results and even dump them to a local file. You can also run the following query in <a href=#beeline>Beeline</a> or the Hive <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-cli_27362033/>CLI</a>:</p>
+</code></pre><p>Note that unlike SQL, we always insert the results into a table. We will illustrate later how the user can inspect these results and even dump them to a local file. You can also run the following query in <a href=#beeline>Beeline</a> or the Hive <a href=https://hive.apache.org/docs/latest/languagemanual-cli_27362033/>CLI</a>:</p>
 <pre tabindex=0><code>    SELECT user.*
     FROM user
     WHERE user.active = 1;
@@ -1081,14 +1081,14 @@ Ended Job = job\_201005052204\_28178 with errors
 </code></pre><p>This query will generate a MapReduce job rather than Map-only job. The SELECT-clause will be converted to a plan to the mappers and the output will be distributed to the reducers based on the value of (ds, country) pairs. The INSERT-clause will be converted to the plan in the reducer which writes to the dynamic partitions.</p>
 <p>Additional documentation:</p>
 <ul>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/dynamicpartitions_27823715/>Design Document for Dynamic Partitions</a>
+<li><a href=https://hive.apache.org/docs/latest/dynamicpartitions_27823715/>Design Document for Dynamic Partitions</a>
 <ul>
 <li><a href=https://issues.apache.org/jira/secure/attachment/12437909/dp_design.txt>Original design doc</a></li>
 <li><a href=https://issues.apache.org/jira/browse/HIVE-936>HIVE-936</a></li>
 </ul>
 </li>
 <li><a href=#hive-dml:-dynamic-partition-inserts>Hive DML: Dynamic Partition Inserts</a></li>
-<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-dynamicpartitions_34014006/>HCatalog Dynamic Partitioning</a>
+<li><a href=https://hive.apache.org/docs/latest/hcatalog-dynamicpartitions_34014006/>HCatalog Dynamic Partitioning</a>
 <ul>
 <li><a href=#usage-with-pig>Usage with Pig</a></li>
 <li><a href=#usage-from-mapreduce>Usage from MapReduce</a></li>
@@ -1239,7 +1239,7 @@ for line in sys.stdin:
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -1263,7 +1263,7 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
