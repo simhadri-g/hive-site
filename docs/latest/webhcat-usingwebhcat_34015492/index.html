@@ -9,8 +9,8 @@
 <title>Apache Hive : WebHCat UsingWebHCat</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -123,7 +123,7 @@ ASF
 <h1 id=apache-hive--webhcat-usingwebhcat>Apache Hive : WebHCat UsingWebHCat</h1>
 <h1 id=using-the-hcatalog-rest-api-webhcat>Using the HCatalog REST API (WebHCat)</h1>
 <ul>
-<li><a href=#using-the-hcatalog-rest-api--webhcat->Using the HCatalog REST API (WebHCat)</a>
+<li><a href=#using-the-hcatalog-rest-api-webhcat>Using the HCatalog REST API (WebHCat)</a>
 <ul>
 <li><a href=#introduction-to-webhcat>Introduction to WebHCat</a></li>
 <li><a href=#url-format>URL Format</a></li>
@@ -131,7 +131,7 @@ ASF
 <ul>
 <li><a href=#standard-parameters>Standard Parameters</a>
 <ul>
-<li><a href=#specifying-user-name>Specifying user.name</a></li>
+<li><a href=#specifying-username>Specifying user.name</a></li>
 </ul>
 </li>
 <li><a href=#security-error-response>Security Error Response</a></li>
@@ -150,7 +150,7 @@ Hive version 0.11.0 is the first release that includes HCatalog and its REST API
 <h2 id=introduction-to-webhcat>Introduction to WebHCat</h2>
 <p>This document describes the HCatalog REST API, <em>WebHCat</em>, which was previously called <em>Templeton</em>. If you are looking for a Hive GUI instead of an API, see <a href=https://hive.apache.org/docs/latest/hivewebinterface_27362110/>Hive Web Interface</a> (removed in release 2.2.0).</p>
 <p>As shown in the figure below, developers make HTTP requests to access <a href=http://hadoop.apache.org/>Hadoop</a> <a href=http://hadoop.apache.org/docs/stable/mapred_tutorial.html>MapReduce</a> (or <a href=http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html>YARN</a>), <a href=http://pig.apache.org/>Pig</a>, <a href=http://hive.apache.org/>Hive</a>, and <a href=#hcatalog-ddl>HCatalog DDL</a> from within applications. Data and code used by this API are maintained in <a href=http://hadoop.apache.org/docs/stable/hdfs_user_guide.html>HDFS</a>. HCatalog DDL commands are executed directly when requested. MapReduce, Pig, and Hive jobs are placed in queue by WebHCat (Templeton) servers and can be monitored for progress or stopped as required. Developers specify a location in HDFS into which Pig, Hive, and MapReduce results should be placed.</p>
-<p><img src=attachments/34015492/34177184.jpg alt></p>
+<p><img src=/attachments/34015492/34177184.jpg alt></p>
 <p>WebHCat or Templeton?</p>
 <p>For backward compatibility, the original name Templeton is still used for WebHCat in some contexts. See <a href=##project-name>#Project Name</a> below.</p>
 <h2 id=url-format>URL Format</h2>
@@ -175,12 +175,12 @@ Hive version 0.11.0 is the first release that includes HCatalog and its REST API
 <h4 id=specifying-username>Specifying user.name</h4>
 <p>The user.name parameter is part of POST parameters for POST calls, and part of the URL for other calls.</p>
 <p>For example, to specify user.name in a GET :table command:</p>
-<pre tabindex=0><code>% curl -s 'http://localhost:50111/templeton/v1/ddl/database/default/table/my\_table?user.name=ctdean'
+<pre tabindex=0><code>% curl -s 'http://localhost:50111/templeton/v1/ddl/database/default/table/my_table?user.name=ctdean'
 
 </code></pre><p>And to specify user.name in a POST :table command:</p>
 <pre tabindex=0><code>% curl -s -d user.name=ctdean \
-       -d rename=test\_table\_2 \
-       'http://localhost:50111/templeton/v1/ddl/database/default/table/test\_table'
+       -d rename=test_table_2 \
+       'http://localhost:50111/templeton/v1/ddl/database/default/table/test_table'
 
 </code></pre><h3 id=security-error-response>Security Error Response</h3>
 <p>If the user.name parameter is not supplied when required, the following error will be returned:</p>
@@ -253,6 +253,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

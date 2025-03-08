@@ -9,8 +9,8 @@
 <title>Apache Hive : Enhanced Aggregation, Cube, Grouping and Rollup</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -124,11 +124,11 @@ ASF
 <p>This document describes enhanced aggregation features for the GROUP BY clause of SELECT statements.</p>
 <ul>
 <li><a href=#grouping-sets-clause>GROUPING SETS clause</a></li>
-<li><a href=#grouping\_\_id-function>Grouping__ID function</a></li>
+<li><a href=#grouping__id-function>Grouping__ID function</a></li>
 <li><a href=#grouping-function>Grouping function</a></li>
 <li><a href=#cubes-and-rollups>Cubes and Rollups</a></li>
-<li><a href=#hive-new-job-grouping-set-cardinality>hive.new.job.grouping.set.cardinality</a></li>
-<li><a href=#grouping\_\_id-function--before-hive-2-3-0->Grouping__ID function (before Hive 2.3.0)</a></li>
+<li><a href=#hivenewjobgroupingsetcardinality>hive.new.job.grouping.set.cardinality</a></li>
+<li><a href=#grouping__id-function-before-hive-230>Grouping__ID function (before Hive 2.3.0)</a></li>
 </ul>
 <p>Version</p>
 <p>Grouping sets, CUBE and ROLLUP operators, and the GROUPING__ID function were added in Hive 0.10.0.<br>
@@ -206,7 +206,7 @@ Support for SQL <em>grouping</em> function was added in Hive 2.3.0 too (see <a h
 </tbody>
 </table>
 <p>The following query:</p>
-<pre tabindex=0><code>SELECT key, value, GROUPING\_\_ID, count(*)
+<pre tabindex=0><code>SELECT key, value, GROUPING__ID, count(*)
 FROM T1
 GROUP BY key, value WITH ROLLUP;
 </code></pre><p>will have the following results:</p>
@@ -295,7 +295,7 @@ For the third row, both the columns are being selected (and the second column h
 <h3 id=grouping-function>Grouping function</h3>
 <p>The grouping function indicates whether an expression in a GROUP BY clause is aggregated or not for a given row. The value 0 represents a column that is part of the grouping set, while the value 1 represents a column that is not part of the grouping set. </p>
 <p>Going back to our example above, consider the following query:</p>
-<pre tabindex=0><code>SELECT key, value, GROUPING\_\_ID,
+<pre tabindex=0><code>SELECT key, value, GROUPING__ID,
   grouping(key, value), grouping(value, key), grouping(key), grouping(value),
   count(*)
 FROM T1
@@ -447,7 +447,7 @@ assumption that the orginal group by will reduce the data size.</p>
 <h3 id=grouping__id-function-before-hive-230>Grouping__ID function (before Hive 2.3.0)</h3>
 <p>Grouping__ID function was fixed in Hive 2.3.0, thus behavior before that release is different (this is expected). For each column, the function would return a value of &ldquo;0&rdquo; iif that column has been aggregated in that row, otherwise the value is &ldquo;1&rdquo;.</p>
 <p>Hence the following query:</p>
-<pre tabindex=0><code>SELECT key, value, GROUPING\_\_ID, count(*)
+<pre tabindex=0><code>SELECT key, value, GROUPING__ID, count(*)
 FROM T1
 GROUP BY key, value WITH ROLLUP;
 </code></pre><p>will have the following results.</p>
@@ -601,6 +601,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

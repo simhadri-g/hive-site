@@ -9,8 +9,8 @@
 <title>Apache Hive : LLAP</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -126,7 +126,7 @@ ASF
 <li><a href=#persistent-daemon>Persistent Daemon</a></li>
 <li><a href=#execution-engine>Execution Engine</a></li>
 <li><a href=#query-fragment-execution>Query Fragment Execution</a></li>
-<li><a href=#i/o>I/O</a></li>
+<li><a href=#io>I/O</a></li>
 <li><a href=#caching>Caching</a></li>
 <li><a href=#workload-management>Workload Management</a></li>
 <li><a href=#acid-support>ACID Support</a></li>
@@ -151,7 +151,7 @@ Functionality such as caching, pre-fetching, some query processing and access co
 <p>Similar to the DataNode, LLAP daemons can be used by other applications as well, especially if a relational view on the data is preferred over file-centric processing. The daemon is also open through optional APIs (e.g., InputFormat) that can be leveraged by other data processing frameworks as a building block.</p>
 <p>Last, but not least, fine-grained column-level access control – a key requirement for mainstream adoption of Hive – fits nicely into this model.</p>
 <p>The diagram below shows an example execution with LLAP. Tez AM orchestrates overall execution. The initial stage of the query is pushed into LLAP. In the reduce stage, large shuffles are performed in separate containers. Multiple queries and applications can access LLAP concurrently.</p>
-<p><img src=attachments/62689557/65871225.png alt></p>
+<p><img src=/attachments/62689557/65871225.png alt></p>
 <h2 id=persistent-daemon>Persistent Daemon</h2>
 <p>To facilitate caching and JIT optimization, and to eliminate most of the startup costs, a daemon runs on the worker nodes on the cluster. The daemon handles I/O, caching, and query fragment execution.</p>
 <ul>
@@ -242,7 +242,7 @@ LLAP Peers - /peers </p>
 <h2 id=llap-status>LLAP Status</h2>
 <p><a href=https://issues.apache.org/jira/browse/AMBARI-16149>AMBARI-16149</a> introduces LLAP app status, available with HiveServer2.</p>
 <p>Example usage.</p>
-<pre tabindex=0><code>/current/hive-server2-hive2/bin/hive --service llapstatus --name {llap\_app\_name} [-f] [-w] [-i] [-t]
+<pre tabindex=0><code>/current/hive-server2-hive2/bin/hive --service llapstatus --name {llap_app_name} [-f] [-w] [-i] [-t]
 </code></pre><pre tabindex=0><code> -f,--findAppTimeout &lt;findAppTimeout&gt;                 Amount of time(s) that the tool will sleep to wait for the YARN application to start. negative values=wait
                                                       forever, 0=Do not wait. default=20s
  -H,--help                                            Print help information
@@ -308,6 +308,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

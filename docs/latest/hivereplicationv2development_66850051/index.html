@@ -9,8 +9,8 @@
 <title>Apache Hive : HiveReplicationv2Development</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -125,7 +125,7 @@ ASF
 <li><a href=#issues-with-the-current-replication-system>Issues with the Current Replication System</a>
 <ul>
 <li><a href=#slowness>Slowness</a></li>
-<li><a href=#requiring-staging-directories-with-full-copies--4xcopy-problem->Requiring Staging Directories with Full Copies (4xcopy Problem)</a></li>
+<li><a href=#requiring-staging-directories-with-full-copies-4xcopy-problem>Requiring Staging Directories with Full Copies (4xcopy Problem)</a></li>
 <li><a href=#unsuitable-for-load-balancing-use-cases>Unsuitable for Load-Balancing Use Cases</a></li>
 <li><a href=#incompatibility-with-acid>Incompatibility with ACID</a></li>
 <li><a href=#dependency-on-external-tools-to-do-a-lot>Dependency on External Tools To Do a Lot</a></li>
@@ -135,9 +135,9 @@ ASF
 <li><a href=#rubberbanding>Rubberbanding</a></li>
 <li><a href=#change-management>Change Management</a>
 <ul>
-<li><a href=#\_files>_files</a></li>
+<li><a href=#_files>_files</a></li>
 <li><a href=#solution-for-rubber-banding>Solution for Rubber Banding</a></li>
-<li><a href=#\_metadata>_metadata</a></li>
+<li><a href=#_metadata>_metadata</a></li>
 </ul>
 </li>
 <li><a href=#a-need-for-bootstrap>A Need for Bootstrap</a></li>
@@ -145,26 +145,26 @@ ASF
 <ul>
 <li><a href=#repl-dump>REPL DUMP</a>
 <ul>
-<li><a href=#syntax:>Syntax:</a></li>
-<li><a href=#return-values:>Return values:</a></li>
-<li><a href=#note:>Note:</a></li>
+<li><a href=#syntax>Syntax:</a></li>
+<li><a href=#return-values>Return values:</a></li>
+<li><a href=#note>Note:</a></li>
 </ul>
 </li>
 <li><a href=#repl-load>REPL LOAD</a>
 <ul>
-<li><a href=#return-values:>Return values:</a></li>
+<li><a href=#return-values>Return values:</a></li>
 </ul>
 </li>
 <li><a href=#repl-status>REPL STATUS</a>
 <ul>
-<li><a href=#return-values:>Return values:</a></li>
+<li><a href=#return-values>Return values:</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href=#bootstrap,-revisited>Bootstrap, Revisited</a></li>
+<li><a href=#bootstrap-revisited>Bootstrap, Revisited</a></li>
 <li><a href=#metastore-notification-api-security>Metastore notification API security</a></li>
-<li><a href=#setup/configuration>Setup/Configuration</a></li>
+<li><a href=#setupconfiguration>Setup/Configuration</a></li>
 </ul>
 <p>This document describes the second version of Hive Replication. Please refer to the <a href=https://hive.apache.org/docs/latest/hivereplicationdevelopment_55155632/>first version of Hive Replication</a> for details on prior implementation.</p>
 <p>This work is under development and interfaces are subject to change. This has been designed for use in conjunction with external orchestration tools, which would be responsible for co-ordinating the right sequence of commands between source and target clusters, fault tolerance/failure handling, and also providing correct configuration options that are necessary to be able to do cross cluster replication.</p>
@@ -291,8 +291,8 @@ Event 120: ALTER TABLE tbl ADD PARTITION (p=1) SET LOCATION &lt;location&gt;;
 <p>The current implementation of replication is built upon existing commands EXPORT and IMPORT. These commands are semantically more suited to the task of exporting and importing, than of a direct notion of an applicable event log. The notion of a lazy _files behaviour on EXPORT is not a good fit, since EXPORTs are done with the understanding that they need to be a stable copy irrespective of cleanup policies on the source. In addition, EXPORTing &ldquo;events&rdquo; is something that is more tenuous. EXPORTing a CREATE event is easy enough, but it is a semantic stretch to export a DROP event. Thus, to fit our needs better, and to not have to keep making the existing EXPORT and IMPORT way more complex, we introduce a new REPL command, with three modes of operation: REPL DUMP, REPL LOAD and REPL STATUS.</p>
 <h2 id=repl-dump>REPL DUMP</h2>
 <h4 id=syntax>Syntax:</h4>
-<p><code>REPL DUMP &lt;repl\_policy> {REPLACE &lt;old\_repl\_policy>} {FROM &lt;init-evid> {TO &lt;end-evid>} {LIMIT &lt;num-evids>} } {WITH ('key1'='value1', 'key2'='value2')};</code></p>
-<p><code>Replication policy: &lt;dbname>{{.[&lt;comma\_separated\_include\_tables\_regex\_list>]}{.[&lt;comma\_separated\_exclude\_tables\_regex\_list>]}}</code></p>
+<p><code>REPL DUMP &lt;repl_policy> {REPLACE &lt;old_repl_policy>} {FROM &lt;init-evid> {TO &lt;end-evid>} {LIMIT &lt;num-evids>} } {WITH ('key1'='value1', 'key2'='value2')};</code></p>
+<p><code>Replication policy: &lt;dbname>{{.[&lt;comma_separated_include_tables_regex_list>]}{.[&lt;comma_separated_exclude_tables_regex_list>]}}</code></p>
 <p>This is better described via various examples of each of the pieces of the command syntax, as follows:</p>
 <p>(a) REPL DUMP sales;       REPL DUMP sales.['.*?']Replicates out sales database for bootstrap, from =0 (bootstrap case) to = with a batch size of 0, i.e. no batching.</p>
 <p>(b) REPL DUMP sales.[&lsquo;T3&rsquo;, &lsquo;[a-z]+'];</p>
@@ -452,6 +452,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

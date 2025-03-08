@@ -9,8 +9,8 @@
 <title>Apache Hive : ViewDev</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -170,11 +170,11 @@ ASF
 </ul>
 <h2 id=syntax>Syntax</h2>
 <pre tabindex=0><code>
-CREATE VIEW [IF NOT EXISTS] view\_name [(column\_name [COMMENT column\_comment], ...) ]
-[COMMENT table\_comment]
+CREATE VIEW [IF NOT EXISTS] view_name [(column_name [COMMENT column_comment], ...) ]
+[COMMENT table_comment]
 AS SELECT ...
 
-DROP VIEW view\_name
+DROP VIEW view_name
 
 </code></pre><h2 id=implementation-sketch>Implementation Sketch</h2>
 <p>The basics of view implementation are very easy due to the fact that Hive already supports subselects in the FROM clause.</p>
@@ -201,10 +201,32 @@ DROP VIEW view\_name
 <p><img src=plugins/servlet/confluence/placeholder/unknown-attachment alt title=HiveViewFlat.png></p>
 <p>(Storing the view definition as a table property may not work since property values are limited to VARCHAR(767), and view definitions may be much longer than that, so we&rsquo;ll need to use a LOB.)</p>
 <p>Comparison of the two approaches:</p>
-<p>|   | <strong>Inheritance Model</strong> | <strong>Flat Model</strong> |
-| <em>JDO Support</em> | Need to investigate how well inheritance works for our purposes | Nothing special |
-| <em>Metadata queries from existing code/tools</em> | Existing queries for tables will NOT include views in results; those that need to will have to be modified to reference base class instead | Existing queries for tables WILL include views in results; those that are not supposed to will need to filter them out |
-| <em>Metastore upgrade on deployment</em> | Need to test carefully to make sure introducing inheritance doesn&rsquo;t corrupt existing metastore instances | Nothing special, just adding a new attribute |</p>
+<table>
+<thead>
+<tr>
+<th> </th>
+<th><strong>Inheritance Model</strong></th>
+<th><strong>Flat Model</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>JDO Support</em></td>
+<td>Need to investigate how well inheritance works for our purposes</td>
+<td>Nothing special</td>
+</tr>
+<tr>
+<td><em>Metadata queries from existing code/tools</em></td>
+<td>Existing queries for tables will NOT include views in results; those that need to will have to be modified to reference base class instead</td>
+<td>Existing queries for tables WILL include views in results; those that are not supposed to will need to filter them out</td>
+</tr>
+<tr>
+<td><em>Metastore upgrade on deployment</em></td>
+<td>Need to test carefully to make sure introducing inheritance doesn&rsquo;t corrupt existing metastore instances</td>
+<td>Nothing special, just adding a new attribute</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Update 30-Dec-2009</strong>: Based on a design review meeting, we&rsquo;re going to go with the flat model. Prasad pointed out that in the future, for materialized views, we may need the view definition to be tracked at the partition level as well, so that when we change the view definition, we don&rsquo;t have to discard existing materialized partitions if the new view result can be derived from the old one. So it may make sense to add the view definition as a new attribute of StorageDescriptor (since that is already present at both table and partition level).</p>
 <p><strong>Update 20-Jan-2010</strong>: After further discussion with Prasad, we decided to put the view definition on the table object instead; for details, see discussion in <a href=https://issues.apache.org/jira/browse/HIVE-972>HIVE-972</a>. Also, per <a href=https://issues.apache.org/jira/browse/HIVE-1068>HIVE-1068</a>, we added an attribute to store the type (view, managed table, external table) for each table descriptor.</p>
 <h3 id=dependency-tracking>Dependency Tracking</h3>
@@ -261,9 +283,9 @@ DROP VIEW view\_name
 <p>However, if the <code>datanucleus.autoCreateSchema</code> property is set to <code>false</code>, then the ALTER statements must be executed explicitly. (An administrator may have set this property for safety in production configurations.)</p>
 <p>In this case, execute a script such as the following against the metastore database:</p>
 <pre tabindex=0><code>
-ALTER TABLE TBLS ADD COLUMN VIEW\_ORIGINAL\_TEXT MEDIUMTEXT;
-ALTER TABLE TBLS ADD COLUMN VIEW\_EXPANDED\_TEXT MEDIUMTEXT;
-ALTER TABLE TBLS ADD COLUMN TBL\_TYPE VARCHAR(128);
+ALTER TABLE TBLS ADD COLUMN VIEW_ORIGINAL_TEXT MEDIUMTEXT;
+ALTER TABLE TBLS ADD COLUMN VIEW_EXPANDED_TEXT MEDIUMTEXT;
+ALTER TABLE TBLS ADD COLUMN TBL_TYPE VARCHAR(128);
 
 </code></pre><p>The syntax here is for MySQL, so you may need to adjust it (particularly for CLOB datatype).</p>
 <p>Note that it should be safe to execute this script and continue operations BEFORE upgrading Hive; the old Hive version will simply ignore/nullify the columns it doesn&rsquo;t recognize.</p>
@@ -271,20 +293,20 @@ ALTER TABLE TBLS ADD COLUMN TBL\_TYPE VARCHAR(128);
 <p>After the tables are altered, the new columns will contain NULL values for existing rows describing previously created tables. This is correct for VIEW_ORIGINAL_TEXT and VIEW_EXPANDED_TEXT (since views did not previously exist), but is incorrect for the TBL_TYPE column introduced by <a href=https://issues.apache.org/jira/browse/HIVE-1068>HIVE-1068</a>. The new Hive code is capable of handling this (automatically filling in the correct value for the new field when a descriptor is retrieved), but it does not &ldquo;fix&rdquo; the stored rows. This could be an issue if in the future other tools are used to retrieve information directly from the metastore database rather than accessing the metastore API.</p>
 <p>The script below can be used to fix existing rows after the tables have been altered. It should be run AFTER all Hive instances directly accessing the metastore database have been upgraded (otherwise new null values could slip in and remain forever). For safety, it is view-aware just in case a CREATE VIEW statement has already been executed, meaning it can be rerun any time after the upgrade.</p>
 <pre tabindex=0><code>
-UPDATE TBLS SET TBL\_TYPE='MANAGED\_TABLE'
-WHERE VIEW\_ORIGINAL\_TEXT IS NULL
+UPDATE TBLS SET TBL_TYPE='MANAGED_TABLE'
+WHERE VIEW_ORIGINAL_TEXT IS NULL
 AND NOT EXISTS(
-    SELECT * FROM TABLE\_PARAMS 
-    WHERE TABLE\_PARAMS.TBL\_ID=TBLS.TBL\_ID
-    AND PARAM\_KEY='EXTERNAL'
-    AND PARAM\_VALUE='TRUE'
+    SELECT * FROM TABLE_PARAMS 
+    WHERE TABLE_PARAMS.TBL_ID=TBLS.TBL_ID
+    AND PARAM_KEY='EXTERNAL'
+    AND PARAM_VALUE='TRUE'
 );
-UPDATE TBLS SET TBL\_TYPE='EXTERNAL\_TABLE'
+UPDATE TBLS SET TBL_TYPE='EXTERNAL_TABLE'
 WHERE EXISTS(
-    SELECT * FROM TABLE\_PARAMS 
-    WHERE TABLE\_PARAMS.TBL\_ID=TBLS.TBL\_ID
-    AND PARAM\_KEY='EXTERNAL'
-    AND PARAM\_VALUE='TRUE'
+    SELECT * FROM TABLE_PARAMS 
+    WHERE TABLE_PARAMS.TBL_ID=TBLS.TBL_ID
+    AND PARAM_KEY='EXTERNAL'
+    AND PARAM_VALUE='TRUE'
 );
 
 </code></pre><p>For MySQL, note that the &ldquo;safe updates&rdquo; feature will need to be disabled since these are full-table updates.</p>
@@ -323,6 +345,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

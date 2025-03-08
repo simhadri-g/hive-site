@@ -9,8 +9,8 @@
 <title>Apache Hive : PartitionedViews</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -147,18 +147,18 @@ ASF
 </ol>
 <h2 id=syntax>Syntax</h2>
 <pre tabindex=0><code>
-CREATE VIEW [IF NOT EXISTS] view\_name [(column\_name [COMMENT column\_comment], ...) ]
-[COMMENT table\_comment]
+CREATE VIEW [IF NOT EXISTS] view_name [(column_name [COMMENT column_comment], ...) ]
+[COMMENT table_comment]
 [PARTITIONED ON (col1, col2, ...)]
 [TBLPROPERTIES ...]
 AS SELECT ...
 
-ALTER VIEW view\_name ADD [IF NOT EXISTS] partition\_spec partition\_spec ...
+ALTER VIEW view_name ADD [IF NOT EXISTS] partition_spec partition_spec ...
 
-ALTER VIEW view\_name DROP [IF EXISTS] partition\_spec, partition\_spec, ...
+ALTER VIEW view_name DROP [IF EXISTS] partition_spec, partition_spec, ...
 
-partition\_spec:
-  : PARTITION (partition\_col = partition\_col\_value, partition\_col = partiton\_col\_value, ...)
+partition_spec:
+  : PARTITION (partition_col = partition_col_value, partition_col = partiton_col_value, ...)
 
 </code></pre><p>Notes:</p>
 <ul>
@@ -178,8 +178,8 @@ partition\_spec:
 <h1 id=hook-information>Hook Information</h1>
 <p>Although there is currently no connection between the view partition and underlying table partitions, Hive does provide dependency information as part of the hook invocation for ALTER VIEW ADD PARTITION. It does this by compiling an internal query of the form</p>
 <pre tabindex=0><code>
-SELECT * FROM view\_name
-WHERE view\_partition\_col1 = 'val1' AND view\_partition\_col=2 = 'val2' ...
+SELECT * FROM view_name
+WHERE view_partition_col1 = 'val1' AND view_partition_col=2 = 'val2' ...
 
 </code></pre><p>and then capturing the table/partition inputs for this query and passing them on to the ALTER VIEW ADD PARTITION hook results.</p>
 <p>This allows applications to track the dependencies themselves. In the future, Hive will automatically populate these dependencies into the metastore as part of <a href=https://issues.apache.org/jira/browse/HIVE-1073>HIVE-1073</a>.</p>
@@ -218,6 +218,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

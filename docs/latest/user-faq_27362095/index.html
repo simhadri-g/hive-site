@@ -9,8 +9,8 @@
 <title>Apache Hive : User FAQ</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -128,47 +128,47 @@ ASF
 <li><a href=#general>General</a>
 <ul>
 <li><a href="#i-see-errors-like:-server-access-error:-connection-timed-out-url=http://archive-apache-org/dist/hadoop/core/hadoop-0-20-1/hadoop-0-20-1-tar-gz">I see errors like: Server access Error: Connection timed out url=http://archive.apache.org/dist/hadoop/core/hadoop-0.20.1/hadoop-0.20.1.tar.gz</a></li>
-<li><a href=#how-to-change-the-warehouse-dir-location-for-older-tables?>How to change the warehouse.dir location for older tables?</a></li>
-<li><a href=#when-running-a-join-query,-i-see-out-of-memory-errors->When running a JOIN query, I see out-of-memory errors.</a></li>
+<li><a href=#how-to-change-the-warehousedir-location-for-older-tables>How to change the warehouse.dir location for older tables?</a></li>
+<li><a href=#when-running-a-join-query-i-see-out-of-memory-errors>When running a JOIN query, I see out-of-memory errors.</a></li>
 <li><a href=#mysql-excpeption>I am using MySQL as metastore and I see errors: &ldquo;com.mysql.jdbc.exceptions.jdbc4.!CommunicationsException: Communications link failure&rdquo;</a></li>
-<li><a href=#does-hive-support-unicode?>Does Hive support Unicode?</a></li>
+<li><a href=#does-hive-support-unicode>Does Hive support Unicode?</a></li>
 </ul>
 </li>
 <li><a href=#hive-sql>Hive SQL</a>
 <ul>
-<li><a href=#are-hive-sql-identifiers--e-g--table-names,-column-names,-etc--case-sensitive?>Are Hive SQL identifiers (e.g. table names, column names, etc) case sensitive?</a></li>
-<li><a href=#what-are-the-maximum-allowed-lengths-for-hive-sql-identifiers?>What are the maximum allowed lengths for Hive SQL identifiers?</a></li>
+<li><a href=#are-hive-sql-identifiers-eg-table-names-column-names-etc-case-sensitive>Are Hive SQL identifiers (e.g. table names, column names, etc) case sensitive?</a></li>
+<li><a href=#what-are-the-maximum-allowed-lengths-for-hive-sql-identifiers>What are the maximum allowed lengths for Hive SQL identifiers?</a></li>
 </ul>
 </li>
 <li><a href=#importing-data-into-hive>Importing Data into Hive</a>
 <ul>
-<li><a href=#how-do-i-import-xml-data-into-hive?>How do I import XML data into Hive?</a></li>
-<li><a href=#how-do-i-import-csv-data-into-hive?>How do I import CSV data into Hive?</a></li>
-<li><a href=#how-do-i-import-json-data-into-hive?>How do I import JSON data into Hive?</a></li>
-<li><a href=#how-do-i-import-thrift-data-into-hive?>How do I import Thrift data into Hive?</a></li>
-<li><a href=#how-do-i-import-avro-data-into-hive?>How do I import Avro data into Hive?</a></li>
-<li><a href=#how-do-i-import-delimited-text-data-into-hive?>How do I import delimited text data into Hive?</a></li>
-<li><a href=#how-do-i-import-fixed-width-data-into-hive?>How do I import fixed-width data into Hive?</a></li>
-<li><a href=#how-do-i-import-ascii-logfiles--http,-etc--into-hive?>How do I import ASCII logfiles (HTTP, etc) into Hive?</a></li>
+<li><a href=#how-do-i-import-xml-data-into-hive>How do I import XML data into Hive?</a></li>
+<li><a href=#how-do-i-import-csv-data-into-hive>How do I import CSV data into Hive?</a></li>
+<li><a href=#how-do-i-import-json-data-into-hive>How do I import JSON data into Hive?</a></li>
+<li><a href=#how-do-i-import-thrift-data-into-hive>How do I import Thrift data into Hive?</a></li>
+<li><a href=#how-do-i-import-avro-data-into-hive>How do I import Avro data into Hive?</a></li>
+<li><a href=#how-do-i-import-delimited-text-data-into-hive>How do I import delimited text data into Hive?</a></li>
+<li><a href=#how-do-i-import-fixed-width-data-into-hive>How do I import fixed-width data into Hive?</a></li>
+<li><a href=#how-do-i-import-ascii-logfiles-http-etc-into-hive>How do I import ASCII logfiles (HTTP, etc) into Hive?</a></li>
 </ul>
 </li>
 <li><a href=#exporting-data-from-hive>Exporting Data from Hive</a></li>
 <li><a href=#hive-data-model>Hive Data Model</a>
 <ul>
-<li><a href=#what-is-the-difference-between-a-native-table-and-an-external-table?>What is the difference between a native table and an external table?</a></li>
-<li><a href=#what-are-dynamic-partitions?>What are dynamic partitions?</a></li>
-<li><a href=#can-a-hive-table-contain-data-in-more-than-one-format?>Can a Hive table contain data in more than one format?</a></li>
-<li><a href=#is-it-possible-to-set-the-data-format-on-a-per-partition-basis?>Is it possible to set the data format on a per-partition basis?</a></li>
+<li><a href=#what-is-the-difference-between-a-native-table-and-an-external-table>What is the difference between a native table and an external table?</a></li>
+<li><a href=#what-are-dynamic-partitions>What are dynamic partitions?</a></li>
+<li><a href=#can-a-hive-table-contain-data-in-more-than-one-format>Can a Hive table contain data in more than one format?</a></li>
+<li><a href=#is-it-possible-to-set-the-data-format-on-a-per-partition-basis>Is it possible to set the data format on a per-partition basis?</a></li>
 </ul>
 </li>
 <li><a href=#jdbc-driver>JDBC Driver</a>
 <ul>
-<li><a href=#does-hive-have-a-jdbc-driver?>Does Hive have a JDBC Driver?</a></li>
+<li><a href=#does-hive-have-a-jdbc-driver>Does Hive have a JDBC Driver?</a></li>
 </ul>
 </li>
 <li><a href=#odbc-driver>ODBC Driver</a>
 <ul>
-<li><a href=#does-hive-have-an-odbc-driver?>Does Hive have an ODBC driver?</a></li>
+<li><a href=#does-hive-have-an-odbc-driver>Does Hive have an ODBC driver?</a></li>
 </ul>
 </li>
 </ul>
@@ -279,6 +279,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

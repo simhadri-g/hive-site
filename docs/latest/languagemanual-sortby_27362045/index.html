@@ -9,8 +9,8 @@
 <title>Apache Hive : LanguageManual SortBy</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -122,7 +122,7 @@ ASF
 <div class=docs>
 <h1 id=apache-hive--languagemanual-sortby>Apache Hive : LanguageManual SortBy</h1>
 <ul>
-<li><a href=#order,-sort,-cluster,-and-distribute-by>Order, Sort, Cluster, and Distribute By</a>
+<li><a href=#order-sort-cluster-and-distribute-by>Order, Sort, Cluster, and Distribute By</a>
 <ul>
 <li><a href=#syntax-of-order-by>Syntax of Order By</a></li>
 <li><a href=#syntax-of-sort-by>Syntax of Sort By</a>
@@ -229,18 +229,28 @@ x4
 SELECT col1, col2 FROM t1 DISTRIBUTE BY col1 SORT BY col1 ASC, col2 DESC
 
 </code></pre><pre tabindex=0><code>  FROM (
-    FROM pv\_users
-    MAP ( pv\_users.userid, pv\_users.date )
-    USING 'map\_script'
+    FROM pv_users
+    MAP ( pv_users.userid, pv_users.date )
+    USING 'map_script'
     AS c1, c2, c3
     DISTRIBUTE BY c2
-    SORT BY c2, c1) map\_output
-  INSERT OVERWRITE TABLE pv\_users\_reduced
-    REDUCE ( map\_output.c1, map\_output.c2, map\_output.c3 )
-    USING 'reduce\_script'
+    SORT BY c2, c1) map_output
+  INSERT OVERWRITE TABLE pv_users_reduced
+    REDUCE ( map_output.c1, map_output.c2, map_output.c3 )
+    USING 'reduce_script'
     AS date, count;
 
-</code></pre>
+</code></pre><p>Note that columns are specified by name, not by position number. However in <a href=https://issues.apache.org/jira/browse/HIVE-28572>HIVE-28572</a> and later, columns can be specified by position when configured as follows:</p>
+<ul>
+<li>set <a href=https://hive.apache.org/docs/latest/configuration-properties_27842758/#hiveorderbypositionalias>hive.orderby.position.alias</a>=true;</li>
+<li>set <a href=https://hive.apache.org/docs/latest/configuration-properties_27842758/#hivecboenable>hive.cbo.enable</a>=true;</li>
+</ul>
+<p>When any of the above conditions are not met, no distribution is performed.</p>
+<p>In the following example we distribute by the 3rd and the 1st column (birthdate, age):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>set</span> hive.orderby.<span style=color:#66d9ef>position</span>.<span style=color:#66d9ef>alias</span><span style=color:#f92672>=</span><span style=color:#66d9ef>true</span>;
+<span style=color:#66d9ef>set</span> hive.cbo.enable<span style=color:#f92672>=</span><span style=color:#66d9ef>true</span>;
+<span style=color:#66d9ef>SELECT</span> age, name, birthdate <span style=color:#66d9ef>FROM</span> author DISTRIBUTE <span style=color:#66d9ef>BY</span> <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>1</span>;
+</code></pre></div>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>
@@ -276,6 +286,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

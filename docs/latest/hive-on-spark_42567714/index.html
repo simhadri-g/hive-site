@@ -9,8 +9,8 @@
 <title>Apache Hive : Hive on Spark</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -122,31 +122,31 @@ ASF
 <div class=docs>
 <h1 id=apache-hive--hive-on-spark>Apache Hive : Hive on Spark</h1>
 <ul>
-<li><a href=#1--introduction>1. Introduction</a>
+<li><a href=#1-introduction>1. Introduction</a>
 <ul>
-<li><a href=#1-1-motivation>1.1 Motivation</a></li>
-<li><a href=#1-2-design-principle>1.2 Design Principle</a></li>
-<li><a href=#1-3-comparison-with-shark-and-spark-sql>1.3 Comparison with Shark and Spark SQL</a></li>
-<li><a href=#1-4-other-considerations>1.4 Other Considerations</a></li>
+<li><a href=#11-motivation>1.1 Motivation</a></li>
+<li><a href=#12-design-principle>1.2 Design Principle</a></li>
+<li><a href=#13-comparison-with-shark-and-spark-sql>1.3 Comparison with Shark and Spark SQL</a></li>
+<li><a href=#14-other-considerations>1.4 Other Considerations</a></li>
 </ul>
 </li>
-<li><a href=#2--high-level-functionality>2. High-Level Functionality</a>
+<li><a href=#2-high-level-functionality>2. High-Level Functionality</a>
 <ul>
-<li><a href=#2-1-a-new-execution-engine>2.1 A New Execution Engine</a></li>
-<li><a href=#2-2-spark-configuration>2.2 Spark Configuration</a></li>
-<li><a href=#2-3-miscellaneous-functionality>2.3 Miscellaneous Functionality</a></li>
+<li><a href=#21-a-new-execution-engine>2.1 A New Execution Engine</a></li>
+<li><a href=#22-spark-configuration>2.2 Spark Configuration</a></li>
+<li><a href=#23-miscellaneous-functionality>2.3 Miscellaneous Functionality</a></li>
 </ul>
 </li>
-<li><a href=#3--hive-level-design>3. Hive-Level Design</a>
+<li><a href=#3-hive-level-design>3. Hive-Level Design</a>
 <ul>
-<li><a href=#3-1-query-planning>3.1 Query Planning</a></li>
-<li><a href=#3-2-job-execution>3.2 Job Execution</a></li>
-<li><a href=#3-3-design-considerations>3.3 Design Considerations</a>
+<li><a href=#31-query-planning>3.1 Query Planning</a></li>
+<li><a href=#32-job-execution>3.2 Job Execution</a></li>
+<li><a href=#33-design-considerations>3.3 Design Considerations</a>
 <ul>
 <li><a href=#table-as-rdd>Table as RDD</a></li>
 <li><a href=#sparkwork>SparkWork</a></li>
 <li><a href=#sparktask>SparkTask</a></li>
-<li><a href=#shuffle,-group,-and-sort>Shuffle, Group, and Sort</a></li>
+<li><a href=#shuffle-group-and-sort>Shuffle, Group, and Sort</a></li>
 <li><a href=#join>Join</a></li>
 <li><a href=#number-of-tasks>Number of Tasks</a></li>
 <li><a href=#local-mapreduce-tasks>Local MapReduce Tasks</a></li>
@@ -162,10 +162,10 @@ ASF
 <li><a href=#testing>Testing</a></li>
 </ul>
 </li>
-<li><a href=#3-4-potentially-required-work-from-spark>3.4 Potentially Required Work from Spark</a></li>
+<li><a href=#34-potentially-required-work-from-spark>3.4 Potentially Required Work from Spark</a></li>
 </ul>
 </li>
-<li><a href=#4--summary>4. Summary</a></li>
+<li><a href=#4-summary>4. Summary</a></li>
 </ul>
 <h1 id=1-introduction>1. Introduction</h1>
 <p>We propose modifying Hive to add Spark as a third execution backend(<a href=https://issues.apache.org/jira/browse/HIVE-7292>HIVE-7292</a>), parallel to MapReduce and Tez.</p>
@@ -338,6 +338,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

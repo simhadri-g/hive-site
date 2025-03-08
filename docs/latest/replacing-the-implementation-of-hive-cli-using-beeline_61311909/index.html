@@ -9,8 +9,8 @@
 <title>Apache Hive : Replacing the Implementation of Hive CLI Using Beeline</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -124,7 +124,7 @@ ASF
 <h2 id=heading></h2>
 <ul>
 <li></li>
-<li><a href=#why-replace-the-existing-hive-cli?>Why Replace the Existing Hive CLI?</a></li>
+<li><a href=#why-replace-the-existing-hive-cli>Why Replace the Existing Hive CLI?</a></li>
 <li><a href=#hive-cli-functionality-support>Hive CLI Functionality Support</a>
 <ul>
 <li><a href=#hive-cli-options-support>Hive CLI Options Support</a></li>
@@ -140,7 +140,7 @@ ASF
 <p>Ideally, Hive CLI should be deprecated as the Hive community has long recommended using the Beeline plus HiveServer2 configuration; however, because of the wide use of Hive CLI, we instead are replacing Hive CLI&rsquo;s implementation with a new Hive CLI on top of Beeline plus embedded HiveServer2 (<a href=https://issues.apache.org/jira/browse/HIVE-10511>HIVE-10511</a>) so that the Hive community only needs to maintain a single code path. In this way, the new Hive CLI is just an alias to Beeline at both the shell script level and the high code level. The goal is that no or minimal changes are required from existing user scripts using Hive CLI.</p>
 <h2 id=hive-cli-functionality-support>Hive CLI Functionality Support</h2>
 <p>We use a new Hive CLI on top of Beeline to implement the Hive CLI functionality. Since some existing Hive CLI features are not supported in the new Hive CLI, we are using the old Hive client implementation by default. Use the following command to specify the new Beeline-based Hive CLI tool:</p>
-<pre tabindex=0><code>export USE\_DEPRECATED\_CLI=false
+<pre tabindex=0><code>export USE_DEPRECATED_CLI=false
 </code></pre><p>Note that the log4j configuration file has been changed to &ldquo;beeline-log4j.properties&rdquo;. </p>
 <h3 id=hive-cli-options-support>Hive CLI Options Support</h3>
 <p>To get help, run &ldquo;<code>hive -H</code>&rdquo; or &ldquo;<code>hive --help</code>&rdquo;.</p>
@@ -162,23 +162,23 @@ ASF
 <ul>
 <li>Example of running a query from the command line</li>
 </ul>
-<pre tabindex=0><code>$HIVE\_HOME/bin/hive -e 'select a.foo from pokes a'
+<pre tabindex=0><code>$HIVE_HOME/bin/hive -e 'select a.foo from pokes a'
 </code></pre><ul>
 <li>Example of setting Hive configuration variables</li>
 </ul>
-<pre tabindex=0><code>$HIVE\_HOME/bin/hive -e 'select a.foo from pokes a' --hiveconf hive.exec.scratchdir=/opt/my/hive\_scratch --hiveconf mapred.reduce.tasks=1
+<pre tabindex=0><code>$HIVE_HOME/bin/hive -e 'select a.foo from pokes a' --hiveconf hive.exec.scratchdir=/opt/my/hive_scratch --hiveconf mapred.reduce.tasks=1
 </code></pre><ul>
 <li>Example of dumping data out from a query into a file using silent mode</li>
 </ul>
-<pre tabindex=0><code>$HIVE\_HOME/bin/hive -S -e 'select a.foo from pokes a' &gt; a.txt
+<pre tabindex=0><code>$HIVE_HOME/bin/hive -S -e 'select a.foo from pokes a' &gt; a.txt
 </code></pre><ul>
 <li>Example of running a script non-interactively from local disk</li>
 </ul>
-<pre tabindex=0><code>$HIVE\_HOME/bin/hive -f /home/my/hive-script.sql
+<pre tabindex=0><code>$HIVE_HOME/bin/hive -f /home/my/hive-script.sql
 </code></pre><ul>
 <li>Example of running a script non-interactively from a Hadoop supported filesystem (starting in <a href=https://issues.apache.org/jira/browse/HIVE-7136>Hive 0.14</a>)</li>
 </ul>
-<pre tabindex=0><code>$HIVE\_HOME/bin/hive -f hdfs://&lt;namenode&gt;:&lt;port&gt;/hive-script.sql
+<pre tabindex=0><code>$HIVE_HOME/bin/hive -f hdfs://&lt;namenode&gt;:&lt;port&gt;/hive-script.sql
 </code></pre><h3 id=hive-cli-interactive-shell-commands-support>Hive CLI Interactive Shell Commands Support</h3>
 <p>When <code>$HIVE_HOME/bin/hive</code> is run without either the <code>-e</code> or <code>-f</code> option, it enters interactive shell mode.</p>
 <p>Use &ldquo;;&rdquo; (semicolon) to terminate commands. Comments in scripts can be specified using the &ldquo;&ndash;&rdquo; prefix.</p>
@@ -284,9 +284,9 @@ drwxr-xr-x  - root supergroup  0   2015-08-12 19:43 /user
 hive&gt; select * from pokes; 
 OK
 pokes.foo   pokes.bar
-238         val\_238
-86          val\_86
-311         val\_311
+238         val_238
+86          val_86
+311         val_311
 hive&gt;source /opt/s.sql;
 </code></pre><h3 id=hive-cli-configuration-support>Hive CLI Configuration Support</h3>
 <table>
@@ -368,6 +368,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

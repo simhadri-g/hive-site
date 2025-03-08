@@ -9,8 +9,8 @@
 <title>Apache Hive : LanguageManual Union</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -134,7 +134,7 @@ ASF
 </li>
 </ul>
 <h2 id=union-syntax>Union Syntax</h2>
-<pre tabindex=0><code>select\_statement UNION [ALL | DISTINCT] select\_statement UNION [ALL | DISTINCT] select\_statement ...
+<pre tabindex=0><code>select_statement UNION [ALL | DISTINCT] select_statement UNION [ALL | DISTINCT] select_statement ...
 
 </code></pre><p>UNION is used to combine the result from multiple SELECT statements into a single result set.</p>
 <ul>
@@ -147,20 +147,20 @@ ASF
 <p>If some additional processing has to be done on the result of the UNION, the entire statement expression can be embedded in a FROM clause like below:</p>
 <pre tabindex=0><code>SELECT *
 FROM (
-  select\_statement
+  select_statement
   UNION ALL
-  select\_statement
+  select_statement
 ) unionResult
 
 </code></pre><p>For example, if we suppose there are two different tables that track which user has published a video and which user has published a comment, the following query joins the results of a UNION ALL with the user table to create a single annotated stream for all the video publishing and comment publishing events:</p>
 <pre tabindex=0><code>    SELECT u.id, actions.date
     FROM (
         SELECT av.uid AS uid 
-        FROM action\_video av 
+        FROM action_video av 
         WHERE av.date = '2008-06-03' 
         UNION ALL 
         SELECT ac.uid AS uid 
-        FROM action\_comment ac 
+        FROM action_comment ac 
         WHERE ac.date = '2008-06-03' 
      ) actions JOIN users u ON (u.id = actions.uid) 
 
@@ -178,20 +178,20 @@ SELECT key FROM src1 
 ORDER BY key LIMIT 10
 </code></pre><h4 id=column-aliases-for-schema-matching>Column Aliases for Schema Matching</h4>
 <p>UNION expects the same schema on both sides of the expression list. As a result, the following query may fail with an error message such as &ldquo;FAILED: SemanticException 4:47 Schema of both sides of union should match.&rdquo;</p>
-<pre tabindex=0><code>INSERT OVERWRITE TABLE target\_table
-  SELECT name, id, category FROM source\_table\_1
+<pre tabindex=0><code>INSERT OVERWRITE TABLE target_table
+  SELECT name, id, category FROM source_table_1
   UNION ALL
-  SELECT name, id, &quot;Category159&quot; FROM source\_table\_2
+  SELECT name, id, &quot;Category159&quot; FROM source_table_2
 </code></pre><p>In such cases, column aliases can be used to force equal schemas:</p>
-<pre tabindex=0><code>INSERT OVERWRITE TABLE target\_table
-  SELECT name, id, category FROM source\_table\_1
+<pre tabindex=0><code>INSERT OVERWRITE TABLE target_table
+  SELECT name, id, category FROM source_table_1
   UNION ALL
-  SELECT name, id, &quot;Category159&quot; as category FROM source\_table\_2
+  SELECT name, id, &quot;Category159&quot; as category FROM source_table_2
 </code></pre><h4 id=column-type-conversion>Column Type Conversion</h4>
 <p>Before <a href=https://issues.apache.org/jira/browse/HIVE-14251>HIVE-14251</a> in release 2.2.0, Hive tries to perform implicit conversion across Hive type groups. With the change of <a href=https://issues.apache.org/jira/browse/HIVE-14251>HIVE-14251</a>, Hive will only perform implicit conversion within each type group including string group, number group or date group, not across groups. In order to union the types from different groups such as a string type and a date type, an explicit cast from string to date or from date to string is needed in the query.</p>
-<pre tabindex=0><code>  SELECT name, id, cast('2001-01-01' as date) d FROM source\_table\_1
+<pre tabindex=0><code>  SELECT name, id, cast('2001-01-01' as date) d FROM source_table_1
   UNION ALL
-  SELECT name, id, hiredate as d FROM source\_table\_2
+  SELECT name, id, hiredate as d FROM source_table_2
 </code></pre><p> </p>
 <h4 id=version-information>Version Information</h4>
 <p>Version information</p>
@@ -235,6 +235,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

@@ -9,8 +9,8 @@
 <title>Apache Hive : JDBC Storage Handler</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -128,7 +128,7 @@ ASF
 <ul>
 <li><a href=#table-properties>Table Properties</a></li>
 <li><a href=#supported-data-type>Supported Data Type</a></li>
-<li><a href=#column/type-mapping>Column/Type Mapping</a></li>
+<li><a href=#columntype-mapping>Column/Type Mapping</a></li>
 </ul>
 </li>
 <li><a href=#auto-shipping>Auto Shipping</a></li>
@@ -146,7 +146,7 @@ ASF
 </ul>
 <h1 id=syntax>Syntax</h1>
 <p>JdbcStorageHandler supports reading from jdbc data source in Hive. Currently writing to a jdbc data source is not supported. To use JdbcStorageHandler, you need to create an external table using JdbcStorageHandler. Here is a simple example:</p>
-<pre tabindex=0><code>CREATE EXTERNAL TABLE student\_jdbc
+<pre tabindex=0><code>CREATE EXTERNAL TABLE student_jdbc
 (
   name string,
   age int,
@@ -163,7 +163,7 @@ TBLPROPERTIES (
     &quot;hive.sql.dbcp.maxActive&quot; = &quot;1&quot;
 );
 </code></pre><p>You can also alter table properties of the jdbc external table using alter table statement, just like other non-native Hive table:</p>
-<pre tabindex=0><code>ALTER TABLE student\_jdbc SET TBLPROPERTIES (&quot;hive.sql.dbcp.password&quot; = &quot;passwd&quot;);
+<pre tabindex=0><code>ALTER TABLE student_jdbc SET TBLPROPERTIES (&quot;hive.sql.dbcp.password&quot; = &quot;passwd&quot;);
 </code></pre><h2 id=table-properties>Table Properties</h2>
 <p>In the create table statement, you are required to specify the following table properties:</p>
 <ul>
@@ -193,7 +193,7 @@ TBLPROPERTIES (
 <p>Note complex data type: struct, map, array are not supported</p>
 <h2 id=columntype-mapping>Column/Type Mapping</h2>
 <p>hive.sql.table / hive.sql.query defines a tabular data with a schema. The schema definition has to be the same as the table schema definition. For example, the following create table statement will fail:</p>
-<pre tabindex=0><code>CREATE EXTERNAL TABLE student\_jdbc
+<pre tabindex=0><code>CREATE EXTERNAL TABLE student_jdbc
 (
   name string,
   age int,
@@ -205,11 +205,11 @@ TBLPROPERTIES (
     &quot;hive.sql.query&quot; = &quot;SELECT name, age, gpa, gender FROM STUDENT&quot;,
 );
 </code></pre><p>However, column name and column type of hive.sql.table / hive.sql.query schema may be different than the table schema. In this case, database column maps to hive column by position. If data type is different, Hive will try to convert it according to Hive table schema. For example:</p>
-<pre tabindex=0><code>CREATE EXTERNAL TABLE student\_jdbc
+<pre tabindex=0><code>CREATE EXTERNAL TABLE student_jdbc
 (
   sname string,
   age int,
-  effective\_gpa decimal(4,3)
+  effective_gpa decimal(4,3)
 )
 STORED BY 'org.apache.hive.storage.jdbc.JdbcStorageHandler'
 TBLPROPERTIES (
@@ -224,7 +224,7 @@ TBLPROPERTIES (
 <pre tabindex=0><code>hadoop credential create host1.password -provider jceks://hdfs/user/foo/test.jceks -v passwd1
 hadoop credential create host2.password -provider jceks://hdfs/user/foo/test.jceks -v passwd2
 </code></pre><p>This will create a keystore file located on hdfs://user/foo/test.jceks which contains two keys: host1.password and host2.password. When creating table in Hive, you will need to specify “hive.sql.dbcp.password.keystore” and “hive.sql.dbcp.password.key” instead of “hive.sql.dbcp.password” in create table statement:</p>
-<pre tabindex=0><code>CREATE EXTERNAL TABLE student\_jdbc
+<pre tabindex=0><code>CREATE EXTERNAL TABLE student_jdbc
 (
   name string,
   age int,
@@ -273,7 +273,7 @@ jdbc.JdbcInputFormat: split:interval:ikey[90,)
 </code></pre><h1 id=computation-pushdown>Computation Pushdown</h1>
 <p>Hive will pushdown computation to jdbc table aggressively, so we can make best usage of the native capacity of jdbc data source.</p>
 <p>For example, if we have another table voter_jdbc:</p>
-<pre tabindex=0><code>EATE EXTERNAL TABLE voter\_jdbc
+<pre tabindex=0><code>EATE EXTERNAL TABLE voter_jdbc
 (
   name string,
   age int,
@@ -290,12 +290,12 @@ TBLPROPERTIES (
     &quot;hive.sql.table&quot; = &quot;VOTER&quot;
 );
 </code></pre><p>Then the following join operation will push down to mysql:</p>
-<pre tabindex=0><code>select * from student\_jdbc join voter\_jdbc on student\_jdbc.name=voter\_jdbc.name;
+<pre tabindex=0><code>select * from student_jdbc join voter_jdbc on student_jdbc.name=voter_jdbc.name;
 </code></pre><p>This can be manifest by explain:</p>
-<pre tabindex=0><code>explain select * from student\_jdbc join voter\_jdbc on student\_jdbc.name=voter\_jdbc.name;
+<pre tabindex=0><code>explain select * from student_jdbc join voter_jdbc on student_jdbc.name=voter_jdbc.name;
         . . . . . .
         TableScan
-          alias: student\_jdbc
+          alias: student_jdbc
           properties:
             hive.sql.query SELECT `t`.`name`, `t`.`age`, `t`.`gpa`, `t0`.`name` AS `name0`, `t0`.`age` AS `age0`, `t0`.`registration`, `t0`.`contribution`
 FROM (SELECT *
@@ -375,7 +375,7 @@ insert into alice.country
 values (7, 'Japan');
 </code></pre><p>Create a user and associate them with a default schema. For example:</p>
 <pre tabindex=0><code>CREATE LOGIN greg WITH PASSWORD = 'GregPass123!$';
-CREATE USER greg FOR LOGIN greg WITH DEFAULT\_SCHEMA=bob;
+CREATE USER greg FOR LOGIN greg WITH DEFAULT_SCHEMA=bob;
 </code></pre><p>Allow the user to connect to the database and run queries. For example:</p>
 <pre tabindex=0><code>GRANT CONNECT, SELECT TO greg;
 </code></pre><h2 id=oracle>Oracle</h2>
@@ -457,7 +457,7 @@ insert into alice.country
 values (7, 'Japan');
 </code></pre><p>Create a user and associate them with a default schema &lt;=> search_path. For example:</p>
 <pre tabindex=0><code>CREATE ROLE greg WITH LOGIN PASSWORD 'GregPass123!$';
-ALTER ROLE greg SET search\_path TO bob;
+ALTER ROLE greg SET search_path TO bob;
 </code></pre><p>Grant the necessary permissions to access the schema. For example:</p>
 <pre tabindex=0><code>GRANT USAGE ON SCHEMA bob TO greg;
 GRANT SELECT ON ALL TABLES IN SCHEMA bob TO greg;
@@ -497,6 +497,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

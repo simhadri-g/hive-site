@@ -9,8 +9,8 @@
 <title>Apache Hive : GenericUDAFCaseStudy</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -126,7 +126,7 @@ ASF
 <p>This tutorial walks through the development of the <code>histogram()</code> UDAF, which computes a histogram with a fixed, user-specified number of bins, using a constant amount of memory and time linear in the input size. It demonstrates a number of features of Generic UDAFs, such as a complex return type (an array of structures), and type checking on the input. The assumption is that the reader wants to write a UDAF for eventual submission to the Hive open-source project, so steps such as modifying the function registry in Hive and writing <code>.q</code> tests are also included. If you just want to write a UDAF, debug and deploy locally, see <a href=http://wiki.apache.org/hadoop/Hive/HivePlugins>this page</a>.</p>
 <p><strong>NOTE:</strong> In this tutorial, we walk through the creation of a <code>histogram()</code> function. Starting with the 0.6.0 release of Hive, this appears as the built-in function <code>histogram_numeric()</code>.</p>
 <ul>
-<li><a href=#writing-genericudafs:-a-tutorial>Writing GenericUDAFs: A Tutorial</a>
+<li><a href=#writing-genericudafs-a-tutorial>Writing GenericUDAFs: A Tutorial</a>
 <ul>
 <li><a href=#preliminaries>Preliminaries</a></li>
 <li><a href=#writing-the-source>Writing the source</a>
@@ -150,7 +150,7 @@ ASF
 </ul>
 </li>
 <li><a href=#checklist-for-open-source-submission>Checklist for open source submission</a></li>
-<li><a href=#tips,-tricks,-best-practices>Tips, Tricks, Best Practices</a>
+<li><a href=#tips-tricks-best-practices>Tips, Tricks, Best Practices</a>
 <ul>
 <li><a href=#resolver-interface-evolution>Resolver Interface Evolution</a></li>
 </ul>
@@ -159,11 +159,36 @@ ASF
 <h2 id=preliminaries>Preliminaries</h2>
 <p>Make sure you have the latest Hive trunk by running <code>svn up</code> in your Hive directory. More detailed instructions on downloading and setting up Hive can be found at <a href=http://wiki.apache.org/hadoop/Hive/GettingStarted>Getting Started</a> . Your local copy of Hive should work by running <code>build/dist/bin/hive</code> from the Hive root directory, and you should have some tables of data loaded into your local instance for testing whatever UDAF you have in mind. For this example, assume that a table called <code>normal</code> exists with a single <code>double</code> column called <code>val</code>, containing a large number of random number drawn from the standard normal distribution.</p>
 <p>The files we will be editing or creating are as follows, relative to the Hive root:</p>
-<p>| <code>ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFHistogram.java</code> | the main source file, to be created by you. |   |
-| <code>ql/src/java/org/apache/hadoop/hive/ql/exec/FunctionRegistry.java</code> | the function registry source file, to be edited by you to register our new <code>histogram()</code> UDAF into Hive&rsquo;s built-in function list. |   |
-| <code>ql/src/test/queries/clientpositive/udaf_histogram.q</code> | a file of sample queries for testing <code>histogram()</code> on sample data, to be created by you. |   |
-| <code>ql/src/test/results/clientpositive/udaf_histogram.q.out</code> | the expected output from your sample queries, to be created by <code>ant</code> in a later step. |   |
-| <code>ql/src/test/results/clientpositive/show_functions.q.out</code> | the expected output from the SHOW FUNCTIONS Hive query. Since we&rsquo;re adding a new <code>histogram()</code> function, this expected output will change to reflect the new function. This file will be modified by <code>ant</code> in a later step. |   |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFHistogram.java</code></td>
+<td>the main source file, to be created by you.</td>
+</tr>
+<tr>
+<td><code>ql/src/java/org/apache/hadoop/hive/ql/exec/FunctionRegistry.java</code></td>
+<td>the function registry source file, to be edited by you to register our new <code>histogram()</code> UDAF into Hive&rsquo;s built-in function list.</td>
+</tr>
+<tr>
+<td><code>ql/src/test/queries/clientpositive/udaf_histogram.q</code></td>
+<td>a file of sample queries for testing <code>histogram()</code> on sample data, to be created by you.</td>
+</tr>
+<tr>
+<td><code>ql/src/test/results/clientpositive/udaf_histogram.q.out</code></td>
+<td>the expected output from your sample queries, to be created by <code>ant</code> in a later step.</td>
+</tr>
+<tr>
+<td><code>ql/src/test/results/clientpositive/show_functions.q.out</code></td>
+<td>the expected output from the SHOW FUNCTIONS Hive query. Since we&rsquo;re adding a new <code>histogram()</code> function, this expected output will change to reflect the new function. This file will be modified by <code>ant</code> in a later step.</td>
+</tr>
+</tbody>
+</table>
 <h2 id=writing-the-source>Writing the source</h2>
 <p>This section gives a high-level outline of how to implement your own generic UDAF. For a concrete example, look at any of the existing UDAF sources present in <code>ql/src/java/org/apache/hadoop/hive/ql/udf/generic/</code> directory.</p>
 <h3 id=overview>Overview</h3>
@@ -290,13 +315,40 @@ public class GenericUDAFHistogramNumeric extends AbstractGenericUDAFResolver {
   } 
 
 </code></pre><p>What do all these functions do? The following is a brief summary of each function, in (roughly) chronological order of being called. It&rsquo;s <strong>very</strong> important to remember that the computation of your aggregation must be arbitrarily divisible over the data. Think of it like writing a divide-and-conquer algorithm where the partitioning of the data is completely out of your control and handled by Hive. More formally, given any subset of the input rows, you should be able to compute a partial result, and also be able to merge any pair of partial results into another partial result. This naturally makes it difficult to port over many existing algorithms, but should guarantee researchers jobs for quite some time.</p>
-<p>| <strong>Function</strong> | <strong>Purpose</strong> |
-| init | Called by Hive to initialize an instance of your UDAF evaluator class. |
-| getNewAggregationBuffer | Return an object that will be used to store temporary aggregation results. |
-| iterate | Process a new row of data into the aggregation buffer |
-| terminatePartial | Return the contents of the current aggregation in a persistable way. Here persistable means the return value can only be built up in terms of Java primitives, arrays, primitive wrappers (e.g. Double), Hadoop Writables, Lists, and Maps. Do NOT use your own classes (even if they implement java.io.Serializable), otherwise you may get strange errors or (probably worse) wrong results. |
-| merge | Merge a partial aggregation returned by <strong>terminatePartial</strong> into the current aggregation |
-| terminate | Return the final result of the aggregation to Hive |</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>init</td>
+<td>Called by Hive to initialize an instance of your UDAF evaluator class.</td>
+</tr>
+<tr>
+<td>getNewAggregationBuffer</td>
+<td>Return an object that will be used to store temporary aggregation results.</td>
+</tr>
+<tr>
+<td>iterate</td>
+<td>Process a new row of data into the aggregation buffer</td>
+</tr>
+<tr>
+<td>terminatePartial</td>
+<td>Return the contents of the current aggregation in a persistable way. Here persistable means the return value can only be built up in terms of Java primitives, arrays, primitive wrappers (e.g. Double), Hadoop Writables, Lists, and Maps. Do NOT use your own classes (even if they implement java.io.Serializable), otherwise you may get strange errors or (probably worse) wrong results.</td>
+</tr>
+<tr>
+<td>merge</td>
+<td>Merge a partial aggregation returned by <strong>terminatePartial</strong> into the current aggregation</td>
+</tr>
+<tr>
+<td>terminate</td>
+<td>Return the final result of the aggregation to Hive</td>
+</tr>
+</tbody>
+</table>
 <p>For writing the <code>histogram()</code> function, the following is the strategy that was adopted.</p>
 <h4 id=getnewaggregationbuffer>getNewAggregationBuffer</h4>
 <p>The aggregation buffer for a histogram is a list of (x,y) pairs that represent the histogram&rsquo;s bin centers and heights. In addition, the aggregation buffer also stores two integers with the maximum number of bins (a user-specified parameter), and the current number of bins used. The aggregation buffer is initialized to a &lsquo;not ready&rsquo; state with the number of bins set to 0. This is because Hive makes no distinction between a constant parameter supplied to a UDAF and a column from a table; thus, we have no way of knowing how many bins the user wants in their histogram until the first call to <code>iterate()</code>.</p>
@@ -339,13 +391,13 @@ build/dist/bin/hive
 </li>
 </ol>
 <pre tabindex=0><code>
-ant test -Dtestcase=TestCliDriver -Dqfile=udaf\_XXXXX.q -Doverwrite=true
+ant test -Dtestcase=TestCliDriver -Dqfile=udaf_XXXXX.q -Doverwrite=true
 
 </code></pre><ol start=6>
 <li>Run the following command to make sure your test runs fine.</li>
 </ol>
 <pre tabindex=0><code>
-ant test -Dtestcase=TestCliDriver -Dqfile=udaf\_XXXXX.q
+ant test -Dtestcase=TestCliDriver -Dqfile=udaf_XXXXX.q
 
 </code></pre><h1 id=checklist-for-open-source-submission>Checklist for open source submission</h1>
 <ul>
@@ -414,6 +466,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

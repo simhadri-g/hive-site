@@ -9,8 +9,8 @@
 <title>Apache Hive : LanguageManual UDF</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -123,7 +123,7 @@ ASF
 <h1 id=apache-hive--languagemanual-udf>Apache Hive : LanguageManual UDF</h1>
 <h1 id=hive-operators-and-user-defined-functions-udfs>Hive Operators and User-Defined Functions (UDFs)</h1>
 <ul>
-<li><a href=#hive-operators-and-user-defined-functions--udfs->Hive Operators and User-Defined Functions (UDFs)</a>
+<li><a href=#hive-operators-and-user-defined-functions-udfs>Hive Operators and User-Defined Functions (UDFs)</a>
 <ul>
 <li><a href=#built-in-operators>Built-in Operators</a>
 <ul>
@@ -149,16 +149,16 @@ ASF
 <li><a href=#conditional-functions>Conditional Functions</a></li>
 <li><a href=#string-functions>String Functions</a></li>
 <li><a href=#data-masking-functions>Data Masking Functions</a></li>
-<li><a href=#misc--functions>Misc. Functions</a>
+<li><a href=#misc-functions>Misc. Functions</a>
 <ul>
 <li><a href=#xpath>xpath</a></li>
-<li><a href=#get\_json\_object>get_json_object</a></li>
+<li><a href=#get_json_object>get_json_object</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href=#built-in-aggregate-functions--udaf->Built-in Aggregate Functions (UDAF)</a></li>
-<li><a href=#built-in-table-generating-functions--udtf->Built-in Table-Generating Functions (UDTF)</a>
+<li><a href=#built-in-aggregate-functions-udaf>Built-in Aggregate Functions (UDAF)</a></li>
+<li><a href=#built-in-table-generating-functions-udtf>Built-in Table-Generating Functions (UDTF)</a>
 <ul>
 <li><a href=#usage-examples>Usage Examples</a>
 <ul>
@@ -171,11 +171,11 @@ ASF
 </li>
 <li><a href=#explode>explode</a></li>
 <li><a href=#posexplode>posexplode</a></li>
-<li><a href=#json\_tuple>json_tuple</a></li>
-<li><a href=#parse\_url\_tuple>parse_url_tuple</a></li>
+<li><a href=#json_tuple>json_tuple</a></li>
+<li><a href=#parse_url_tuple>parse_url_tuple</a></li>
 </ul>
 </li>
-<li><a href=#grouping-and-sorting-on-f-column->GROUPing and SORTing on f(column)</a></li>
+<li><a href=#grouping-and-sorting-on-fcolumn>GROUPing and SORTing on f(column)</a></li>
 <li><a href=#utility-functions>Utility Functions</a></li>
 <li><a href=#udf-internals>UDF internals</a></li>
 <li><a href=#creating-custom-udfs>Creating Custom UDFs</a></li>
@@ -186,8 +186,8 @@ ASF
 <p>All Hive keywords are case-insensitive, including the names of Hive operators and functions.</p>
 <p>In <a href=#beeline>Beeline</a> or the <a href=https://hive.apache.org/docs/latest/languagemanual-cli_27362033/>CLI</a>, use the commands below to show the latest documentation:</p>
 <pre tabindex=0><code>SHOW FUNCTIONS;
-DESCRIBE FUNCTION &lt;function\_name&gt;;
-DESCRIBE FUNCTION EXTENDED &lt;function\_name&gt;;
+DESCRIBE FUNCTION &lt;function_name&gt;;
+DESCRIBE FUNCTION EXTENDED &lt;function_name&gt;;
 
 </code></pre><p>Bug for expression caching when UDF nested in UDF or function</p>
 <p>When <a href=#hive-cache-expr-evaluation>hive.cache.expr.evaluation</a> is set to true (which is the default) a UDF can give incorrect results if it is nested in another UDF or a Hive function. This bug affects releases 0.12.0, 0.13.0, and 0.13.1. Release 0.14.0 fixed the bug (<a href=https://issues.apache.org/jira/browse/HIVE-7314>HIVE-7314</a>).</p>
@@ -1234,28 +1234,122 @@ Closed</p>
 </tr>
 </tbody>
 </table>
-<p>|
-| string | regexp_extract(string subject, string pattern, int index) | Returns the string extracted using the pattern. For example, regexp_extract(&lsquo;foothebar&rsquo;, &lsquo;foo(.*?)(bar)&rsquo;, 2) returns &lsquo;bar.&rsquo; Note that some care is necessary in using predefined character classes: using &lsquo;\s&rsquo; as the second argument will match the letter s; &lsquo;\s&rsquo; is necessary to match whitespace, etc. The &lsquo;index&rsquo; parameter is the Java regex Matcher group() method index. See <a href=https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html>docs/api/java/util/regex/Matcher.html</a> for more information on the &lsquo;index&rsquo; or Java regex group() method. |
-| string | regexp_replace(string INITIAL_STRING, string PATTERN, string REPLACEMENT) | Returns the string resulting from replacing all substrings in INITIAL_STRING that match the java regular expression syntax defined in PATTERN with instances of REPLACEMENT. For example, regexp_replace(&ldquo;foobar&rdquo;, &ldquo;oo|ar&rdquo;, &ldquo;") returns &lsquo;fb.&rsquo; Note that some care is necessary in using predefined character classes: using &lsquo;\s&rsquo; as the second argument will match the letter s; &lsquo;\s&rsquo; is necessary to match whitespace, etc. |
-| string | repeat(string str, int n) | Repeats str n times. |
-| string | replace(string A, string OLD, string NEW) | Returns the string A with all non-overlapping occurrences of OLD replaced with NEW (as of <a href=https://issues.apache.org/jira/browse/HIVE-13063>Hive 1.3.0 and 2.1.0</a>). Example: select replace(&ldquo;ababab&rdquo;, &ldquo;abab&rdquo;, &ldquo;Z&rdquo;); returns &ldquo;Zab&rdquo;. |
-| string | reverse(string A) | Returns the reversed string. |
-| string | rpad(string str, int len, string pad) | Returns str, right-padded with pad to a length of len. If str is longer than len, the return value is shortened to len characters. In case of empty pad string, the return value is null. |
-| string | rtrim(string A) | Returns the string resulting from trimming spaces from the end(right hand side) of A. For example, rtrim(&rsquo; foobar &lsquo;) results in ' foobar&rsquo;. |
-| array&lt;array> | sentences(string str, string lang, string locale) | Tokenizes a string of natural language text into words and sentences, where each sentence is broken at the appropriate sentence boundary and returned as an array of words. The &lsquo;lang&rsquo; and &lsquo;locale&rsquo; are optional arguments. For example, sentences(&lsquo;Hello there! How are you?') returns ( (&ldquo;Hello&rdquo;, &ldquo;there&rdquo;), (&ldquo;How&rdquo;, &ldquo;are&rdquo;, &ldquo;you&rdquo;) ). |
-| string | space(int n) | Returns a string of n spaces. |
-| array | split(string str, string pat) | Splits str around pat (pat is a regular expression). |
-| map&lt;string,string> | str_to_map(text[, delimiter1, delimiter2]) | Splits text into key-value pairs using two delimiters. Delimiter1 separates text into K-V pairs, and Delimiter2 splits each K-V pair. Default delimiters are &lsquo;,&rsquo; for delimiter1 and &lsquo;:&rsquo; for delimiter2. |
-| string | substr(string|binary A, int start) substring(string|binary A, int start) | Returns the substring or slice of the byte array of A starting from start position till the end of string A. For example, substr(&lsquo;foobar&rsquo;, 4) results in &lsquo;bar&rsquo; (see [<a href=http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr>http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr</a>]). |
-| string | substr(string|binary A, int start, int len) substring(string|binary A, int start, int len) | Returns the substring or slice of the byte array of A starting from start position with length len. For example, substr(&lsquo;foobar&rsquo;, 4, 1) results in &lsquo;b&rsquo; (see [<a href=http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr>http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr</a>]). |
-| string | substring_index(string A, string delim, int count) | Returns the substring from string A before count occurrences of the delimiter delim (as of Hive <a href=https://issues.apache.org/jira/browse/HIVE-686>1.3.0</a>). If count is positive, everything to the left of the final delimiter (counting from the left) is returned. If count is negative, everything to the right of the final delimiter (counting from the right) is returned. Substring_index performs a case-sensitive match when searching for delim. Example: substring_index(&lsquo;<a href=http://www.apache.org>www.apache.org</a>&rsquo;, &lsquo;.&rsquo;, 2) = &lsquo;www.apache&rsquo;. |
-| string | translate(string|char|varchar input, string|char|varchar from, string|char|varchar to) | Translates the input string by replacing the characters present in the <code>from</code> string with the corresponding characters in the <code>to</code> string. This is similar to the <code>translate</code> function in <a href=http://www.postgresql.org/docs/9.1/interactive/functions-string.html>PostgreSQL</a>. If any of the parameters to this UDF are NULL, the result is NULL as well. (Available as of Hive <a href=https://issues.apache.org/jira/browse/HIVE-2418>0.10.0</a>, for string types)Char/varchar support added as of <a href=https://issues.apache.org/jira/browse/HIVE-6622>Hive 0.14.0</a>. |
-| string | trim(string A) | Returns the string resulting from trimming spaces from both ends of A. For example, trim(&rsquo; foobar &lsquo;) results in &lsquo;foobar&rsquo; |
-| binary | unbase64(string str) | Converts the argument from a base 64 string to BINARY. (As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-2482>0.12.0</a>.) |
-| string | upper(string A) ucase(string A) | Returns the string resulting from converting all characters of A to upper case. For example, upper(&lsquo;fOoBaR&rsquo;) results in &lsquo;FOOBAR&rsquo;. |
-| string | initcap(string A) | Returns string, with the first letter of each word in uppercase, all other letters in lowercase. Words are delimited by whitespace. (As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-3405>1.1.0</a>.) |
-| int | levenshtein(string A, string B) | Returns the Levenshtein distance between two strings (as of Hive <a href=https://issues.apache.org/jira/browse/HIVE-9556>1.2.0</a>). For example, levenshtein(&lsquo;kitten&rsquo;, &lsquo;sitting&rsquo;) results in 3. |
-| string | soundex(string A) | Returns soundex code of the string (as of Hive <a href=https://issues.apache.org/jira/browse/HIVE-9738>1.2.0</a>). For example, soundex(&lsquo;Miller&rsquo;) results in M460. |</p>
+<table>
+<thead>
+<tr>
+<th><strong>Return Type</strong></th>
+<th><strong>Name(Signature)</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td>regexp_extract(string subject, string pattern, int index)</td>
+<td>Returns the string extracted using the pattern. For example, regexp_extract(&lsquo;foothebar&rsquo;, &lsquo;foo(.*?)(bar)&rsquo;, 2) returns &lsquo;bar.&rsquo; Note that some care is necessary in using predefined character classes: using &lsquo;\s&rsquo; as the second argument will match the letter s; &lsquo;\s&rsquo; is necessary to match whitespace, etc. The &lsquo;index&rsquo; parameter is the Java regex Matcher group() method index. See <a href=https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html>docs/api/java/util/regex/Matcher.html</a> for more information on the &lsquo;index&rsquo; or Java regex group() method.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>regexp_replace(string INITIAL_STRING, string PATTERN, string REPLACEMENT)</td>
+<td>Returns the string resulting from replacing all substrings in INITIAL_STRING that match the java regular expression syntax defined in PATTERN with instances of REPLACEMENT. For example, regexp_replace(&ldquo;foobar&rdquo;, &ldquo;oo</td>
+</tr>
+<tr>
+<td>string</td>
+<td>repeat(string str, int n)</td>
+<td>Repeats str n times.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>replace(string A, string OLD, string NEW)</td>
+<td>Returns the string A with all non-overlapping occurrences of OLD replaced with NEW (as of <a href=https://issues.apache.org/jira/browse/HIVE-13063>Hive 1.3.0 and 2.1.0</a>). Example: select replace(&ldquo;ababab&rdquo;, &ldquo;abab&rdquo;, &ldquo;Z&rdquo;); returns &ldquo;Zab&rdquo;.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>reverse(string A)</td>
+<td>Returns the reversed string.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>rpad(string str, int len, string pad)</td>
+<td>Returns str, right-padded with pad to a length of len. If str is longer than len, the return value is shortened to len characters. In case of empty pad string, the return value is null.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>rtrim(string A)</td>
+<td>Returns the string resulting from trimming spaces from the end(right hand side) of A. For example, rtrim(&rsquo; foobar &lsquo;) results in ' foobar&rsquo;.</td>
+</tr>
+<tr>
+<td>array&lt;array></td>
+<td>sentences(string str, string lang, string locale)</td>
+<td>Tokenizes a string of natural language text into words and sentences, where each sentence is broken at the appropriate sentence boundary and returned as an array of words. The &lsquo;lang&rsquo; and &lsquo;locale&rsquo; are optional arguments. For example, sentences(&lsquo;Hello there! How are you?') returns ( (&ldquo;Hello&rdquo;, &ldquo;there&rdquo;), (&ldquo;How&rdquo;, &ldquo;are&rdquo;, &ldquo;you&rdquo;) ).</td>
+</tr>
+<tr>
+<td>string</td>
+<td>space(int n)</td>
+<td>Returns a string of n spaces.</td>
+</tr>
+<tr>
+<td>array</td>
+<td>split(string str, string pat)</td>
+<td>Splits str around pat (pat is a regular expression).</td>
+</tr>
+<tr>
+<td>map&lt;string,string></td>
+<td>str_to_map(text[, delimiter1, delimiter2])</td>
+<td>Splits text into key-value pairs using two delimiters. Delimiter1 separates text into K-V pairs, and Delimiter2 splits each K-V pair. Default delimiters are &lsquo;,&rsquo; for delimiter1 and &lsquo;:&rsquo; for delimiter2.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>substr(string</td>
+<td>binary A, int start) substring(string</td>
+</tr>
+<tr>
+<td>string</td>
+<td>substr(string</td>
+<td>binary A, int start, int len) substring(string</td>
+</tr>
+<tr>
+<td>string</td>
+<td>substring_index(string A, string delim, int count)</td>
+<td>Returns the substring from string A before count occurrences of the delimiter delim (as of Hive <a href=https://issues.apache.org/jira/browse/HIVE-686>1.3.0</a>). If count is positive, everything to the left of the final delimiter (counting from the left) is returned. If count is negative, everything to the right of the final delimiter (counting from the right) is returned. Substring_index performs a case-sensitive match when searching for delim. Example: substring_index(&lsquo;<a href=http://www.apache.org>www.apache.org</a>&rsquo;, &lsquo;.&rsquo;, 2) = &lsquo;www.apache&rsquo;.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>translate(string</td>
+<td>char</td>
+</tr>
+<tr>
+<td>string</td>
+<td>trim(string A)</td>
+<td>Returns the string resulting from trimming spaces from both ends of A. For example, trim(&rsquo; foobar &lsquo;) results in &lsquo;foobar&rsquo;</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>unbase64(string str)</td>
+<td>Converts the argument from a base 64 string to BINARY. (As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-2482>0.12.0</a>.)</td>
+</tr>
+<tr>
+<td>string</td>
+<td>upper(string A) ucase(string A)</td>
+<td>Returns the string resulting from converting all characters of A to upper case. For example, upper(&lsquo;fOoBaR&rsquo;) results in &lsquo;FOOBAR&rsquo;.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>initcap(string A)</td>
+<td>Returns string, with the first letter of each word in uppercase, all other letters in lowercase. Words are delimited by whitespace. (As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-3405>1.1.0</a>.)</td>
+</tr>
+<tr>
+<td>int</td>
+<td>levenshtein(string A, string B)</td>
+<td>Returns the Levenshtein distance between two strings (as of Hive <a href=https://issues.apache.org/jira/browse/HIVE-9556>1.2.0</a>). For example, levenshtein(&lsquo;kitten&rsquo;, &lsquo;sitting&rsquo;) results in 3.</td>
+</tr>
+<tr>
+<td>string</td>
+<td>soundex(string A)</td>
+<td>Returns soundex code of the string (as of Hive <a href=https://issues.apache.org/jira/browse/HIVE-9738>1.2.0</a>). For example, soundex(&lsquo;Miller&rsquo;) results in M460.</td>
+</tr>
+</tbody>
+</table>
 <h3 id=data-masking-functions>Data Masking Functions</h3>
 <p>The following built-in data masking functions are supported in Hive:</p>
 <table>
@@ -1416,19 +1510,19 @@ Closed</p>
   {&quot;fruit&quot;:\[{&quot;weight&quot;:8,&quot;type&quot;:&quot;apple&quot;},{&quot;weight&quot;:9,&quot;type&quot;:&quot;pear&quot;}],
    &quot;bicycle&quot;:{&quot;price&quot;:19.95,&quot;color&quot;:&quot;red&quot;}
   },
- &quot;email&quot;:&quot;amy@only\_for\_json\_udf\_test.net&quot;,
+ &quot;email&quot;:&quot;amy@only_for_json_udf_test.net&quot;,
  &quot;owner&quot;:&quot;amy&quot;
 }
 +----+
 
 </code></pre><p>The fields of the json object can be extracted using these queries:</p>
-<pre tabindex=0><code>hive&gt; SELECT get\_json\_object(src\_json.json, '$.owner') FROM src\_json;
+<pre tabindex=0><code>hive&gt; SELECT get_json_object(src_json.json, '$.owner') FROM src_json;
 amy
 
-hive&gt; SELECT get\_json\_object(src\_json.json, '$.store.fruit\[0]') FROM src\_json;
+hive&gt; SELECT get_json_object(src_json.json, '$.store.fruit\[0]') FROM src_json;
 {&quot;weight&quot;:8,&quot;type&quot;:&quot;apple&quot;}
 
-hive&gt; SELECT get\_json\_object(src\_json.json, '$.non\_exist\_key') FROM src\_json;
+hive&gt; SELECT get_json_object(src_json.json, '$.non_exist_key') FROM src_json;
 NULL
 
 </code></pre><h2 id=built-in-aggregate-functions-udaf>Built-in Aggregate Functions (UDAF)</h2>
@@ -1802,31 +1896,31 @@ select tf.* from (select 0) t lateral view stack(2,'A',10,date '2015-01-01','B',
 <h3 id=json_tuple>json_tuple</h3>
 <p>A new json_tuple() UDTF is introduced in Hive 0.7. It takes a set of names (keys) and a JSON string, and returns a tuple of values using one function. This is much more efficient than calling GET_JSON_OBJECT to retrieve more than one key from a single JSON string. In any case where a single JSON string would be parsed more than once, your query will be more efficient if you parse it once, which is what JSON_TUPLE is for. As JSON_TUPLE is a UDTF, you will need to use the <a href=https://hive.apache.org/docs/latest/languagemanual-lateralview_27362040/>LATERAL VIEW</a> syntax in order to achieve the same goal.</p>
 <p>For example,</p>
-<pre tabindex=0><code>select a.timestamp, get\_json\_object(a.appevents, '$.eventid'), get\_json\_object(a.appenvets, '$.eventname') from log a;
+<pre tabindex=0><code>select a.timestamp, get_json_object(a.appevents, '$.eventid'), get_json_object(a.appenvets, '$.eventname') from log a;
 
 </code></pre><p>should be changed to:</p>
 <pre tabindex=0><code>select a.timestamp, b.*
-from log a lateral view json\_tuple(a.appevent, 'eventid', 'eventname') b as f1, f2;
+from log a lateral view json_tuple(a.appevent, 'eventid', 'eventname') b as f1, f2;
 
 </code></pre><h3 id=parse_url_tuple>parse_url_tuple</h3>
 <p>The parse_url_tuple() UDTF is similar to parse_url(), but can extract multiple parts of a given URL, returning the data in a tuple. Values for a particular key in QUERY can be extracted by appending a colon and the key to the partToExtract argument, for example, parse_url_tuple(&lsquo;<a href="http://facebook.com/path1/p.php?k1=v1&k2=v2#Ref1'">http://facebook.com/path1/p.php?k1=v1&k2=v2#Ref1'</a>, &lsquo;QUERY:k1&rsquo;, &lsquo;QUERY:k2&rsquo;) returns a tuple with values of &lsquo;v1&rsquo;,&lsquo;v2&rsquo;. This is more efficient than calling parse_url() multiple times. All the input parameters and output column types are string.</p>
 <pre tabindex=0><code>SELECT b.*
-FROM src LATERAL VIEW parse\_url\_tuple(fullurl, 'HOST', 'PATH', 'QUERY', 'QUERY:id') b as host, path, query, query\_id LIMIT 1;
+FROM src LATERAL VIEW parse_url_tuple(fullurl, 'HOST', 'PATH', 'QUERY', 'QUERY:id') b as host, path, query, query_id LIMIT 1;
 
 </code></pre><h2 id=grouping-and-sorting-on-fcolumn>GROUPing and SORTing on f(column)</h2>
 <p>A typical OLAP pattern is that you have a timestamp column and you want to group by daily or other less granular date windows than by second. So you might want to select concat(year(dt),month(dt)) and then group on that concat(). But if you attempt to GROUP BY or SORT BY a column on which you&rsquo;ve applied a function and alias, like this:</p>
-<pre tabindex=0><code>select f(col) as fc, count(*) from table\_name group by fc;
+<pre tabindex=0><code>select f(col) as fc, count(*) from table_name group by fc;
 
 </code></pre><p>you will get an error:</p>
 <pre tabindex=0><code>FAILED: Error in semantic analysis: line 1:69 Invalid Table Alias or Column Reference fc
 
 </code></pre><p>because you are not able to GROUP BY or SORT BY a column alias on which a function has been applied. There are two workarounds. First, you can reformulate this query with subqueries, which is somewhat complicated:</p>
 <pre tabindex=0><code>select sq.fc,col1,col2,...,colN,count(*) from
-  (select f(col) as fc,col1,col2,...,colN from table\_name) sq
+  (select f(col) as fc,col1,col2,...,colN from table_name) sq
  group by sq.fc,col1,col2,...,colN;
 
 </code></pre><p>Or you can make sure not to use a column alias, which is simpler:</p>
-<pre tabindex=0><code>select f(col) as fc, count(*) from table\_name group by f(col);
+<pre tabindex=0><code>select f(col) as fc, count(*) from table_name group by f(col);
 
 </code></pre><p>Contact Tim Ellis (tellis) at RiotGames dot com if you would like to discuss this in further detail.</p>
 <h2 id=utility-functions>Utility Functions</h2>
@@ -1856,12 +1950,12 @@ FROM src LATERAL VIEW parse\_url\_tuple(fullurl, 'HOST', 'PATH', 'QUERY', 'QUERY
 </table>
 <h2 id=udf-internals>UDF internals</h2>
 <p>The context of a UDF&rsquo;s evaluate method is one row at a time. A simple invocation of a UDF like</p>
-<pre tabindex=0><code>SELECT length(string\_col) FROM table\_name;
+<pre tabindex=0><code>SELECT length(string_col) FROM table_name;
 
 </code></pre><p>would evaluate the length of each of the string_col&rsquo;s values in the map portion of the job. The side effect of the UDF being evaluated on the map-side is that you can&rsquo;t control the order of rows which get sent to the mapper. It is the same order in which the file split sent to the mapper gets deserialized. Any reduce side operation (such as SORT BY, ORDER BY, regular JOIN, etc.) would apply to the UDFs output as if it is just another column of the table. This is fine since the context of the UDF&rsquo;s evaluate method is meant to be one row at a time.</p>
 <p>If you would like to control which rows get sent to the same UDF (and possibly in what order), you will have the urge to make the UDF evaluate during the reduce phase. This is achievable by making use of <a href=https://hive.apache.org/docs/latest/languagemanual-sortby_27362045/>DISTRIBUTE BY, DISTRIBUTE BY + SORT BY, CLUSTER BY</a>. An example query would be:</p>
-<pre tabindex=0><code>SELECT reducer\_udf(my\_col, distribute\_col, sort\_col) FROM
-(SELECT my\_col, distribute\_col, sort\_col FROM table\_name DISTRIBUTE BY distribute\_col SORT BY distribute\_col, sort\_col) t
+<pre tabindex=0><code>SELECT reducer_udf(my_col, distribute_col, sort_col) FROM
+(SELECT my_col, distribute_col, sort_col FROM table_name DISTRIBUTE BY distribute_col SORT BY distribute_col, sort_col) t
 
 </code></pre><p>However, one could argue that the very premise of your requirement to control the set of rows sent to the same UDF is to do aggregation in that UDF. In such a case, using a User Defined Aggregate Function (UDAF) is a better choice. You can read more about writing a UDAF <a href=https://hive.apache.org/docs/latest/genericudafcasestudy_27362093/>here</a>. Alternatively, you can user a custom reduce script to accomplish the same using <a href=https://hive.apache.org/docs/latest/languagemanual-transform_27362047/>Hive&rsquo;s Transform functionality</a>. Both of these options would do aggregations on the reduce side.</p>
 <h2 id=creating-custom-udfs>Creating Custom UDFs</h2>
@@ -1905,6 +1999,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

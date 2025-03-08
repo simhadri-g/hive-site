@@ -9,8 +9,8 @@
 <title>Apache Hive : HiveDeveloperFAQ</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -127,47 +127,47 @@ ASF
 <ul>
 <li><a href=#developing>Developing</a>
 <ul>
-<li><a href=#how-do-i-move-some-files?>How do I move some files?</a></li>
-<li><a href=#how-do-i-add-a-new-minidriver-test?>How do I add a new MiniDriver test?</a></li>
+<li><a href=#how-do-i-move-some-files>How do I move some files?</a></li>
+<li><a href=#how-do-i-add-a-new-minidriver-test>How do I add a new MiniDriver test?</a></li>
 </ul>
 </li>
 <li><a href=#building>Building</a>
 <ul>
 <li><a href=#maven-settings>Maven settings</a></li>
-<li><a href=#how-to-build-all-source?>How to build all source?</a></li>
-<li><a href=#how-do-i-import-into-eclipse?>How do I import into Eclipse?</a></li>
-<li><a href=#how-to-generate-tarball?>How to generate tarball?</a></li>
-<li><a href=#how-to-generate-protobuf-code?>How to generate protobuf code?</a></li>
-<li><a href=#how-to-generate-thrift-code?>How to generate Thrift code?</a></li>
+<li><a href=#how-to-build-all-source>How to build all source?</a></li>
+<li><a href=#how-do-i-import-into-eclipse>How do I import into Eclipse?</a></li>
+<li><a href=#how-to-generate-tarball>How to generate tarball?</a></li>
+<li><a href=#how-to-generate-protobuf-code>How to generate protobuf code?</a></li>
+<li><a href=#how-to-generate-thrift-code>How to generate Thrift code?</a></li>
 <li><a href=#how-to-run-findbugs-after-a-change?>How to run findbugs after a change?</a></li>
-<li><a href=#how-to-compile-odbc?>How to compile ODBC?</a></li>
-<li><a href=#how-do-i-publish-hive-artifacts-to-my-local-maven-repository?>How do I publish Hive artifacts to my local Maven repository?</a></li>
+<li><a href=#how-to-compile-odbc>How to compile ODBC?</a></li>
+<li><a href=#how-do-i-publish-hive-artifacts-to-my-local-maven-repository>How do I publish Hive artifacts to my local Maven repository?</a></li>
 </ul>
 </li>
 <li><a href=#testing>Testing</a>
 <ul>
-<li><a href=#how-do-i-run-precommit-tests-on-a-patch?>How do I run precommit tests on a patch?</a></li>
-<li><a href=#how-do-i-rerun-precommit-tests-over-the-same-patch?>How do I rerun precommit tests over the same patch?</a></li>
-<li><a href=#how-do-i-run-a-single-test?>How do I run a single test?</a></li>
-<li><a href=#how-do-i-run-all-of-the-unit-tests?>How do I run all of the unit tests?</a></li>
-<li><a href=#how-do-i-run-all-of-the-unit-tests-except-for-a-certain-few-tests?>How do I run all of the unit tests except for a certain few tests?</a></li>
-<li><a href=#how-do-i-run-the-clientpositive/clientnegative-unit-tests?>How do I run the clientpositive/clientnegative unit tests?</a></li>
-<li><a href=#how-do-i-run-with-postgre/mysql/oracle?>How do I run with Postgre/MySQL/Oracle?</a></li>
-<li><a href=#how-do-i-remote-debug-a-qtest?>How do I remote debug a qtest?</a></li>
-<li><a href=#how-do-i-modify-the-init-script-when-testing?>How do I modify the init script when testing?</a></li>
-<li><a href=#how-do-i-update-the-output-of-a-clidriver-testcase?>How do I update the output of a CliDriver testcase?</a></li>
-<li><a href=#how-do-i-update-the-results-of-many-test-cases?>How do I update the results of many test cases?</a></li>
-<li><a href=#where-is-the-log-output-of-a-test?>Where is the log output of a test?</a></li>
-<li><a href=#how-do-i-add-a-test-case?>How do I add a test case?</a></li>
-<li><a href="#why-isn't-the-itests-pom-connected-to-the-root-pom?">Why isn&rsquo;t the itests pom connected to the root pom?</a></li>
-<li><a href=#why-does-a-test-fail-with-a-nullpointerexception-in-minidfscluster?>Why does a test fail with a NullPointerException in MiniDFSCluster?</a></li>
-<li><a href=#why-do-spark-unit-tests-fail-with-a-securityexception?>Why do Spark unit tests fail with a SecurityException?</a></li>
+<li><a href=#how-do-i-run-precommit-tests-on-a-patch>How do I run precommit tests on a patch?</a></li>
+<li><a href=#how-do-i-rerun-precommit-tests-over-the-same-patch>How do I rerun precommit tests over the same patch?</a></li>
+<li><a href=#how-do-i-run-a-single-test>How do I run a single test?</a></li>
+<li><a href=#how-do-i-run-all-of-the-unit-tests>How do I run all of the unit tests?</a></li>
+<li><a href=#how-do-i-run-all-of-the-unit-tests-except-for-a-certain-few-tests>How do I run all of the unit tests except for a certain few tests?</a></li>
+<li><a href=#how-do-i-run-the-clientpositiveclientnegative-unit-tests>How do I run the clientpositive/clientnegative unit tests?</a></li>
+<li><a href=#how-do-i-run-with-postgremysqloracle>How do I run with Postgre/MySQL/Oracle?</a></li>
+<li><a href=#how-do-i-remote-debug-a-qtest>How do I remote debug a qtest?</a></li>
+<li><a href=#how-do-i-modify-the-init-script-when-testing>How do I modify the init script when testing?</a></li>
+<li><a href=#how-do-i-update-the-output-of-a-clidriver-testcase>How do I update the output of a CliDriver testcase?</a></li>
+<li><a href=#how-do-i-update-the-results-of-many-test-cases>How do I update the results of many test cases?</a></li>
+<li><a href=#where-is-the-log-output-of-a-test>Where is the log output of a test?</a></li>
+<li><a href=#how-do-i-add-a-test-case>How do I add a test case?</a></li>
+<li><a href=#why-isnt-the-itests-pom-connected-to-the-root-pom>Why isn&rsquo;t the itests pom connected to the root pom?</a></li>
+<li><a href=#why-does-a-test-fail-with-a-nullpointerexception-in-minidfscluster>Why does a test fail with a NullPointerException in MiniDFSCluster?</a></li>
+<li><a href=#why-do-spark-unit-tests-fail-with-a-securityexception>Why do Spark unit tests fail with a SecurityException?</a></li>
 </ul>
 </li>
 <li><a href=#debugging>Debugging</a>
 <ul>
 <li><a href=#how-do-i-debug-into-a-single-test-in-eclipse?>How do I debug into a single test in Eclipse?</a></li>
-<li><a href=#how-do-i-debug-my-queries-in-hive?>How do I debug my queries in Hive?</a></li>
+<li><a href=#how-do-i-debug-my-queries-in-hive>How do I debug my queries in Hive?</a></li>
 </ul>
 </li>
 </ul>
@@ -318,30 +318,30 @@ mvn test -Dtest=TestCliDriver
 mvn test -Dtest=TestNegativeCliDriver -Dqfile=alter1.q 
 </code></pre><p>To run all of the clientpositive tests that match a regex, for example the partition_wise_fileformat tests</p>
 <pre tabindex=0><code>cd itests/qtest
-mvn test -Dtest=TestCliDriver -Dqfile\_regex=partition\_wise\_fileformat.* 
+mvn test -Dtest=TestCliDriver -Dqfile_regex=partition_wise_fileformat.* 
 
 # Alternatively, you can specify comma separated list with &quot;-Dqfile&quot; argument
-mvn test -Dtest=TestMiniLlapLocalCliDriver -Dqfile='vectorization\_0.q,vectorization\_17.q,vectorization\_8.q'
+mvn test -Dtest=TestMiniLlapLocalCliDriver -Dqfile='vectorization_0.q,vectorization_17.q,vectorization_8.q'
 </code></pre><p>To run a single contrib test alter1.q and overwrite the result file</p>
 <pre tabindex=0><code>cd itests/qtest
 mvn test -Dtest=TestContribCliDriver -Dqfile=alter1.q -Dtest.output.overwrite=true 
 </code></pre><h3 id=how-do-i-run-with-postgremysqloracle>How do I run with Postgre/MySQL/Oracle?</h3>
 <p>To run test test with a specified DB it is possible by adding &ldquo;-Dtest.metastore.db&rdquo; parameter like in the following commands:</p>
-<pre tabindex=0><code>mvn test -Pitests -pl itests/qtest -Dtest=TestCliDriver -Dqfile=partition\_params\_postgres.q -Dtest.metastore.db=postgres
+<pre tabindex=0><code>mvn test -Pitests -pl itests/qtest -Dtest=TestCliDriver -Dqfile=partition_params_postgres.q -Dtest.metastore.db=postgres
 
-mvn test -Pitests -pl itests/qtest -Dtest=TestCliDriver -Dqfile=partition\_params\_postgres.q -Dtest.metastore.db=mssql
-mvn test -Pitests -pl itests/qtest -Dtest=TestCliDriver -Dqfile=partition\_params\_postgres.q -Dtest.metastore.db=mysql
-mvn test -Pitests -pl itests/qtest -Dtest=TestCliDriver -Dqfile=partition\_params\_postgres.q -Dtest.metastore.db=oracle -Ditest.jdbc.jars=/path/to/your/god/damn/oracle/jdbc/driver/ojdbc6.jar
+mvn test -Pitests -pl itests/qtest -Dtest=TestCliDriver -Dqfile=partition_params_postgres.q -Dtest.metastore.db=mssql
+mvn test -Pitests -pl itests/qtest -Dtest=TestCliDriver -Dqfile=partition_params_postgres.q -Dtest.metastore.db=mysql
+mvn test -Pitests -pl itests/qtest -Dtest=TestCliDriver -Dqfile=partition_params_postgres.q -Dtest.metastore.db=oracle -Ditest.jdbc.jars=/path/to/your/god/damn/oracle/jdbc/driver/ojdbc6.jar
 </code></pre><p>Without specifying -Dqfile it will run all .q files .</p>
 <h3 id=how-do-i-remote-debug-a-qtest>How do I remote debug a qtest?</h3>
 <pre tabindex=0><code>cd itests/qtest
-mvn -Dmaven.surefire.debug=&quot;-Xdebug -Xrunjdwp:transport=dt\_socket,server=y,suspend=y,address=8000 -Xnoagent -Djava.compiler=NONE&quot; test -Dtest=TestCliDriver -Dqfile=&lt;test&gt;.q
+mvn -Dmaven.surefire.debug=&quot;-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -Xnoagent -Djava.compiler=NONE&quot; test -Dtest=TestCliDriver -Dqfile=&lt;test&gt;.q
 </code></pre><h3 id=how-do-i-modify-the-init-script-when-testing>How do I modify the init script when testing?</h3>
 <p>The option to skip the init script or supply a custom init script was added in Hive 2.0 (see <a href=https://issues.apache.org/jira/browse/HIVE-11538>HIVE-11538</a>).</p>
 <p>To skip initialization:</p>
-<pre tabindex=0><code>mvn test -Dtest=TestCliDriver -Phadoop-2 -Dqfile=test\_to\_run.q  -DinitScript=
+<pre tabindex=0><code>mvn test -Dtest=TestCliDriver -Phadoop-2 -Dqfile=test_to_run.q  -DinitScript=
 </code></pre><p>To supply a custom script:</p>
-<pre tabindex=0><code>mvn test -Dtest=TestCliDriver -Phadoop-2 -Dtest.output.overwrite=true -Dqfile=test\_to\_run.q  -DinitScript=custom\_script.sql
+<pre tabindex=0><code>mvn test -Dtest=TestCliDriver -Phadoop-2 -Dtest.output.overwrite=true -Dqfile=test_to_run.q  -DinitScript=custom_script.sql
 </code></pre><h3 id=how-do-i-update-the-output-of-a-clidriver-testcase>How do I update the output of a CliDriver testcase?</h3>
 <pre tabindex=0><code>cd itests/qtest
 mvn test -Dtest=TestCliDriver -Dqfile=alter1.q -Dtest.output.overwrite=true 
@@ -349,17 +349,17 @@ mvn test -Dtest=TestCliDriver -Dqfile=alter1.q -Dtest.output.overwrite=true
 </code></pre><h3 id=how-do-i-update-the-results-of-many-test-cases>How do I update the results of many test cases?</h3>
 <p>Assume that you have a file like below which you&rsquo;d like to re-generate output files for. Such a file could be created by copying the output from the precommit tests.</p>
 <pre tabindex=0><code>head -2 /tmp/failed-TestCliDriver-file-tests
-org.apache.hadoop.hive.cli.TestCliDriver.testCliDriver\_allcolref\_in\_udf
-org.apache.hadoop.hive.cli.TestCliDriver.testCliDriver\_annotate\_stats\_join
+org.apache.hadoop.hive.cli.TestCliDriver.testCliDriver_allcolref_in_udf
+org.apache.hadoop.hive.cli.TestCliDriver.testCliDriver_annotate_stats_join
 </code></pre><p>You can re-generate all those output files in batches of 20 with the command below</p>
-<pre tabindex=0><code>egrep 'TestCliDriver' /tmp/failed-TestCliDriver-file-tests | perl -pe 's@.*testCliDriver\_@@g' | awk '{print $1 &quot;.q&quot;}' | xargs -n 30 | perl -pe 's@ @,@g' | xargs -I{} mvn test -Dtest=TestCliDriver -Dtest.output.overwrite=true -Dqfile={}
+<pre tabindex=0><code>egrep 'TestCliDriver' /tmp/failed-TestCliDriver-file-tests | perl -pe 's@.*testCliDriver_@@g' | awk '{print $1 &quot;.q&quot;}' | xargs -n 30 | perl -pe 's@ @,@g' | xargs -I{} mvn test -Dtest=TestCliDriver -Dtest.output.overwrite=true -Dqfile={}
 </code></pre><p>To do the same from the output of a precommit result, with multiple drivers, you can do</p>
 <pre tabindex=0><code>import re
 from itertools import groupby
 s = &quot;&quot;&quot;
-org.apache.hadoop.hive.cli.TestBeeLineDriver.testCliDriver[drop\_with\_concurrency] (batchId=231)
+org.apache.hadoop.hive.cli.TestBeeLineDriver.testCliDriver[drop_with_concurrency] (batchId=231)
 org.apache.hadoop.hive.cli.TestCliDriver.testCliDriver[comments] (batchId=35)
-org.apache.hadoop.hive.cli.TestMiniLlapLocalCliDriver.testCliDriver[vector\_if\_expr] (batchId=141)
+org.apache.hadoop.hive.cli.TestMiniLlapLocalCliDriver.testCliDriver[vector_if_expr] (batchId=141)
 &quot;&quot;&quot;
 PAT = re.compile(&quot;org.apache.hadoop.hive.cli.([^\.]*).*\[([^\]]*).*&quot;)
 l = [PAT.match(x.strip()) for x in s.split(&quot;\n&quot;) if x.strip()]
@@ -432,15 +432,15 @@ java.lang.SecurityException: class &quot;javax.servlet.FilterRegistration&quot;'
 <h3 id=how-do-i-debug-into-asingle-testin-eclipse>How do I debug into a single test in Eclipse?</h3>
 <p>You can debug into a single JUnit test in <a href=https://www.eclipse.org/users/>Eclipse</a> by first making sure you&rsquo;ve built the Eclipse files and imported the project into Eclipse as described <a href=#here>here</a>. Then set one or more breakpoints, highlight the method name of the JUnit test method you want to debug into, and do <code>Run->Debug</code>.</p>
 <p>Another useful method to debug these tests is to attach a remote debugger. When you run the test, enable the debug mode for surefire by passing in &ldquo;<code>-Dmaven.surefire.debug</code>&rdquo;. Additional details on how to turning on debugging for surefire can be found <a href=http://maven.apache.org/surefire/maven-surefire-plugin/examples/debugging.html>here</a>. Now when you run the tests, it will wait with a message similar to</p>
-<pre tabindex=0><code>Listening for transport dt\_socket at address: 5005
+<pre tabindex=0><code>Listening for transport dt_socket at address: 5005
 </code></pre><p>Note that this assumes that you are still using the default port 5005 for surefire. Otherwise you might see a different port. Once you see this message, in Eclipse right click on the project you want to debug, go to &ldquo;Debug As -> Debug Configurations -> Remote Java Application&rdquo; and hit the &ldquo;+&rdquo; sign on far left top. This should bring up a dialog box. Make sure that the host is &ldquo;localhost&rdquo; and the port is &ldquo;5005&rdquo;. Before you start debugging, make sure that you have set appropriate debug breakpoints in the code. Once ready, hit &ldquo;Debug&rdquo;. Now if you go back to the terminal, you should see the tests running and they will stop at the breakpoints that you set for debugging.</p>
 <h3 id=how-do-i-debug-my-queries-in-hive>How do I debug my queries in Hive?</h3>
 <p>You can also interactively debug your queries in Hive by attaching a remote debugger. To do so, start <a href=#beeline>Beeline</a> with the &ldquo;<code>--debug</code>&rdquo; option.</p>
 <pre tabindex=0><code>$ beeline --debug
-Listening for transport dt\_socket at address: 8000
+Listening for transport dt_socket at address: 8000
 </code></pre><p>Once you see this message, in Eclipse right click on the project you want to debug, go to &ldquo;Debug As -> Debug Configurations -> Remote Java Application&rdquo; and hit the &ldquo;+&rdquo; sign on far left top. This should bring up a dialog box. Make sure that the host is the host on which the Beeline CLI is running and the port is &ldquo;8000&rdquo;. Before you start debugging, make sure that you have set appropriate debug breakpoints in the code. Once ready, hit &ldquo;Debug&rdquo;. The remote debugger should attach to Beeline and proceed.</p>
 <pre tabindex=0><code>$ beeline --debug
-Listening for transport dt\_socket at address: 8000
+Listening for transport dt_socket at address: 8000
 Beeline version 1.2.0 by Apache Hive
 beeline&gt;
 </code></pre><p>At this point, run your queries as normal and it should stop at the breakpoints that you set so that you can start debugging.</p>
@@ -485,6 +485,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

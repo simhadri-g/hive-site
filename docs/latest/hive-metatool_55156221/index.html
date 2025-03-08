@@ -9,8 +9,8 @@
 <title>Apache Hive : Hive MetaTool</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -148,34 +148,38 @@ ASF
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>-listFSRoot</code></td>
+<td>Print the location of the current file system root (NameNode). The value is prefixed with <code>hdfs:// scheme</code>.</td>
+</tr>
+<tr>
+<td><code>-updateLocation &lt;new-loc> &lt;old-loc></code></td>
+<td>Update records in the Hive metastore to point to a new NameNode location (file system root location). Both <em>new-loc</em> and <em>old-loc</em> should be valid URIs with valid host names and schemes. For upgrading to HDFS HA NN, <em>new-loc</em> should match the value of the <code>dfs.nameservices</code> property. The <em>old-loc</em> should match the value returned by the <strong>listFSRoot</strong> option.When run with the <strong>dryRun</strong> option, changes are displayed but are not persisted. When run with the <strong>serdepropKey</strong>/<strong>tablePropKey</strong> option, <strong>updateLocation</strong> looks for the <em>serde-prop-key</em>/<em>table-prop-key</em> that is specified and updates its value if found.</td>
+</tr>
+<tr>
+<td><code>-serdePropKey &lt;serde-prop-key></code></td>
+<td>Specify a SerDe property key whose value field may reference the HDFS NameNode location and hence may require an update. For example to update the Haivvero schema URL, specify schema.url for this argument.This option is valid only with the <strong>updateLocation</strong> option.</td>
+</tr>
+<tr>
+<td><code>-tablePropKey &lt;table-prop-key></code></td>
+<td>Specify a table property key whose value field may reference the HDFS NameNode location and hence may require an update. For example to update the Avro SerDe schema URL, specify avro.schema.url for this argument.This option is valid only with the <strong>updateLocation</strong> option.</td>
+</tr>
+<tr>
+<td><code>-dryRun</code></td>
+<td>Perform a dry run of <strong>updateLocation</strong> changes. The <strong>updateLocation</strong> changes are displayed but not persisted.This option is valid only with the <strong>updateLocation</strong> option.</td>
+</tr>
+<tr>
+<td><code>-executeJDOQL &lt;query-string></code></td>
+<td>Execute the given JDOQL query.</td>
+</tr>
+<tr>
+<td><code>-help</code></td>
+<td>Print a list of command options and their descriptions.</td>
 </tr>
 </tbody>
 </table>
-<pre tabindex=0><code>-listFSRoot
-</code></pre><p>| Print the location of the current file system root (NameNode). The value is prefixed with <code>hdfs:// scheme</code>. |
-|</p>
-<pre tabindex=0><code>-updateLocation &lt;new-loc&gt; &lt;old-loc&gt;
-</code></pre><p>| Update records in the Hive metastore to point to a new NameNode location (file system root location). Both <em>new-loc</em> and <em>old-loc</em> should be valid URIs with valid host names and schemes. For upgrading to HDFS HA NN, <em>new-loc</em> should match the value of the <code>dfs.nameservices</code> property. The <em>old-loc</em> should match the value returned by the <strong>listFSRoot</strong> option.When run with the <strong>dryRun</strong> option, changes are displayed but are not persisted. When run with the <strong>serdepropKey</strong>/<strong>tablePropKey</strong> option, <strong>updateLocation</strong> looks for the <em>serde-prop-key</em>/<em>table-prop-key</em> that is specified and updates its value if found. |
-|</p>
-<pre tabindex=0><code>-serdePropKey &lt;serde-prop-key&gt;
-</code></pre><p>| Specify a SerDe property key whose value field may reference the HDFS NameNode location and hence may require an update. For example to update the Haivvero schema URL, specify schema.url for this argument.This option is valid only with the <strong>updateLocation</strong> option. |
-|</p>
-<pre tabindex=0><code>-tablePropKey &lt;table-prop-key&gt;
-</code></pre><p>| Specify a table property key whose value field may reference the HDFS NameNode location and hence may require an update. For example to update the Avro SerDe schema URL, specify avro.schema.url for this argument.This option is valid only with the <strong>updateLocation</strong> option. |
-|</p>
-<pre tabindex=0><code>-dryRun
-</code></pre><p>| Perform a dry run of <strong>updateLocation</strong> changes. The <strong>updateLocation</strong> changes are displayed but not persisted.This option is valid only with the <strong>updateLocation</strong> option. |
-|</p>
-<pre tabindex=0><code>-executeJDOQL &lt;query-string&gt;
-</code></pre><p>| Execute the given JDOQL query. |
-|</p>
-<pre tabindex=0><code>-help
-</code></pre><p>| Print a list of command options and their descriptions. |</p>
 <p>If you are unsure which version of Avro SerDe is used, pass both <strong>serdePropKey</strong> and <strong>tablePropKey</strong> arguments with their respective values for the keys to <strong>updateLocation</strong>.</p>
 <p>Hive Configuration Directory</p>
-<p>Note that <code>metatool</code> is a command for Hive administrators and it needs direct access to the metastore RDBMS. In some environments, the RDBMS login information (especially password or the password key) is only stored on the metastore server host or in a metastore server specific config directory (with more restrictive file system permissions). In such cases, make sure you run on the metastore server machine, as the hive user, and also set the HIVE_CONF_DIR environment variable appropriately (for example, <code>export HIVE\_CONF\_DIR=*&lt;path to metastore server config dir>*</code>).</p>
+<p>Note that <code>metatool</code> is a command for Hive administrators and it needs direct access to the metastore RDBMS. In some environments, the RDBMS login information (especially password or the password key) is only stored on the metastore server host or in a metastore server specific config directory (with more restrictive file system permissions). In such cases, make sure you run on the metastore server machine, as the hive user, and also set the HIVE_CONF_DIR environment variable appropriately (for example, <code>export HIVE_CONF_DIR=*&lt;path to metastore server config dir>*</code>).</p>
 <h3 id=usage-example>Usage Example</h3>
 <p>The following <code>metatool</code> command uses the <strong>updateLocation</strong>, <strong>tablePropKey</strong>, and <strong>serdePropKey</strong> options to update the NameNode location to hdfs://localhost:9000 from hdfs://namenode2:8020.</p>
 <pre tabindex=0><code>./hive --service metatool -updateLocation hdfs://localhost:9000 hdfs://namenode2:8020 -tablePropKey avro.schema.url -serdePropKey avro.schema.url
@@ -191,26 +195,26 @@ Initializing HiveMetaTool..
 15/04/22 14:18:44 INFO DataNucleus.Query: Reading in results for query &quot;org.datanucleus.store.rdbms.query.SQLQuery@0&quot; since the connection used is closing
 15/04/22 14:18:44 INFO metastore.MetaStoreDirectSql: Using direct SQL, underlying DB is MYSQL
 15/04/22 14:18:44 INFO metastore.ObjectStore: Initialized ObjectStore
-Looking for LOCATION\_URI field in DBS table to update..
+Looking for LOCATION_URI field in DBS table to update..
 Successfully updated the following locations..
 Updated 0 records in DBS table
 Looking for LOCATION field in SDS table to update..
 Successfully updated the following locations..
 Updated 0 records in SDS table
-Looking for value of avro.schema.url key in TABLE\_PARAMS table to update..
+Looking for value of avro.schema.url key in TABLE_PARAMS table to update..
 Successfully updated the following locations..
-Updated 0 records in TABLE\_PARAMS table
-Looking for value of avro.schema.url key in SD\_PARAMS table to update..
+Updated 0 records in TABLE_PARAMS table
+Looking for value of avro.schema.url key in SD_PARAMS table to update..
 Successfully updated the following locations..
-Updated 0 records in SD\_PARAMS table
-Looking for value of avro.schema.url key in SERDE\_PARAMS table to update..
+Updated 0 records in SD_PARAMS table
+Looking for value of avro.schema.url key in SERDE_PARAMS table to update..
 Successfully updated the following locations..
-Updated 0 records in SERDE\_PARAMS table
+Updated 0 records in SERDE_PARAMS table
 </code></pre><p> </p>
 <p>Using metatool to read out table information (for all metastore backends).</p>
-<pre tabindex=0><code>HIVE\_CONF\_DIR=/etc/hive/conf/conf.server/ hive --service metatool -executeJDOQL 'select dbName+&quot;.&quot;+tableName+&quot;::&quot;+colName+&quot;=&quot;+numDVs from org.apache.hadoop.hive.metastore.model.MTableColumnStatistics';
+<pre tabindex=0><code>HIVE_CONF_DIR=/etc/hive/conf/conf.server/ hive --service metatool -executeJDOQL 'select dbName+&quot;.&quot;+tableName+&quot;::&quot;+colName+&quot;=&quot;+numDVs from org.apache.hadoop.hive.metastore.model.MTableColumnStatistics';
 </code></pre><pre tabindex=0><code>  
- HIVE\_CONF\_DIR=/etc/hive/conf/conf.server/ hive --service metatool -executeJDOQL 'select dbName+&quot;.&quot;+tableName+&quot;(&quot;+partitionName+&quot;)::&quot;+colName+&quot;=&quot;+numDVs from org.apache.hadoop.hive.metastore.model.MPartitionColumnStatistics';
+ HIVE_CONF_DIR=/etc/hive/conf/conf.server/ hive --service metatool -executeJDOQL 'select dbName+&quot;.&quot;+tableName+&quot;(&quot;+partitionName+&quot;)::&quot;+colName+&quot;=&quot;+numDVs from org.apache.hadoop.hive.metastore.model.MPartitionColumnStatistics';
 </code></pre><p> </p>
 </div>
 </div>
@@ -247,6 +251,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

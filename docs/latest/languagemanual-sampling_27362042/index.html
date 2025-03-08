@@ -9,8 +9,8 @@
 <title>Apache Hive : LanguageManual Sampling</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -132,7 +132,7 @@ ASF
 <h2 id=sampling-syntax>Sampling Syntax</h2>
 <h3 id=sampling-bucketized-table>Sampling Bucketized Table</h3>
 <pre tabindex=0><code>
-table\_sample: TABLESAMPLE (BUCKET x OUT OF y [ON colname])
+table_sample: TABLESAMPLE (BUCKET x OUT OF y [ON colname])
 
 </code></pre><p>The TABLESAMPLE clause allows the users to write queries for samples of the data instead of the whole table. The TABLESAMPLE clause can be added to any table in the FROM clause. The buckets are numbered starting from 1. <strong>colname</strong> indicates the column on which to sample each row in the table. colname can be one of the non-partition columns in the table or <strong>rand()</strong> indicating sampling on the entire row instead of an individual column. The rows of the table are &lsquo;bucketed&rsquo; on the colname randomly into y buckets numbered 1 through y. Rows which belong to bucket x are returned.</p>
 <p>In the following example the 3rd bucket out of the 32 buckets of the table source. &rsquo;s' is the table alias.</p>
@@ -156,7 +156,7 @@ FROM source TABLESAMPLE(BUCKET 3 OUT OF 32 ON rand()) s;
 <h3 id=block-sampling>Block Sampling</h3>
 <p>Block sampling is available starting with Hive 0.8. Addressed under JIRA - <a href=https://issues.apache.org/jira/browse/HIVE-2121>https://issues.apache.org/jira/browse/HIVE-2121</a></p>
 <pre tabindex=0><code>
-block\_sample: TABLESAMPLE (n PERCENT)
+block_sample: TABLESAMPLE (n PERCENT)
 
 </code></pre><p>This will allow Hive to pick up at least n% data size (notice it doesn&rsquo;t necessarily mean number of rows) as inputs. Only CombineHiveInputFormat is supported and some special compression formats are not handled. If we fail to sample it, the input of MapReduce job will be the whole table/partition. We do it in HDFS block level so that the sampling granularity is block size. For example, if block size is 256MB, even if n% of input size is only 100MB, you get 256MB of data.</p>
 <p>In the following example the input size 0.1% or more will be used for the query.</p>
@@ -170,7 +170,7 @@ set hive.sample.seednumber=&lt;INTEGER&gt;;
 
 </code></pre><p>Or user can specify total length to be read, but it has same limitation with PERCENT sampling. (As of Hive 0.10.0 - <a href=https://issues.apache.org/jira/browse/HIVE-3401>https://issues.apache.org/jira/browse/HIVE-3401</a>)</p>
 <pre tabindex=0><code>
-block\_sample: TABLESAMPLE (ByteLengthLiteral)
+block_sample: TABLESAMPLE (ByteLengthLiteral)
 
 ByteLengthLiteral : (Digit)+ ('b' | 'B' | 'k' | 'K' | 'm' | 'M' | 'g' | 'G')
 
@@ -181,7 +181,7 @@ FROM source TABLESAMPLE(100M) s;
 
 </code></pre><p>Hive also supports limiting input by row count basis, but it acts differently with above two. First, it does not need CombineHiveInputFormat which means this can be used with non-native tables. Second, the row count given by user is applied to each split. So total row count can be vary by number of input splits. (As of Hive 0.10.0 - <a href=https://issues.apache.org/jira/browse/HIVE-3401>https://issues.apache.org/jira/browse/HIVE-3401</a>)</p>
 <pre tabindex=0><code>
-block\_sample: TABLESAMPLE (n ROWS)
+block_sample: TABLESAMPLE (n ROWS)
 
 </code></pre><p>For example, the following query will take the first 10 rows from each input split.</p>
 <pre tabindex=0><code>
@@ -223,6 +223,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

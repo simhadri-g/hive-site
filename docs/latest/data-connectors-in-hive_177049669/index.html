@@ -9,8 +9,8 @@
 <title>Apache Hive : Data Connectors in Hive</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -130,7 +130,7 @@ ASF
 <li>The metadata for the mapped table is static. It does not track changes to the remote table. If remote table has changed (added columns or dropped columns), the mapped hive table has to be dropped and re-created. This management compounds when one has constantly changing tables.</li>
 </ul>
 <p>Data connectors allow users to map a database/schema in the remote datasource to a Hive database. Such databases are referred to as REMOTE databases in hive.</p>
-<pre tabindex=0><code>       CREATE REMOTE DATABASE postgres\_db1 USING &lt;connectorName&gt; WITH DBPROPERTIES ('connector.remoteDbName'='db1');
+<pre tabindex=0><code>       CREATE REMOTE DATABASE postgres_db1 USING &lt;connectorName&gt; WITH DBPROPERTIES ('connector.remoteDbName'='db1');
 </code></pre><ul>
 <li>All the tables within a mapped database (<em>db1</em>) are automatically visible from Hive. The metadata for these tables are not persisted in Hive metastore&rsquo;s backend. They are retrieved at runtime via a live connector.</li>
 <li>All future tables will automatically be visible in Hive.</li>
@@ -141,21 +141,21 @@ ASF
 <ol>
 <li>Create a connector first.</li>
 </ol>
-<pre tabindex=0><code>    CREATE CONNECTOR pg\_local TYPE 'postgres' URL 'jdbc:&lt;postgresql://localhost:5432&gt;' WITH DCPROPERTIES (&quot;hive.sql.dbcp.username&quot;=&quot;postgres&quot;, &quot;hive.sql.dbcp.password&quot;=&quot;postgres&quot;);  
+<pre tabindex=0><code>    CREATE CONNECTOR pg_local TYPE 'postgres' URL 'jdbc:&lt;postgresql://localhost:5432&gt;' WITH DCPROPERTIES (&quot;hive.sql.dbcp.username&quot;=&quot;postgres&quot;, &quot;hive.sql.dbcp.password&quot;=&quot;postgres&quot;);  
   
 
 </code></pre><ol start=2>
-<li>Create a database of type REMOTE in hive using the connector from Step1.   This maps a remote database named &ldquo;<code>*hive\_hms\_testing*</code>&rdquo; to a hive database named &ldquo;<em><code>pg_hive_testing</code></em>&rdquo; in hive.</li>
+<li>Create a database of type REMOTE in hive using the connector from Step1.   This maps a remote database named &ldquo;<code>*hive_hms_testing*</code>&rdquo; to a hive database named &ldquo;<em><code>pg_hive_testing</code></em>&rdquo; in hive.</li>
 </ol>
-<pre tabindex=0><code>         CREATE REMOTE DATABASE pg\_hive\_testing USING pg\_local WITH DBPROPERTIES (&quot;connector.remoteDbName&quot;=&quot;hive\_hms\_testing&quot;);  
+<pre tabindex=0><code>         CREATE REMOTE DATABASE pg_hive_testing USING pg_local WITH DBPROPERTIES (&quot;connector.remoteDbName&quot;=&quot;hive_hms_testing&quot;);  
   
          // USING keystore instead of cleartext passwords in DCPROPERTIES  
-         CREATE CONNECTOR pg\_local\_ks TYPE 'postgres' URL 'jdbc:&lt;postgresql://localhost:5432/hive_hms_testing&gt;' WITH DCPROPERTIES(&quot;hive.sql.dbcp.username&quot;=&quot;postgres&quot;,&quot;hive.sql.dbcp.password.keystore&quot;=&quot;jceks://app/local/hive/secrets.jceks&quot; &quot;hive.sql.dbcp.password.key&quot;=&quot;postgres.credential&quot;);  
-         CREATE REMOTE DATABASE pg\_ks\_local USING pg\_local\_ks(&quot;connector.remoteDbName&quot;=&quot;hive\_hms\_testing&quot;);  
+         CREATE CONNECTOR pg_local_ks TYPE 'postgres' URL 'jdbc:&lt;postgresql://localhost:5432/hive_hms_testing&gt;' WITH DCPROPERTIES(&quot;hive.sql.dbcp.username&quot;=&quot;postgres&quot;,&quot;hive.sql.dbcp.password.keystore&quot;=&quot;jceks://app/local/hive/secrets.jceks&quot; &quot;hive.sql.dbcp.password.key&quot;=&quot;postgres.credential&quot;);  
+         CREATE REMOTE DATABASE pg_ks_local USING pg_local_ks(&quot;connector.remoteDbName&quot;=&quot;hive_hms_testing&quot;);  
      
    3. Use the tables in REMOTE database much like the JDBC-storagehandler based tables in hive. One big difference is that the metadata for these tables are never persisted in hive. Currently, create/alter/drop table DDLs are not supported in REMOTE databases.   
   
-         USE pg\_hive\_testing;  
+         USE pg_hive_testing;  
          SHOW TABLES;  
          DESCRIBE [formatted] &lt;tablename&gt;;  
          SELECT &lt;col1&gt; from &lt;tablename&gt; where &lt;filter1&gt; and &lt;filter2&gt;;
@@ -195,6 +195,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

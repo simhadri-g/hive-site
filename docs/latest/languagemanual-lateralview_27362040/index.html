@@ -9,8 +9,8 @@
 <title>Apache Hive : LanguageManual LateralView</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -180,7 +180,7 @@ fromClause: FROM baseTable (lateralView)*
 <p>and the user would like to count the total number of times an ad appears across all pages.</p>
 <p>A lateral view with <a href=#explode-->explode()</a> can be used to convert <code>adid_list</code> into separate rows using the query:</p>
 <pre tabindex=0><code>SELECT pageid, adid
-FROM pageAds LATERAL VIEW explode(adid\_list) adTable AS adid;
+FROM pageAds LATERAL VIEW explode(adid_list) adTable AS adid;
 
 </code></pre><p>The resulting output will be</p>
 <table>
@@ -219,15 +219,43 @@ FROM pageAds LATERAL VIEW explode(adid\_list) adTable AS adid;
 </table>
 <p>Then in order to count the number of times a particular ad appears, count/group by can be used:</p>
 <pre tabindex=0><code>SELECT adid, count(1)
-FROM pageAds LATERAL VIEW explode(adid\_list) adTable AS adid
+FROM pageAds LATERAL VIEW explode(adid_list) adTable AS adid
 GROUP BY adid;
 
-</code></pre><p>| int adid | count(1) |
-| 1 | 1 |
-| 2 | 1 |
-| 3 | 2 |
-| 4 | 1 |
-| 5 | 1 |</p>
+</code></pre><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int adid</td>
+<td>count(1)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
 <h2 id=multiple-lateral-views>Multiple Lateral Views</h2>
 <p>A FROM clause can have multiple LATERAL VIEW clauses. Subsequent LATERAL VIEWS can reference columns from any of the tables appearing to the left of the LATERAL VIEW.</p>
 <p>For example, the following could be a valid query:</p>
@@ -236,38 +264,131 @@ LATERAL VIEW explode(col1) myTable1 AS myCol1
 LATERAL VIEW explode(myCol1) myTable2 AS myCol2;
 
 </code></pre><p>LATERAL VIEW clauses are applied in the order that they appear. For example with the following base table:</p>
-<p>| Array col1 | Array col2 |
-| [1, 2] | [a", &ldquo;b&rdquo;, &ldquo;c&rdquo;] |
-| [3, 4] | [d", &ldquo;e&rdquo;, &ldquo;f&rdquo;] |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array&lt;int> col1</td>
+<td>Array&lt;string> col2</td>
+</tr>
+<tr>
+<td>[1, 2]</td>
+<td>[a", &ldquo;b&rdquo;, &ldquo;c&rdquo;]</td>
+</tr>
+<tr>
+<td>[3, 4]</td>
+<td>[d", &ldquo;e&rdquo;, &ldquo;f&rdquo;]</td>
+</tr>
+</tbody>
+</table>
 <p>The query:</p>
 <pre tabindex=0><code>SELECT myCol1, col2 FROM baseTable
 LATERAL VIEW explode(col1) myTable1 AS myCol1;
 
 </code></pre><p>Will produce:</p>
-<p>| int mycol1 | Array col2 |
-| 1 | [a", &ldquo;b&rdquo;, &ldquo;c&rdquo;] |
-| 2 | [a", &ldquo;b&rdquo;, &ldquo;c&rdquo;] |
-| 3 | [d", &ldquo;e&rdquo;, &ldquo;f&rdquo;] |
-| 4 | [d", &ldquo;e&rdquo;, &ldquo;f&rdquo;] |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int mycol1</td>
+<td>Array&lt;string> col2</td>
+</tr>
+<tr>
+<td>1</td>
+<td>[a", &ldquo;b&rdquo;, &ldquo;c&rdquo;]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>[a", &ldquo;b&rdquo;, &ldquo;c&rdquo;]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[d", &ldquo;e&rdquo;, &ldquo;f&rdquo;]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>[d", &ldquo;e&rdquo;, &ldquo;f&rdquo;]</td>
+</tr>
+</tbody>
+</table>
 <p>A query that adds an additional LATERAL VIEW:</p>
 <pre tabindex=0><code>SELECT myCol1, myCol2 FROM baseTable
 LATERAL VIEW explode(col1) myTable1 AS myCol1
 LATERAL VIEW explode(col2) myTable2 AS myCol2;
 
 </code></pre><p>Will produce:</p>
-<p>| int myCol1 | string myCol2 |
-| 1 | &ldquo;a&rdquo; |
-| 1 | &ldquo;b&rdquo; |
-| 1 | &ldquo;c&rdquo; |
-| 2 | &ldquo;a&rdquo; |
-| 2 | &ldquo;b&rdquo; |
-| 2 | &ldquo;c&rdquo; |
-| 3 | &ldquo;d&rdquo; |
-| 3 | &ldquo;e&rdquo; |
-| 3 | &ldquo;f&rdquo; |
-| 4 | &ldquo;d&rdquo; |
-| 4 | &ldquo;e&rdquo; |
-| 4 | &ldquo;f&rdquo; |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int myCol1</td>
+<td>string myCol2</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&ldquo;a&rdquo;</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&ldquo;b&rdquo;</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&ldquo;c&rdquo;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&ldquo;a&rdquo;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&ldquo;b&rdquo;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&ldquo;c&rdquo;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&ldquo;d&rdquo;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&ldquo;e&rdquo;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&ldquo;f&rdquo;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&ldquo;d&rdquo;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&ldquo;e&rdquo;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&ldquo;f&rdquo;</td>
+</tr>
+</tbody>
+</table>
 <h2 id=outer-lateral-views>Outer Lateral Views</h2>
 <p>Version</p>
 <p>Introduced in Hive version 0.12.0</p>
@@ -324,6 +445,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

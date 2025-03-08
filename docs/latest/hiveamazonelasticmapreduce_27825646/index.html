@@ -9,8 +9,8 @@
 <title>Apache Hive : HiveAmazonElasticMapReduce</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -135,38 +135,154 @@ ASF
 <p><a href=http://docs.amazonwebservices.com/ElasticMapReduce/latest/GettingStartedGuide/>http://docs.amazonwebservices.com/ElasticMapReduce/latest/GettingStartedGuide/</a></p>
 <p>Amazon Elastic MapReduce provides you with multiple clients to run your Hive cluster. You can launch a Hive cluster using the AWS Management Console, the Amazon Elastic MapReduce Ruby Client, or the AWS Java SDK. You may also install and run multiple versions of Hive on the same cluster, allowing you to benchmark a newer Hive version alongside your previous version. You can also install a newer Hive version directly onto an existing Hive cluster.</p>
 <h1 id=supported-versions>Supported versions:</h1>
-<p>| Hadoop Version | Hive Version |
-| 0.18 | 0.4 |
-| 0.20 | 0.5, 0.7, 0.7.1 |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hadoop Version</td>
+<td>Hive Version</td>
+</tr>
+<tr>
+<td>0.18</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>0.20</td>
+<td>0.5, 0.7, 0.7.1</td>
+</tr>
+</tbody>
+</table>
 <h1 id=hive-defaults>Hive Defaults</h1>
 <h2 id=thrift-communication-port>Thrift Communication port</h2>
-<p>| Hive Version | Thrift port |
-| 0.4 | 10000 |
-| 0.5 | 10000 |
-| 0.7 | 10001 |
-| 0.7.1 | 10002 |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hive Version</td>
+<td>Thrift port</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>0.7</td>
+<td>10001</td>
+</tr>
+<tr>
+<td>0.7.1</td>
+<td>10002</td>
+</tr>
+</tbody>
+</table>
 <h2 id=log-file>Log File</h2>
-<p>| Hive Version | Log location |
-| 0.4 | /mnt/var/log/apps/hive.log |
-| 0.5 | /mnt/var/log/apps/hive_05.log |
-| 0.7 | /mnt/var/log/apps/hive_07.log |
-| 0.7.1 | /mnt/var/log/apps/hive_07_1.log |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hive Version</td>
+<td>Log location</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>/mnt/var/log/apps/hive.log</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>/mnt/var/log/apps/hive_05.log</td>
+</tr>
+<tr>
+<td>0.7</td>
+<td>/mnt/var/log/apps/hive_07.log</td>
+</tr>
+<tr>
+<td>0.7.1</td>
+<td>/mnt/var/log/apps/hive_07_1.log</td>
+</tr>
+</tbody>
+</table>
 <h1 id=metastore>MetaStore</h1>
 <p>By default, Amazon Elastic MapReduce uses MySQL, preinstalled on the Master Node, for its Hive metastore. Alternatively, you can use the Amazon Relational Database Service (Amazon RDS) to ensure the metastore is persisted beyond the life of your cluster. This also allows you to share the metastore between multiple Hive clusters. Simply override the default location of the MySQL database to the external persistent storage location.</p>
 <h1 id=hive-cli>Hive CLI</h1>
 <p>EMR configures the master node to allow SSH access. You can log onto the master node and execute Hive commands using the Hive CLI. If you have multiple versions of Hive installed on the cluster you can access each one of them via a separate command:</p>
-<p>| Hive Version | Hive command |
-| 0.4 | hive |
-| 0.5 | hive-0.5 |
-| 0.7 | hive-0.7 |
-| 0.7.1 | hive-0.7.1 |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hive Version</td>
+<td>Hive command</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>hive</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>hive-0.5</td>
+</tr>
+<tr>
+<td>0.7</td>
+<td>hive-0.7</td>
+</tr>
+<tr>
+<td>0.7.1</td>
+<td>hive-0.7.1</td>
+</tr>
+</tbody>
+</table>
 <p>EMR sets up a separate Hive metastore and Hive warehouse for each installed Hive version on a given cluster. Hence, creating tables using one version does not interfere with the tables created using another version installed. Please note that if you point multiple Hive tables to same location, updates to one table become visible to other tables.</p>
 <h1 id=hive-server>Hive Server</h1>
 <p>EMR runs a Thrift Hive server on the master node of the Hive cluster. It can be accessed using any JDBC client (for example, squirrel SQL) via Hive JDBC drivers. The JDBC drivers for different Hive versions can be downloaded via the following links:</p>
-<p>| Hive Version | Hive JDBC |
-| 0.5 | <a href=http://aws.amazon.com/developertools/0196055244487017>http://aws.amazon.com/developertools/0196055244487017</a> |
-| 0.7 | <a href=http://aws.amazon.com/developertools/1818074809286277>http://aws.amazon.com/developertools/1818074809286277</a> |
-| 0.7.1 | <a href=http://aws.amazon.com/developertools/8084613472207189>http://aws.amazon.com/developertools/8084613472207189</a> |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hive Version</td>
+<td>Hive JDBC</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td><a href=http://aws.amazon.com/developertools/0196055244487017>http://aws.amazon.com/developertools/0196055244487017</a></td>
+</tr>
+<tr>
+<td>0.7</td>
+<td><a href=http://aws.amazon.com/developertools/1818074809286277>http://aws.amazon.com/developertools/1818074809286277</a></td>
+</tr>
+<tr>
+<td>0.7.1</td>
+<td><a href=http://aws.amazon.com/developertools/8084613472207189>http://aws.amazon.com/developertools/8084613472207189</a></td>
+</tr>
+</tbody>
+</table>
 <p>Here is the process to connect to the Hive Server using a JDBC driver:</p>
 <p><a href=http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_Hive.html#HiveJDBCDriver>http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_Hive.html#HiveJDBCDriver</a></p>
 <h1 id=running-batch-queries>Running Batch Queries</h1>
@@ -247,6 +363,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

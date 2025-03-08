@@ -9,8 +9,8 @@
 <title>Apache Hive : Hive Metadata Caching Proposal</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -212,10 +212,37 @@ Closed</p>
 <p>The major concern in this approach is how much memory the metastore cache will consume and how much latency at startup time to read all metastore objects (prewarm). For that, we did some quantitative experiments.</p>
 <p>In our experiments, we adopted some memory optimizations discussed below, which is separating table/partition and storage descriptor. We only cache database/table/partition objects and not count column statistics/permanent functions/constraints. In our setting, the memory footprint is dominated by partition objects which aggregates to 58M (shown in the table below). This does not discount the fact that many strings can be interned and shared by multiple objects, which could save an additional 20% according to HIVE-16079.</p>
 <p> </p>
-<p>| object | count | Avg size (byte) |
-| table | 895 | 1576 |
-| partition | 97,863 | 591 |
-| storagedescriptor | 412 | 680 |</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object</td>
+<td>count</td>
+<td>Avg size (byte)</td>
+</tr>
+<tr>
+<td>table</td>
+<td>895</td>
+<td>1576</td>
+</tr>
+<tr>
+<td>partition</td>
+<td>97,863</td>
+<td>591</td>
+</tr>
+<tr>
+<td>storagedescriptor</td>
+<td>412</td>
+<td>680</td>
+</tr>
+</tbody>
+</table>
 <p> </p>
 <p>If we have 6G memory reserved for metastore cache, we could afford 10,000,000 partition objects and which we think is enough for majority use cases. In case we are out of the memory boundary, we could switch to a non-cached metastore and don’t crash.</p>
 <p>We also tested the prewarm time in the same setting. It takes metastore 25 seconds to load all databases/tables/partitions from MySql database. Note in slow database such as Azure, the number could be much bigger but we have not tested yet. Metastore would only open listening port after prewarm. All metastore client request will be rejected before prewarm is done.</p>
@@ -298,6 +325,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

@@ -9,8 +9,8 @@
 <title>Apache Hive : Manual Installation</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -122,13 +122,13 @@ ASF
 <div class=docs>
 <h1 id=apache-hive--manual-installation>Apache Hive : Manual Installation</h1>
 <ul>
-<li><a href=#installing,-configuring-and-running-hive>Installing, configuring and running Hive</a>
+<li><a href=#installing-configuring-and-running-hive>Installing, configuring and running Hive</a>
 <ul>
 <li><a href=#prerequisites>Prerequisites</a></li>
 <li><a href=#install-the-prerequisites>Install the prerequisites</a>
 <ul>
 <li><a href=#java-8>Java 8</a></li>
-<li><a href=#maven:>Maven:</a></li>
+<li><a href=#maven>Maven:</a></li>
 <li><a href=#protobuf>Protobuf</a></li>
 <li><a href=#hadoop>Hadoop</a></li>
 <li><a href=#tez>Tez</a></li>
@@ -137,13 +137,14 @@ ASF
 <li><a href=#extra-hadoop-configurations-to-make-everything-working>Extra hadoop configurations to make everything working</a></li>
 <li><a href=#installing-hive-from-a-tarball>Installing Hive from a Tarball</a></li>
 <li><a href=#installing-from-source-code>Installing from Source Code</a></li>
+<li><a href=#installing-with-old-version-hadoopgreater-than-or-equal-310>Installing with old version hadoop(greater than or equal 3.1.0)</a></li>
 <li><a href=#next-steps>Next Steps</a></li>
 <li><a href=#beeline-cli>Beeline CLI</a></li>
 <li><a href=#hive-metastore>Hive Metastore</a></li>
 <li><a href=#hcatalog-and-webhcat>HCatalog and WebHCat</a>
 <ul>
 <li><a href=#hcatalog>HCatalog</a></li>
-<li><a href=#webhcat--templeton->WebHCat (Templeton)</a></li>
+<li><a href=#webhcat-templeton>WebHCat (Templeton)</a></li>
 </ul>
 </li>
 </ul>
@@ -173,9 +174,9 @@ brew untap adoptopenjdk/openjdk
 <pre tabindex=0><code>mvn -version
 Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
 Maven home: /Users/yourusername/programs/apache-maven-3.6.3
-Java version: 1.8.0\_292, vendor: AdoptOpenJDK, runtime: /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre
-Default locale: en\_HU, platform encoding: UTF-8
-OS name: &quot;mac os x&quot;, version: &quot;10.16&quot;, arch: &quot;x86\_64&quot;, family: &quot;mac&quot;
+Java version: 1.8.0_292, vendor: AdoptOpenJDK, runtime: /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre
+Default locale: en_HU, platform encoding: UTF-8
+OS name: &quot;mac os x&quot;, version: &quot;10.16&quot;, arch: &quot;x86_64&quot;, family: &quot;mac&quot;
 </code></pre><p>As you can see, even if it is an arm processor, maven thinks the architecture is Intel based.</p>
 <h3 id=protobuf>Protobuf</h3>
 <p>You have to download and compile protobuf. And also, install it into the local maven repository. Protobuf 2.5.0 is not ready for ARM. On this chipset, you will need to do some extra steps.</p>
@@ -185,9 +186,9 @@ cd protobuf-2.5.0
 ./configure
 </code></pre><p>On ARM, edit the src/google/protobuf/stubs/platform_macros.h and add arm to the part, processor architecture detection, after the last elif branch: <br>
  </p>
-<pre tabindex=0><code>#elif defined(\_\_arm64\_\_)
-#define GOOGLE\_PROTOBUF\_ARCH\_ARM 1
-#define GOOGLE\_PROTOBUF\_ARCH\_64\_BIT 1
+<pre tabindex=0><code>#elif defined(__arm64__)
+#define GOOGLE_PROTOBUF_ARCH_ARM 1
+#define GOOGLE_PROTOBUF_ARCH_64_BIT 1
 </code></pre><p>Now, you can compile and install protobuf:</p>
 <pre tabindex=0><code>make
 make check
@@ -197,7 +198,7 @@ sudo make install
 </code></pre><h3 id=hadoop>Hadoop</h3>
 <p>Firstly, move through the instructions on the official documentation, single-node, pseudo-distributed configuration: <a href=https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation>https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation</a>.</p>
 <p>After that, set up HADOOP_HOME:</p>
-<pre tabindex=0><code>export HADOOP\_HOME=/yourpathtohadoop/hadoop-3.3.6
+<pre tabindex=0><code>export HADOOP_HOME=/yourpathtohadoop/hadoop-3.3.6
 </code></pre><h3 id=tez>Tez</h3>
 <p>Tez will require some additional steps. Hadoop uses a tez tarball but it expects it in other compressed directory structure than it is released. So we will extract the tarball and compress again. And also, we will put the extracted jars into hdfs. After that we set the necessary environment variables.</p>
 <p>Download tez, extract and re-compress the tar: </p>
@@ -206,15 +207,15 @@ tar -xzvf apache-tez-0.10.3-bin.tar.gz
 cd apache-tez-0.10.3-bin
 tar zcvf ../apache-tez-0.10.3-bin.tar.gz * &amp;&amp; cd ..
 </code></pre><p>Add the necessary tez files to hdfs</p>
-<pre tabindex=0><code>$HADOOP\_HOME/sbin/start-dfs.sh	# start hdfs
-$HADOOP\_HOME/bin/hadoop fs -mkdir -p /apps/tez
-$HADOOP\_HOME/bin/hadoop fs -put apache-tez-0.10.3-bin.tar.gz /apps/tez # copy the tarball
-$HADOOP\_HOME/bin/hadoop fs -put apache-tez-0.10.3-bin /apps/tez # copy the whole folder
-$HADOOP\_HOME/bin/hadoop fs -ls /apps/tez # verify
-$HADOOP\_HOME/sbin/stop-all.sh # stop hdfs
+<pre tabindex=0><code>$HADOOP_HOME/sbin/start-dfs.sh	# start hdfs
+$HADOOP_HOME/bin/hadoop fs -mkdir -p /apps/tez
+$HADOOP_HOME/bin/hadoop fs -put apache-tez-0.10.3-bin.tar.gz /apps/tez # copy the tarball
+$HADOOP_HOME/bin/hadoop fs -put apache-tez-0.10.3-bin /apps/tez # copy the whole folder
+$HADOOP_HOME/bin/hadoop fs -ls /apps/tez # verify
+$HADOOP_HOME/sbin/stop-all.sh # stop hdfs
 </code></pre><p>Set up TEZ_HOME and HADOOP_CLASSPATH environment variables</p>
-<pre tabindex=0><code>export TEZ\_HOME=/yourpathtotez/apache-tez-0.10.3-bin
-export HADOOP\_CLASSPATH=$TEZ\_HOME/*:$TEZ\_HOME/conf
+<pre tabindex=0><code>export TEZ_HOME=/yourpathtotez/apache-tez-0.10.3-bin
+export HADOOP_CLASSPATH=$TEZ_HOME/*:$TEZ_HOME/conf
 </code></pre><p>Create a new config file for Tez: $TEZ_HOME/conf/tez-site.xml</p>
 <pre tabindex=0><code>&lt;configuration&gt;
     &lt;property&gt;
@@ -241,13 +242,13 @@ export HADOOP\_CLASSPATH=$TEZ\_HOME/*:$TEZ\_HOME/conf
     &lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre><p>Modify $HADOOP_HOME/<strong>etc/hadoop/hadoop-env.sh</strong></p>
-<pre tabindex=0><code># JAVA\_HOME
-export JAVA\_HOME=/yourpathtojavahome/javahome
+<pre tabindex=0><code># JAVA_HOME
+export JAVA_HOME=/yourpathtojavahome/javahome
 # tez
-export TEZ\_CONF\_DIR=/yourpathtotezconf/conf
-export TEZ\_JARS=/yourpathtotez/apache-tez-0.10.3-bin
-export HADOOP\_CLASSPATH=${TEZ\_CONF\_DIR}:${TEZ\_JARS}/*:${TEZ\_JARS}/lib/*:${HADOOP\_CLASSPATH}:
-${JAVA\_JDBC\_LIBS}:${MAPREDUCE\_LIBS}
+export TEZ_CONF_DIR=/yourpathtotezconf/conf
+export TEZ_JARS=/yourpathtotez/apache-tez-0.10.3-bin
+export HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*:${HADOOP_CLASSPATH}:
+${JAVA_JDBC_LIBS}:${MAPREDUCE_LIBS}
 </code></pre><p>Modify $HADOOP_HOME/<strong>etc/hadoop/mapred-site.xml</strong></p>
 <pre tabindex=0><code>&lt;configuration&gt;
     &lt;property&gt;
@@ -256,7 +257,7 @@ ${JAVA\_JDBC\_LIBS}:${MAPREDUCE\_LIBS}
     &lt;/property&gt;
     &lt;property&gt;
         &lt;name&gt;mapreduce.application.classpath&lt;/name&gt;
-        &lt;value&gt;$HADOOP\_CLASSPATH:$HADOOP\_HOME/share/hadoop/mapreduce/*:$HADOOP\_MAPRED\_HOME/share/hadoop/mapreduce/lib/*&lt;/value&gt;
+        &lt;value&gt;$HADOOP_CLASSPATH:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*&lt;/value&gt;
     &lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre><p>Modify $HADOOP_HOME/<strong>etc/hadoop/yarn-site.xml</strong></p>
@@ -264,11 +265,11 @@ ${JAVA\_JDBC\_LIBS}:${MAPREDUCE\_LIBS}
 &lt;!-- Site specific YARN configuration properties --&gt;
   &lt;property&gt;
     &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
-    &lt;value&gt;mapreduce\_shuffle&lt;/value&gt;
+    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
   &lt;/property&gt;
   &lt;property&gt;
     &lt;name&gt;yarn.nodemanager.env-whitelist&lt;/name&gt;
-    &lt;value&gt;JAVA\_HOME,HADOOP\_COMMON\_HOME,HADOOP\_HDFS\_HOME,HADOOP\_CONF\_DIR,CLASSPATH\_PREPEND\_DISTCACHE,HADOOP\_YARN\_HOME,HADOOP\_HOME,PATH,LANG,TZ,HADOOP\_MAPRED\_HOME&lt;/value&gt;
+    &lt;value&gt;JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_HOME,PATH,LANG,TZ,HADOOP_MAPRED_HOME&lt;/value&gt;
   &lt;/property&gt;
     &lt;property&gt;
     &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt;
@@ -285,9 +286,9 @@ ${JAVA\_JDBC\_LIBS}:${MAPREDUCE\_LIBS}
 &lt;/configuration&gt;
 </code></pre><p>Start hadoop</p>
 <p>If you already started hadoop before, stop it. As we configured yarn and map-reduce, we have to restart it and make sure yarn is running:</p>
-<pre tabindex=0><code>$HADOOP\_HOME/sbin/stop-all.sh
+<pre tabindex=0><code>$HADOOP_HOME/sbin/stop-all.sh
 </code></pre><p>And start hadoop:</p>
-<pre tabindex=0><code>$HADOOP\_HOME/sbin/start-all.sh
+<pre tabindex=0><code>$HADOOP_HOME/sbin/start-all.sh
 </code></pre><h2 id=installing-hive-from-a-tarball>Installing Hive from a Tarball</h2>
 <p>Start by downloading the most recent stable release of Hive from one of the Apache download mirrors (see <a href=https://hive.apache.org/downloads.html>Hive Releases</a>).</p>
 <p>Next you need to unpack the tarball. This will result in the creation of a subdirectory named <code>hive-x.y.z</code> (where <code>x.y.z</code> is the release number):</p>
@@ -295,9 +296,9 @@ ${JAVA\_JDBC\_LIBS}:${MAPREDUCE\_LIBS}
 tar -xzvf apache-hive-4.0.0-bin.tar.gz 
 </code></pre><p>Set the environment variable <code>HIVE_HOME</code> to point to the installation directory:</p>
 <pre tabindex=0><code>cd apache-hive-4.0.0-bin
-export HIVE\_HOME=/yourpathtohive/apache-hive-4.0.0-bin 
+export HIVE_HOME=/yourpathtohive/apache-hive-4.0.0-bin 
 </code></pre><p>Add <code>$HIVE_HOME/bin</code> to your <code>PATH</code>:</p>
-<pre tabindex=0><code>export PATH=$HIVE\_HOME/bin:$PATH
+<pre tabindex=0><code>export PATH=$HIVE_HOME/bin:$PATH
 </code></pre><p>Create a directory for external tables: </p>
 <pre tabindex=0><code>mkdir /yourpathtoexternaltables/warehouse
 </code></pre><p>Create a new config file for Hive: $HIVE_HOME/conf/hive-site.xml</p>
@@ -333,12 +334,12 @@ export HIVE\_HOME=/yourpathtohive/apache-hive-4.0.0-bin
     &lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre><p>Initialize metastore schema. It will create a directore called metastore_db. It contains an embedded Derby database for metastore</p>
-<pre tabindex=0><code>$HIVE\_HOME/bin/schematool -dbType derby -initSchema --verbose
+<pre tabindex=0><code>$HIVE_HOME/bin/schematool -dbType derby -initSchema --verbose
 </code></pre><p>Run HiveServer2</p>
-<pre tabindex=0><code>$HIVE\_HOME/bin/hiveserver2
+<pre tabindex=0><code>$HIVE_HOME/bin/hiveserver2
 </code></pre><p><strong>Note</strong>: you can check if it is running in Hive Server web ui: <a href=http://localhost:10002/>http://localhost:10002/</a></p>
 <p>Run beeline:</p>
-<pre tabindex=0><code>$HIVE\_HOME/bin/beeline -u 'jdbc:hive2://localhost:10000/' -n yourusername
+<pre tabindex=0><code>$HIVE_HOME/bin/beeline -u 'jdbc:hive2://localhost:10000/' -n yourusername
 </code></pre><p>As a test, create a table insert some value</p>
 <pre tabindex=0><code>create table test (message string);
 insert into test values ('Hello, from Hive!');
@@ -360,6 +361,68 @@ insert into test values ('Hello, from Hive!');
 </ul>
 <p>That directory should contain all the files necessary to run Hive. You can run it from there or copy it to a different location, if you prefer.</p>
 <p>From now, you can follow the steps described in the section Installing Hive from a Tarball</p>
+<h2 id=installing-with-old-version-hadoopgreater-than-or-equal-310>Installing with old version hadoop(greater than or equal 3.1.0)</h2>
+<p>Although we normally require hive4 to rely on a
+hadoop 3.3.6+ cluster environment.
+However, in practice, in an ON YARN environment,
+we can package all the hadoop related dependencies into
+tez&hive so that they do not need to rely on the lib
+of the original hadoop cluster environment at runtime.
+In this way, we can run HIVE4 in a lower version of hadoop,
+provided that the base APIs of the hadoop 3.x series are common to
+each other.</p>
+<p>The steps are as follows:</p>
+<p>1.Compile TEZ to get tez.tar.gz which contains all hadoop related dependencies(not tez minimal tarball),
+run <code>mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -Pdist -Paws -Pazure</code>.
+For more detail,see:<code>https://tez.apache.org/install.html</code>.
+After compiling to get tez.tar.gz, users should set the following properties in tez-site.xml:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>    <span style=color:#f92672>&lt;property&gt;</span>
+        <span style=color:#f92672>&lt;name&gt;</span>tez.lib.uris<span style=color:#f92672>&lt;/name&gt;</span><span style=color:#75715e>&lt;!--Example, replace with actual hdfs path--&gt;</span>
+        <span style=color:#f92672>&lt;value&gt;</span>/apps/apache-tez-0.10.4-bin.tar.gz<span style=color:#f92672>&lt;/value&gt;</span>
+    <span style=color:#f92672>&lt;/property&gt;</span>
+    <span style=color:#f92672>&lt;property&gt;</span>
+        <span style=color:#f92672>&lt;name&gt;</span>tez.lib.uris.classpath<span style=color:#f92672>&lt;/name&gt;</span> <span style=color:#75715e>&lt;!--only use tez self lib,do not use any old version hadoop cluster&#39;s lib--&gt;</span>
+       <span style=color:#f92672>&lt;value&gt;</span>$PWD/tezlib/*,$PWD/tezlib/lib/*<span style=color:#f92672>&lt;/value&gt;</span>
+    <span style=color:#f92672>&lt;/property&gt;</span>
+    <span style=color:#f92672>&lt;property&gt;</span>
+        <span style=color:#f92672>&lt;name&gt;</span>tez.use.cluster.hadoop-libs<span style=color:#f92672>&lt;/name&gt;</span><span style=color:#75715e>&lt;!--only use tez self lib,do not use any old version hadoop cluster&#39;s lib--&gt;</span>
+        <span style=color:#f92672>&lt;value&gt;</span>false<span style=color:#f92672>&lt;/value&gt;</span>
+    <span style=color:#f92672>&lt;/property&gt;</span>
+
+    <span style=color:#f92672>&lt;property&gt;</span>
+        <span style=color:#f92672>&lt;name&gt;</span>tez.am.launch.env<span style=color:#f92672>&lt;/name&gt;</span><span style=color:#75715e>&lt;!--Example, replace with actual native-lib install path.Reuse old version hadoop cluster&#39;s native lib is ok.--&gt;</span>
+        <span style=color:#f92672>&lt;value&gt;</span>LD_LIBRARY_PATH=/usr/hadoop/3.1.0/hadoop/lib/native<span style=color:#f92672>&lt;/value&gt;</span>
+        <span style=color:#f92672>&lt;description&gt;</span>Users can set up environment variables individually, including but not limited to: JAVA_HOME, LD_LIBRARY_PATH.<span style=color:#f92672>&lt;/description&gt;</span>
+    <span style=color:#f92672>&lt;/property&gt;</span>
+    
+    <span style=color:#f92672>&lt;property&gt;</span>
+        <span style=color:#f92672>&lt;name&gt;</span>tez.task.launch.env<span style=color:#f92672>&lt;/name&gt;</span><span style=color:#75715e>&lt;!--Example, replace with actual native-lib install path.Reuse old version hadoop cluster&#39;s native lib is ok.--&gt;</span>
+        <span style=color:#f92672>&lt;value&gt;</span>LD_LIBRARY_PATH=/usr/hadoop/3.1.0/hadoop/lib/native<span style=color:#f92672>&lt;/value&gt;</span>
+        <span style=color:#f92672>&lt;description&gt;</span>Users can set up environment variables individually, including but not limited to: JAVA_HOME, LD_LIBRARY_PATH.<span style=color:#f92672>&lt;/description&gt;</span>
+    <span style=color:#f92672>&lt;/property&gt;</span>
+</code></pre></div><p>2.Upload tez to the specified HDFS path in <code>tez.lib.uris</code>.(Please remember, do not use the minimal tarball for installation.)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e>## DO not upload minimal tarball !!!</span>
+<span style=color:#f92672>[</span>hadoop@hive opt<span style=color:#f92672>]</span><span style=color:#75715e># hdfs dfs -put apache-tez-0.10.4-bin.tar.gz /apps/</span>
+</code></pre></div><p>3.Download the high version of the Hadoop package(Please ensure that the HADOOP version on which TEZ depends is the same as the HADOOP version you have downloaded.).Unzip HIVE, HADOOP, and TEZ all in the installation path.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e>## In this example, we have installed HIVE-4.0.1 and TEZ-0.10.4 on an Hadoop 3.1.0 cluster.users should install HIVE,HADOOP and TEZ into actual directories.</span>
+<span style=color:#f92672>[</span>hadoop@hive opt<span style=color:#f92672>]</span><span style=color:#75715e># cd /opt</span>
+<span style=color:#f92672>[</span>hadoop@hive opt<span style=color:#f92672>]</span><span style=color:#75715e># ll</span>
+drwxr-xr-x <span style=color:#ae81ff>11</span> hive hadoop      <span style=color:#ae81ff>4096</span> Nov  <span style=color:#ae81ff>7</span> 13:59 apache-hive-4.0.1-bin
+drwxr-xr-x  <span style=color:#ae81ff>3</span> hive hadoop      <span style=color:#ae81ff>4096</span> Nov  <span style=color:#ae81ff>7</span> 13:59 apache-tez-0.10.4-bin
+drwxr-xr-x <span style=color:#ae81ff>10</span> hive hadoop      <span style=color:#ae81ff>4096</span> Nov  <span style=color:#ae81ff>7</span> 13:59 hadoop-3.3.6
+lrwxrwxrwx  <span style=color:#ae81ff>1</span> hive hadoop        <span style=color:#ae81ff>30</span> Nov  <span style=color:#ae81ff>7</span> 13:59 hive-4.0.1 -&gt; apache-hive-4.0.1-bin
+lrwxrwxrwx  <span style=color:#ae81ff>1</span> hive hadoop        <span style=color:#ae81ff>21</span> Nov  <span style=color:#ae81ff>7</span> 13:59 tez -&gt; apache-tez-0.10.4-bin
+</code></pre></div><p>edit <code>hive-env.sh</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e># Set HADOOP_HOME to point to a specific hadoop install directory</span>
+HADOOP_HOME<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>HADOOP_HOME<span style=color:#66d9ef>:-</span>/opt/hadoop-3.3.6<span style=color:#e6db74>}</span>
+export HIVE_HOME<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>HIVE_HOME<span style=color:#66d9ef>:-</span>/opt/hive-4.0.1<span style=color:#e6db74>}</span>
+export TEZ_HOME<span style=color:#f92672>=</span>/opt/tez
+</code></pre></div><p>Copy old version hadoop conf into hadoop3.3.6+:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>cp /usr/hadoop/3.1.0/hadoop/conf/*  /opt/hadoop3.3.6/conf/
+</code></pre></div><p>Put <code>tez-site.xml</code> into hive conf dir:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mv tez-site.xml  /opt/hive-4.0.1/conf/
+</code></pre></div><p>After completing the above steps, users should be able to start the HMS service and HS2 service normally, and submit TEZ computing tasks without any issues.</p>
+<p>Through the above steps, we can run Hive4+tez in any Hadoop3 environment. Users do not need to upgrade the cluster&rsquo;s original hive/hadoop/tez.</p>
 <h2 id=next-steps>Next Steps</h2>
 <p>You can begin using Hive as soon as it is installed, it should be work on you computer. There are some extra information in the following sections.</p>
 <h2 id=beeline-cli>Beeline CLI</h2>
@@ -412,6 +475,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

@@ -9,8 +9,8 @@
 <title>Apache Hive : Top K Stats</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC crossorigin=anonymous>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
 <link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
 <link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
@@ -77,7 +77,7 @@ Development
 Community
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/BecomingACommitter>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
 <li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
@@ -86,7 +86,7 @@ Community
 <li>
 <hr class=dropdown-divider>
 </li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Bylaws>By Laws</a></li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
 </ul>
 </li>
@@ -134,7 +134,7 @@ ASF
 <li><a href=#existing-tables>Existing Tables</a></li>
 </ul>
 </li>
-<li><a href=#current-status--jira->Current Status (JIRA)</a></li>
+<li><a href=#current-status-jira>Current Status (JIRA)</a></li>
 </ul>
 </li>
 </ul>
@@ -188,7 +188,7 @@ set hive.stats.topk.poolsize=100;
 </code></pre><h3 id=newly-created-tables>Newly Created Tables</h3>
 <p>Suppose a partitioned table is created without skew, and data is inserted to its partitions:</p>
 <pre tabindex=0><code>CREATE TABLE table1 (key STRING, value STRING) PARTITIONED BY (ds STRING);
-INSERT OVERWRITE TABLE table1 PARTITION (ds='2012-09-07') SELECT * FROM table\_src;
+INSERT OVERWRITE TABLE table1 PARTITION (ds='2012-09-07') SELECT * FROM table_src;
 
 </code></pre><p>Top K was computed for the partition while data was inserted. If the user issues the command:</p>
 <pre tabindex=0><code>DESCRIBE FORMATTED table1 partition (ds='2012-09-07');
@@ -196,7 +196,7 @@ INSERT OVERWRITE TABLE table1 PARTITION (ds='2012-09-07') SELECT * FROM table\_s
 </code></pre><p>then among the output, the following will be displayed:</p>
 <pre tabindex=0><code>...
 Skewed Columns:         [value]                  
-Skewed Values:          [[val\_348], [val\_230], [val\_401], [val\_70]]      
+Skewed Values:          [[val_348], [val_230], [val_401], [val_70]]      
 ...
 
 </code></pre><p>If the user issues the command:</p>
@@ -205,7 +205,7 @@ Skewed Values:          [[val\_348], [val\_230], [val\_401], [val\_70]]
 </code></pre><p>then among the output, there will not be skewed information, since table level top K is not available for partitioned tables.</p>
 <p>For a non-partitioned table:</p>
 <pre tabindex=0><code>CREATE TABLE table1 (key STRING, value STRING);
-INSERT OVERWRITE TABLE table1 SELECT * FROM table\_src;
+INSERT OVERWRITE TABLE table1 SELECT * FROM table_src;
 
 </code></pre><p>If the user issues the command:</p>
 <pre tabindex=0><code>DESCRIBE FORMATTED table1;
@@ -213,13 +213,13 @@ INSERT OVERWRITE TABLE table1 SELECT * FROM table\_src;
 </code></pre><p>then among the output, the following will be displayed:</p>
 <pre tabindex=0><code>...
 Skewed Columns:         [value]                  
-Skewed Values:          [[val\_348], [val\_230], [val\_401], [val\_70]]      
+Skewed Values:          [[val_348], [val_230], [val_401], [val_70]]      
 ...
 
 </code></pre><p>When a table is created with skew:</p>
 <pre tabindex=0><code>set hive.internal.ddl.list.bucketing.enable=true;
 CREATE TABLE table1 (key STRING, value STRING) PARTITIONED BY (ds STRING) SKEWED BY (key) on ('38', '49');
-INSERT OVERWRITE TABLE table1 PARTITION (ds='2012-09-07') SELECT * FROM table\_src;
+INSERT OVERWRITE TABLE table1 PARTITION (ds='2012-09-07') SELECT * FROM table_src;
 
 </code></pre><p>Top K will not be collected, and the user specified skewed information remains. If the user issues the command:</p>
 <pre tabindex=0><code>DESCRIBE FORMATTED table1 partition (ds='2012-09-07');
@@ -269,6 +269,6 @@ The contents of this website are © 2023 Apache Software Foundation under the te
 </a>
 </div>
 </footer>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>
