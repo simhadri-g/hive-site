@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : LanguageManual Transform</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
-<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
-<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
-<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://hive.apache.org> <img src=https://hive.apache.org/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://hive.apache.org>Apache Hive</a>
+<a href=https://simhadri-g.github.io/hive-site/> <img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -146,7 +146,7 @@ ASF
 <p>It is your responsibility to sanitize any STRING columns prior to transformation. If your STRING column contains tabs, an identity transformer will not give you back what you started with! To help with this, see <a href=#regexp_replace>REGEXP_REPLACE</a> and replace the tabs with some other character on their way into the TRANSFORM() call.</p>
 <p>Warning</p>
 <p>Formally, <em>MAP &mldr;</em> and <em>REDUCE &mldr;</em> are syntactic transformations of <em>SELECT TRANSFORM ( &mldr; )</em>. In other words, they serve as comments or notes to the reader of the query. BEWARE: Use of these keywords may be <strong>dangerous</strong> as (e.g.) typing &ldquo;REDUCE&rdquo; does not force a reduce phase to occur and typing &ldquo;MAP&rdquo; does not force a new map phase!</p>
-<p>Please also see <a href=https://hive.apache.org/docs/latest/languagemanual-sortby_27362045/>Sort By / Cluster By / Distribute By</a> and Larry Ogrodnek&rsquo;s <a href=http://dev.bizo.com/2009/10/hive-map-reduce-in-java.html>blog post</a>.</p>
+<p>Please also see <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sortby_27362045/>Sort By / Cluster By / Distribute By</a> and Larry Ogrodnek&rsquo;s <a href=http://dev.bizo.com/2009/10/hive-map-reduce-in-java.html>blog post</a>.</p>
 <pre tabindex=0><code>clusterBy: CLUSTER BY colName (',' colName)*
 distributeBy: DISTRIBUTE BY colName (',' colName)*
 sortBy: SORT BY colName (ASC | DESC)? (',' colName (ASC | DESC)?)*
@@ -199,7 +199,7 @@ query:
     (outRowFormat)? (outRecordReader)?
 
 </code></pre><h4 id=sql-standard-based-authorization-disallows-transform>SQL Standard Based Authorization Disallows TRANSFORM</h4>
-<p>The TRANSFORM clause is disallowed when <a href=https://hive.apache.org/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL standard based authorization</a> is configured in Hive 0.13.0 and later releases (<a href=https://issues.apache.org/jira/browse/HIVE-6415>HIVE-6415</a>).</p>
+<p>The TRANSFORM clause is disallowed when <a href=https://simhadri-g.github.io/hive-site/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL standard based authorization</a> is configured in Hive 0.13.0 and later releases (<a href=https://issues.apache.org/jira/browse/HIVE-6415>HIVE-6415</a>).</p>
 <h4 id=transform-examples>TRANSFORM Examples</h4>
 <p>Example #1:</p>
 <pre tabindex=0><code>  FROM (
@@ -264,7 +264,7 @@ query:
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -288,11 +288,11 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://hive.apache.org style=color:grey>
+<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
+<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
 </body>
 </html>

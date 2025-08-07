@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : AdminManual Configuration</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
-<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
-<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
-<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://hive.apache.org> <img src=https://hive.apache.org/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://hive.apache.org>Apache Hive</a>
+<a href=https://simhadri-g.github.io/hive-site/> <img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -150,7 +150,7 @@ ASF
 <h2 id=configuring-hive>Configuring Hive</h2>
 <p>A number of configuration variables in Hive can be used by the administrator to change the behavior for their installations and user sessions. These variables can be configured in any of the following ways, shown in the order of preference:</p>
 <ul>
-<li>Using the <strong>set command</strong> in the <a href=https://hive.apache.org/docs/latest/languagemanual-cli_27362033/>CLI</a> or <a href=#beeline>Beeline</a> for setting session level values for the configuration variable for all statements subsequent to the set command. For example, the following command sets the scratch directory (which is used by Hive to store temporary output and plans) to <code>/tmp/mydir</code> for all subsequent statements:</li>
+<li>Using the <strong>set command</strong> in the <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-cli_27362033/>CLI</a> or <a href=#beeline>Beeline</a> for setting session level values for the configuration variable for all statements subsequent to the set command. For example, the following command sets the scratch directory (which is used by Hive to store temporary output and plans) to <code>/tmp/mydir</code> for all subsequent statements:</li>
 </ul>
 <pre tabindex=0><code>  set hive.exec.scratchdir=/tmp/mydir;
 
@@ -192,7 +192,7 @@ hive-site.xml -> hivemetastore-site.xml -> hiveserver2-site.xml -> &lsquo;<code>
 <p><code>hive-default.xml.template</code> is located in the <code>conf</code> directory in your installation root, and <code>hive-site.xml</code> should also be created in the same directory.</p>
 <p>Please note that the template file <code>hive-default.xml.template</code> is not used by Hive at all (as of Hive 0.9.0) – the canonical list of configuration options is only managed in the <code>HiveConf</code> java class. The template file has the formatting needed for <code>hive-site.xml</code>, so you can paste configuration variables from the template file into <code>hive-site.xml</code> and then change their values to the desired configuration.</p>
 <p>In Hive releases 0.9.0 through 0.13.1, the template file does not necessarily contain all configuration options found in <code>HiveConf.java</code> and some of its values and descriptions might be out of date or out of sync with the actual values and descriptions. However, as of <a href=https://issues.apache.org/jira/browse/HIVE-6037>Hive 0.14.0</a> the template file is generated directly from <code>HiveConf.java</code> and therefore it is a reliable source for configuration variables and their defaults.</p>
-<p>The administrative configuration variables are listed <a href=#below>below</a>. User variables are listed in <a href=https://hive.apache.org/docs/latest/configuration-properties_27842758/>Hive Configuration Properties</a>. As of <a href=https://issues.apache.org/jira/browse/HIVE-6037>Hive 0.14.0</a> you can display information about a configuration variable with the <a href=#show-conf-command>SHOW CONF command</a>.</p>
+<p>The administrative configuration variables are listed <a href=#below>below</a>. User variables are listed in <a href=https://simhadri-g.github.io/hive-site/docs/latest/configuration-properties_27842758/>Hive Configuration Properties</a>. As of <a href=https://issues.apache.org/jira/browse/HIVE-6037>Hive 0.14.0</a> you can display information about a configuration variable with the <a href=#show-conf-command>SHOW CONF command</a>.</p>
 <h3 id=temporary-folders>Temporary Folders</h3>
 <p>Hive uses temporary folders both on the machine running the Hive client and the default HDFS instance. These folders are used to store per-query temporary/intermediate data sets and are normally cleaned up by the hive client when the query is finished. However, in cases of abnormal hive client termination, some data may be left behind. The configuration details are as follows:</p>
 <ul>
@@ -202,9 +202,9 @@ hive-site.xml -> hivemetastore-site.xml -> hiveserver2-site.xml -> &lsquo;<code>
 <p>Note that when writing data to a table/partition, Hive will first write to a temporary location on the target table&rsquo;s filesystem (using hive.exec.scratchdir as the temporary location) and then move the data to the target table. This applies in all cases - whether tables are stored in HDFS (normal case) or in file systems like S3 or even NFS.</p>
 <h3 id=log-files>Log Files</h3>
 <p>Hive client produces logs and history files on the client machine. Please see <a href=#hive-logging>Hive Logging</a> for configuration details.</p>
-<p>For WebHCat logs, see <a href=#log-files>Log Files</a> in the <a href=https://hive.apache.org/docs/latest/webhcat_33299069/>WebHCat manual</a>.</p>
+<p>For WebHCat logs, see <a href=#log-files>Log Files</a> in the <a href=https://simhadri-g.github.io/hive-site/docs/latest/webhcat_33299069/>WebHCat manual</a>.</p>
 <h3 id=derby-server-mode>Derby Server Mode</h3>
-<p><a href=http://db.apache.org/derby/>Derby</a> is the default database for the Hive metastore (<a href=#metadata-store>Metadata Store</a>). To run Derby as a network server for multiple users, see <a href=https://hive.apache.org/docs/latest/hivederbyservermode_27362068/>Hive Using Derby in Server Mode</a>.</p>
+<p><a href=http://db.apache.org/derby/>Derby</a> is the default database for the Hive metastore (<a href=#metadata-store>Metadata Store</a>). To run Derby as a network server for multiple users, see <a href=https://simhadri-g.github.io/hive-site/docs/latest/hivederbyservermode_27362068/>Hive Using Derby in Server Mode</a>.</p>
 <h3 id=configuration-variables>Configuration Variables</h3>
 <p>Broadly the configuration variables for Hive administration are categorized into:</p>
 <ul>
@@ -213,7 +213,7 @@ hive-site.xml -> hivemetastore-site.xml -> hiveserver2-site.xml -> &lsquo;<code>
 <li><a href=#configuration-variables-used-to-interact-with-hadoop>Configuration Variables Used to Interact with Hadoop</a></li>
 <li><a href=#hive-variables-used-to-pass-run-time-information>Hive Variables Used to Pass Run Time Information</a></li>
 </ul>
-<p>Also see <a href=https://hive.apache.org/docs/latest/configuration-properties_27842758/>Hive Configuration Properties</a> in the <a href=https://hive.apache.org/docs/latest/languagemanual_27362030/>Language Manual</a> for non-administrative configuration variables.</p>
+<p>Also see <a href=https://simhadri-g.github.io/hive-site/docs/latest/configuration-properties_27842758/>Hive Configuration Properties</a> in the <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual_27362030/>Language Manual</a> for non-administrative configuration variables.</p>
 <p>Version information: Metrics</p>
 <p> A new Hive metrics system based on Codahale is introduced in releases 1.3.0 and 2.0.0 by <a href=https://issues.apache.org/jira/browse/HIVE-10761>HIVE-10761</a>. To configure it or revert to the old metrics system, see the <a href=#metrics-section-of-hive-configuration-properties>Metrics section of Hive Configuration Properties</a>.</p>
 <h4 id=hive-configuration-variables>Hive Configuration Variables</h4>
@@ -404,8 +404,8 @@ hive-site.xml -> hivemetastore-site.xml -> hiveserver2-site.xml -> &lsquo;<code>
 </tbody>
 </table>
 <h4 id=hive-metastore-configuration-variables>Hive Metastore Configuration Variables</h4>
-<p>Please see <a href=https://hive.apache.org/docs/latest/adminmanual-metastore-administration_27362076/>Hive Metastore Administration</a> for information about the configuration variables used to set up the metastore in local, remote, or embedded mode. Also see descriptions in the <a href=#metastore>Metastore</a> section of the Language Manual&rsquo;s <a href=https://hive.apache.org/docs/latest/configuration-properties_27842758/>Hive Configuration Properties</a>.</p>
-<p>For security configuration (Hive 0.10 and later), see the <a href=https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-HiveMetastoreSecurity>Hive Metastore Security</a> section in the Language Manual&rsquo;s <a href=https://hive.apache.org/docs/latest/configuration-properties_27842758/>Hive Configuration Properties</a>.</p>
+<p>Please see <a href=https://simhadri-g.github.io/hive-site/docs/latest/adminmanual-metastore-administration_27362076/>Hive Metastore Administration</a> for information about the configuration variables used to set up the metastore in local, remote, or embedded mode. Also see descriptions in the <a href=#metastore>Metastore</a> section of the Language Manual&rsquo;s <a href=https://simhadri-g.github.io/hive-site/docs/latest/configuration-properties_27842758/>Hive Configuration Properties</a>.</p>
+<p>For security configuration (Hive 0.10 and later), see the <a href=https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-HiveMetastoreSecurity>Hive Metastore Security</a> section in the Language Manual&rsquo;s <a href=https://simhadri-g.github.io/hive-site/docs/latest/configuration-properties_27842758/>Hive Configuration Properties</a>.</p>
 <h4 id=configuration-variables-used-to-interact-with-hadoop>Configuration Variables Used to Interact with Hadoop</h4>
 <table>
 <thead>
@@ -537,12 +537,12 @@ See <a href=http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-co
 <h3 id=hcatalog>HCatalog</h3>
 <p>Starting in Hive release 0.11.0, HCatalog is installed and configured with Hive. The HCatalog server is the same as the Hive metastore.</p>
 <ul>
-<li>See <a href=https://hive.apache.org/docs/latest/adminmanual-metastore-administration_27362076/>Hive Metastore Administration</a> for metastore configuration properties.</li>
-<li>See <a href=https://hive.apache.org/docs/latest/hcatalog-installhcat_34013403/>HCatalog Installation from Tarball</a> for additional information.</li>
+<li>See <a href=https://simhadri-g.github.io/hive-site/docs/latest/adminmanual-metastore-administration_27362076/>Hive Metastore Administration</a> for metastore configuration properties.</li>
+<li>See <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-installhcat_34013403/>HCatalog Installation from Tarball</a> for additional information.</li>
 </ul>
 <p>For Hive releases prior to 0.11.0, see the &ldquo;Thrift Server Setup&rdquo; section in the HCatalog 0.5.0 document <a href=http://hive.apache.org/docs/hcat_r0.5.0/install.html>Installation from Tarball</a>.</p>
 <h3 id=webhcat>WebHCat</h3>
-<p>For information about configuring WebHCat, see <a href=https://hive.apache.org/docs/latest/webhcat-configure_34015738/>WebHCat Configuration</a>.</p>
+<p>For information about configuring WebHCat, see <a href=https://simhadri-g.github.io/hive-site/docs/latest/webhcat-configure_34015738/>WebHCat Configuration</a>.</p>
 <p> </p>
 <p> </p>
 <p>Save</p>
@@ -552,7 +552,7 @@ See <a href=http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-co
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -576,11 +576,11 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://hive.apache.org style=color:grey>
+<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
+<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
 </body>
 </html>

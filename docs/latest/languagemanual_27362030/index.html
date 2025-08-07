@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : LanguageManual</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
-<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
-<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
-<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
-<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -27,8 +27,8 @@
 <menu style=background:#000;margin:0>
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 <div class=container-fluid>
-<a href=https://hive.apache.org> <img src=https://hive.apache.org/images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
-<a class="header-text navbar-brand" href=https://hive.apache.org>Apache Hive</a>
+<a href=https://simhadri-g.github.io/hive-site/> <img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
 </button>
@@ -45,7 +45,7 @@ Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -55,7 +55,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -63,13 +63,13 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/DesignDocs>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -80,9 +80,9 @@ Community
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Home#Home-ResourcesforContributors>Resources for Contributors</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
 <li>
 <hr class=dropdown-divider>
 </li>
@@ -126,84 +126,84 @@ ASF
 <li>
 <p>Commands and CLIs</p>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-commands_34838882/>Commands</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-cli_27362033/>Hive CLI</a> (old)</li>
-<li><a href=https://hive.apache.org/docs/latest/hiveserver2-clients_30758725/>Beeline CLI</a> (new)</li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-variablesubstitution_30754722/>Variable Substitution</a></li>
-<li><a href=https://hive.apache.org/docs/latest/hcatalog-cli_34013932/>HCatalog CLI</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-commands_34838882/>Commands</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-cli_27362033/>Hive CLI</a> (old)</li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/hiveserver2-clients_30758725/>Beeline CLI</a> (new)</li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-variablesubstitution_30754722/>Variable Substitution</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog-cli_34013932/>HCatalog CLI</a></li>
 </ul>
 </li>
 <li>
 <p>File Formats</p>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/avroserde_27850707/>Avro Files</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-orc_31818911/>ORC Files</a></li>
-<li><a href=https://hive.apache.org/docs/latest/parquet_38570914/>Parquet</a></li>
-<li><a href=https://hive.apache.org/docs/latest/compressedstorage_27362073/>Compressed Data Storage</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-lzo_33298193/>LZO Compression</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/avroserde_27850707/>Avro Files</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-orc_31818911/>ORC Files</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/parquet_38570914/>Parquet</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/compressedstorage_27362073/>Compressed Data Storage</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-lzo_33298193/>LZO Compression</a></li>
 </ul>
 </li>
 <li>
-<p><a href=https://hive.apache.org/docs/latest/languagemanual-types_27838462/>Data Types</a></p>
+<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-types_27838462/>Data Types</a></p>
 </li>
 <li>
 <p>Data Definition Statements</p>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-ddl_27362034/>DDL Statements</a>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-ddl_27362034/>DDL Statements</a>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-ddl-bucketedtables_27362035/>Bucketed Tables</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-ddl-bucketedtables_27362035/>Bucketed Tables</a></li>
 </ul>
 </li>
-<li><a href=https://hive.apache.org/docs/latest/statsdev_27362062/>Statistics (Analyze and Describe)</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-indexing_31822176/>Indexes</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-archiving_27362031/>Archiving</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/statsdev_27362062/>Statistics (Analyze and Describe)</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-indexing_31822176/>Indexes</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-archiving_27362031/>Archiving</a></li>
 </ul>
 </li>
 <li>
 <p>Data Manipulation Statements</p>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-dml_27362036/>DML: Load, Insert, Update, Delete</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-importexport_27837968/>Import/Export</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-dml_27362036/>DML: Load, Insert, Update, Delete</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-importexport_27837968/>Import/Export</a></li>
 </ul>
 </li>
 <li>
 <p>Data Retrieval: Queries</p>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-select_27362043/>Select</a>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-select_27362043/>Select</a>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-groupby_27362038/>Group By</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-sortby_27362045/>Sort/Distribute/Cluster/Order By</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-transform_27362047/>Transform and Map-Reduce Scripts</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-udf_27362046/>Operators and User-Defined Functions (UDFs)</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-xpathudf_27362051/>XPath-specific Functions</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-joins_27362039/>Joins</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-joinoptimization_33293167/>Join Optimization</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-union_27362049/>Union</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-lateralview_27362040/>Lateral View</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-groupby_27362038/>Group By</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sortby_27362045/>Sort/Distribute/Cluster/Order By</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-transform_27362047/>Transform and Map-Reduce Scripts</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-udf_27362046/>Operators and User-Defined Functions (UDFs)</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-xpathudf_27362051/>XPath-specific Functions</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joins_27362039/>Joins</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-joinoptimization_33293167/>Join Optimization</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-union_27362049/>Union</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-lateralview_27362040/>Lateral View</a></li>
 </ul>
 </li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-subqueries_27362044/>Sub Queries</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-sampling_27362042/>Sampling</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-virtualcolumns_27362048/>Virtual Columns</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-windowingandanalytics_31819589/>Windowing and Analytics Functions</a></li>
-<li><a href=https://hive.apache.org/docs/latest/30151323/>Enhanced Aggregation, Cube, Grouping and Rollup</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-subqueries_27362044/>Sub Queries</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sampling_27362042/>Sampling</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-virtualcolumns_27362048/>Virtual Columns</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-windowingandanalytics_31819589/>Windowing and Analytics Functions</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/30151323/>Enhanced Aggregation, Cube, Grouping and Rollup</a></li>
 <li>Procedural Language:  <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=59690156">Hive HPL/SQL</a></li>
-<li><a href=https://hive.apache.org/docs/latest/languagemanual-explain_27362037/>Explain Execution Plan</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-explain_27362037/>Explain Execution Plan</a></li>
 </ul>
 </li>
 <li>
-<p><a href=https://hive.apache.org/docs/latest/locking_27362050/>Locks</a></p>
+<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/locking_27362050/>Locks</a></p>
 </li>
 <li>
-<p><a href=https://hive.apache.org/docs/latest/languagemanual-authorization_27362032/>Authorization</a></p>
+<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-authorization_27362032/>Authorization</a></p>
 <ul>
-<li><a href=https://hive.apache.org/docs/latest/storage-based-authorization-in-the-metastore-server_45876440/>Storage Based Authorization</a></li>
-<li><a href=https://hive.apache.org/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL Standard Based Authorization</a></li>
-<li><a href=https://hive.apache.org/docs/latest/45876173/>Hive deprecated authorization mode / Legacy Mode</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/storage-based-authorization-in-the-metastore-server_45876440/>Storage Based Authorization</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL Standard Based Authorization</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site/docs/latest/45876173/>Hive deprecated authorization mode / Legacy Mode</a></li>
 </ul>
 </li>
 <li>
-<p><a href=https://hive.apache.org/docs/latest/configuration-properties_27842758/>Configuration Properties</a></p>
+<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/configuration-properties_27842758/>Configuration Properties</a></p>
 </li>
 </ul>
 </div>
@@ -212,7 +212,7 @@ ASF
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -236,11 +236,11 @@ donate</a> to the Apache Foundation.
 </div>
 </div>
 <div class="copyright row">
-<a href=https://hive.apache.org style=color:grey>
+<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
+<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
 </body>
 </html>
