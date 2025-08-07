@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content>
 <meta name=author content>
-<title>Apache Hive : Hive PTest2 Infrastructure</title>
+<title></title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
 <link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
 <link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
@@ -87,7 +87,7 @@ Community
 <hr class=dropdown-divider>
 </li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
+<li><a class=dropdown-item href=/docs/latest/howtorelease_27362106/>How To Release</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -120,73 +120,38 @@ ASF
 </header>
 <div class=content>
 <div class=docs>
-<h1 id=apache-hive--hive-ptest2-infrastructure>Apache Hive : Hive PTest2 Infrastructure</h1>
+<h1 id=capture-lineage-information-in-hive-hooks>Capture Lineage Information In Hive Hooks</h1>
 <h2 id=background>Background</h2>
-<p>Hive build jobs include <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Hive PreCommit Testing</a> and scheduled builds of various branches with various flags.  They are run on the Hive PTest2 Infrastructure, which is an EC2 cluster currently sponsored by Cloudera.  The Hive PTest2 Infra runs each build sequentially, but splits the testing across all the resources of the cluster to achieve much higher throughput.</p>
-<h2 id=location>Location</h2>
-<p>The infrastructure master is at ec2-174-129-184-35.compute-1.amazonaws.com.  Committers can be granted access to this host by request, see <a href=https://issues.apache.org/jira/browse/HIVE-4739>HIVE-4739</a>.</p>
-<h2 id=processes>Processes</h2>
-<p>The infrastructure master hosts two processes:</p>
+<p>In Hive, lineage information is captured in the form of <code>LineageInfo</code> object. This object is created in the <code>SemanticAnalyzer</code> and is passed to the <code>HookContext</code> object. Users can use the following existing Hooks or implement their own custom hooks to capture this information and utilize it.</p>
+<h5 id=existing-hooks>Existing Hooks</h5>
+<ul>
+<li>org.apache.hadoop.hive.ql.hooks.PostExecutePrinter</li>
+<li>org.apache.hadoop.hive.ql.hooks.LineageLogger</li>
+<li>org.apache.atlas.hive.hook.HiveHook</li>
+</ul>
+<p>To facilitate the capture of lineage information in a custom hook or in a use case where the <a href=#existing-hooks>existing hooks</a> are not set in <code>hive.exec.post.hooks</code>, a new configuration <code>hive.lineage.hook.info.enabled</code> was introduced in <a href=https://issues.apache.org/jira/browse/HIVE-24051>HIVE-24051</a>. This configuration is set to <code>false</code> by default.</p>
+<p>To provide filtering capability on query type in the lineage information, a new configuration <code>hive.lineage.hook.info.query.type</code> was introduced in <a href=https://issues.apache.org/jira/browse/HIVE-28409>HIVE-28409</a>, with default value as &ldquo;<em>ALL</em>&rdquo;. Users can tune the configuration accordingly to capture lineage information only for the required query types. In <a href=https://issues.apache.org/jira/browse/HIVE-28409>HIVE-28409</a>, the previously introduced configuration <code>hive.lineage.hook.info.enabled</code> was marked as deprecated.</p>
+<p><strong>NOTE: HIVE-28409, will be available in Hive-4.1.0 release.</strong></p>
+<p>Usage example:</p>
+<pre tabindex=0><code>hive.lineage.hook.info.query.type=ALL                                -- will capture lineage info for all the queries.
+hive.lineage.hook.info.query.type=CREATE_VIEW,CREATE_TABLE_AS_SELECT -- will capture lineage info related to these 2 particulare query types only.
+hive.lineage.hook.info.query.type=NONE                               -- will not capture lineage info for any query.
+</code></pre><p>Previously, to capture lineage information, users has 2 ways:</p>
 <ol>
-<li>Jenkins: <a href=http://ec2-174-129-184-35.compute-1.amazonaws.com/jenkins/>http://ec2-174-129-184-35.compute-1.amazonaws.com/jenkins/</a>
-<ul>
-<li>This is the admin for Hive builds.  The dashboard shows the state of the build queue, test results of past builds, etc.</li>
-<li>Builds are submitted either manually in the dashboard UI, automatically by patch upload (see <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Hive PreCommit Testing</a>), or by Jenkins schedule (branch builds).</li>
-</ul>
-</li>
-<li>Hive PTest2 WebServer
-<ul>
-<li>Exposes a REST API to take test requests from the Jenkins builds.  Each request specifies a profile property-file, which contains a set of properties such as what branch to build and what tests to run.</li>
-<li>On a test request:
-<ul>
-<li>Creates EC2 slaves, which are spot-instances.</li>
-<li>Reads the specified property-file and compiles Hive using it.</li>
-<li>Distributes the compiled artifacts across the EC2 slaves, makes SSH calls to run the tests remotely in parallel, and gathers the results.</li>
-</ul>
-</li>
-</ul>
+<li>Set any of the above mentioned <a href=#existing-hooks>existing hooks</a> in <code>hive.exec.post.hooks</code> configuration.</li>
+<li>Set <code>hive.lineage.hook.info.enabled</code> as true in cluster and restart HiveServer2 service. (Valid since Hive-4.0.0 release).</li>
+</ol>
+<p><strong>NOTE</strong>: Just by enabling <code>hive.lineage.hook.info.enabled</code>, lineage information for &ldquo;Create View&rdquo; query type won&rsquo;t be captured, user has to set the <a href=#existing-hooks>existing hooks</a> in <code>hive.exec.post.hooks</code> along with their custom hook class name.</p>
+<h2 id=changes-done-in-hive-28768httpsissuesapacheorgjirabrowsehive-28768>Changes done in <a href=https://issues.apache.org/jira/browse/HIVE-28768>HIVE-28768</a></h2>
+<p>The hardcoded values of the <a href=#existing-hooks>existing hooks</a> that capture lineage information in <code>SemanticAnalyzer</code> and <code>Optimizer</code> code has been removed and to determine, whether lineage information should be captured or not, the value of <code>hive.lineage.hook.info.query.type</code> configuration is checked. <strong>The default value of <code>hive.lineage.hook.info.query.type</code> has been set to &ldquo;<em>NONE</em>&rdquo;.</strong></p>
+<h2 id=implications-of-hive-28768httpsissuesapacheorgjirabrowsehive-28768-on-users>Implications of <a href=https://issues.apache.org/jira/browse/HIVE-28768>HIVE-28768</a> on users</h2>
 <ol>
-<li>
-<ul>
-<li>If no further test request comes in 30 minutes, the slaves are shutdown.</li>
-</ul>
-</li>
+<li>Users migrating directly from Hive-3.x to HIVE-4.1.0 <strong>will observe breaking changes</strong> in the way lineage information is captured. Setting <code>hive.exec.post.hooks</code> to any of the <a href=#existing-hooks>existing hooks</a> will not capture lineage information anymore. Users will have to make use of <code>hive.lineage.hook.info.query.type</code> configuration to capture lineage information.</li>
+<li>Users migrating from Hive-4.0.x to Hive-4.1.0 who don&rsquo;t have <code>hive.lineage.hook.info.enabled</code> set to true, <strong>will also observe breaking changes</strong> in the way lineage information is captured.</li>
 </ol>
-</li>
-</ol>
-<h3 id=jenkins-configurationdebug>Jenkins Configuration/Debug</h3>
-<ul>
-<li>Jenkins logs:  /var/log/jenkins/jenkins.log</li>
-<li>Jenkins config: /etc/sysconfig/jenkins</li>
-<li>Jenkins home: /var/lib/jenkins  (job info is located at /var/lib/jenkins/jobs)</li>
-</ul>
-<h3 id=hive-ptest2-webserver-configurationdebug>Hive PTest2 WebServer Configuration/Debug</h3>
-<ul>
-<li>Test Logs: <a href=http://ec2-174-129-184-35.compute-1.amazonaws.com/logs/>http://ec2-174-129-184-35.compute-1.amazonaws.com/logs/</a>  (redirects to /data/hive-ptest/logs/)</li>
-<li>Profile properties files: /usr/local/hiveptest/etc/public/</li>
-<li>Webservice logs: /home/hiveptest/apache-tomcat-7.0.41/logs/</li>
-<li>Working Directory: /data/hive-ptest/working/ (where libs, source, etc. are stored)</li>
-<li>Scripts: /usr/local/hiveptest/bin/</li>
-<li>Relevant JIRAs: <a href=https://issues.apache.org/jira/browse/HIVE-4675>HIVE-4675</a> and <a href=https://issues.apache.org/jira/browse/HIVE-4739>HIVE-4739</a></li>
-</ul>
-<h2 id=faq>FAQ:</h2>
-<h3 id=how-do-i-restart-jenkins>How do I restart Jenkins?</h3>
-<p>sudo service jenkins restart</p>
-<h3 id=how-do-i-setup-a-new-branch-build>How do I setup a new branch build?</h3>
-<ol>
-<li>Log into build machine, go to /usr/local/hiveptest/etc/public, create a new profile properties in the form {newprofile.properties} , where &ldquo;newprofile&rdquo; is the name of the new profile.  Easiest way is to copy an existing one, for example &ldquo;trunk-mr2.properties&rdquo; which are used to run pre-commit tests.</li>
-<li>In the new profile property, set the &ldquo;repository&rdquo; property in the new profile to point to the new branch, and &ldquo;repository-name&rdquo; property to any unique value (will be used as the directory name of the checked-out code).  Set any other properties accordingly, as they will be invoked by the jenkins build.</li>
-<li>In Jenkins, create a new job by copying template from existing job.</li>
-<li>In new Jenkins job, go in the build config modify the profile argument in the Hive PTest2 WebServer call (it will be like: &ldquo;java &mldr; org.apache.hive.ptest.api.client.PTestClient &ndash;profile trunk-mr2&rdquo;) to point to the new profile  ie, (&ldquo;java &mldr;–profile newprofile).</li>
-</ol>
-<h3 id=how-can-i-read-or-make-changes-to-hive-ptest2-infra-code>How can I read or make changes to Hive PTest2 Infra code?</h3>
-<p>Code is located in the Hive git repo.  It is under /hive/testutils/ptest2.  As the Hive PTest2 WebServer is a running process, if changes are made, it needs to be restarted.</p>
-<h3 id=how-do-i-stop-start-restart-the-hive-ptest2-webserver-or-have-it-use-the-latest-test-infra-code>How do I stop, start, restart the Hive PTest2 WebServer, or have it use the latest test infra code?</h3>
-<pre tabindex=0><code>$ sudo /usr/local/hiveptest/bin/stop-server.sh 
-$ sudo /usr/local/hiveptest/bin/start-server.sh 
-$ sudo /usr/local/hiveptest/bin/restart-server.sh 
-$ sudo /usr/local/hiveptest/bin/update.sh 
-</code></pre>
+<hr>
+<p><strong>NOTE: Recommended way to capture lineage information is though <code>hive.lineage.hook.info.query.type</code> configuration as <code>hive.lineage.hook.info.enabled</code> is marked as deprecated and is subjected to be removed in future release</strong></p>
+<hr>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>

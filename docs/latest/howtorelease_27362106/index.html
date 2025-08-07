@@ -87,7 +87,7 @@ Community
 <hr class=dropdown-divider>
 </li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToRelease>How To Release</a></li>
+<li><a class=dropdown-item href=/docs/latest/howtorelease_27362106/>How To Release</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -121,10 +121,12 @@ ASF
 <div class=content>
 <div class=docs>
 <h1 id=apache-hive--howtorelease>Apache Hive : HowToRelease</h1>
-<p><em>This page is prepared for Hive committers. You need committer rights to create a new Hive release.</em></p>
-<h2 id=heading></h2>
+<aside class=table-of-contents>
+<nav id=TableOfContents>
 <ul>
-<li></li>
+<li><a href=#apache-hive--howtorelease>Apache Hive : HowToRelease</a>
+<ul>
+<li><a href=#introduction>Introduction</a></li>
 <li><a href=#storage-api-release>Storage API Release</a>
 <ul>
 <li><a href=#storage-api-prepare-master-branch>Storage API Prepare Master Branch</a></li>
@@ -150,7 +152,12 @@ ASF
 </li>
 <li><a href=#see-also>See Also</a></li>
 </ul>
-<p>Hadoop Version Warning</p>
+</li>
+</ul>
+</nav>
+</aside>
+<h2 id=introduction>Introduction</h2>
+<p>This page is prepared for Hive committers. You need committer rights to create a new Hive release.</p>
 <p>This page assumes you are releasing from the master branch, and thus omits the use of Maven profiles to determine which version of Hadoop you are building against. If you are releasing from branch-1, you will need to add <code>-Phadoop-2</code> to most of your Maven commands.</p>
 <h2 id=storage-api-release>Storage API Release</h2>
 <p>The Hive projects has two products that are released separately:</p>
@@ -244,7 +251,7 @@ sftp&gt; quit
 </ol>
 <pre tabindex=0><code>% git checkout storage-release-X.Y.Z-rcR
 % cd storage-api
-% mvn -Papache-release -DskipTests clean deploy
+% mvn clean deploy -Papache-release -DskipTests
 </code></pre><ol start=2>
 <li>Login to Nexus and close the repository. Mark the repository as released.</li>
 <li>Create the final tag (be very careful, tags in &ldquo;rel/&rdquo; are not changeable).</li>
@@ -253,11 +260,9 @@ sftp&gt; quit
 % git tag -s rel/storage-release-X.Y.Z -m &quot;Hive Storage API X.Y.Z&quot;
 % git push origin rel/storage-release-X.Y.Z
 </code></pre><ol start=4>
-<li>Add the artifacts to Hive&rsquo;s dist area. There might be a problem with the size of the artifact.</li>
+<li>Add the artifacts to Hive&rsquo;s dist area. There might be a problem with the size of the artifact.
+<a href=https://issues.apache.org/jira/browse/INFRA-23055>INFRA-23055</a> solved the issue.</li>
 </ol>
-<h2 id=infra-23055httpsissuesapacheorgjirabrowseinfra-23055srcconfmacro><a href="https://issues.apache.org/jira/browse/INFRA-23055?src=confmacro">INFRA-23055</a></h2>
-<p><a href="https://cwiki.apache.org/confluence/plugins/servlet/applinks/oauth/login-dance/authorize?applicationLinkID=5aa69414-a9e9-3523-82ec-879b028fb15b">Authenticate</a> to see issue details</p>
-<p>solved the issue.</p>
 <pre tabindex=0><code>% svn checkout https://dist.apache.org/repos/dist/release/hive hive-dist
 % cd hive-dist
 % mkdir hive-storage-X.Y.Z
@@ -337,11 +342,15 @@ git push origin release-X.Y.Z-rcR
 <li>Make sure your release notes have been updated for any new commits, and go through the previous steps if necessary.</li>
 <li>Build the release (binary and source versions) after running unit tests. Manually create the sha256 files.</li>
 </ol>
-<pre tabindex=0><code>% mvn install -Pdist,iceberg -DskipTests -Dmaven.javadoc.skip=true -DcreateChecksum=true
+<pre tabindex=0><code>% mvn clean install -Pdist -DskipTests -Dmaven.javadoc.skip=true
 
 % cd packaging/target
 % shasum -a 256 apache-hive-X.Y.Z-bin.tar.gz &gt; apache-hive-X.Y.Z-bin.tar.gz.sha256
 % shasum -a 256 apache-hive-X.Y.Z-src.tar.gz &gt; apache-hive-X.Y.Z-src.tar.gz.sha256
+
+% cd ../../standalone-metastore/packaging/target
+% shasum -a 256 hive-standalone-metastore-X.Y.Z-bin.tar.gz &gt; hive-standalone-metastore-X.Y.Z-bin.tar.gz.sha256
+% shasum -a 256 hive-standalone-metastore-X.Y.Z-src.tar.gz &gt; hive-standalone-metastore-X.Y.Z-src.tar.gz.sha256
 </code></pre><p>Note: If you build from the existing project, make sure there are no empty directories or the &ldquo;*.iml&rdquo; files in the apache-hive-X.Y.Z-src.tar.gz.
 3. Verify that the SHA 256 checksums are valid:</p>
 <pre tabindex=0><code>% shasum -a 256 -c apache-hive-X.Y.Z-bin.tar.gz.sha256
@@ -350,6 +359,11 @@ apache-hive-X.Y.Z-bin.tar.gz: OK
 % shasum -a 256 -c apache-hive-X.Y.Z-src.tar.gz.sha256
 apache-hive-X.Y.Z-src.tar.gz: OK
 
+% shasum -a 256 -c hive-standalone-metastore-X.Y.Z-bin.tar.gz.sha256
+hive-standalone-metastore-X.Y.Z-bin.tar.gz: OK
+
+% shasum -a 256 -c hive-standalone-metastore-X.Y.Z-src.tar.gz.sha256
+hive-standalone-metastore-X.Y.Z-src.tar.gz: OK
 </code></pre><ol start=4>
 <li>Check that release file looks ok &ndash; e.g., install it and run examples from tutorial.</li>
 <li>Setup your PGP keys for signing the release, if you don&rsquo;t have them already.
@@ -370,7 +384,8 @@ apache-hive-X.Y.Z-src.tar.gz: OK
 </ol>
 <pre tabindex=0><code>% gpg --armor --output apache-hive-X.Y.Z-bin.tar.gz.asc --detach-sig apache-hive-X.Y.Z-bin.tar.gz
 % gpg --armor --output apache-hive-X.Y.Z-src.tar.gz.asc --detach-sig apache-hive-X.Y.Z-src.tar.gz
-
+% gpg --armor --output hive-standalone-metastore-X.Y.Z-bin.tar.gz.asc --detach-sig hive-standalone-metastore-X.Y.Z-bin.tar.gz
+% gpg --armor --output hive-standalone-metastore-X.Y.Z-src.tar.gz.asc --detach-sig hive-standalone-metastore-X.Y.Z-src.tar.gz
 </code></pre><ol start=7>
 <li>Follow instructions in <a href=https://www.apache.org/dev/release-publishing.html#distribution>https://www.apache.org/dev/release-publishing.html#distribution</a> to push the new release artifacts (tar.gz, tar.gz.asc, tar.gz.sha256) to the SVN staging area of the project (<a href=https://dist.apache.org/repos/dist/dev/hive/>https://dist.apache.org/repos/dist/dev/hive/</a>). Make sure to create a new directory for the release candidate. You may need PMC privileges to do this step – if you do not have such privileges, please ping a <a href=http://hive.apache.org/people.html>PMC member</a> to do this for you.</li>
 </ol>
@@ -380,24 +395,25 @@ cd dist
 svn update --set-depth empty dev
 svn update --set-depth empty dev/hive
 mkdir dev/hive/hive-X.Y.Z/
-
 cp &lt;hive-source-dir&gt;/packaging/target/apache-hive-X.Y.Z*.tar.gz* dev/hive/hive-X.Y.Z/
+
+mkdir dev/hive/hive-standalone-metastore-X.Y.Z/
+cp &lt;hive-source-dir&gt;/standalone-metastore/packaging/target/hive-standalone-metastore-X.Y.Z*.tar.gz* dev/hive/hive-standalone-metastore-X.Y.Z/
+
 svn add dev/hive/hive-X.Y.Z
+svn add dev/hive/hive-standalone-metastore-X.Y.Z
 svn commit -m &quot;Hive X.Y.Z release&quot; 
 </code></pre><ol start=8>
 <li>Publish Maven artifacts to the Apache staging repository. Make sure to have this <a href=http://www.apache.org/dev/publishing-maven-artifacts.html#dev-env>setup</a> for Apache releases. Use committer <a href=https://maven.apache.org/developers/committer-settings.html>setting.xml</a>.</li>
 </ol>
 <p><strong>Note</strong>: If you get an error <code>gpg: signing failed: Inappropriate ioctl for device,</code> try doing <code>export GPG_TTY=$(tty)</code></p>
 <p><strong>Note</strong>: if you have multiple gpg keys, you may need to specify which key to use via -Dgpg.keyname=&lt;PRIV_KEY></p>
-<pre tabindex=0><code>% mvn deploy -DskipTests -Papache-release,iceberg -Dmaven.javadoc.skip=true
-
+<pre tabindex=0><code>% mvn deploy -Papache-release -DskipTests -Dmaven.javadoc.skip=true
 </code></pre><ol start=9>
 <li>Login to the <a href=https://repository.apache.org/index.html#stagingRepositories>Apache Nexus server</a> and &ldquo;close&rdquo; the staged repository. This makes the artifacts available at a temporary URL.</li>
 </ol>
 <h3 id=voting>Voting</h3>
-<ol>
-<li>Call a release vote on dev at hive.apache.org.</li>
-</ol>
+<p>Call a release vote on dev at hive.apache.org.</p>
 <pre tabindex=0><code>From: you@apache.org
 To: dev@hive.apache.org
 Subject: [VOTE] Apache Hive X.Y.Z Release Candidate N
@@ -407,8 +423,10 @@ Apache Hive X.Y.Z Release Candidate N is available here:
 https://people.apache.org/~you/hive-X.Y.Z-candidate-N
 
 The checksums are these:
-- ff60286044d2f3faa8ad1475132cdcecf4ce9ed8faf1ed4e56a6753ebc3ab585  apache-hive-4.0.0-alpha-1-bin.tar.gz
-- 07f30371df5f624352fa1d0fa50fd981a4dec6d4311bb340bace5dd7247d3015  apache-hive-4.0.0-alpha-1-src.tar.gz
+- ff60286044d2f3faa8ad1475132cdcecf4ce9ed8faf1ed4e56a6753ebc3ab585  apache-hive-4.1.0-bin.tar.gz
+- 07f30371df5f624352fa1d0fa50fd981a4dec6d4311bb340bace5dd7247d3015  apache-hive-4.1.0-src.tar.gz
+- 8d3a82be5670199c9c21f4766fdb3c49749cc8db6b517e0e73ac9f16dc7d3ef9  hive-standalone-metastore-4.1.0-bin.tar.gz
+- f47be1263f2d8bb09e2e626b66b979d29135c978ba1dd29f682bb21a08455b60  hive-standalone-metastore-4.1.0-src.tar.gz
 
 Maven artifacts are available here:
 
@@ -426,7 +444,44 @@ Voting will conclude in 72 hours.
 Hive PMC Members: Please test and vote.
 
 Thanks.
+</code></pre><p>After the vote finishes, count <em>all</em> votes and send out the result in a separate thread.</p>
+<pre tabindex=0><code>From: you@apache.org
+To: dev@hive.apache.org
+Subject: [RESULT][VOTE] Apache Hive X.Y.Z Release Candidate N
 
+Thanks to everyone who has tested the release candidate and given their comments and votes.
+
+The tally is as follows.
+
+N binding +1s:
+&lt;names&gt;
+
+N non-binding +1s:
+&lt;names&gt;
+
+No 0s or -1s.
+
+Therefore, I am delighted to announce that the proposal to release Apache Hive X.Y.Z has passed.
+
+Thanks everyone. We’ll now publish and announce the release.
+
+[There was some feedback during voting. I shall open a separate
+thread to discuss.]
+</code></pre><p>For transparency and accountability purposes, all votes must be counted including zeros, and negative votes. In case questions arise later, there is a clear audit trail about who supported or opposed the release.
+Even though non-binding votes do not count for publishing the release, naming the voters acknowledges participation, encourages involvement, and shows active community engagement.
+Moreover, sharing the result in a separate thread improves clarity since it clearly separates the voting process from the result. It also provides a permanent reference point for the result without extra noise that may appear in the voting thread and can be used later for audit trails.</p>
+<p>In case problems are discovered with a release candidate, the release manager should send an appropriate email in a separate thread.</p>
+<pre tabindex=0><code>From: you@apache.org
+To: dev@hive.apache.org
+Subject: [CANCEL][VOTE] Apache Hive X.Y.Z Release Candidate N
+
+Thanks to everyone who has tested the release candidate and given their comments and votes.
+
+I am cancelling the vote for Release Candidate N due to:
+HIVE-XXXXXX:
+HIVE-YYYYYY:
+
+I will prepare another a release candidate once the above issues are resolved.
 </code></pre><h3 id=verifying-the-release-candidate>Verifying the Release Candidate</h3>
 <ol>
 <li>Verifying the PGP signature:</li>
@@ -437,9 +492,11 @@ or
 wget https://people.apache.org/keys/group/hive.asc
 
 gpg --import &lt;keys file&gt;
-gpg --verify hive-X.Y.Z-bin.tar.gz.asc  hive-X.Y.Z-bin.tar.gz
-gpg --verify hive-X.Y.Z.tar.gz.asc  hive-X.Y.Z.tar.gz
+gpg --verify apache-hive-X.Y.Z-bin.tar.gz.asc apache-hive-X.Y.Z-bin.tar.gz
+gpg --verify apache-hive-X.Y.Z-src.tar.gz.asc apache-hive-X.Y.Z-src.tar.gz
 
+gpg --verify hive-standalone-metastore-X.Y.Z-bin.tar.gz.asc hive-standalone-metastore-X.Y.Z-bin.tar.gz
+gpg --verify hive-standalone-metastore-X.Y.Z-src.tar.gz.asc hive-standalone-metastore-X.Y.Z-src.tar.gz
 </code></pre><ol start=2>
 <li>Verifying the sha256 checksum:<br>
 See the step under Building.</li>
@@ -454,16 +511,13 @@ git push origin rel/release-X.Y.Z
 git tag -d release-X.Y.Z-rcR
 git push origin :release-X.Y.Z-rcR
 </code></pre><p>If errors happen while &ldquo;git tag -s&rdquo;, try to configure the git signing key by &ldquo;git config user.signingkey your_gpg_key_id&rdquo; then rerun the command.
-2. Move the release artifacts to the release area of the project (<a href=https://dist.apache.org/repos/dist/release/hive/>https://dist.apache.org/repos/dist/release/hive/</a>). Using svn mv command is important otherwise you may hit size limitations applying to artifacts(</p>
-<h2 id=infra-23055httpsissuesapacheorgjirabrowseinfra-23055srcconfmacro-1><a href="https://issues.apache.org/jira/browse/INFRA-23055?src=confmacro">INFRA-23055</a></h2>
-<p><a href="https://cwiki.apache.org/confluence/plugins/servlet/applinks/oauth/login-dance/authorize?applicationLinkID=5aa69414-a9e9-3523-82ec-879b028fb15b">Authenticate</a> to see issue details</p>
-<p>)</p>
+2. Move the release artifacts to the release area of the project (<a href=https://dist.apache.org/repos/dist/release/hive/>https://dist.apache.org/repos/dist/release/hive/</a>). Using svn mv command is important otherwise you may hit size limitations applying to artifacts(<a href=https://issues.apache.org/jira/browse/INFRA-23055>INFRA-23055</a>)</p>
 <pre tabindex=0><code>svn mv https://dist.apache.org/repos/dist/dev/hive/hive-X.Y.Z https://dist.apache.org/repos/dist/release/hive/hive-X.Y.Z -m &quot;Move hive-X.Y.Z release from dev to release&quot;
 </code></pre><ol start=3>
 <li>Wait till the release propagates to the mirrors and appears under: <a href=https://dlcdn.apache.org/hive/>https://dlcdn.apache.org/hive/</a></li>
 <li>In your base hive source directory, generate javadocs as follows:</li>
 </ol>
-<pre tabindex=0><code>mvn clean install javadoc:javadoc javadoc:aggregate -DskipTests -Pjavadoc,iceberg
+<pre tabindex=0><code>mvn clean install javadoc:javadoc javadoc:aggregate -Pjavadoc -DskipTests
 </code></pre><p>After you run this, you should have javadocs present in your &lt;hive_source_dir>/target/site/apidocs
 5. Check out the javadocs svn repository as follows:</p>
 <pre tabindex=0><code>svn co --depth empty https://svn.apache.org/repos/infra/websites/production/hive/content/javadocs
@@ -531,10 +585,10 @@ possible.
 Regards,
 
 The Apache Hive Team
-
 </code></pre><h3 id=archive-old-releases>Archive old releases</h3>
 <p>According to the <a href=https://infra.apache.org/release-distribution.html#archival>INFRA archival g</a><a href=https://infra.apache.org/release-distribution.html#archival>uidelines</a> old releases should be removed from the main <a href=https://downloads.apache.org/hive/>download site of the project</a> following. Check the respective guidelines and perform the necessary cleanup.</p>
-<pre tabindex=0><code>svn del -m &quot;Archiving release Apache Hive 4.0.0-beta-1&quot; https://dist.apache.org/repos/dist/release/hive/hive-4.0.0-beta-1/ 
+<pre tabindex=0><code>svn del -m &quot;Archiving release Apache Hive X.Y.Z&quot; https://dist.apache.org/repos/dist/release/hive/hive-X.Y.Z/ 
+svn del -m &quot;Archiving release Apache Hive Standalone Metastore X.Y.Z&quot; https://dist.apache.org/repos/dist/release/hive/hive-standalone-metastore-X.Y.Z/ 
 </code></pre><h3 id=preparing-branch-for-future-maintenance-release>Preparing Branch for Future Maintenance Release</h3>
 <p>After the release has been completed, prepare the branch for the next development cycle.</p>
 <ol>
