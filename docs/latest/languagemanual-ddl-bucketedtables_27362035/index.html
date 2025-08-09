@@ -44,8 +44,8 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=/hive-site/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -119,7 +119,69 @@ ASF
 </menu>
 </header>
 <div class=content>
-<div class=docs>
+<div class=docs-container>
+<aside class=docs-sidebar>
+<div class=docs-sidebar-header>
+<h3><i class="fas fa-book"></i> Documentation</h3>
+</div>
+<nav class=docs-nav>
+<div class=docs-nav-section>
+<h4>Quick Start</h4>
+<ul>
+<li><a href=/docs/javadocs/><i class="fas fa-code"></i> API Documentation</a></li>
+<li><a href=/development/gettingstarted/><i class="fas fa-rocket"></i> Getting Started</a></li>
+<li><a href=/development/quickstart/><i class="fas fa-zap"></i> Quick Start Guide</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Development</h4>
+<ul>
+<li><a href=/development/versioncontrol/><i class="fab fa-git-alt"></i> Version Control</a></li>
+<li><a href=/development/qtest/><i class="fas fa-vial"></i> Testing</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Community</h4>
+<ul>
+<li><a href=/community/mailinglists/><i class="fas fa-envelope"></i> Mailing Lists</a></li>
+<li><a href=/community/issuetracking/><i class="fas fa-bug"></i> Issue Tracking</a></li>
+<li><a href=/community/people/><i class="fas fa-users"></i> People</a></li>
+</ul>
+</div>
+</nav>
+<div class=docs-sidebar-footer>
+<div class=docs-version>
+<i class="fas fa-tag"></i> Latest Version
+</div>
+</div>
+</aside>
+<main class="docs-main docs-main-full">
+<article class=docs-content>
+<nav class=docs-breadcrumb>
+<ol>
+<li><a href=/><i class="fas fa-home"></i> Home</a></li>
+<li><a href=/docs/>Documentation</a></li>
+<li class=active>Apache Hive : LanguageManual DDL BucketedTables</li>
+</ol>
+</nav>
+<header class=docs-header>
+<h1 class=docs-title>Apache Hive : LanguageManual DDL BucketedTables</h1>
+<div class=docs-meta>
+<span class=docs-date>
+<i class="fas fa-calendar-alt"></i>
+Last updated: December 12, 2024
+</span>
+</div>
+</header>
+<div class=docs-toc>
+<h4><i class="fas fa-list"></i> Table of Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--languagemanual-ddl-bucketedtables>Apache Hive : LanguageManual DDL BucketedTables</a></li>
+</ul>
+</nav>
+</div>
+<div class=docs-article>
 <h1 id=apache-hive--languagemanual-ddl-bucketedtables>Apache Hive : LanguageManual DDL BucketedTables</h1>
 <p>This is a brief example on creating and populating bucketed tables. (For another example, see <a href=#bucketed-sorted-tables>Bucketed Sorted Tables</a>.)</p>
 <p>Bucketed tables are fantastic in that they allow much more efficient <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-sampling_27362042/>sampling</a> than do non-bucketed tables, and they may later allow for time saving operations such as mapside joins. However, the bucketing specified at table creation is not enforced when the table is written to, and so it is possible for the table&rsquo;s metadata to advertise properties which are not upheld by the table&rsquo;s actual layout. This should obviously be avoided. Here&rsquo;s how to do it right.</p>
@@ -141,6 +203,28 @@ SELECT userid, firstname, lastname WHERE ds='2009-02-25';
 <p>The command <code>set hive.enforce.bucketing = true;</code> allows the correct number of reducers and the cluster by column to be automatically selected based on the table. Otherwise, you would need to set the number of reducers to be the same as the number of buckets as in <code>set mapred.reduce.tasks = 256;</code> and have a <code>CLUSTER BY ...</code> clause in the select.</p>
 <p>How does Hive distribute the rows across the buckets? In general, the bucket number is determined by the expression <code>hash_function(bucketing_column) mod num_buckets</code>. (There&rsquo;s a &lsquo;0x7FFFFFFF in there too, but that&rsquo;s not that important). The hash_function depends on the type of the bucketing column. For an int, it&rsquo;s easy, <code>hash_int(i) == i</code>. For example, if user_id were an int, and there were 10 buckets, we would expect all user_id&rsquo;s that end in 0 to be in bucket 1, all user_id&rsquo;s that end in a 1 to be in bucket 2, etc. For other datatypes, it&rsquo;s a little tricky. In particular, the hash of a BIGINT is not the same as the BIGINT. And the hash of a string or a complex datatype will be some number that&rsquo;s derived from the value, but not anything humanly-recognizable. For example, if user_id were a STRING, then the user_id&rsquo;s in bucket 1 would probably not end in 0. In general, distributing rows based on the hash will give you a even distribution in the buckets.</p>
 <p>So, what can go wrong? As long as you use the syntax above and <code>set hive.enforce.bucketing = true</code> (for Hive 0.x and 1.x), the tables should be populated properly. Things can go wrong if the bucketing column type is different during the insert and on read, or if you manually cluster by a value that&rsquo;s different from the table definition.</p>
+</div>
+<footer class=docs-footer>
+<div class=docs-feedback>
+<h4><i class="fas fa-comment"></i> Feedback</h4>
+<p>Was this page helpful? Let us know how we can improve.</p>
+<div class=docs-feedback-buttons>
+<button class="btn btn-feedback btn-positive">
+<i class="fas fa-thumbs-up"></i> Yes
+</button>
+<button class="btn btn-feedback btn-negative">
+<i class="fas fa-thumbs-down"></i> No
+</button>
+</div>
+</div>
+<div class=docs-edit>
+<a href=https://github.com/apache/hive-site/edit/main/content/docs/latest/languagemanual-ddl-bucketedtables_27362035.md class="btn btn-outline">
+<i class="fab fa-github"></i> Edit this page on GitHub
+</a>
+</div>
+</footer>
+</article>
+</main>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>

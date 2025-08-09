@@ -44,8 +44,8 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=/hive-site/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -119,7 +119,88 @@ ASF
 </menu>
 </header>
 <div class=content>
-<div class=docs>
+<div class=docs-container>
+<aside class=docs-sidebar>
+<div class=docs-sidebar-header>
+<h3><i class="fas fa-book"></i> Documentation</h3>
+</div>
+<nav class=docs-nav>
+<div class=docs-nav-section>
+<h4>Quick Start</h4>
+<ul>
+<li><a href=/docs/javadocs/><i class="fas fa-code"></i> API Documentation</a></li>
+<li><a href=/development/gettingstarted/><i class="fas fa-rocket"></i> Getting Started</a></li>
+<li><a href=/development/quickstart/><i class="fas fa-zap"></i> Quick Start Guide</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Development</h4>
+<ul>
+<li><a href=/development/versioncontrol/><i class="fab fa-git-alt"></i> Version Control</a></li>
+<li><a href=/development/qtest/><i class="fas fa-vial"></i> Testing</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Community</h4>
+<ul>
+<li><a href=/community/mailinglists/><i class="fas fa-envelope"></i> Mailing Lists</a></li>
+<li><a href=/community/issuetracking/><i class="fas fa-bug"></i> Issue Tracking</a></li>
+<li><a href=/community/people/><i class="fas fa-users"></i> People</a></li>
+</ul>
+</div>
+</nav>
+<div class=docs-sidebar-footer>
+<div class=docs-version>
+<i class="fas fa-tag"></i> Latest Version
+</div>
+</div>
+</aside>
+<main class=docs-main>
+<article class=docs-content>
+<nav class=docs-breadcrumb>
+<ol>
+<li><a href=/><i class="fas fa-home"></i> Home</a></li>
+<li><a href=/docs/>Documentation</a></li>
+<li class=active>Apache Hive : JDBC Storage Handler</li>
+</ol>
+</nav>
+<header class=docs-header>
+<h1 class=docs-title>Apache Hive : JDBC Storage Handler</h1>
+<div class=docs-meta>
+<span class=docs-date>
+<i class="fas fa-calendar-alt"></i>
+Last updated: December 12, 2024
+</span>
+</div>
+</header>
+<div class=docs-toc>
+<h4><i class="fas fa-list"></i> Table of Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--jdbc-storage-handler>Apache Hive : JDBC Storage Handler</a></li>
+<li><a href=#syntax>Syntax</a>
+<ul>
+<li><a href=#table-properties>Table Properties</a></li>
+<li><a href=#supported-data-type>Supported Data Type</a></li>
+<li><a href=#columntype-mapping>Column/Type Mapping</a></li>
+</ul>
+</li>
+<li><a href=#auto-shipping>Auto Shipping</a></li>
+<li><a href=#securing-password>Securing Password</a></li>
+<li><a href=#partitioning>Partitioning</a></li>
+<li><a href=#computation-pushdown>Computation Pushdown</a></li>
+<li><a href=#using-a-non-default-schema>Using a Non-default Schema</a>
+<ul>
+<li><a href=#mariadb>MariaDB</a></li>
+<li><a href=#ms-sql>MS SQL</a></li>
+<li><a href=#oracle>Oracle</a></li>
+<li><a href=#postgresql>PostgreSQL</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class=docs-article>
 <h1 id=apache-hive--jdbc-storage-handler>Apache Hive : JDBC Storage Handler</h1>
 <aside class=table-of-contents>
 <nav id=TableOfContents>
@@ -465,6 +546,57 @@ ALTER ROLE greg SET search_path TO bob;
 <pre tabindex=0><code>GRANT USAGE ON SCHEMA bob TO greg;
 GRANT SELECT ON ALL TABLES IN SCHEMA bob TO greg;
 </code></pre>
+</div>
+<footer class=docs-footer>
+<div class=docs-feedback>
+<h4><i class="fas fa-comment"></i> Feedback</h4>
+<p>Was this page helpful? Let us know how we can improve.</p>
+<div class=docs-feedback-buttons>
+<button class="btn btn-feedback btn-positive">
+<i class="fas fa-thumbs-up"></i> Yes
+</button>
+<button class="btn btn-feedback btn-negative">
+<i class="fas fa-thumbs-down"></i> No
+</button>
+</div>
+</div>
+<div class=docs-edit>
+<a href=https://github.com/apache/hive-site/edit/main/content/docs/latest/jdbc-storage-handler_95651916.md class="btn btn-outline">
+<i class="fab fa-github"></i> Edit this page on GitHub
+</a>
+</div>
+</footer>
+</article>
+<aside class=docs-toc-sidebar>
+<div class=docs-toc-sticky>
+<h4><i class="fas fa-list"></i> On this page</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--jdbc-storage-handler>Apache Hive : JDBC Storage Handler</a></li>
+<li><a href=#syntax>Syntax</a>
+<ul>
+<li><a href=#table-properties>Table Properties</a></li>
+<li><a href=#supported-data-type>Supported Data Type</a></li>
+<li><a href=#columntype-mapping>Column/Type Mapping</a></li>
+</ul>
+</li>
+<li><a href=#auto-shipping>Auto Shipping</a></li>
+<li><a href=#securing-password>Securing Password</a></li>
+<li><a href=#partitioning>Partitioning</a></li>
+<li><a href=#computation-pushdown>Computation Pushdown</a></li>
+<li><a href=#using-a-non-default-schema>Using a Non-default Schema</a>
+<ul>
+<li><a href=#mariadb>MariaDB</a></li>
+<li><a href=#ms-sql>MS SQL</a></li>
+<li><a href=#oracle>Oracle</a></li>
+<li><a href=#postgresql>PostgreSQL</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>

@@ -44,8 +44,8 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=/hive-site/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -119,7 +119,107 @@ ASF
 </menu>
 </header>
 <div class=content>
-<div class=docs>
+<div class=docs-container>
+<aside class=docs-sidebar>
+<div class=docs-sidebar-header>
+<h3><i class="fas fa-book"></i> Documentation</h3>
+</div>
+<nav class=docs-nav>
+<div class=docs-nav-section>
+<h4>Quick Start</h4>
+<ul>
+<li><a href=/docs/javadocs/><i class="fas fa-code"></i> API Documentation</a></li>
+<li><a href=/development/gettingstarted/><i class="fas fa-rocket"></i> Getting Started</a></li>
+<li><a href=/development/quickstart/><i class="fas fa-zap"></i> Quick Start Guide</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Development</h4>
+<ul>
+<li><a href=/development/versioncontrol/><i class="fab fa-git-alt"></i> Version Control</a></li>
+<li><a href=/development/qtest/><i class="fas fa-vial"></i> Testing</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Community</h4>
+<ul>
+<li><a href=/community/mailinglists/><i class="fas fa-envelope"></i> Mailing Lists</a></li>
+<li><a href=/community/issuetracking/><i class="fas fa-bug"></i> Issue Tracking</a></li>
+<li><a href=/community/people/><i class="fas fa-users"></i> People</a></li>
+</ul>
+</div>
+</nav>
+<div class=docs-sidebar-footer>
+<div class=docs-version>
+<i class="fas fa-tag"></i> Latest Version
+</div>
+</div>
+</aside>
+<main class=docs-main>
+<article class=docs-content>
+<nav class=docs-breadcrumb>
+<ol>
+<li><a href=/><i class="fas fa-home"></i> Home</a></li>
+<li><a href=/docs/>Documentation</a></li>
+<li class=active>Query File Test(qtest)</li>
+</ol>
+</nav>
+<header class=docs-header>
+<h1 class=docs-title>Query File Test(qtest)</h1>
+<div class=docs-meta>
+<span class=docs-date>
+<i class="fas fa-calendar-alt"></i>
+Last updated: March 28, 2025
+</span>
+</div>
+</header>
+<div class=docs-toc>
+<h4><i class="fas fa-list"></i> Table of Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#query-file-testqtest>Query File Test(qtest)</a>
+<ul>
+<li><a href=#tutorial-how-to-run-a-specific-test-case>Tutorial: How to run a specific test case</a>
+<ul>
+<li><a href=#preparation>Preparation</a></li>
+<li><a href=#run-a-test-case>Run a test case</a></li>
+</ul>
+</li>
+<li><a href=#tutorial-how-to-add-a-new-test-case>Tutorial: How to add a new test case</a>
+<ul>
+<li><a href=#add-a-qfile>Add a QFile</a></li>
+<li><a href=#generate-a-result-file>Generate a result file</a></li>
+<li><a href=#verify-the-new-result-file>Verify the new result file</a></li>
+</ul>
+</li>
+<li><a href=#commandline-options>Commandline options</a>
+<ul>
+<li><a href=#test-options>Test options</a></li>
+<li><a href=#test-iceberg-accumulo-or-kudu>Test Iceberg, Accumulo, or Kudu</a></li>
+</ul>
+</li>
+<li><a href=#qtestoptionhandler-prepost-processor>QTestOptionHandler: pre/post-processor</a>
+<ul>
+<li><a href=#using-test-data>Using test data</a></li>
+<li><a href=#mask-non-deterministic-outputs>Mask non-deterministic outputs</a></li>
+</ul>
+</li>
+<li><a href=#advanced>Advanced</a>
+<ul>
+<li><a href=#locations-of-log-files>Locations of log files</a></li>
+<li><a href=#negative-tests>Negative tests</a></li>
+<li><a href=#how-to-specify-drivers>How to specify drivers</a></li>
+<li><a href=#how-to-use-postgresqlmysqloracle-as-a-backend-database-for-hive-metastore>How to use PostgreSQL/MySQL/Oracle as a backend database for Hive Metastore</a></li>
+<li><a href=#remote-debug>Remote debug</a></li>
+</ul>
+</li>
+<li><a href=#tips-for-adding-new-tests-in-hive>Tips for Adding New Tests in Hive</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class=docs-article>
 <h1 id=query-file-testqtest>Query File Test(qtest)</h1>
 <p>Query File Test is a JUnit-based integration test suite for Apache Hive. Developers write any SQL; the testing framework runs it and verifies the result and output.</p>
 <aside class=table-of-contents>
@@ -324,6 +424,76 @@ $ mvn test -Pitests -pl itests/qtest -Dtest<span style=color:#f92672>=</span>Tes
 <li>Limit your test to one table unless you require multiple tables specifically.</li>
 <li>Make sure that you name your query file appropriately with a descriptive name.</li>
 </ul>
+</div>
+<footer class=docs-footer>
+<div class=docs-feedback>
+<h4><i class="fas fa-comment"></i> Feedback</h4>
+<p>Was this page helpful? Let us know how we can improve.</p>
+<div class=docs-feedback-buttons>
+<button class="btn btn-feedback btn-positive">
+<i class="fas fa-thumbs-up"></i> Yes
+</button>
+<button class="btn btn-feedback btn-negative">
+<i class="fas fa-thumbs-down"></i> No
+</button>
+</div>
+</div>
+<div class=docs-edit>
+<a href=https://github.com/apache/hive-site/edit/main/content/Development/qtest.md class="btn btn-outline">
+<i class="fab fa-github"></i> Edit this page on GitHub
+</a>
+</div>
+</footer>
+</article>
+<aside class=docs-toc-sidebar>
+<div class=docs-toc-sticky>
+<h4><i class="fas fa-list"></i> On this page</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#query-file-testqtest>Query File Test(qtest)</a>
+<ul>
+<li><a href=#tutorial-how-to-run-a-specific-test-case>Tutorial: How to run a specific test case</a>
+<ul>
+<li><a href=#preparation>Preparation</a></li>
+<li><a href=#run-a-test-case>Run a test case</a></li>
+</ul>
+</li>
+<li><a href=#tutorial-how-to-add-a-new-test-case>Tutorial: How to add a new test case</a>
+<ul>
+<li><a href=#add-a-qfile>Add a QFile</a></li>
+<li><a href=#generate-a-result-file>Generate a result file</a></li>
+<li><a href=#verify-the-new-result-file>Verify the new result file</a></li>
+</ul>
+</li>
+<li><a href=#commandline-options>Commandline options</a>
+<ul>
+<li><a href=#test-options>Test options</a></li>
+<li><a href=#test-iceberg-accumulo-or-kudu>Test Iceberg, Accumulo, or Kudu</a></li>
+</ul>
+</li>
+<li><a href=#qtestoptionhandler-prepost-processor>QTestOptionHandler: pre/post-processor</a>
+<ul>
+<li><a href=#using-test-data>Using test data</a></li>
+<li><a href=#mask-non-deterministic-outputs>Mask non-deterministic outputs</a></li>
+</ul>
+</li>
+<li><a href=#advanced>Advanced</a>
+<ul>
+<li><a href=#locations-of-log-files>Locations of log files</a></li>
+<li><a href=#negative-tests>Negative tests</a></li>
+<li><a href=#how-to-specify-drivers>How to specify drivers</a></li>
+<li><a href=#how-to-use-postgresqlmysqloracle-as-a-backend-database-for-hive-metastore>How to use PostgreSQL/MySQL/Oracle as a backend database for Hive Metastore</a></li>
+<li><a href=#remote-debug>Remote debug</a></li>
+</ul>
+</li>
+<li><a href=#tips-for-adding-new-tests-in-hive>Tips for Adding New Tests in Hive</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>

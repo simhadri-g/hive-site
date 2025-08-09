@@ -44,8 +44,8 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=/hive-site/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -119,7 +119,90 @@ ASF
 </menu>
 </header>
 <div class=content>
-<div class=docs>
+<div class=docs-container>
+<aside class=docs-sidebar>
+<div class=docs-sidebar-header>
+<h3><i class="fas fa-book"></i> Documentation</h3>
+</div>
+<nav class=docs-nav>
+<div class=docs-nav-section>
+<h4>Quick Start</h4>
+<ul>
+<li><a href=/docs/javadocs/><i class="fas fa-code"></i> API Documentation</a></li>
+<li><a href=/development/gettingstarted/><i class="fas fa-rocket"></i> Getting Started</a></li>
+<li><a href=/development/quickstart/><i class="fas fa-zap"></i> Quick Start Guide</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Development</h4>
+<ul>
+<li><a href=/development/versioncontrol/><i class="fab fa-git-alt"></i> Version Control</a></li>
+<li><a href=/development/qtest/><i class="fas fa-vial"></i> Testing</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Community</h4>
+<ul>
+<li><a href=/community/mailinglists/><i class="fas fa-envelope"></i> Mailing Lists</a></li>
+<li><a href=/community/issuetracking/><i class="fas fa-bug"></i> Issue Tracking</a></li>
+<li><a href=/community/people/><i class="fas fa-users"></i> People</a></li>
+</ul>
+</div>
+</nav>
+<div class=docs-sidebar-footer>
+<div class=docs-version>
+<i class="fas fa-tag"></i> Latest Version
+</div>
+</div>
+</aside>
+<main class=docs-main>
+<article class=docs-content>
+<nav class=docs-breadcrumb>
+<ol>
+<li><a href=/><i class="fas fa-home"></i> Home</a></li>
+<li><a href=/docs/>Documentation</a></li>
+<li class=active>Apache Hive : PoweredBy</li>
+</ol>
+</nav>
+<header class=docs-header>
+<h1 class=docs-title>Apache Hive : PoweredBy</h1>
+<div class=docs-meta>
+<span class=docs-date>
+<i class="fas fa-calendar-alt"></i>
+Last updated: December 12, 2024
+</span>
+</div>
+</header>
+<div class=docs-toc>
+<h4><i class="fas fa-list"></i> Table of Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--poweredby>Apache Hive : PoweredBy</a>
+<ul>
+<li><a href=#bizohttpwwwbizocom><a href=http://www.bizo.com>Bizo</a></a></li>
+<li><a href=#chitikahttpwwwchitikacom><a href=http://www.chitika.com>Chitika</a></a></li>
+<li><a href=#cnethttpwwwcnetcom><a href=http://www.cnet.com>CNET</a></a></li>
+<li><a href=#digghttpwwwdiggcom><a href=http://www.digg.com>Digg</a></a></li>
+<li><a href=#eharmonyhttpwwweharmonycom><a href=http://www.eharmony.com>eHarmony</a></a></li>
+<li><a href=#groovesharkhttpwwwgroovesharkcom><a href=http://www.grooveshark.com>Grooveshark</a></a></li>
+<li><a href=#hi5httpwwwhi5com><a href=http://www.hi5.com>hi5</a></a></li>
+<li><a href=#hubspothttpdevhubspotcom><a href=http://dev.hubspot.com/>HubSpot</a></a></li>
+<li><a href=#lastfmhttpwwwlastfm><a href=http://www.last.fm>Last.fm</a></a></li>
+<li><a href=#medhelp-find-a-doctorhttpwwwmedhelporgfind-a-doctor><a href=http://www.medhelp.org/find-a-doctor>MedHelp Find a Doctor</a></a></li>
+<li><a href=#nexrhttpwwwnexrcom><a href=http://www.nexr.com>NexR</a></a></li>
+<li><a href=#papertrailhttppapertrailappcom><a href=http://papertrailapp.com/>Papertrail</a></a></li>
+<li><a href=#rocket-fuelhttpwwwrocketfuelinccom><a href=http://www.rocketfuelinc.com/>Rocket Fuel</a></a></li>
+<li><a href=#saaspulsehttpwwwsaaspulsecom><a href=http://www.saaspulse.com/>SaaSPulse</a></a></li>
+<li><a href=#scribdhttpwwwscribdcom><a href=http://www.scribd.com/>Scribd</a></a></li>
+<li><a href=#taobaohttpwwwtaobaocom><a href=http://www.taobao.com>TaoBao</a></a></li>
+<li><a href=#trending-topicshttpwwwtrendingtopicsorg><a href=http://www.trendingtopics.org>Trending Topics</a></a></li>
+<li><a href=#videoegghttpwwwvideoeggcom><a href=http://www.videoegg.com>VideoEgg</a></a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class=docs-article>
 <h1 id=apache-hive--poweredby>Apache Hive : PoweredBy</h1>
 <p>Applications and organizations using Hive include (alphabetically):</p>
 <h2 id=bizohttpwwwbizocom><a href=http://www.bizo.com>Bizo</a></h2>
@@ -164,6 +247,59 @@ ASF
 <p>Hot Wikipedia Topics, Served Fresh Daily. Powered by Cloudera Hadoop Distribution & Hive on EC2. We use Hive for log data normalization and building sample datasets for trend detection R&D.</p>
 <h2 id=videoegghttpwwwvideoeggcom><a href=http://www.videoegg.com>VideoEgg</a></h2>
 <p>We use Hive as the core database for our data warehouse where we track and analyze all the usage data of the ads across our network.</p>
+</div>
+<footer class=docs-footer>
+<div class=docs-feedback>
+<h4><i class="fas fa-comment"></i> Feedback</h4>
+<p>Was this page helpful? Let us know how we can improve.</p>
+<div class=docs-feedback-buttons>
+<button class="btn btn-feedback btn-positive">
+<i class="fas fa-thumbs-up"></i> Yes
+</button>
+<button class="btn btn-feedback btn-negative">
+<i class="fas fa-thumbs-down"></i> No
+</button>
+</div>
+</div>
+<div class=docs-edit>
+<a href=https://github.com/apache/hive-site/edit/main/content/docs/latest/poweredby_27362055.md class="btn btn-outline">
+<i class="fab fa-github"></i> Edit this page on GitHub
+</a>
+</div>
+</footer>
+</article>
+<aside class=docs-toc-sidebar>
+<div class=docs-toc-sticky>
+<h4><i class="fas fa-list"></i> On this page</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--poweredby>Apache Hive : PoweredBy</a>
+<ul>
+<li><a href=#bizohttpwwwbizocom><a href=http://www.bizo.com>Bizo</a></a></li>
+<li><a href=#chitikahttpwwwchitikacom><a href=http://www.chitika.com>Chitika</a></a></li>
+<li><a href=#cnethttpwwwcnetcom><a href=http://www.cnet.com>CNET</a></a></li>
+<li><a href=#digghttpwwwdiggcom><a href=http://www.digg.com>Digg</a></a></li>
+<li><a href=#eharmonyhttpwwweharmonycom><a href=http://www.eharmony.com>eHarmony</a></a></li>
+<li><a href=#groovesharkhttpwwwgroovesharkcom><a href=http://www.grooveshark.com>Grooveshark</a></a></li>
+<li><a href=#hi5httpwwwhi5com><a href=http://www.hi5.com>hi5</a></a></li>
+<li><a href=#hubspothttpdevhubspotcom><a href=http://dev.hubspot.com/>HubSpot</a></a></li>
+<li><a href=#lastfmhttpwwwlastfm><a href=http://www.last.fm>Last.fm</a></a></li>
+<li><a href=#medhelp-find-a-doctorhttpwwwmedhelporgfind-a-doctor><a href=http://www.medhelp.org/find-a-doctor>MedHelp Find a Doctor</a></a></li>
+<li><a href=#nexrhttpwwwnexrcom><a href=http://www.nexr.com>NexR</a></a></li>
+<li><a href=#papertrailhttppapertrailappcom><a href=http://papertrailapp.com/>Papertrail</a></a></li>
+<li><a href=#rocket-fuelhttpwwwrocketfuelinccom><a href=http://www.rocketfuelinc.com/>Rocket Fuel</a></a></li>
+<li><a href=#saaspulsehttpwwwsaaspulsecom><a href=http://www.saaspulse.com/>SaaSPulse</a></a></li>
+<li><a href=#scribdhttpwwwscribdcom><a href=http://www.scribd.com/>Scribd</a></a></li>
+<li><a href=#taobaohttpwwwtaobaocom><a href=http://www.taobao.com>TaoBao</a></a></li>
+<li><a href=#trending-topicshttpwwwtrendingtopicsorg><a href=http://www.trendingtopics.org>Trending Topics</a></a></li>
+<li><a href=#videoegghttpwwwvideoeggcom><a href=http://www.videoegg.com>VideoEgg</a></a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>

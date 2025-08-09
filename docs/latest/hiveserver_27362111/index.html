@@ -44,8 +44,8 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=/hive-site/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -119,7 +119,70 @@ ASF
 </menu>
 </header>
 <div class=content>
-<div class=docs>
+<div class=docs-container>
+<aside class=docs-sidebar>
+<div class=docs-sidebar-header>
+<h3><i class="fas fa-book"></i> Documentation</h3>
+</div>
+<nav class=docs-nav>
+<div class=docs-nav-section>
+<h4>Quick Start</h4>
+<ul>
+<li><a href=/docs/javadocs/><i class="fas fa-code"></i> API Documentation</a></li>
+<li><a href=/development/gettingstarted/><i class="fas fa-rocket"></i> Getting Started</a></li>
+<li><a href=/development/quickstart/><i class="fas fa-zap"></i> Quick Start Guide</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Development</h4>
+<ul>
+<li><a href=/development/versioncontrol/><i class="fab fa-git-alt"></i> Version Control</a></li>
+<li><a href=/development/qtest/><i class="fas fa-vial"></i> Testing</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Community</h4>
+<ul>
+<li><a href=/community/mailinglists/><i class="fas fa-envelope"></i> Mailing Lists</a></li>
+<li><a href=/community/issuetracking/><i class="fas fa-bug"></i> Issue Tracking</a></li>
+<li><a href=/community/people/><i class="fas fa-users"></i> People</a></li>
+</ul>
+</div>
+</nav>
+<div class=docs-sidebar-footer>
+<div class=docs-version>
+<i class="fas fa-tag"></i> Latest Version
+</div>
+</div>
+</aside>
+<main class="docs-main docs-main-full">
+<article class=docs-content>
+<nav class=docs-breadcrumb>
+<ol>
+<li><a href=/><i class="fas fa-home"></i> Home</a></li>
+<li><a href=/docs/>Documentation</a></li>
+<li class=active>Apache Hive : HiveServer</li>
+</ol>
+</nav>
+<header class=docs-header>
+<h1 class=docs-title>Apache Hive : HiveServer</h1>
+<div class=docs-meta>
+<span class=docs-date>
+<i class="fas fa-calendar-alt"></i>
+Last updated: December 12, 2024
+</span>
+</div>
+</header>
+<div class=docs-toc>
+<h4><i class="fas fa-list"></i> Table of Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--hiveserver>Apache Hive : HiveServer</a></li>
+<li><a href=#thrift-hive-server>Thrift Hive Server</a></li>
+</ul>
+</nav>
+</div>
+<div class=docs-article>
 <h1 id=apache-hive--hiveserver>Apache Hive : HiveServer</h1>
 <h1 id=thrift-hive-server>Thrift Hive Server</h1>
 <p>HiveServer is an optional service that allows a remote <a href=https://simhadri-g.github.io/hive-site/docs/latest/hiveclient_27362101/>client</a> to submit requests to Hive, using a variety of programming languages, and retrieve results. HiveServer is built on Apache ThriftTM (<a href=http://thrift.apache.org/>http://thrift.apache.org/</a>), therefore it is sometimes called the <em>Thrift server</em> although this can lead to confusion because a newer service named <a href=#hiveserver2>HiveServer2</a> is also built on Thrift. Since the introduction of HiveServer2, HiveServer has also been called <em>HiveServer1</em>.</p>
@@ -158,6 +221,28 @@ $ ant test -Dtestcase=TestHiveServer -Dstandalone=true
 </code></pre><p>The service supports clients in multiple languages. For more details see <a href=https://simhadri-g.github.io/hive-site/docs/latest/hiveclient_27362101/>Hive Client</a>.</p>
 <p>Troubleshooting: Connection Error</p>
 <p>Hive server and clients communicate through Thrift and FB303 services. In some distributions, both the Hadoop and Hive distributions have different versions of libthrift.jar and libfb303.jar. If they are incompatible, it may cause a Thrift connection error when running the unit test on standalone mode. The solution is to remove the Hadoop&rsquo;s version of libthrift.jar and libfb303.jar.</p>
+</div>
+<footer class=docs-footer>
+<div class=docs-feedback>
+<h4><i class="fas fa-comment"></i> Feedback</h4>
+<p>Was this page helpful? Let us know how we can improve.</p>
+<div class=docs-feedback-buttons>
+<button class="btn btn-feedback btn-positive">
+<i class="fas fa-thumbs-up"></i> Yes
+</button>
+<button class="btn btn-feedback btn-negative">
+<i class="fas fa-thumbs-down"></i> No
+</button>
+</div>
+</div>
+<div class=docs-edit>
+<a href=https://github.com/apache/hive-site/edit/main/content/docs/latest/hiveserver_27362111.md class="btn btn-outline">
+<i class="fab fa-github"></i> Edit this page on GitHub
+</a>
+</div>
+</footer>
+</article>
+</main>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>

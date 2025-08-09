@@ -44,8 +44,8 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=/hive-site/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -119,7 +119,92 @@ ASF
 </menu>
 </header>
 <div class=content>
-<div class=docs>
+<div class=docs-container>
+<aside class=docs-sidebar>
+<div class=docs-sidebar-header>
+<h3><i class="fas fa-book"></i> Documentation</h3>
+</div>
+<nav class=docs-nav>
+<div class=docs-nav-section>
+<h4>Quick Start</h4>
+<ul>
+<li><a href=/docs/javadocs/><i class="fas fa-code"></i> API Documentation</a></li>
+<li><a href=/development/gettingstarted/><i class="fas fa-rocket"></i> Getting Started</a></li>
+<li><a href=/development/quickstart/><i class="fas fa-zap"></i> Quick Start Guide</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Development</h4>
+<ul>
+<li><a href=/development/versioncontrol/><i class="fab fa-git-alt"></i> Version Control</a></li>
+<li><a href=/development/qtest/><i class="fas fa-vial"></i> Testing</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Community</h4>
+<ul>
+<li><a href=/community/mailinglists/><i class="fas fa-envelope"></i> Mailing Lists</a></li>
+<li><a href=/community/issuetracking/><i class="fas fa-bug"></i> Issue Tracking</a></li>
+<li><a href=/community/people/><i class="fas fa-users"></i> People</a></li>
+</ul>
+</div>
+</nav>
+<div class=docs-sidebar-footer>
+<div class=docs-version>
+<i class="fas fa-tag"></i> Latest Version
+</div>
+</div>
+</aside>
+<main class=docs-main>
+<article class=docs-content>
+<nav class=docs-breadcrumb>
+<ol>
+<li><a href=/><i class="fas fa-home"></i> Home</a></li>
+<li><a href=/docs/>Documentation</a></li>
+<li class=active>Apache Hive : Correlation Optimizer</li>
+</ol>
+</nav>
+<header class=docs-header>
+<h1 class=docs-title>Apache Hive : Correlation Optimizer</h1>
+<div class=docs-meta>
+<span class=docs-date>
+<i class="fas fa-calendar-alt"></i>
+Last updated: December 12, 2024
+</span>
+</div>
+</header>
+<div class=docs-toc>
+<h4><i class="fas fa-list"></i> Table of Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--correlation-optimizer>Apache Hive : Correlation Optimizer</a>
+<ul>
+<li><a href=#1-overview>1. Overview</a></li>
+<li><a href=#2-examples>2. Examples</a>
+<ul>
+<li><a href=#21-example-1>2.1 Example 1</a></li>
+<li><a href=#22-example-2>2.2 Example 2</a></li>
+<li><a href=#23-example-3>2.3 Example 3</a></li>
+</ul>
+</li>
+<li><a href=#3-intra-query-correlations>3. Intra-query Correlations</a></li>
+<li><a href=#4-correlation-detection>4. Correlation Detection</a></li>
+<li><a href=#5-operator-tree-transformation>5. Operator Tree Transformation</a></li>
+<li><a href=#6-executing-optimized-operator-tree-in-the-reduce-phase>6. Executing Optimized Operator Tree in the Reduce Phase</a></li>
+<li><a href=#7-related-jiras>7. Related Jiras</a>
+<ul>
+<li><a href=#71-resolved-jiras>7.1 Resolved Jiras</a></li>
+<li><a href=#72-unresolved-jiras>7.2 Unresolved Jiras</a></li>
+</ul>
+</li>
+<li><a href=#8-references>8. References</a></li>
+<li><a href=#attachments>Attachments:</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class=docs-article>
 <h1 id=apache-hive--correlation-optimizer>Apache Hive : Correlation Optimizer</h1>
 <p>This page documents Correlation Optimizer. It was originally introduced by <a href=https://issues.apache.org/jira/browse/HIVE-2206>HIVE-2206</a> and based on the idea of YSmart [1]. To turn on this optimizer, you can use &mldr;</p>
 <pre tabindex=0><code>set hive.optimize.correlation=true;
@@ -255,6 +340,61 @@ in <a href=#figure-5>Figure 5</a>, the detector knows that MJ1, MJ2, and MJ3 w
 </ol>
 <h2 id=attachments>Attachments:</h2>
 <p><img src=images/icons/bullet_blue.gif alt></p>
+</div>
+<footer class=docs-footer>
+<div class=docs-feedback>
+<h4><i class="fas fa-comment"></i> Feedback</h4>
+<p>Was this page helpful? Let us know how we can improve.</p>
+<div class=docs-feedback-buttons>
+<button class="btn btn-feedback btn-positive">
+<i class="fas fa-thumbs-up"></i> Yes
+</button>
+<button class="btn btn-feedback btn-negative">
+<i class="fas fa-thumbs-down"></i> No
+</button>
+</div>
+</div>
+<div class=docs-edit>
+<a href=https://github.com/apache/hive-site/edit/main/content/docs/latest/correlation-optimizer_34019487.md class="btn btn-outline">
+<i class="fab fa-github"></i> Edit this page on GitHub
+</a>
+</div>
+</footer>
+</article>
+<aside class=docs-toc-sidebar>
+<div class=docs-toc-sticky>
+<h4><i class="fas fa-list"></i> On this page</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--correlation-optimizer>Apache Hive : Correlation Optimizer</a>
+<ul>
+<li><a href=#1-overview>1. Overview</a></li>
+<li><a href=#2-examples>2. Examples</a>
+<ul>
+<li><a href=#21-example-1>2.1 Example 1</a></li>
+<li><a href=#22-example-2>2.2 Example 2</a></li>
+<li><a href=#23-example-3>2.3 Example 3</a></li>
+</ul>
+</li>
+<li><a href=#3-intra-query-correlations>3. Intra-query Correlations</a></li>
+<li><a href=#4-correlation-detection>4. Correlation Detection</a></li>
+<li><a href=#5-operator-tree-transformation>5. Operator Tree Transformation</a></li>
+<li><a href=#6-executing-optimized-operator-tree-in-the-reduce-phase>6. Executing Optimized Operator Tree in the Reduce Phase</a></li>
+<li><a href=#7-related-jiras>7. Related Jiras</a>
+<ul>
+<li><a href=#71-resolved-jiras>7.1 Resolved Jiras</a></li>
+<li><a href=#72-unresolved-jiras>7.2 Unresolved Jiras</a></li>
+</ul>
+</li>
+<li><a href=#8-references>8. References</a></li>
+<li><a href=#attachments>Attachments:</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>

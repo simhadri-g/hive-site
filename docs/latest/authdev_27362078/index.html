@@ -44,8 +44,8 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=/hive-site/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -119,7 +119,114 @@ ASF
 </menu>
 </header>
 <div class=content>
-<div class=docs>
+<div class=docs-container>
+<aside class=docs-sidebar>
+<div class=docs-sidebar-header>
+<h3><i class="fas fa-book"></i> Documentation</h3>
+</div>
+<nav class=docs-nav>
+<div class=docs-nav-section>
+<h4>Quick Start</h4>
+<ul>
+<li><a href=/docs/javadocs/><i class="fas fa-code"></i> API Documentation</a></li>
+<li><a href=/development/gettingstarted/><i class="fas fa-rocket"></i> Getting Started</a></li>
+<li><a href=/development/quickstart/><i class="fas fa-zap"></i> Quick Start Guide</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Development</h4>
+<ul>
+<li><a href=/development/versioncontrol/><i class="fab fa-git-alt"></i> Version Control</a></li>
+<li><a href=/development/qtest/><i class="fas fa-vial"></i> Testing</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Community</h4>
+<ul>
+<li><a href=/community/mailinglists/><i class="fas fa-envelope"></i> Mailing Lists</a></li>
+<li><a href=/community/issuetracking/><i class="fas fa-bug"></i> Issue Tracking</a></li>
+<li><a href=/community/people/><i class="fas fa-users"></i> People</a></li>
+</ul>
+</div>
+</nav>
+<div class=docs-sidebar-footer>
+<div class=docs-version>
+<i class="fas fa-tag"></i> Latest Version
+</div>
+</div>
+</aside>
+<main class=docs-main>
+<article class=docs-content>
+<nav class=docs-breadcrumb>
+<ol>
+<li><a href=/><i class="fas fa-home"></i> Home</a></li>
+<li><a href=/docs/>Documentation</a></li>
+<li class=active>Apache Hive : AuthDev</li>
+</ol>
+</nav>
+<header class=docs-header>
+<h1 class=docs-title>Apache Hive : AuthDev</h1>
+<div class=docs-meta>
+<span class=docs-date>
+<i class="fas fa-calendar-alt"></i>
+Last updated: December 12, 2024
+</span>
+</div>
+</header>
+<div class=docs-toc>
+<h4><i class="fas fa-list"></i> Table of Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--authdev>Apache Hive : AuthDev</a></li>
+<li><a href=#1-privilege>1. Privilege</a>
+<ul>
+<li><a href=#11-access-privilege>1.1 Access Privilege</a></li>
+</ul>
+</li>
+<li><a href=#2-hive-operations>2. Hive Operations</a></li>
+<li><a href=#3-metadata>3. Metadata</a>
+<ul>
+<li><a href=#31-user-group-and-roles>3.1 user, group, and roles</a>
+<ul>
+<li><a href=#311-role-management>3.1.1 Role management</a></li>
+<li><a href=#312-role-metadata>3.1.2 role metadata</a></li>
+<li><a href=#313-hive-role-user-membership-table>3.1.3 hive role user membership table</a></li>
+</ul>
+</li>
+<li><a href=#32-privileges-to-be-supported-by-hive>3.2 Privileges to be supported by Hive</a>
+<ul>
+<li><a href=#321-metadata>3.2.1 metadata</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#4-grantrevoke-access-privilege>4. grant/revoke access privilege</a>
+<ul>
+<li><a href=#41-privilege-namestypes>4.1 Privilege names/types:</a></li>
+<li><a href=#42-show-grant>4.2 show grant</a></li>
+<li><a href=#43-grantrevoke-statement>4.3 grant/revoke statement</a></li>
+</ul>
+</li>
+<li><a href=#5-authorization-verification>5. Authorization verification</a>
+<ul>
+<li><a href=#51-usergrouprole>5.1 USER/GROUP/ROLE</a></li>
+<li><a href=#52-the-verification-steps>5.2 The verification steps</a></li>
+<li><a href=#53-examples>5.3 Examples</a></li>
+</ul>
+</li>
+<li><a href=#6-where-to-add-authorization-in-hive>6. Where to add authorization in Hive</a></li>
+<li><a href=#7-implementation>7. Implementation</a>
+<ul>
+<li><a href=#71-authenticator-interface>7.1 Authenticator interface</a></li>
+<li><a href=#72-authorization>7.2 Authorization</a></li>
+</ul>
+</li>
+<li><a href=#8-metastore-upgrade-script-for-mysql>8. Metastore upgrade script for mysql</a></li>
+<li><a href=#hdfs-permission>HDFS Permission</a></li>
+</ul>
+</nav>
+</div>
+<div class=docs-article>
 <h1 id=apache-hive--authdev>Apache Hive : AuthDev</h1>
 <p>This is the design document for the <a href=https://simhadri-g.github.io/hive-site/docs/latest/45876173/>original Hive authorization mode</a>. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/languagemanual-authorization_27362032/>Authorization</a> for an overview of authorization modes, which include <a href=https://simhadri-g.github.io/hive-site/docs/latest/storage-based-authorization-in-the-metastore-server_45876440/>storage based authorization</a> and <a href=https://simhadri-g.github.io/hive-site/docs/latest/sql-standard-based-hive-authorization_40509928/>SQL standards based authorization</a>.</p>
 <aside class=table-of-contents>
@@ -580,6 +687,83 @@ CREATE TABLE {{PART_COL_PRIVS}} (
 </code></pre><hr>
 <h1 id=hdfs-permission>HDFS Permission</h1>
 <p>The above has a STRONG assumption on the file layer security. Users can easily by-pass the security if the hdfs file permission is open to him. We hope we can easily plug in external authorizations (like HDFS permission/Howl permission) to alter the authorization result or even the rule.</p>
+</div>
+<footer class=docs-footer>
+<div class=docs-feedback>
+<h4><i class="fas fa-comment"></i> Feedback</h4>
+<p>Was this page helpful? Let us know how we can improve.</p>
+<div class=docs-feedback-buttons>
+<button class="btn btn-feedback btn-positive">
+<i class="fas fa-thumbs-up"></i> Yes
+</button>
+<button class="btn btn-feedback btn-negative">
+<i class="fas fa-thumbs-down"></i> No
+</button>
+</div>
+</div>
+<div class=docs-edit>
+<a href=https://github.com/apache/hive-site/edit/main/content/docs/latest/authdev_27362078.md class="btn btn-outline">
+<i class="fab fa-github"></i> Edit this page on GitHub
+</a>
+</div>
+</footer>
+</article>
+<aside class=docs-toc-sidebar>
+<div class=docs-toc-sticky>
+<h4><i class="fas fa-list"></i> On this page</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#apache-hive--authdev>Apache Hive : AuthDev</a></li>
+<li><a href=#1-privilege>1. Privilege</a>
+<ul>
+<li><a href=#11-access-privilege>1.1 Access Privilege</a></li>
+</ul>
+</li>
+<li><a href=#2-hive-operations>2. Hive Operations</a></li>
+<li><a href=#3-metadata>3. Metadata</a>
+<ul>
+<li><a href=#31-user-group-and-roles>3.1 user, group, and roles</a>
+<ul>
+<li><a href=#311-role-management>3.1.1 Role management</a></li>
+<li><a href=#312-role-metadata>3.1.2 role metadata</a></li>
+<li><a href=#313-hive-role-user-membership-table>3.1.3 hive role user membership table</a></li>
+</ul>
+</li>
+<li><a href=#32-privileges-to-be-supported-by-hive>3.2 Privileges to be supported by Hive</a>
+<ul>
+<li><a href=#321-metadata>3.2.1 metadata</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#4-grantrevoke-access-privilege>4. grant/revoke access privilege</a>
+<ul>
+<li><a href=#41-privilege-namestypes>4.1 Privilege names/types:</a></li>
+<li><a href=#42-show-grant>4.2 show grant</a></li>
+<li><a href=#43-grantrevoke-statement>4.3 grant/revoke statement</a></li>
+</ul>
+</li>
+<li><a href=#5-authorization-verification>5. Authorization verification</a>
+<ul>
+<li><a href=#51-usergrouprole>5.1 USER/GROUP/ROLE</a></li>
+<li><a href=#52-the-verification-steps>5.2 The verification steps</a></li>
+<li><a href=#53-examples>5.3 Examples</a></li>
+</ul>
+</li>
+<li><a href=#6-where-to-add-authorization-in-hive>6. Where to add authorization in Hive</a></li>
+<li><a href=#7-implementation>7. Implementation</a>
+<ul>
+<li><a href=#71-authenticator-interface>7.1 Authenticator interface</a></li>
+<li><a href=#72-authorization>7.2 Authorization</a></li>
+</ul>
+</li>
+<li><a href=#8-metastore-upgrade-script-for-mysql>8. Metastore upgrade script for mysql</a></li>
+<li><a href=#hdfs-permission>HDFS Permission</a></li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
 </div>
 </div>
 <footer class="black-background static-bottom" style=padding:30px>
