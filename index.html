@@ -36,7 +36,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item dropdown">
-<a class=nav-link href=/general/downloads id=navbarDropdown role=button aria-expanded=false>
+<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads id=navbarDropdown role=button aria-expanded=false>
 Releases
 </a>
 </li>
@@ -45,8 +45,8 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=navbarDropdown>
-<li><a class=dropdown-item href=/hive-site/docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
 <li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
 </ul>
 </li>
@@ -160,7 +160,7 @@ facilitates reading, writing, and managing petabytes of data residing in distrib
 <i class="fa-solid fa-comments"></i>
 <span>Community</span>
 </a>
-<a href=/hive-site/docs/latest/ class=action-link>
+<a href=/docs/latest/ class=action-link>
 <i class="fas fa-book"></i>
 <span>Documentation</span>
 </a>
@@ -220,7 +220,7 @@ facilitates reading, writing, and managing petabytes of data residing in distrib
 <a href=https://docs.microsoft.com/en-us/azure/hdinsight/hadoop/apache-hadoop-use-hive-ambari-view target=_blank class=company-logo-link>
 <img src=https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg alt="Microsoft Azure" class=company-logo>
 </a>
-<a href=https://cloud.google.com/dataproc/docs/concepts/components/hive target=_blank class=company-logo-link>
+<a href=https://cloud.google.com/dataproc-metastore/docs/use-hive target=_blank class=company-logo-link>
 <img src=https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg alt="Google Cloud" class=company-logo>
 </a>
 <a href=https://www.databricks.com/glossary/apache-hive target=_blank class=company-logo-link>
@@ -333,7 +333,7 @@ Apache Hive is a distributed, fault-tolerant data warehouse system that enables 
 <div class="row feature-row align-items-center mb-5">
 <div class=col-md-6>
 <hs2terminal class=col-md>
-<div id=hs2 data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700>
+<div id=hs2 data-termynal data-termynal data-ty-typedelay=40 data-ty-linedelay=700 style=font-size:.9em>
 <span data-ty=input>beeline -u "jdbc:hive2://host:10001/default"</span>
 <span data-ty>Connected to: Apache Hive </span>
 <span data-ty></span>
@@ -403,7 +403,7 @@ Learn More <i class="fas fa-arrow-right"></i>
 <div class="col-md-6 order-md-2">
 <div class=feature-visual>
 <compaction>
-<div id=comp data-termynal data-ty-typedelay=40 data-ty-linedelay=70>
+<div id=comp data-termynal data-ty-typedelay=40 data-ty-linedelay=70 style=font-size:.9em>
 <span data-ty=input>jdbc:hive2://> alter table test_t1 compact "MAJOR";</span>
 <span data-ty>Done!</span>
 <span data-ty=input>jdbc:hive2://> alter table test_t1 compact "MINOR";</span>
@@ -497,7 +497,7 @@ Learn More <i class="fas fa-arrow-right"></i>
 <div class="col-md-6 order-md-2">
 <div class=feature-visual>
 <explain>
-<div id=explain data-termynal data-ty-typedelay=40 data-ty-linedelay=70 style=text-align:left>
+<div id=explain data-termynal data-ty-typedelay=40 data-ty-linedelay=70 style=text-align:left;font-size:.9em>
 <span data-ty=input>jdbc:hive2://> explain cbo select ss.ss_net_profit, sr.sr_net_loss from store_sales ss join store_returns sr on (ss.ss_item_sk=sr.sr_item_sk) limit 5 ;</span>
 <span data-ty>+---------------------------------------------+</span>
 <span data-ty> Explain </span></span>
@@ -537,7 +537,7 @@ Learn More <i class="fas fa-arrow-right"></i>
 <div class=col-md-6>
 <div class=feature-visual>
 <replication class=col-md>
-<div id=repl data-termynal data-ty-typedelay=40 data-ty-linedelay=70 style=width:830px>
+<div id=repl data-termynal data-ty-typedelay=40 data-ty-linedelay=70 style=width:830px;font-size:.9em>
 <span data-ty=input>jdbc:hive2://> repl dump src with (</span>
 <span data-ty=input>. . .> 'hive.repl.dump.version'= '2',</span>
 <span data-ty=input>. . .> 'hive.repl.rootdir'= 'hdfs://&lt;host>:&lt;port>/user/replDir/d1'</span>
@@ -586,7 +586,7 @@ Join thousands of organizations using Apache Hive to power their data analytics 
 </a>
 </div>
 <div class=cta-links>
-<a href=/hive-site/docs/latest/ class=cta-link>
+<a href=/docs/latest/ class=cta-link>
 <i class="fas fa-book"></i>
 <span>Documentation</span>
 </a>
