@@ -171,6 +171,30 @@ facilitates reading, writing, and managing petabytes of data residing in distrib
 </div>
 <script src=https://simhadri-g.github.io/hive-site//js/script.js></script>
 </banner>
+<div class=release-banner>
+<div class=container>
+<div class="row align-items-center">
+<div class=col-md-8>
+<div class=banner-content>
+<span class="badge badge-success me-2">NEW RELEASE</span>
+<strong>Apache Hive 4.1.0 is now available!</strong>
+<span class=banner-details>Featuring JDK 17 support, enhanced Iceberg integration, and improved performance.</span>
+</div>
+</div>
+<div class="col-md-4 text-md-end">
+<div class=banner-actions>
+<a href=https://simhadri-g.github.io/hive-site//general/downloads class="btn btn-banner-primary">
+<i class="fas fa-download"></i> Download
+</a>
+<a href=https://simhadri-g.github.io/hive-site//announcements/ class="btn btn-banner-secondary">
+<i class="fas fa-info-circle"></i> Details
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>.release-banner{background:linear-gradient(135deg,#10b981 0%,#059669 100%);color:#fff;padding:1rem 0;position:relative;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.1)}.banner-content{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}.banner-details{color:rgba(255,255,255,.9);font-size:.9rem}.banner-actions{display:flex;gap:.5rem;flex-wrap:wrap}.btn-banner-primary{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;padding:.4rem 1rem;border-radius:20px;text-decoration:none;font-size:.9rem;font-weight:500;transition:all .3s ease;display:inline-flex;align-items:center;gap:.4rem}.btn-banner-primary:hover{background:rgba(255,255,255,.3);border-color:rgba(255,255,255,.6);color:#fff;text-decoration:none;transform:translateY(-1px)}.btn-banner-secondary{background:0 0;border:1px solid rgba(255,255,255,.4);color:#fff;padding:.4rem 1rem;border-radius:20px;text-decoration:none;font-size:.9rem;font-weight:500;transition:all .3s ease;display:inline-flex;align-items:center;gap:.4rem}.btn-banner-secondary:hover{background:rgba(255,255,255,.1);color:#fff;text-decoration:none;transform:translateY(-1px)}@media(max-width:768px){.banner-content{justify-content:center;text-align:center;margin-bottom:1rem}.banner-actions{justify-content:center}.btn-banner-primary,.btn-banner-secondary{padding:.5rem 1.2rem}}</style>
 <section class=stats-section>
 <div class=container>
 <div class="row text-center">
@@ -539,13 +563,13 @@ Learn More <i class="fas fa-arrow-right"></i>
 <replication class=col-md>
 <div id=repl data-termynal data-ty-typedelay=40 data-ty-linedelay=70 style=width:830px;font-size:.9em>
 <span data-ty=input>jdbc:hive2://> repl dump src with (</span>
-<span data-ty=input>. . .> 'hive.repl.dump.version'= '2',</span>
-<span data-ty=input>. . .> 'hive.repl.rootdir'= 'hdfs://&lt;host>:&lt;port>/user/replDir/d1'</span>
-<span data-ty=input>. . .> );</span>
+<span data-ty=multiline_input>'hive.repl.dump.version'= '2',</span>
+<span data-ty=multiline_input>'hive.repl.rootdir'= 'hdfs://&lt;host>:&lt;port>/user/replDir/d1'</span>
+<span data-ty=multiline_input>);</span>
 <span data-ty>Done!</span>
 <span data-ty=input>jdbc:hive2://> repl load src into tgt with (</span>
-<span data-ty=input>. . .> 'hive.repl.rootdir'= 'hdfs://&lt;host>:&lt;port>/user/replDir/d1'</span>
-<span data-ty=input>. . .> );</span>
+<span data-ty=multiline_input>'hive.repl.rootdir'= 'hdfs://&lt;host>:&lt;port>/user/replDir/d1'</span>
+<span data-ty=multiline_input>);</span>
 <span data-ty>Done!</span>
 </div>
 </replication>
@@ -578,10 +602,10 @@ Learn More <i class="fas fa-arrow-right"></i>
 Join thousands of organizations using Apache Hive to power their data analytics and build modern data lakes.
 </p>
 <div class=cta-actions>
-<a href=/development/gettingstarted/ class="btn btn-cta-primary">
+<a href=https://simhadri-g.github.io/hive-site//development/gettingstarted/ class="btn btn-cta-primary">
 <i class="fas fa-play"></i> Start Your Journey
 </a>
-<a href=/development/quickstart/ class="btn btn-cta-secondary">
+<a href=https://simhadri-g.github.io/hive-site//development/quickstart/ class="btn btn-cta-secondary">
 <i class="fab fa-docker"></i> Try with Docker
 </a>
 </div>
