@@ -1,0 +1,466 @@
+<!doctype html><html><!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content>
+<meta name=author content>
+<title>HCatalog Manual</title>
+<link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
+<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
+<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
+<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
+</head>
+<body>
+<body>
+<header>
+<menu style=background:#000;margin:0>
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+<div class=container-fluid>
+<a href=https://simhadri-g.github.io/hive-site/> <img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=60 height=35 alt="Apache Software Foundation"></a>
+<a class="header-text navbar-brand" href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse" id=navbarSupportedContent>
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item dropdown">
+<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads id=navbarDropdown role=button aria-expanded=false>
+Releases
+</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=/Document id=navbarDropdown role=button data-bs-toggle=dropdown aria-expanded=false>
+Documentation
+</a>
+<ul class=dropdown-menu aria-labelledby=navbarDropdown>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=/general id=navbarDropdown role=button data-bs-toggle=dropdown aria-expanded=false>
+General
+</a>
+<ul class=dropdown-menu aria-labelledby=navbarDropdown>
+<li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/poweredby/>Powered by</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-expanded=false>
+Development
+</a>
+<ul class=dropdown-menu aria-labelledby=navbarDropdown>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=/development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
+<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-expanded=false>
+Community
+</a>
+<ul class=dropdown-menu aria-labelledby=navbarDropdown>
+<li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
+<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=/community/resources/>Resources</a></li>
+<li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li>
+<hr class=dropdown-divider>
+</li>
+<li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
+<li><a class=dropdown-item href=/community/resources/howtorelease_27362106/>How To Release</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class=nav-link href=https://hive.blog.apache.org/ id=navbarDropdown role=button aria-expanded=false>
+Blogs
+</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-expanded=false>
+ASF
+</a>
+<ul class=dropdown-menu aria-labelledby=navbarDropdown>
+<li><a class=dropdown-item href=https://www.apache.org/foundation/contributing.html>Donations</a></li>
+<li><a class=dropdown-item href=https://www.apache.org/foundation/sponsorship.html>Sponsorship</a></li>
+<li><a class=dropdown-item href=https://www.apache.org/foundation/thanks.html>Thanks</a></li>
+<li><a class=dropdown-item href=https://www.apache.org/>Website</a></li>
+</ul>
+</li>
+<li>
+<form action=/search method=get class=search-bar>
+<input type=search name=q id=search-query placeholder=Search... class=search-input>
+<button type=submit class=search-button>Search</button>
+</form>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</menu>
+</header>
+<div class=content>
+<div class=docs-container>
+<aside class=docs-sidebar>
+<div class=docs-sidebar-header>
+<h3><i class="fas fa-book"></i> Documentation</h3>
+</div>
+<nav class=docs-nav>
+<div class=docs-nav-section>
+<h4>Quick Start</h4>
+<ul>
+<li><a href=https://simhadri-g.github.io/hive-site//hive-site/docs/javadocs/><i class="fas fa-code"></i> API Documentation</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site//development/gettingstarted/><i class="fas fa-rocket"></i> Getting Started</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site//development/quickstart/><i class="fas fa-zap"></i> Quick Start Guide</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Development</h4>
+<ul>
+<li><a href=https://simhadri-g.github.io/hive-site//development/versioncontrol/><i class="fab fa-git-alt"></i> Version Control</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site//development/qtest/><i class="fas fa-vial"></i> Testing</a></li>
+</ul>
+</div>
+<div class=docs-nav-section>
+<h4>Community</h4>
+<ul>
+<li><a href=https://simhadri-g.github.io/hive-site//community/mailinglists/><i class="fas fa-envelope"></i> Mailing Lists</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site//community/issuetracking/><i class="fas fa-bug"></i> Issue Tracking</a></li>
+<li><a href=https://simhadri-g.github.io/hive-site//community/people/><i class="fas fa-users"></i> People</a></li>
+</ul>
+</div>
+</nav>
+<div class=docs-sidebar-footer>
+<div class=docs-version>
+<i class="fas fa-tag"></i> Latest Version
+</div>
+</div>
+</aside>
+<main class=docs-main>
+<article class=docs-content>
+<nav class=docs-breadcrumb>
+<ol>
+<li><a href=/><i class="fas fa-home"></i> Home</a></li>
+<li class=active>HCatalog Manual</li>
+</ol>
+</nav>
+<header class=docs-header>
+<h1 class=docs-title>HCatalog Manual</h1>
+<div class=docs-meta>
+<span class=docs-count>
+<i class="fas fa-file-alt"></i>
+14 documents
+</span>
+</div>
+</header>
+<div class=docs-article>
+<div class=docs-grid>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog_33299065/>Apache Hive : HCatalog</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog HCatalog is a table and storage management layer for Hadoop that enables users with different data processing tools — Pig, MapReduce — to more easily read and write data on the grid.
+This is the HCatalog manual. Using HCatalog Installation from Tarball HCatalog Configuration Properties Load and Store Interfaces Input and Output Interfaces Reader and Writer Interfaces Command Line Interface Storage Formats Dynamic Partitioning Notification Storage Based Authorization The old HCatalog wiki page has many other documents including additional user documentation, further information on HBase integration, and resources for contributors.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog_33299065/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-authorization_34014782/>Apache Hive : HCatalog Authorization</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Authorization Apache Hive : HCatalog Authorization Storage Based Authorization Default Authorization Model of Hive Storage-System Based Authorization Model Minimum Permissions Unused DDL for Permissions Configuring Storage-System Based Authorization Creating New Tables or Databases Known Issues Storage Based Authorization Default Authorization Model of Hive The default authorization model of Hive supports a traditional RDBMS style of authorization based on users, groups and roles and granting them permissions to do operations on database or table.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-authorization_34014782/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-cli_34013932/>Apache Hive : HCatalog CLI</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Command Line Interface Apache Hive : HCatalog Command Line Interface Set Up HCatalog CLI Owner Permissions Hive CLI HCatalog DDL Create/Drop/Alter Table Create/Drop/Alter View Show/Describe Create/Drop Index Create/Drop Function &ldquo;dfs&rdquo; Command and &ldquo;set&rdquo; Command Other Commands CLI Errors Authentication Error Log Set Up The HCatalog command line interface (CLI) can be invoked as HIVE_HOME=hive_home hcat_home/bin/hcat where hive_home is the directory where Hive has been installed and hcat_home is the directory where HCatalog has been installed.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-cli_34013932/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-configuration-properties_39622369/>Apache Hive : HCatalog Configuration Properties</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Configuration Properties Apache HCatalog&rsquo;s behaviour can be modified through the use of a few configuration parameters specified in jobs submitted to it. This document details all the various knobs that users have available to them, and what they accomplish.  Apache Hive : HCatalog Configuration Properties Setup Storage Directives Cache Behaviour Directives Input Split Generation Behaviour Data Promotion Behaviour HCatRecordReader Error Tolerance Behaviour Setup The properties described in this page are meant to be job-level properties set on HCatalog through the jobConf passed into it.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-configuration-properties_39622369/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-dynamicpartitions_34014006/>Apache Hive : HCatalog DynamicPartitions</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Dynamic Partitioning Apache Hive : HCatalog Dynamic Partitioning Overview External Tables Hive Dynamic Partitions Usage with Pig Usage from MapReduce Overview When writing data in HCatalog it is possible to write all records to a single partition. In this case the partition column(s) need not be in the output data.
+The following Pig script illustrates this:
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-dynamicpartitions_34014006/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-inputoutput_34013776/>Apache Hive : HCatalog InputOutput</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Input and Output Interfaces Apache Hive : HCatalog Input and Output Interfaces Set Up HCatInputFormat API HCatOutputFormat API HCatRecord Running MapReduce with HCatalog Authentication Read Example Filter Operators Scan Filter Write Filter Set Up No HCatalog-specific setup is required for the HCatInputFormat and HCatOutputFormat interfaces.
+Note: HCatalog is not thread safe.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-inputoutput_34013776/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-installhcat_34013403/>Apache Hive : HCatalog InstallHCat</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Installation from Tarball Apache Hive : HCatalog Installation from Tarball HCatalog Installed with Hive HCatalog Command Line HCatalog Client Jars HCatalog Server HCatalog Installed with Hive Version
+HCatalog is installed with Hive, starting with Hive release 0.11.0.
+Hive installation is documented here.
+HCatalog Command Line If you install Hive from the binary tarball, the hcat command is available in the hcatalog/bin directory.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-installhcat_34013403/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-loadstore_34013511/>Apache Hive : HCatalog LoadStore</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Load and Store Interfaces Apache Hive : HCatalog Load and Store Interfaces Set Up Running Pig HCatLoader Usage HCatLoader Data Types Running Pig with HCatalog Load Examples HCatStorer Usage Store Examples HCatStorer Data Types Data Type Mappings Primitive Types Complex Types Set Up The HCatLoader and HCatStorer interfaces are used with Pig scripts to read and write data in HCatalog-managed tables.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-loadstore_34013511/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-notification_34014558/>Apache Hive : HCatalog Notification</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Notification Apache Hive : HCatalog Notification Overview Notification for a New Partition Notification for a Set of Partitions Server Configuration Enable JMS Notifications Topic Names Overview Since version 0.2, HCatalog provides notifications for certain events happening in the system. This way applications such as Oozie can wait for those events and schedule the work that depends on them.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-notification_34014558/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-readerwriter_34013921/>Apache Hive : HCatalog ReaderWriter</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Reader and Writer Interfaces Apache Hive : HCatalog Reader and Writer Interfaces Overview HCatReader HCatWriter Complete Example Program Overview HCatalog provides a data transfer API for parallel input and output without using MapReduce. This API provides a way to read data from a Hadoop cluster or write data into a Hadoop cluster, using a basic storage abstraction of tables and rows.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-readerwriter_34013921/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-storageformats_34013997/>Apache Hive : HCatalog StorageFormats</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Storage Formats Apache Hive : HCatalog Storage Formats SerDes and Storage Formats Usage from Hive CTAS Issue with JSON SerDe SerDes and Storage Formats HCatalog uses Hive&rsquo;s SerDe class to serialize and deserialize data. SerDes are provided for RCFile, CSV text, JSON text, and SequenceFile formats. Check the SerDe documentation for additional SerDes that might be included in new versions.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-storageformats_34013997/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-streaming-mutation-api_61337025/>Apache Hive : HCatalog Streaming Mutation API</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Streaming Mutation API A Java API focused on mutating (insert/update/delete) records into transactional tables using Hive’s ACID feature. It is introduced in Hive 2.0.0 (HIVE-10165).
+Apache Hive : HCatalog Streaming Mutation API Background Structure Data Requirements Streaming Requirements Record Layout Connection and Transaction Management Writing Data Dynamic Partition Creation Reading Data Example Attachments: Background In certain data processing use cases it is necessary to modify existing data when new facts arrive.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-streaming-mutation-api_61337025/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/283118454/>Apache Hive : HCatalog Streaming Mutation API (Copy)</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Streaming Mutation API (Copy) A Java API focused on mutating (insert/update/delete) records into transactional tables using Hive’s ACID feature. It is introduced in Hive 2.0.0 (HIVE-10165).
+Apache Hive : HCatalog Streaming Mutation API (Copy) Background Structure Data Requirements Streaming Requirements Record Layout Connection and Transaction Management Writing Data Dynamic Partition Creation Reading Data Example Attachments: Background In certain data processing use cases it is necessary to modify existing data when new facts arrive.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/283118454/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class=docs-card>
+<div class=docs-card-header>
+<h3><a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-usinghcat_34013260/>Apache Hive : HCatalog UsingHCat</a></h3>
+<span class=docs-card-date>
+<i class="fas fa-calendar-alt"></i>
+Dec 12, 2024
+</span>
+</div>
+<div class=docs-card-summary>
+Apache Hive : HCatalog Usage Apache Hive : HCatalog Usage Version information Overview HCatalog Architecture Interfaces Data Model Data Flow Example First: Copy Data to the Grid Second: Prepare the Data Third: Analyze the Data HCatalog Web API Attachments: Version information HCatalog graduated from the Apache incubator and merged with the Hive project on March 26, 2013.
+</div>
+<div class=docs-card-footer>
+<a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-usinghcat_34013260/ class=docs-card-link>
+Read more <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+</div>
+<footer class="black-background static-bottom" style=padding:30px>
+<div class=row>
+<div class=col-3>
+<a href=https://www.apache.org/>
+<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+</a>
+</div>
+<div class=col-9>
+<p class=footer-text>Apache is a non-profit organization helping open-source
+software projects released under the Apache
+<a href=https://www.apache.org/licenses/>license</a>
+and managed with
+<a href=https://www.apache.org/foundation/how-it-works.html>
+open governance</a> and
+<a href=https://privacy.apache.org/policies/privacy-policy-public.html>
+privacy policy</a>. See upcoming
+<a href=https://www.apache.org/events/current-event>Apache Events</a>.
+If you discover any
+<a href=https://www.apache.org/security/>security</a> vulnerabilities, please
+report them privately. Finally,
+<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+</a> to the sponsors who
+<a href=https://www.apache.org/foundation/contributing.html>
+donate</a> to the Apache Foundation.
+</p>
+</div>
+</div>
+<div class="copyright row">
+<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
+</a>
+</div>
+</footer>
+<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+</body>
+</html>
