@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : Druid Integration</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -28,10 +28,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class=container-fluid>
 <div class=navbar-brand-wrapper>
-<a href=https://simhadri-g.github.io/hive-site/ class=navbar-logo>
-<img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=50 height=30 alt="Apache Hive Logo">
+<a href=https://hive.apache.org class=navbar-logo>
+<img src=https://hive.apache.org/images/hive.svg width=50 height=30 alt="Apache Hive Logo">
 </a>
-<a class=navbar-brand href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<a class=navbar-brand href=https://hive.apache.org>Apache Hive</a>
 </div>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
@@ -39,7 +39,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto">
 <li class=nav-item>
-<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads>
+<a class=nav-link href=https://hive.apache.org/general/downloads>
 Releases
 </a>
 </li>
@@ -48,9 +48,9 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=docsDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/language/languagemanual>Language Manual</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -59,7 +59,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=generalDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 <li><a class=dropdown-item href=/general/poweredby/>Powered by</a></li>
 </ul>
 </li>
@@ -68,13 +68,12 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=devDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/desingdocs/>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/hivedeveloperfaq>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -83,12 +82,12 @@ Community
 </a>
 <ul class=dropdown-menu aria-labelledby=communityDropdown>
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/howtocontribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=/community/resources/>Resources</a></li>
 <li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li><hr class=dropdown-divider></li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=/community/resources/howtorelease/>How To Release</a></li>
@@ -182,38 +181,6 @@ Last updated: December 12, 2024
 <div class=docs-article>
 <h1 id=apache-hive--druid-integration>Apache Hive : Druid Integration</h1>
 <p>This page documents the work done for the integration between Druid and Hive introduced in Hive 2.2.0 (<a href=https://issues.apache.org/jira/browse/HIVE-14217>HIVE-14217</a>). Initially it was compatible with Druid 0.9.1.1, the latest stable release of Druid to that date.</p>
-<aside class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#apache-hive--druid-integration>Apache Hive : Druid Integration</a>
-<ul>
-<li><a href=#objectives>Objectives</a></li>
-</ul>
-</li>
-<li><a href=#preliminaries>Preliminaries</a>
-<ul>
-<li><a href=#druid>Druid</a></li>
-<li><a href=#storage-handlers>Storage Handlers</a></li>
-</ul>
-</li>
-<li><a href=#usage>Usage</a>
-<ul>
-<li><a href=#discovery-and-management-of-druid-datasources-from-hive>Discovery and management of Druid datasources from Hive</a>
-<ul>
-<li><a href=#create-tables-linked-to-existing-druid-datasources>Create tables linked to existing Druid datasources</a></li>
-<li><a href=#create-druid-datasources-from-hive>Create Druid datasources from Hive</a></li>
-<li><a href=#druid-kafka-ingestion-from-hive>Druid kafka ingestion from Hive</a></li>
-<li><a href=#insert-insert-overwrite-and-drop-statements>INSERT, INSERT OVERWRITE and DROP statements</a></li>
-<li><a href=#queries-completely-executed-in-druid>Queries completely executed in Druid</a></li>
-<li><a href=#queries-across-druid-and-hive>Queries across Druid and Hive</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href=#open-issues-jira>Open Issues (JIRA)</a></li>
-</ul>
-</nav>
-</aside>
 <h2 id=objectives>Objectives</h2>
 <p>Our main <strong>goal</strong> is to be able to index data from Hive into Druid, and to be able to query Druid datasources from Hive. Completing this work will bring benefits to the Druid and Hive systems alike:</p>
 <ul>
@@ -229,7 +196,7 @@ Last updated: December 12, 2024
 <h2 id=druid>Druid</h2>
 <p>Druid is an open-source analytics data store designed for business intelligence (OLAP) queries on event data. Druid provides low latency (real-time) data ingestion, flexible data exploration, and fast data aggregation. Existing Druid deployments have scaled to trillions of events and petabytes of data. Druid is most commonly used to power user-facing analytic applications. You can find more information about Druid <a href=http://druid.io/>here</a>. </p>
 <h2 id=storage-handlers>Storage Handlers</h2>
-<p>You can find an overview of Hive Storage Handlers <a href=https://simhadri-g.github.io/hive-site/development/desingdocs/storagehandlers/>here</a>; the integration of Druid with Hive depends upon that framework.</p>
+<p>You can find an overview of Hive Storage Handlers <a href=https://hive.apache.org/development/desingdocs/storagehandlers/>here</a>; the integration of Druid with Hive depends upon that framework.</p>
 <h1 id=usage>Usage</h1>
 <p>For the running examples, we use the <em><a href=http://druid.io/docs/latest/tutorials/tutorial-batch.html>wikiticker</a></em> dataset included in the quickstart tutorial of Druid.</p>
 <h2 id=discovery-and-management-of-druid-datasources-from-hive>Discovery and management of Druid datasources from Hive</h2>
@@ -353,7 +320,7 @@ ALTER TABLE druid_kafka_test SET TBLPROPERTIES('druid.kafka.ingestion' = 'RESET'
 <p><strong>For versions 3.0.0+, All Druid tables are EXTERNAL (<a href=https://issues.apache.org/jira/browse/HIVE-20085>HIVE-20085</a>) and these statements are supported for any table.</strong></p>
 <p><strong>Querying Druid from Hive</strong></p>
 <p>Once we have created our first table stored in Druid using the <code>DruidStorageHandler</code>, we are ready to execute our queries against Druid.</p>
-<p>When we express a query over a Druid table, Hive tries to <em>rewrite</em> the query to be executed efficiently by pushing as much computation as possible to Druid. This task is accomplished by the <a href=https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive>cost optimizer</a> based in <a href=http://calcite.apache.org/>Apache Calcite</a>, which identifies patterns in the plan and apply rules to rewrite the input query into a new equivalent query with (hopefully) more operations executed in Druid.</p>
+<p>When we express a query over a Druid table, Hive tries to <em>rewrite</em> the query to be executed efficiently by pushing as much computation as possible to Druid. This task is accomplished by the <a href=https://hive.apache.org/docs/latest/user/cost-based-optimization-in-hive>cost optimizer</a> based in <a href=http://calcite.apache.org/>Apache Calcite</a>, which identifies patterns in the plan and apply rules to rewrite the input query into a new equivalent query with (hopefully) more operations executed in Druid.</p>
 <p>In particular, we implemented our extension to the optimizer in <a href=https://issues.apache.org/jira/browse/HIVE-14217>HIVE-14217</a>, which builds upon the work initiated in <a href=https://issues.apache.org/jira/browse/CALCITE-1121>CALCITE-1121</a>, and extends its logic to identify more complex query patterns (<em>timeseries</em> queries), translate filters on the <em>time</em> dimension to Druid intervals, push limit into Druid <em>select</em> queries, etc.</p>
 <p>Currently, we support the recognition of <em>timeseries</em>, <em>groupBy,</em> and s<strong>elect</strong> queries.</p>
 <p>Once we have completed the optimization, the (sub)plan of operators that needs to be executed by Druid is translated into a valid Druid JSON query, and passed as a property to the Hive physical TableScan operator. The Druid query will be executed within the TableScan operator, which will generate the records out of the Druid query results.</p>
@@ -868,7 +835,6 @@ Time taken: 1.835 seconds, Fetched: 2 row(s)
 </tr>
 </tbody>
 </table>
-<p><a href="https://cwiki.apache.org/confluence/plugins/servlet/applinks/oauth/login-dance/authorize?applicationLinkID=5aa69414-a9e9-3523-82ec-879b028fb15b">Authenticate</a> to retrieve your issues</p>
 <p>Showing 20 out of
 <a href="https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&jqlQuery=project+%3D+Hive+AND+component+%3D+12330863++and+resolution+%3D+Unresolved+ORDER+BY+key+ASC+&src=confmacro">28 issues</a></p>
 </div>
@@ -934,7 +900,7 @@ Time taken: 1.835 seconds, Fetched: 2 row(s)
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -950,19 +916,19 @@ privacy policy</a>. See upcoming
 If you discover any
 <a href=https://www.apache.org/security/>security</a> vulnerabilities, please
 report them privately. Finally,
-<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+<a href=https://www.apache.org/foundation/thanks.html>thanks
 </a> to the sponsors who
-<a href=https://www.apache.org/foundation/contributing.html>
+<a href=https://www.apache.org/foundation/sponsorship.html>
 donate</a> to the Apache Foundation.
 </p>
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

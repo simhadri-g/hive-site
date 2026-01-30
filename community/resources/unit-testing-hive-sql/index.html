@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : Unit Testing Hive SQL</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -28,10 +28,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class=container-fluid>
 <div class=navbar-brand-wrapper>
-<a href=https://simhadri-g.github.io/hive-site/ class=navbar-logo>
-<img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=50 height=30 alt="Apache Hive Logo">
+<a href=https://hive.apache.org class=navbar-logo>
+<img src=https://hive.apache.org/images/hive.svg width=50 height=30 alt="Apache Hive Logo">
 </a>
-<a class=navbar-brand href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<a class=navbar-brand href=https://hive.apache.org>Apache Hive</a>
 </div>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
@@ -39,7 +39,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto">
 <li class=nav-item>
-<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads>
+<a class=nav-link href=https://hive.apache.org/general/downloads>
 Releases
 </a>
 </li>
@@ -48,9 +48,9 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=docsDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/language/languagemanual>Language Manual</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -59,7 +59,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=generalDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 <li><a class=dropdown-item href=/general/poweredby/>Powered by</a></li>
 </ul>
 </li>
@@ -68,13 +68,12 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=devDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/desingdocs/>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/hivedeveloperfaq>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -83,12 +82,12 @@ Community
 </a>
 <ul class=dropdown-menu aria-labelledby=communityDropdown>
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/howtocontribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=/community/resources/>Resources</a></li>
 <li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li><hr class=dropdown-divider></li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=/community/resources/howtorelease/>How To Release</a></li>
@@ -166,43 +165,12 @@ Last updated: December 12, 2024
 <li><a href=#tools-and-frameworks>Tools and frameworks</a></li>
 <li><a href=#useful-practices>Useful practices</a></li>
 <li><a href=#relevant-issues>Relevant issues</a></li>
-<li><a href=#other-hive-unit-testing-concerns>Other Hive unit testing concerns</a>
-<ul>
-<li><a href=#comments>Comments:</a></li>
-</ul>
-</li>
+<li><a href=#other-hive-unit-testing-concerns>Other Hive unit testing concerns</a></li>
 </ul>
 </nav>
 </div>
 <div class=docs-article>
 <h1 id=apache-hive--unit-testing-hive-sql>Apache Hive : Unit Testing Hive SQL</h1>
-<aside class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#apache-hive--unit-testing-hive-sql>Apache Hive : Unit Testing Hive SQL</a></li>
-<li><a href=#motivations>Motivations</a></li>
-<li><a href=#challenges>Challenges</a></li>
-<li><a href=#modularisation>Modularisation</a>
-<ul>
-<li>
-<ul>
-<li><a href=#encapsulation-of-column-level-logic>Encapsulation of column level logic</a></li>
-<li><a href=#encapsulation-of-set-level-logic>Encapsulation of set level logic</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href=#tools-and-frameworks>Tools and frameworks</a></li>
-<li><a href=#useful-practices>Useful practices</a></li>
-<li><a href=#relevant-issues>Relevant issues</a></li>
-<li><a href=#other-hive-unit-testing-concerns>Other Hive unit testing concerns</a>
-<ul>
-<li><a href=#comments>Comments:</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
 <h1 id=motivations>Motivations</h1>
 <p>Hive is widely applied as a solution to numerous distinct problem types in the domain of big data. Quite clearly it is often used for the ad hoc querying of large datasets. However it is also used to implement ETL type processes. Unlike ad hoc queries, the Hive SQL written for ETLs has some distinct attributes:</p>
 <ul>
@@ -221,9 +189,9 @@ Last updated: December 12, 2024
 <li><strong>Speed of execution:</strong> The goal is to have large numbers of isolated, small tests. Test isolation requires frequent setup and teardown and the costs incurred are multiplied the number of tests. The Hive CLI is fairly heavy process to repeatedly start and stop and so some Hive test frameworks attempt to optimise this aspect of test execution.</li>
 </ul>
 <h1 id=modularisation>Modularisation</h1>
-<p>By modularising processes implemented using Hive they become easier to test effectively and more resilient to change. Although Hive provides a number of vectors for modularisation it is not always clear how a large process can be decomposed. Features for encapsulation of query logic into components is separated into two perpendicular concerns: column level logic, and set level logic. Column level logic refers to the expressions applied to individual columns or groups of columns in the query, commonly described as ‘functions’. Set level logic concerns Hive SQL constructs that manipulate groupings of data such as: column projection with <code>SELECT</code>, <code>GROUP BY</code> aggregates, <code>JOIN</code>s, <code>ORDER BY</code> sorting, etc. In either case we expect individual components to live in their own source file or deployable artifact and imported as needed by the composition. For Hive SQL-based components, the <code>[SOURCE](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveInteractiveShellCommands)</code> command provides this functionality.</p>
+<p>By modularising processes implemented using Hive they become easier to test effectively and more resilient to change. Although Hive provides a number of vectors for modularisation it is not always clear how a large process can be decomposed. Features for encapsulation of query logic into components is separated into two perpendicular concerns: column level logic, and set level logic. Column level logic refers to the expressions applied to individual columns or groups of columns in the query, commonly described as ‘functions’. Set level logic concerns Hive SQL constructs that manipulate groupings of data such as: column projection with <code>SELECT</code>, <code>GROUP BY</code> aggregates, <code>JOIN</code>s, <code>ORDER BY</code> sorting, etc. In either case we expect individual components to live in their own source file or deployable artifact and imported as needed by the composition. For Hive SQL-based components, the <code>[SOURCE](https://hive.apache.org/docs/latest/language/languagemanual-cli#hive-interactive-shell-commands)</code> command provides this functionality.</p>
 <h3 id=encapsulation-of-column-level-logic>Encapsulation of column level logic</h3>
-<p>In the case of column level logic Hive provides both <a href=https://cwiki.apache.org/confluence/display/Hive/HivePlugins#HivePlugins-CreatingCustomUDFs>UDFs</a> and <a href=#macros>macros</a> that allow the user to extract and reuse the expressions applied to columns. Once defined, UDFs and Macros can be readily isolated for testing. UDFs can be simply tested with existing Java/Python unit test tools such as JUnit whereas Macros require a Hive command line interface to execute the macro declaration and then exercise it with some sample <code>SELECT</code> statements.</p>
+<p>In the case of column level logic Hive provides both <a href=https://hive.apache.org/docs/latest/language/hiveplugins#creating-custom-udfs>UDFs</a> and <a href=#macros>macros</a> that allow the user to extract and reuse the expressions applied to columns. Once defined, UDFs and Macros can be readily isolated for testing. UDFs can be simply tested with existing Java/Python unit test tools such as JUnit whereas Macros require a Hive command line interface to execute the macro declaration and then exercise it with some sample <code>SELECT</code> statements.</p>
 <h3 id=encapsulation-of-set-level-logic>Encapsulation of set level logic</h3>
 <p>Unlike column level logic, it is much less obvious how best to encapsulate and compose collections of set based logic. Consider the following example of a single complex query comprising joins, groupings, and column projections:</p>
 <p><strong>Monolithic query</strong></p>
@@ -279,9 +247,9 @@ GROUP BY ...;                      -- Query 1
 <ul>
 <li>Modularise large or complex queries into multiple smaller components. These are easier to comprehend, maintain, and test.</li>
 <li>Use macros or UDFs to encapsulate repeated or complex column expressions.</li>
-<li>Use <a href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual+VariableSubstitution>Hive variables</a> to decouple SQL scripts from specific environments. For example it might be wise to use <code>LOCATION ${myTableLocation}</code> in preference to <code>LOCATION /hard/coded/path</code>.</li>
+<li>Use <a href=https://hive.apache.org/docs/latest/language/languagemanual-variablesubstitution>Hive variables</a> to decouple SQL scripts from specific environments. For example it might be wise to use <code>LOCATION ${myTableLocation}</code> in preference to <code>LOCATION /hard/coded/path</code>.</li>
 <li>Keep the scope of tests small. Making coarse assertions on the entire contents of a table is brittle and has a high maintenance requirement.</li>
-<li>Use the <code>[SOURCE](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveInteractiveShellCommands)</code> command to combine multiple smaller SQL scripts.</li>
+<li>Use the <code>[SOURCE](https://hive.apache.org/docs/latest/language/languagemanual-cli#hive-interactive-shell-commands)</code> command to combine multiple smaller SQL scripts.</li>
 <li>Test macros and the integration of UDFs by creating simple test tables and applying the functions to columns in those tables.</li>
 <li>Test UDFs by invoking the lifecycle methods directly (<code>initialize</code>, <code>evaluate</code>, etc.) in a standard testing framework such as JUnit.</li>
 </ul>
@@ -291,29 +259,6 @@ GROUP BY ...;                      -- Query 1
 </ul>
 <h1 id=other-hive-unit-testing-concerns>Other Hive unit testing concerns</h1>
 <p>Although not specifically related to Hive SQL, tooling exists for the testing of other aspects of the Hive ecosystem. In particular the <a href=https://github.com/HotelsDotCom/beeju>BeeJU</a> project provides JUnit rules to simplify the testing of integrations with the Hive Metastore and HiveServer2 services. These are useful, if for example, you are developing alternative data processing frameworks or tools that aim to leverage Hive&rsquo;s metadata features.</p>
-<p> </p>
-<h2 id=comments>Comments:</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>Disclosure: The tools are listed according to level of experience I have with each tool, HiveRunner being the tool that I have used the most. Furthermore, I have previously contributed to the HiveRunner project. I&rsquo;ve also been involved with the BeeJU project.</td>
-</tr>
-</tbody>
-</table>
-<p>Posted by teabot at Nov 11, 2015 10:20
-|
-|
-Where does <a href=https://cwiki.apache.org/confluence/download/attachments/27362054/CapybaraHiveMeetupNov2015.pptx>Capybara</a> fit into this (it at all)?</p>
-<p>Posted by teabot at Dec 03, 2015 11:30
-|</p>
 </div>
 <footer class=docs-footer>
 <div class=docs-feedback>
@@ -356,11 +301,7 @@ Where does <a href=https://cwiki.apache.org/confluence/download/attachments/2736
 <li><a href=#tools-and-frameworks>Tools and frameworks</a></li>
 <li><a href=#useful-practices>Useful practices</a></li>
 <li><a href=#relevant-issues>Relevant issues</a></li>
-<li><a href=#other-hive-unit-testing-concerns>Other Hive unit testing concerns</a>
-<ul>
-<li><a href=#comments>Comments:</a></li>
-</ul>
-</li>
+<li><a href=#other-hive-unit-testing-concerns>Other Hive unit testing concerns</a></li>
 </ul>
 </nav>
 </div>
@@ -372,7 +313,7 @@ Where does <a href=https://cwiki.apache.org/confluence/download/attachments/2736
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -388,19 +329,19 @@ privacy policy</a>. See upcoming
 If you discover any
 <a href=https://www.apache.org/security/>security</a> vulnerabilities, please
 report them privately. Finally,
-<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+<a href=https://www.apache.org/foundation/thanks.html>thanks
 </a> to the sponsors who
-<a href=https://www.apache.org/foundation/contributing.html>
+<a href=https://www.apache.org/foundation/sponsorship.html>
 donate</a> to the Apache Foundation.
 </p>
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

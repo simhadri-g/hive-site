@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : Design</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -28,10 +28,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class=container-fluid>
 <div class=navbar-brand-wrapper>
-<a href=https://simhadri-g.github.io/hive-site/ class=navbar-logo>
-<img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=50 height=30 alt="Apache Hive Logo">
+<a href=https://hive.apache.org class=navbar-logo>
+<img src=https://hive.apache.org/images/hive.svg width=50 height=30 alt="Apache Hive Logo">
 </a>
-<a class=navbar-brand href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<a class=navbar-brand href=https://hive.apache.org>Apache Hive</a>
 </div>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
@@ -39,7 +39,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto">
 <li class=nav-item>
-<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads>
+<a class=nav-link href=https://hive.apache.org/general/downloads>
 Releases
 </a>
 </li>
@@ -48,9 +48,9 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=docsDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/language/languagemanual>Language Manual</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -59,7 +59,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=generalDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 <li><a class=dropdown-item href=/general/poweredby/>Powered by</a></li>
 </ul>
 </li>
@@ -68,13 +68,12 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=devDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/desingdocs/>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/hivedeveloperfaq>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -83,12 +82,12 @@ Community
 </a>
 <ul class=dropdown-menu aria-labelledby=communityDropdown>
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/howtocontribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=/community/resources/>Resources</a></li>
 <li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li><hr class=dropdown-divider></li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=/community/resources/howtorelease/>How To Release</a></li>
@@ -175,31 +174,6 @@ Last updated: December 12, 2024
 <div class=docs-article>
 <h1 id=apache-hive--design>Apache Hive : Design</h1>
 <p>This page contains details about the Hive design and architecture. A brief technical report about Hive is available at <a href=#hive-pdf>hive.pdf</a>.</p>
-<aside class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#apache-hive--design>Apache Hive : Design</a>
-<ul>
-<li><a href=#hive-architecture>Hive Architecture</a></li>
-<li><a href=#hive-data-model>Hive Data Model</a></li>
-<li><a href=#metastore>Metastore</a>
-<ul>
-<li><a href=#motivation>Motivation</a></li>
-<li><a href=#metadata-objects>Metadata Objects</a></li>
-<li><a href=#metastore-architecture>Metastore Architecture</a></li>
-<li><a href=#metastore-interface>Metastore Interface</a></li>
-</ul>
-</li>
-<li><a href=#hive-query-language>Hive Query Language</a></li>
-<li><a href=#compiler>Compiler</a></li>
-<li><a href=#optimizer>Optimizer</a></li>
-<li><a href=#hive-apis>Hive APIs</a></li>
-<li><a href=#attachments>Attachments:</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
 <h2 id=hive-architecture>Hive Architecture</h2>
 <p>Figure 1<br>
 <img src=/attachments/27362072/47743299.png alt></p>
@@ -226,16 +200,16 @@ Last updated: December 12, 2024
 <h3 id=metadata-objects>Metadata Objects</h3>
 <ul>
 <li>Database – is a namespace for tables. It can be used as an administrative unit in the future. The database &lsquo;default&rsquo; is used for tables with no user-supplied database name.</li>
-<li>Table – Metadata for a table contains list of columns, owner, storage and SerDe information. It can also contain any user-supplied key and value data. Storage information includes location of the underlying data, file inout and output formats and bucketing information. SerDe metadata includes the implementation class of serializer and deserializer and any supporting information required by the implementation. All of this information can be provided during creation of the table.</li>
+<li>Table – Metadata for a table contains list of columns, owner, storage and SerDe information. It can also contain any user-supplied key and value data. Storage information includes location of the underlying data, file input and output formats and bucketing information. SerDe metadata includes the implementation class of serializer and deserializer and any supporting information required by the implementation. All of this information can be provided during creation of the table.</li>
 <li>Partition – Each partition can have its own columns and SerDe and storage information. This facilitates schema changes without affecting older partitions.</li>
 </ul>
 <h3 id=metastore-architecture>Metastore Architecture</h3>
 <p>Metastore is an object store with a database or file backed store. The database backed store is implemented using an object-relational mapping (ORM) solution called the <a href=http://www.datanucleus.org/>DataNucleus</a>. The prime motivation for storing this in a relational database is queriability of metadata. Some disadvantages of using a separate data store for metadata instead of using HDFS are synchronization and scalability issues. Additionally there is no clear way to implement an object store on top of HDFS due to lack of random updates to files. This, coupled with the advantages of queriability of a relational store, made our approach a sensible one.</p>
-<p>The metastore can be configured to be used in a couple of ways: remote and embedded. In remote mode, the metastore is a <a href=https://thrift.apache.org/>Thrift</a> service. This mode is useful for non-Java clients. In embedded mode, the Hive client directly connects to an underlying metastore using JDBC. This mode is useful because it avoids another system that needs to be maintained and monitored. Both of these modes can co-exist. (Update: Local metastore is a third possibility. See <a href=https://cwiki.apache.org/confluence/display/Hive/AdminManual+MetastoreAdmin>Hive Metastore Administration</a> for details.)</p>
+<p>The metastore can be configured to be used in a couple of ways: remote and embedded. In remote mode, the metastore is a <a href=https://thrift.apache.org/>Thrift</a> service. This mode is useful for non-Java clients. In embedded mode, the Hive client directly connects to an underlying metastore using JDBC. This mode is useful because it avoids another system that needs to be maintained and monitored. Both of these modes can co-exist. (Update: Local metastore is a third possibility. See <a href=https://hive.apache.org/docs/latest/admin/adminmanual-metastore-administration>Hive Metastore Administration</a> for details.)</p>
 <h3 id=metastore-interface>Metastore Interface</h3>
 <p>Metastore provides a <a href=https://thrift.apache.org/docs/idl>Thrift interface</a> to manipulate and query Hive metadata. Thrift provides bindings in many popular languages. Third party tools can use this interface to integrate Hive metadata into other business metadata repositories.</p>
 <h2 id=hive-query-language>Hive Query Language</h2>
-<p>HiveQL is an SQL-like query language for Hive. It mostly mimics SQL syntax for creation of tables, loading data into tables and querying the tables. HiveQL also allows users to embed their custom map-reduce scripts. These scripts can be written in any language using a simple row-based streaming interface – read rows from standard input and write out rows to standard output. This flexibility comes at a cost of a performance hit caused by converting rows from and to strings. However, we have seen that users do not mind this given that they can implement their scripts in the language of their choice. Another feature unique to HiveQL is multi-table insert. In this construct, users can perform multiple queries on the same input data using a single HiveQL query. Hive optimizes these queries to share the scan of the input data, thus increasing the throughput of these queries several orders of magnitude. We omit more details due to lack of space. For a more complete description of the HiveQL language see the <a href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>language manual</a>.</p>
+<p>HiveQL is an SQL-like query language for Hive. It mostly mimics SQL syntax for creation of tables, loading data into tables and querying the tables. HiveQL also allows users to embed their custom map-reduce scripts. These scripts can be written in any language using a simple row-based streaming interface – read rows from standard input and write out rows to standard output. This flexibility comes at a cost of a performance hit caused by converting rows from and to strings. However, we have seen that users do not mind this given that they can implement their scripts in the language of their choice. Another feature unique to HiveQL is multi-table insert. In this construct, users can perform multiple queries on the same input data using a single HiveQL query. Hive optimizes these queries to share the scan of the input data, thus increasing the throughput of these queries several orders of magnitude. We omit more details due to lack of space. For a more complete description of the HiveQL language see the <a href=https://hive.apache.org/docs/latest/language/languagemanual>language manual</a>.</p>
 <h2 id=compiler>Compiler</h2>
 <ul>
 <li>Parser – Transform a query string to a parse tree representation.</li>
@@ -244,12 +218,12 @@ Last updated: December 12, 2024
 <li>Query Plan Generator – Convert the logical plan to a series of map-reduce tasks. The operator tree is recursively traversed, to be broken up into a series of map-reduce serializable tasks which can be submitted later on to the map-reduce framework for the Hadoop distributed file system. The reduceSink operator is the map-reduce boundary, whose descriptor contains the reduction keys. The reduction keys in the reduceSink descriptor are used as the reduction keys in the map-reduce boundary. The plan consists of the required samples/partitions if the query specified so. The plan is serialized and written to a file.</li>
 </ul>
 <h2 id=optimizer>Optimizer</h2>
-<p>More plan transformations are performed by the optimizer. The optimizer is an evolving component. As of 2011, it was rule-based and performed the following: column pruning and predicate pushdown. However, the infrastructure was in place, and there was work under progress to include other optimizations like map-side join. (Hive 0.11 added several <a href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization>join optimizations</a>.)</p>
-<p>The optimizer can be enhanced to be cost-based (see <a href=https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive>Cost-based optimization in Hive</a> and <a href=https://issues.apache.org/jira/browse/HIVE-5775>HIVE-5775</a>). The sorted nature of output tables can also be preserved and used later on to generate better plans. The query can be performed on a small sample of data to guess the data distribution, which can be used to generate a better plan.</p>
-<p>A <a href=https://cwiki.apache.org/confluence/display/Hive/Correlation+Optimizer>correlation optimizer</a> was added in Hive 0.12.</p>
+<p>More plan transformations are performed by the optimizer. The optimizer is an evolving component. As of 2011, it was rule-based and performed the following: column pruning and predicate pushdown. However, the infrastructure was in place, and there was work under progress to include other optimizations like map-side join. (Hive 0.11 added several <a href=https://hive.apache.org/docs/latest/language/languagemanual-joinoptimization>join optimizations</a>.)</p>
+<p>The optimizer can be enhanced to be cost-based (see <a href=https://hive.apache.org/docs/latest/user/cost-based-optimization-in-hive>Cost-based optimization in Hive</a> and <a href=https://issues.apache.org/jira/browse/HIVE-5775>HIVE-5775</a>). The sorted nature of output tables can also be preserved and used later on to generate better plans. The query can be performed on a small sample of data to guess the data distribution, which can be used to generate a better plan.</p>
+<p>A <a href=https://hive.apache.org/development/desingdocs/correlation-optimizer>correlation optimizer</a> was added in Hive 0.12.</p>
 <p>The plan is a generic operator tree, and can be easily manipulated.</p>
 <h2 id=hive-apis>Hive APIs</h2>
-<p><a href=https://simhadri-g.github.io/hive-site/community/resources/hive-apis-overview/>Hive APIs Overview</a> describes various public-facing APIs that Hive provides.</p>
+<p><a href=https://hive.apache.org/community/resources/hive-apis-overview/>Hive APIs Overview</a> describes various public-facing APIs that Hive provides.</p>
 <h2 id=attachments>Attachments:</h2>
 <p><img src=images/icons/bullet_blue.gif alt></p>
 </div>
@@ -308,7 +282,7 @@ Last updated: December 12, 2024
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -324,19 +298,19 @@ privacy policy</a>. See upcoming
 If you discover any
 <a href=https://www.apache.org/security/>security</a> vulnerabilities, please
 report them privately. Finally,
-<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+<a href=https://www.apache.org/foundation/thanks.html>thanks
 </a> to the sponsors who
-<a href=https://www.apache.org/foundation/contributing.html>
+<a href=https://www.apache.org/foundation/sponsorship.html>
 donate</a> to the Apache Foundation.
 </p>
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

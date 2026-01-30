@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : LanguageManual UDF</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -28,10 +28,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class=container-fluid>
 <div class=navbar-brand-wrapper>
-<a href=https://simhadri-g.github.io/hive-site/ class=navbar-logo>
-<img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=50 height=30 alt="Apache Hive Logo">
+<a href=https://hive.apache.org class=navbar-logo>
+<img src=https://hive.apache.org/images/hive.svg width=50 height=30 alt="Apache Hive Logo">
 </a>
-<a class=navbar-brand href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<a class=navbar-brand href=https://hive.apache.org>Apache Hive</a>
 </div>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
@@ -39,7 +39,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto">
 <li class=nav-item>
-<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads>
+<a class=nav-link href=https://hive.apache.org/general/downloads>
 Releases
 </a>
 </li>
@@ -48,9 +48,9 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=docsDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/language/languagemanual>Language Manual</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -59,7 +59,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=generalDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 <li><a class=dropdown-item href=/general/poweredby/>Powered by</a></li>
 </ul>
 </li>
@@ -68,13 +68,12 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=devDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/desingdocs/>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/hivedeveloperfaq>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -83,12 +82,12 @@ Community
 </a>
 <ul class=dropdown-menu aria-labelledby=communityDropdown>
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/howtocontribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=/community/resources/>Resources</a></li>
 <li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li><hr class=dropdown-divider></li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=/community/resources/howtorelease/>How To Release</a></li>
@@ -198,58 +197,9 @@ Last updated: December 12, 2024
 </div>
 <div class=docs-article>
 <h1 id=apache-hive--languagemanual-operators-and-user-defined-functions>Apache Hive : LanguageManual Operators and User-Defined Functions</h1>
-<aside class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#apache-hive--languagemanual-operators-and-user-defined-functions>Apache Hive : LanguageManual Operators and User-Defined Functions</a>
-<ul>
-<li><a href=#overview>Overview</a></li>
-<li><a href=#built-in-operators>Built-in Operators</a>
-<ul>
-<li><a href=#operators-precedences>Operators Precedences</a></li>
-<li><a href=#relational-operators>Relational Operators</a></li>
-<li><a href=#arithmetic-operators>Arithmetic Operators</a></li>
-<li><a href=#logical-operators>Logical Operators</a></li>
-<li><a href=#string-operators>String Operators</a></li>
-<li><a href=#complex-type-constructors>Complex Type Constructors</a></li>
-<li><a href=#operators-on-complex-types>Operators on Complex Types</a></li>
-</ul>
-</li>
-<li><a href=#built-in-functions>Built-in Functions</a>
-<ul>
-<li><a href=#mathematical-functions>Mathematical Functions</a></li>
-<li><a href=#collection-functions>Collection Functions</a></li>
-<li><a href=#type-conversion-functions>Type Conversion Functions</a></li>
-<li><a href=#date-functions>Date Functions</a></li>
-<li><a href=#conditional-functions>Conditional Functions</a></li>
-<li><a href=#string-functions>String Functions</a></li>
-<li><a href=#data-masking-functions>Data Masking Functions</a></li>
-<li><a href=#misc-functions>Misc. Functions</a></li>
-</ul>
-</li>
-<li><a href=#built-in-aggregate-functions-udaf>Built-in Aggregate Functions (UDAF)</a></li>
-<li><a href=#built-in-table-generating-functions-udtf>Built-in Table-Generating Functions (UDTF)</a>
-<ul>
-<li><a href=#usage-examples>Usage Examples</a></li>
-<li><a href=#explode>explode</a></li>
-<li><a href=#posexplode>posexplode</a></li>
-<li><a href=#json_tuple>json_tuple</a></li>
-<li><a href=#parse_url_tuple>parse_url_tuple</a></li>
-</ul>
-</li>
-<li><a href=#grouping-and-sorting-on-fcolumn>GROUPing and SORTing on f(column)</a></li>
-<li><a href=#utility-functions>Utility Functions</a></li>
-<li><a href=#udf-internals>UDF internals</a></li>
-<li><a href=#creating-custom-udfs>Creating Custom UDFs</a></li>
-<li><a href=#attachments>Attachments:</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
 <h2 id=overview>Overview</h2>
 <p>All Hive keywords are case-insensitive, including the names of Hive operators and functions.</p>
-<p>In <a href=#beeline>Beeline</a> or the <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-cli/>CLI</a>, use the commands below to show the latest documentation:</p>
+<p>In <a href=#beeline>Beeline</a> or the <a href=https://hive.apache.org/docs/latest/language/languagemanual-cli/>CLI</a>, use the commands below to show the latest documentation:</p>
 <pre tabindex=0><code>SHOW FUNCTIONS;
 DESCRIBE FUNCTION &lt;function_name&gt;;
 DESCRIBE FUNCTION EXTENDED &lt;function_name&gt;;
@@ -505,17 +455,17 @@ DESCRIBE FUNCTION EXTENDED &lt;function_name&gt;;
 <tr>
 <td>A IN (val1, val2, &mldr;)</td>
 <td>boolean</td>
-<td>TRUE if A is equal to any of the values. As of Hive 0.13 <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-subqueries/>subqueries</a> are supported in IN statements.</td>
+<td>TRUE if A is equal to any of the values. As of Hive 0.13 <a href=https://hive.apache.org/docs/latest/language/languagemanual-subqueries/>subqueries</a> are supported in IN statements.</td>
 </tr>
 <tr>
 <td>A NOT IN (val1, val2, &mldr;)</td>
 <td>boolean</td>
-<td>TRUE if A is not equal to any of the values. As of Hive 0.13 <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-subqueries/>subqueries</a> are supported in NOT IN statements.</td>
+<td>TRUE if A is not equal to any of the values. As of Hive 0.13 <a href=https://hive.apache.org/docs/latest/language/languagemanual-subqueries/>subqueries</a> are supported in NOT IN statements.</td>
 </tr>
 <tr>
 <td>[NOT] EXISTS (subquery)</td>
 <td></td>
-<td>TRUE if the the subquery returns at least one row. Supported as of <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-subqueries/>Hive 0.13</a>.</td>
+<td>TRUE if the the subquery returns at least one row. Supported as of <a href=https://hive.apache.org/docs/latest/language/languagemanual-subqueries/>Hive 0.13</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -824,7 +774,7 @@ DESCRIBE FUNCTION EXTENDED &lt;function_name&gt;;
 <h4 id=mathematical-functions-and-operators-for-decimal-datatypes>Mathematical Functions and Operators for Decimal Datatypes</h4>
 <p>Version</p>
 <p>The decimal datatype was introduced in Hive 0.11.0 (<a href=https://issues.apache.org/jira/browse/HIVE-2693>HIVE-2693</a>).</p>
-<p>All regular arithmetic operators (such as +, -, *, /) and relevant mathematical UDFs (Floor, Ceil, Round, and many more) have been updated to handle decimal types. For a list of supported UDFs, see <a href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types#LanguageManualTypes-MathematicalUDFs>Mathematical UDFs</a> in <a href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types#LanguageManualTypes>Hive Data Types</a>.</p>
+<p>All regular arithmetic operators (such as +, -, *, /) and relevant mathematical UDFs (Floor, Ceil, Round, and many more) have been updated to handle decimal types. For a list of supported UDFs, see <a href=https://hive.apache.org/docs/latest/language/languagemanual-types#mathematical-udfs>Mathematical UDFs</a> in <a href=https://hive.apache.org/docs/latest/language/languagemanual-types>Hive Data Types</a>.</p>
 <h3 id=collection-functions>Collection Functions</h3>
 <p>The following built-in collection functions are supported in Hive:</p>
 <table>
@@ -1165,7 +1115,7 @@ DESCRIBE FUNCTION EXTENDED &lt;function_name&gt;;
 <tr>
 <td>array&lt;struct&lt;string,double&#187;</td>
 <td>context_ngrams(array&lt;array>, array, int K, int pf)</td>
-<td>Returns the top-k contextual N-grams from a set of tokenized sentences, given a string of &ldquo;context&rdquo;. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/statisticsanddatamining/>StatisticsAndDataMining</a> for more information.</td>
+<td>Returns the top-k contextual N-grams from a set of tokenized sentences, given a string of &ldquo;context&rdquo;. See <a href=https://hive.apache.org/docs/latest/language/statisticsanddatamining/>StatisticsAndDataMining</a> for more information.</td>
 </tr>
 <tr>
 <td>string</td>
@@ -1250,7 +1200,7 @@ DESCRIBE FUNCTION EXTENDED &lt;function_name&gt;;
 <tr>
 <td>array&lt;struct&lt;string,double&#187;</td>
 <td>ngrams(array&lt;array>, int N, int K, int pf)</td>
-<td>Returns the top-k N-grams from a set of tokenized sentences, such as those returned by the sentences() UDAF. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/statisticsanddatamining/>StatisticsAndDataMining</a> for more information.</td>
+<td>Returns the top-k N-grams from a set of tokenized sentences, such as those returned by the sentences() UDAF. See <a href=https://hive.apache.org/docs/latest/language/statisticsanddatamining/>StatisticsAndDataMining</a> for more information.</td>
 </tr>
 <tr>
 <td>int</td>
@@ -1473,7 +1423,7 @@ DESCRIBE FUNCTION EXTENDED &lt;function_name&gt;;
 <tr>
 <td>varies</td>
 <td>reflect(class, method[, arg1[, arg2..]])</td>
-<td>Calls a Java method by matching the argument signature, using reflection. (As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-471>0.7.0</a>.) See <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/reflectudf/>Reflect (Generic) UDF</a> for examples.</td>
+<td>Calls a Java method by matching the argument signature, using reflection. (As of Hive <a href=https://issues.apache.org/jira/browse/HIVE-471>0.7.0</a>.) See <a href=https://hive.apache.org/docs/latest/language/reflectudf/>Reflect (Generic) UDF</a> for examples.</td>
 </tr>
 <tr>
 <td>int</td>
@@ -1538,7 +1488,7 @@ DESCRIBE FUNCTION EXTENDED &lt;function_name&gt;;
 </tbody>
 </table>
 <h4 id=xpath>xpath</h4>
-<p>The following functions are described in <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-xpathudf/>LanguageManual XPathUDF</a>:</p>
+<p>The following functions are described in <a href=https://hive.apache.org/docs/latest/language/languagemanual-xpathudf/>LanguageManual XPathUDF</a>:</p>
 <ul>
 <li>xpath, xpath_short, xpath_int, xpath_long, xpath_float, xpath_double, xpath_number, xpath_string</li>
 </ul>
@@ -1844,8 +1794,8 @@ select tf.* from (select 0) t lateral view stack(2,'A',10,date '2015-01-01','B',
 </ul>
 </li>
 </ul>
-<p>Please see <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-lateralview/>LanguageManual LateralView</a> for an alternative syntax that does not have these limitations.</p>
-<p>Also see <a href=https://simhadri-g.github.io/hive-site/community/resources/developerguide-udtf/>Writing UDTFs</a> if you want to create a custom UDTF.</p>
+<p>Please see <a href=https://hive.apache.org/docs/latest/language/languagemanual-lateralview/>LanguageManual LateralView</a> for an alternative syntax that does not have these limitations.</p>
+<p>Also see <a href=https://hive.apache.org/community/resources/developerguide-udtf/>Writing UDTFs</a> if you want to create a custom UDTF.</p>
 <h3 id=explode>explode</h3>
 <p><code>explode()</code> takes in an array (or a map) as an input and outputs the elements of the array (map) as separate rows. UDTFs can be used in the SELECT expression list and as a part of LATERAL VIEW.</p>
 <p>As an example of using <code>explode()</code> in the SELECT expression list, consider a table named myTable that has a single column (myCol) and two rows:</p>
@@ -1956,7 +1906,7 @@ select tf.* from (select 0) t lateral view stack(2,'A',10,date '2015-01-01','B',
 </tbody>
 </table>
 <h3 id=json_tuple>json_tuple</h3>
-<p>A new json_tuple() UDTF is introduced in Hive 0.7. It takes a set of names (keys) and a JSON string, and returns a tuple of values using one function. This is much more efficient than calling GET_JSON_OBJECT to retrieve more than one key from a single JSON string. In any case where a single JSON string would be parsed more than once, your query will be more efficient if you parse it once, which is what JSON_TUPLE is for. As JSON_TUPLE is a UDTF, you will need to use the <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-lateralview/>LATERAL VIEW</a> syntax in order to achieve the same goal.</p>
+<p>A new json_tuple() UDTF is introduced in Hive 0.7. It takes a set of names (keys) and a JSON string, and returns a tuple of values using one function. This is much more efficient than calling GET_JSON_OBJECT to retrieve more than one key from a single JSON string. In any case where a single JSON string would be parsed more than once, your query will be more efficient if you parse it once, which is what JSON_TUPLE is for. As JSON_TUPLE is a UDTF, you will need to use the <a href=https://hive.apache.org/docs/latest/language/languagemanual-lateralview/>LATERAL VIEW</a> syntax in order to achieve the same goal.</p>
 <p>For example,</p>
 <pre tabindex=0><code>select a.timestamp, get_json_object(a.appevents, '$.eventid'), get_json_object(a.appenvets, '$.eventname') from log a;
 
@@ -2015,13 +1965,13 @@ FROM src LATERAL VIEW parse_url_tuple(fullurl, 'HOST', 'PATH', 'QUERY', 'QUERY:i
 <pre tabindex=0><code>SELECT length(string_col) FROM table_name;
 
 </code></pre><p>would evaluate the length of each of the string_col&rsquo;s values in the map portion of the job. The side effect of the UDF being evaluated on the map-side is that you can&rsquo;t control the order of rows which get sent to the mapper. It is the same order in which the file split sent to the mapper gets deserialized. Any reduce side operation (such as SORT BY, ORDER BY, regular JOIN, etc.) would apply to the UDFs output as if it is just another column of the table. This is fine since the context of the UDF&rsquo;s evaluate method is meant to be one row at a time.</p>
-<p>If you would like to control which rows get sent to the same UDF (and possibly in what order), you will have the urge to make the UDF evaluate during the reduce phase. This is achievable by making use of <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-sortby/>DISTRIBUTE BY, DISTRIBUTE BY + SORT BY, CLUSTER BY</a>. An example query would be:</p>
+<p>If you would like to control which rows get sent to the same UDF (and possibly in what order), you will have the urge to make the UDF evaluate during the reduce phase. This is achievable by making use of <a href=https://hive.apache.org/docs/latest/language/languagemanual-sortby/>DISTRIBUTE BY, DISTRIBUTE BY + SORT BY, CLUSTER BY</a>. An example query would be:</p>
 <pre tabindex=0><code>SELECT reducer_udf(my_col, distribute_col, sort_col) FROM
 (SELECT my_col, distribute_col, sort_col FROM table_name DISTRIBUTE BY distribute_col SORT BY distribute_col, sort_col) t
 
-</code></pre><p>However, one could argue that the very premise of your requirement to control the set of rows sent to the same UDF is to do aggregation in that UDF. In such a case, using a User Defined Aggregate Function (UDAF) is a better choice. You can read more about writing a UDAF <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/genericudafcasestudy/>here</a>. Alternatively, you can user a custom reduce script to accomplish the same using <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-transform/>Hive&rsquo;s Transform functionality</a>. Both of these options would do aggregations on the reduce side.</p>
+</code></pre><p>However, one could argue that the very premise of your requirement to control the set of rows sent to the same UDF is to do aggregation in that UDF. In such a case, using a User Defined Aggregate Function (UDAF) is a better choice. You can read more about writing a UDAF <a href=https://hive.apache.org/docs/latest/language/genericudafcasestudy/>here</a>. Alternatively, you can user a custom reduce script to accomplish the same using <a href=https://hive.apache.org/docs/latest/language/languagemanual-transform/>Hive&rsquo;s Transform functionality</a>. Both of these options would do aggregations on the reduce side.</p>
 <h2 id=creating-custom-udfs>Creating Custom UDFs</h2>
-<p>For information about how to create a custom UDF, see <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/hiveplugins/>Hive Plugins</a> and <a href=#create-function>Create Function</a>.</p>
+<p>For information about how to create a custom UDF, see <a href=https://hive.apache.org/docs/latest/language/hiveplugins/>Hive Plugins</a> and <a href=#create-function>Create Function</a>.</p>
 <p>select explode(array(&lsquo;A&rsquo;,&lsquo;B&rsquo;,&lsquo;C&rsquo;));select explode(array(&lsquo;A&rsquo;,&lsquo;B&rsquo;,&lsquo;C&rsquo;)) as col;select tf.* from (select 0) t lateral view explode(array(&lsquo;A&rsquo;,&lsquo;B&rsquo;,&lsquo;C&rsquo;)) tf;select tf.* from (select 0) t lateral view explode(array(&lsquo;A&rsquo;,&lsquo;B&rsquo;,&lsquo;C&rsquo;)) tf as col;</p>
 <h2 id=attachments>Attachments:</h2>
 <p><img src=images/icons/bullet_blue.gif alt>
@@ -2106,7 +2056,7 @@ FROM src LATERAL VIEW parse_url_tuple(fullurl, 'HOST', 'PATH', 'QUERY', 'QUERY:i
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -2122,19 +2072,19 @@ privacy policy</a>. See upcoming
 If you discover any
 <a href=https://www.apache.org/security/>security</a> vulnerabilities, please
 report them privately. Finally,
-<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+<a href=https://www.apache.org/foundation/thanks.html>thanks
 </a> to the sponsors who
-<a href=https://www.apache.org/foundation/contributing.html>
+<a href=https://www.apache.org/foundation/sponsorship.html>
 donate</a> to the Apache Foundation.
 </p>
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

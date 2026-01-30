@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : Streaming Data Ingest</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -28,10 +28,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class=container-fluid>
 <div class=navbar-brand-wrapper>
-<a href=https://simhadri-g.github.io/hive-site/ class=navbar-logo>
-<img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=50 height=30 alt="Apache Hive Logo">
+<a href=https://hive.apache.org class=navbar-logo>
+<img src=https://hive.apache.org/images/hive.svg width=50 height=30 alt="Apache Hive Logo">
 </a>
-<a class=navbar-brand href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<a class=navbar-brand href=https://hive.apache.org>Apache Hive</a>
 </div>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
@@ -39,7 +39,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto">
 <li class=nav-item>
-<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads>
+<a class=nav-link href=https://hive.apache.org/general/downloads>
 Releases
 </a>
 </li>
@@ -48,9 +48,9 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=docsDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/language/languagemanual>Language Manual</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -59,7 +59,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=generalDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 <li><a class=dropdown-item href=/general/poweredby/>Powered by</a></li>
 </ul>
 </li>
@@ -68,13 +68,12 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=devDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/desingdocs/>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/hivedeveloperfaq>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -83,12 +82,12 @@ Community
 </a>
 <ul class=dropdown-menu aria-labelledby=communityDropdown>
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/howtocontribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=/community/resources/>Resources</a></li>
 <li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li><hr class=dropdown-divider></li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=/community/resources/howtorelease/>How To Release</a></li>
@@ -193,74 +192,30 @@ Last updated: December 12, 2024
 </div>
 <div class=docs-article>
 <h1 id=apache-hive--streaming-data-ingest>Apache Hive : Streaming Data Ingest</h1>
-<aside class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#apache-hive--streaming-data-ingest>Apache Hive : Streaming Data Ingest</a></li>
-<li><a href=#hive-3-streaming-api>Hive 3 Streaming API</a></li>
-<li><a href=#hive-hcatalog-streaming-api>Hive HCatalog Streaming API</a>
-<ul>
-<li>
-<ul>
-<li><a href=#streaming-mutation-api>Streaming Mutation API</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href=#streaming-requirements>Streaming Requirements</a></li>
-<li><a href=#limitations>Limitations</a></li>
-<li><a href=#api-usage>API Usage</a>
-<ul>
-<li><a href=#transaction-and-connection-management>Transaction and Connection Management</a>
-<ul>
-<li><a href=#hiveendpoint>HiveEndPoint</a></li>
-<li><a href=#streamingconnection>StreamingConnection</a></li>
-<li><a href=#transactionbatch>TransactionBatch</a></li>
-<li><a href=#notes-about-the-hiveconf-object>Notes about the HiveConf Object</a></li>
-</ul>
-</li>
-<li><a href=#io--writing-data>I/O – Writing Data</a>
-<ul>
-<li><a href=#recordwriter>RecordWriter</a></li>
-<li><a href=#delimitedinputwriter>DelimitedInputWriter</a></li>
-<li><a href=#strictjsonwriter>StrictJsonWriter</a></li>
-<li><a href=#strictregexwriter>StrictRegexWriter</a></li>
-<li><a href=#abstractrecordwriter>AbstractRecordWriter</a></li>
-</ul>
-</li>
-<li><a href=#error-handling>Error Handling</a></li>
-</ul>
-</li>
-<li><a href=#example-non-secure-mode>Example – Non-secure Mode</a></li>
-<li><a href=#example-securestreaming>Example – Secure Streaming</a></li>
-<li><a href=#knowledge-base>Knowledge Base</a></li>
-</ul>
-</nav>
-</aside>
 <h1 id=hive-3-streaming-api>Hive 3 Streaming API</h1>
-<p><a href=https://cwiki.apache.org/confluence/display/Hive/Streaming+Data+Ingest+V2>Hive 3 Streaming API Documentation</a> - new API available in Hive 3</p>
+<p><a href=https://hive.apache.org/docs/latest/user/streaming-data-ingest-v2>Hive 3 Streaming API Documentation</a> - new API available in Hive 3</p>
 <h1 id=hive-hcatalog-streaming-api>Hive HCatalog Streaming API</h1>
 <p>Traditionally adding new data into Hive requires gathering a large amount of data onto HDFS and then periodically adding a new partition. This is essentially a “batch insertion”. Insertion of new data into an existing partition is not permitted. Hive Streaming API allows data to be pumped continuously into Hive. The incoming data can be continuously committed in small batches of records into an existing Hive partition or table. Once data is committed it becomes immediately visible to all Hive queries initiated subsequently.</p>
-<p>This API is intended for streaming clients such as <a href=http://flume.apache.org/>Flume</a> and <a href=https://storm.incubator.apache.org/>Storm</a>, which continuously generate data. Streaming support is built on top of ACID based insert/update support in Hive (see <a href=https://simhadri-g.github.io/hive-site/docs/latest/user/hive-transactions/>Hive Transactions</a>).</p>
+<p>This API is intended for streaming clients such as <a href=http://flume.apache.org/>Flume</a> and <a href=https://storm.incubator.apache.org/>Storm</a>, which continuously generate data. Streaming support is built on top of ACID based insert/update support in Hive (see <a href=https://hive.apache.org/docs/latest/user/hive-transactions/>Hive Transactions</a>).</p>
 <p>The Classes and interfaces part of the Hive streaming API are broadly categorized into two sets. The first set provides support for connection and transaction management while the second set provides I/O support. Transactions are managed by the metastore. Writes are performed directly to HDFS.</p>
 <p>Streaming to <strong>unpartitioned</strong> tables is also supported. The API supports Kerberos authentication starting in <a href=https://issues.apache.org/jira/browse/HIVE-7508>Hive 0.14</a>.</p>
 <p><strong>Note on packaging</strong>: The APIs are defined in the Java package org.apache.hive.hcatalog.streaming and part of the <em>hive-hcatalog-streaming</em> Maven module in Hive.</p>
 <h3 id=streaming-mutation-api>Streaming Mutation API</h3>
-<p>Starting in release 2.0.0, Hive offers another API for mutating (insert/update/delete) records into transactional tables using Hive’s ACID feature. See <a href=https://simhadri-g.github.io/hive-site/docs/latest/hcatalog/hcatalog-streaming-mutation-api/>HCatalog Streaming Mutation API</a> for details and a comparison with the streaming data ingest API that is described in this document.</p>
+<p>Starting in release 2.0.0, Hive offers another API for mutating (insert/update/delete) records into transactional tables using Hive’s ACID feature. See <a href=https://hive.apache.org/docs/latest/hcatalog/hcatalog-streaming-mutation-api/>HCatalog Streaming Mutation API</a> for details and a comparison with the streaming data ingest API that is described in this document.</p>
 <h1 id=streaming-requirements>Streaming Requirements</h1>
 <p>A few things are required to use streaming.</p>
 <ol>
 <li>The following settings are required in hive-site.xml to enable ACID support for streaming:
 <ol>
 <li><strong>hive.txn.manager = org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</strong></li>
-<li><strong>hive.compactor.initiator.on = true</strong>(See more important details <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions#HiveTransactions-NewConfigurationParametersforTransactions>here</a>)</li>
-<li><strong>hive.compactor.cleaner.on = true</strong> (From Hive 4.0.0 onwards. See more important details <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions#HiveTransactions-NewConfigurationParametersforTransactions>here</a>)</li>
+<li><strong>hive.compactor.initiator.on = true</strong>(See more important details <a href=https://hive.apache.org/docs/latest/user/hive-transactions#new-configuration-parameters-for-transactions>here</a>)</li>
+<li><strong>hive.compactor.cleaner.on = true</strong> (From Hive 4.0.0 onwards. See more important details <a href=https://hive.apache.org/docs/latest/user/hive-transactions#new-configuration-parameters-for-transactions>here</a>)</li>
 <li><strong>hive.compactor.worker.threads</strong> > <strong>0</strong></li>
 </ol>
 </li>
-<li><em>“stored as orc”</em> must be specified during <a href=#table-creation>table creation</a>. Only <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-orc/>ORC storage format</a> is supported currently.</li>
+<li><em>“stored as orc”</em> must be specified during <a href=#table-creation>table creation</a>. Only <a href=https://hive.apache.org/docs/latest/language/languagemanual-orc/>ORC storage format</a> is supported currently.</li>
 <li>tblproperties(&ldquo;transactional&rdquo;=&ldquo;true&rdquo;) must be set on the table during creation.</li>
-<li>The Hive table must be <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-ddl-bucketedtables/>bucketed</a>, but not sorted. So something like “clustered by (colName) into <em>10</em> buckets” must be specified during table creation. The number of buckets is ideally the same as the number of streaming writers.</li>
+<li>The Hive table must be <a href=https://hive.apache.org/docs/latest/language/languagemanual-ddl-bucketedtables/>bucketed</a>, but not sorted. So something like “clustered by (colName) into <em>10</em> buckets” must be specified during table creation. The number of buckets is ideally the same as the number of streaming writers.</li>
 <li>User of the client streaming process must have the necessary permissions to write to the table or partition and create partitions in the table.</li>
 <li>(Temporary requirements) <strong>When issuing queries</strong> on streaming tables, the client needs to set
 <ol>
@@ -285,7 +240,7 @@ Last updated: December 12, 2024
 <h3 id=transactionbatch>TransactionBatch</h3>
 <p>TransactionBatch is used to write a series of transactions. There is one file created on HDFS per TxnBatch in each bucket. The API examines each record to decide which bucket it belongs to and writes it to the appropriate bucket. If the table has 5 buckets, there will be 5 files (some of them could be empty) for the TxnBatch (before compaction kicks in).  Prior to <a href=https://issues.apache.org/jira/browse/HIVE-11983>Hive 1.3.0</a>, a bug in the API&rsquo;s bucket computation logic caused incorrect distribution of records into buckets, which could lead to incorrect data returned from queries using bucket join algorithms.</p>
 <p>For each transaction in the TxnBatch, the application calls <em>beginNextTransaction</em>, <em>write,</em> and then <em>commit</em> or <em>abort</em> as appropriate. See the <a href=http://hive.apache.org/javadocs/r1.2.1/api/org/apache/hive/hcatalog/streaming/TransactionBatch.html>Javadoc</a> for details.  A Transaction cannot include data from more than one partition.</p>
-<p>Transactions in a TransactionBatch are eventually expired by the Metastore if not committed or aborted after <a href=https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions#HiveTransactions-NewConfigurationParametersforTransactions>hive.txn.timeout</a> secs. TrasnactionBatch class provides a <strong>heartbeat()</strong> method to prolong the lifetime of unused transactions in the batch.  A good rule of thumb is to send call heartbeat() at (hive.txn.timeout/2) intervals after creating a TransactionBatch.  This is sufficient to keep an inactive transaction alive but not load the metastore unnecessarily.</p>
+<p>Transactions in a TransactionBatch are eventually expired by the Metastore if not committed or aborted after <a href=https://hive.apache.org/docs/latest/user/hive-transactions#new-configuration-parameters-for-transactions>hive.txn.timeout</a> secs. TrasnactionBatch class provides a <strong>heartbeat()</strong> method to prolong the lifetime of unused transactions in the batch.  A good rule of thumb is to send call heartbeat() at (hive.txn.timeout/2) intervals after creating a TransactionBatch.  This is sufficient to keep an inactive transaction alive but not load the metastore unnecessarily.</p>
 <h4 id=usage-guidelines>Usage Guidelines</h4>
 <p>Generally, the more events are included in each transaction the more throughput can be achieved.  It&rsquo;s common commit either after a certain number of events or after a certain time interval, whichever comes first.  The later ensures that when event flow rate is variable, transactions don&rsquo;t stay open too long.  There is no practical limit on how much data can be included in a single transaction.  The only concern is amount of data which will need to be replayed if the transaction fails.  The concept of a TransactionBatch serves to reduce the number of files created by SteramingAPI in HDFS.  Since all transactions in a given batch write to the same physical file (per bucket), a partition can only be compacted up to the the level of the earliest transaction of any batch which contains an open transaction.  Thus TranactionBatches should not be made excessively large.  It makes sense to include a timer to close a TransactionBatch (even if it has unused transactions) after some amount of time.</p>
 <p><strong>Note:</strong> <a href=https://issues.apache.org/jira/browse/HIVE-12307>Hive 1.3.0</a> onwards, invoking TxnBatch.close() will cause all unused transaction in the current TxnBatch to be aborted.</p>
@@ -305,7 +260,7 @@ Last updated: December 12, 2024
 <p>A RecordWriter&rsquo;s primary functions are:</p>
 <ol>
 <li>Modify input record: This may involve dropping fields from input data if they don’t have corresponding table columns, adding nulls in case of missing fields for certain columns, and changing the order of incoming fields to match the order of fields in the table. This task requires understanding of incoming data format. Not all formats (for example JSON, which includes field names in the data) need this step.</li>
-<li>Encode modified record: The encoding involves serialization using an appropriate <a href=https://simhadri-g.github.io/hive-site/docs/latest/user/serde/>Hive SerDe</a>.</li>
+<li>Encode modified record: The encoding involves serialization using an appropriate <a href=https://hive.apache.org/docs/latest/user/serde/>Hive SerDe</a>.</li>
 <li>Identify the bucket to which the record belongs</li>
 <li>Write encoded record to Hive using the <a href=https://hive.apache.org/javadocs/r1.2.1/api/org/apache/hadoop/hive/ql/io/AcidOutputFormat.html>AcidOutputFormat</a>&rsquo;s record updater for the appropriate bucket.</li>
 </ol>
@@ -441,7 +396,7 @@ txnBatch3.close();
 secureConn.close();
 </code></pre><h1 id=knowledge-base>Knowledge Base</h1>
 <ul>
-<li><a href=https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions#HiveTransactions-TalksandPresentations>Talks and Presentations</a></li>
+<li><a href=https://hive.apache.org/docs/latest/user/hive-transactions#talks-and-presentations>Talks and Presentations</a></li>
 <li><a href=https://community.hortonworks.com/articles/139876/lessons-learnt-from-nifi-streaming-data-to-hive-tr.html>Lessons learnt from NiFi streaming data to Hive transactional tables</a></li>
 </ul>
 </div>
@@ -519,7 +474,7 @@ secureConn.close();
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -535,19 +490,19 @@ privacy policy</a>. See upcoming
 If you discover any
 <a href=https://www.apache.org/security/>security</a> vulnerabilities, please
 report them privately. Finally,
-<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+<a href=https://www.apache.org/foundation/thanks.html>thanks
 </a> to the sponsors who
-<a href=https://www.apache.org/foundation/contributing.html>
+<a href=https://www.apache.org/foundation/sponsorship.html>
 donate</a> to the Apache Foundation.
 </p>
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : AdminManual Metastore Administration</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -28,10 +28,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class=container-fluid>
 <div class=navbar-brand-wrapper>
-<a href=https://simhadri-g.github.io/hive-site/ class=navbar-logo>
-<img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=50 height=30 alt="Apache Hive Logo">
+<a href=https://hive.apache.org class=navbar-logo>
+<img src=https://hive.apache.org/images/hive.svg width=50 height=30 alt="Apache Hive Logo">
 </a>
-<a class=navbar-brand href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<a class=navbar-brand href=https://hive.apache.org>Apache Hive</a>
 </div>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
@@ -39,7 +39,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto">
 <li class=nav-item>
-<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads>
+<a class=nav-link href=https://hive.apache.org/general/downloads>
 Releases
 </a>
 </li>
@@ -48,9 +48,9 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=docsDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/language/languagemanual>Language Manual</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -59,7 +59,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=generalDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 <li><a class=dropdown-item href=/general/poweredby/>Powered by</a></li>
 </ul>
 </li>
@@ -68,13 +68,12 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=devDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/desingdocs/>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/hivedeveloperfaq>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -83,12 +82,12 @@ Community
 </a>
 <ul class=dropdown-menu aria-labelledby=communityDropdown>
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/howtocontribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=/community/resources/>Resources</a></li>
 <li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li><hr class=dropdown-divider></li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=/community/resources/howtorelease/>How To Release</a></li>
@@ -170,28 +169,7 @@ Last updated: December 12, 2024
 </div>
 <div class=docs-article>
 <h1 id=apache-hive--adminmanual-metastore-administration>Apache Hive : AdminManual Metastore Administration</h1>
-<p>This page only documents the MetaStore in Hive 2.x and earlier. For 3.x and later releases please see <a href=https://simhadri-g.github.io/hive-site/docs/latest/admin/adminmanual-metastore-3-0-administration/>AdminManual Metastore 3.0 Administration</a></p>
-<aside class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#apache-hive--adminmanual-metastore-administration>Apache Hive : AdminManual Metastore Administration</a>
-<ul>
-<li>
-<ul>
-<li><a href=#introduction>Introduction</a></li>
-<li><a href=#localembedded-metastore-database-derby>Local/Embedded Metastore Database (Derby)</a></li>
-<li><a href=#remote-metastore-database>Remote Metastore Database</a></li>
-<li><a href=#localembedded-metastore-server>Local/Embedded Metastore Server</a></li>
-<li><a href=#remote-metastore-server>Remote Metastore Server</a></li>
-<li><a href=#supported-backend-databases-for-metastore>Supported Backend Databases for Metastore</a></li>
-<li><a href=#metastore-schema-consistency-and-upgrades>Metastore Schema Consistency and Upgrades</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
+<p>This page only documents the MetaStore in Hive 2.x and earlier. For 3.x and later releases please see <a href=https://hive.apache.org/docs/latest/admin/adminmanual-metastore-3-0-administration/>AdminManual Metastore 3.0 Administration</a></p>
 <h3 id=introduction>Introduction</h3>
 <p>All the metadata for Hive tables and partitions are accessed through the Hive Metastore. Metadata is persisted using <a href=http://www.datanucleus.org/>JPOX</a> ORM solution (Data Nucleus) so any database that is supported by it can be used by Hive. Most of the commercial relational databases and many open source databases are supported. See the list of <a href=#supported-databases>supported databases</a> in section below.</p>
 <p>You can find an E/R diagram for the metastore <a href=https://issues.apache.org/jira/secure/attachment/12471108/HiveMetaStore.pdf>here</a>.</p>
@@ -207,8 +185,8 @@ Last updated: December 12, 2024
 <li><a href=#remote-metastore-server>Remote Metastore Server</a></li>
 </ul>
 <h4 id=basic-configuration-parameters>Basic Configuration Parameters</h4>
-<p>The relevant configuration parameters are shown here. (Non-metastore parameters are described in <a href=https://cwiki.apache.org/confluence/display/Hive/AdminManual+Configuration>Configuring Hive</a>. Also see the Language Manual&rsquo;s <a href=https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties>Hive Configuration Properties</a>, including <a href=https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-MetaStore>Metastore</a> and <a href=https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-HiveMetastoreSecurity>Hive Metastore Security</a>.)</p>
-<p>Also see hivemetastore-site.xml documentation under <a href=https://cwiki.apache.org/confluence/display/Hive/AdminManual+Configuration>Configuring Hive</a>.</p>
+<p>The relevant configuration parameters are shown here. (Non-metastore parameters are described in <a href=https://hive.apache.org/docs/latest/admin/adminmanual-configuration>Configuring Hive</a>. Also see the Language Manual&rsquo;s <a href=https://hive.apache.org/docs/latest/user/configuration-properties>Hive Configuration Properties</a>, including <a href=https://hive.apache.org/docs/latest/user/configuration-properties#metastore>Metastore</a> and <a href=https://hive.apache.org/docs/latest/user/configuration-properties#hive-metastore-security>Hive Metastore Security</a>.)</p>
+<p>Also see hivemetastore-site.xml documentation under <a href=https://hive.apache.org/docs/latest/admin/adminmanual-configuration>Configuring Hive</a>.</p>
 <table>
 <thead>
 <tr>
@@ -241,7 +219,7 @@ Last updated: December 12, 2024
 </table>
 <p>The Hive metastore is stateless and thus there can be multiple instances to achieve High Availability. Using <code>hive.metastore.uris</code> it is possible to specify multiple remote metastores. Hive will use the first one from the list by default but will pick a random one on connection failure and will try to reconnect.</p>
 <h4 id=additional-configuration-parameters>Additional Configuration Parameters</h4>
-<p>The following metastore configuration parameters were carried over from old documentation without a guarantee that they all still exist. See the <code>HiveConf</code> Java class for current Hive configuration options, and see the <a href=https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-MetaStore>Metastore</a> and <a href=https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-HiveMetastoreSecurity>Hive Metastore Security</a> sections of the Language Manual&rsquo;s <a href=https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties>Hive Configuration Properties</a> for user-friendly descriptions of the metastore parameters.</p>
+<p>The following metastore configuration parameters were carried over from old documentation without a guarantee that they all still exist. See the <code>HiveConf</code> Java class for current Hive configuration options, and see the <a href=https://hive.apache.org/docs/latest/user/configuration-properties#metastore>Metastore</a> and <a href=https://hive.apache.org/docs/latest/user/configuration-properties#hive-metastore-security>Hive Metastore Security</a> sections of the Language Manual&rsquo;s <a href=https://hive.apache.org/docs/latest/user/configuration-properties>Hive Configuration Properties</a> for user-friendly descriptions of the metastore parameters.</p>
 <table>
 <thead>
 <tr>
@@ -352,7 +330,7 @@ Last updated: December 12, 2024
 </tr>
 </tbody>
 </table>
-<p>If you want to run Derby as a network server so the metastore can be accessed from multiple nodes, see <a href=https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode>Hive Using Derby in Server Mode</a>.</p>
+<p>If you want to run Derby as a network server so the metastore can be accessed from multiple nodes, see <a href=https://hive.apache.org/docs/latest/admin/hivederbyservermode>Hive Using Derby in Server Mode</a>.</p>
 <h3 id=remote-metastore-database>Remote Metastore Database</h3>
 <p>In this configuration, you would use a traditional standalone RDBMS server. The following example configuration will set up a metastore in a MySQL server. This configuration of metastore database is recommended for any real use.</p>
 <table>
@@ -589,8 +567,7 @@ Last updated: December 12, 2024
 <p>Introduced in Hive 0.12.0. See <a href=https://issues.apache.org/jira/browse/HIVE-3764>HIVE-3764</a>.</p>
 <p>Hive now records the schema version in the metastore database and verifies that the metastore schema version is compatible with Hive binaries that are going to accesss the metastore. Note that the Hive properties to implicitly create or alter the existing schema are disabled by default. Hive will not attempt to change the metastore schema implicitly. When you execute a Hive query against an old schema, it will fail to access the metastore.</p>
 <p>To suppress the schema check and allow the metastore to implicitly modify the schema, you need to set a configuration property <code>hive.metastore.schema.verification</code> to false in <code>hive-site.xml</code>.</p>
-<p>Starting in release 0.12, Hive also includes an off-line schema tool to initialize and upgrade the metastore schema. Please refer to the details <a href=https://simhadri-g.github.io/hive-site/docs/latest/admin/hive-schema-tool/>here</a>.</p>
-<p>Save</p>
+<p>Starting in release 0.12, Hive also includes an off-line schema tool to initialize and upgrade the metastore schema. Please refer to the details <a href=https://hive.apache.org/docs/latest/admin/hive-schema-tool/>here</a>.</p>
 </div>
 <footer class=docs-footer>
 <div class=docs-feedback>
@@ -643,7 +620,7 @@ Last updated: December 12, 2024
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -659,19 +636,19 @@ privacy policy</a>. See upcoming
 If you discover any
 <a href=https://www.apache.org/security/>security</a> vulnerabilities, please
 report them privately. Finally,
-<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+<a href=https://www.apache.org/foundation/thanks.html>thanks
 </a> to the sponsors who
-<a href=https://www.apache.org/foundation/contributing.html>
+<a href=https://www.apache.org/foundation/sponsorship.html>
 donate</a> to the Apache Foundation.
 </p>
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

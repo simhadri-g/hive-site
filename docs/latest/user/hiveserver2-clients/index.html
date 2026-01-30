@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : HiveServer2 Clients</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -28,10 +28,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class=container-fluid>
 <div class=navbar-brand-wrapper>
-<a href=https://simhadri-g.github.io/hive-site/ class=navbar-logo>
-<img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=50 height=30 alt="Apache Hive Logo">
+<a href=https://hive.apache.org class=navbar-logo>
+<img src=https://hive.apache.org/images/hive.svg width=50 height=30 alt="Apache Hive Logo">
 </a>
-<a class=navbar-brand href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<a class=navbar-brand href=https://hive.apache.org>Apache Hive</a>
 </div>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
@@ -39,7 +39,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto">
 <li class=nav-item>
-<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads>
+<a class=nav-link href=https://hive.apache.org/general/downloads>
 Releases
 </a>
 </li>
@@ -48,9 +48,9 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=docsDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/language/languagemanual>Language Manual</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -59,7 +59,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=generalDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 <li><a class=dropdown-item href=/general/poweredby/>Powered by</a></li>
 </ul>
 </li>
@@ -68,13 +68,12 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=devDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/desingdocs/>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/hivedeveloperfaq>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -83,12 +82,12 @@ Community
 </a>
 <ul class=dropdown-menu aria-labelledby=communityDropdown>
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/howtocontribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=/community/resources/>Resources</a></li>
 <li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li><hr class=dropdown-divider></li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=/community/resources/howtorelease/>How To Release</a></li>
@@ -216,80 +215,13 @@ Last updated: December 12, 2024
 </div>
 <div class=docs-article>
 <h1 id=apache-hive--hiveserver2-clients>Apache Hive : HiveServer2 Clients</h1>
-<p>This page describes the different clients supported by <a href=https://simhadri-g.github.io/hive-site/docs/latest/admin/setting-up-hiveserver2/>HiveServer2</a>.</p>
-<aside class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#apache-hive--hiveserver2-clients>Apache Hive : HiveServer2 Clients</a></li>
-<li><a href=#version-information>Version information</a></li>
-<li><a href=#beeline--command-line-shell>Beeline – Command Line Shell</a>
-<ul>
-<li>
-<ul>
-<li><a href=#beeline-example>Beeline Example</a></li>
-<li><a href=#beeline-commands>Beeline Commands</a></li>
-<li><a href=#beeline-properties>Beeline Properties</a></li>
-<li><a href=#beeline-hive-commands>Beeline Hive Commands</a></li>
-<li><a href=#beeline-command-options>Beeline Command Options</a></li>
-<li><a href=#output-formats>Output Formats</a></li>
-<li><a href=#hiveserver2-logging>HiveServer2 Logging</a></li>
-<li><a href=#cancelling-the-query>Cancelling the Query</a></li>
-<li><a href=#background-query-in-terminal-script>Background Query in Terminal Script</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href=#jdbc>JDBC</a>
-<ul>
-<li><a href=#connection-urls>Connection URLs</a>
-<ul>
-<li><a href=#connection-url-format>Connection URL Format</a></li>
-<li><a href=#connection-url-for-remote-or-embedded-mode>Connection URL for Remote or Embedded Mode</a></li>
-<li><a href=#connection-url-when-hiveserver2-is-running-in-http-mode>Connection URL When HiveServer2 Is Running in HTTP Mode</a></li>
-<li><a href=#connection-url-when-ssl-is-enabled-in-hiveserver2>Connection URL When SSL Is Enabled in HiveServer2</a></li>
-<li><a href=#connection-url-when-zookeeper-service-discovery-is-enabled>Connection URL When ZooKeeper Service Discovery Is Enabled</a></li>
-<li><a href=#named-connection-urls><strong>Named Connection URLs</strong></a></li>
-<li><a href=#reconnecting><strong>Reconnecting</strong></a></li>
-<li><a href=#using-hive-sitexml-to-automatically-connect-to-hiveserver2>Using hive-site.xml to automatically connect to HiveServer2</a></li>
-<li><a href=#using-beeline-sitexml-to-automatically-connect-to-hiveserver2>Using beeline-site.xml to automatically connect to HiveServer2</a></li>
-<li><a href=#using-jdbc>Using JDBC</a></li>
-</ul>
-</li>
-<li><a href=#jdbc-data-types>JDBC Data Types</a></li>
-<li><a href=#jdbc-client-setup-for-a-secure-cluster>JDBC Client Setup for a Secure Cluster</a>
-<ul>
-<li><a href=#multi-user-scenarios-and-programmatic-login-to-kerberos-kdc>Multi-User Scenarios and Programmatic Login to Kerberos KDC</a></li>
-</ul>
-</li>
-<li><a href=#jdbc-fetch-size>JDBC Fetch Size</a></li>
-</ul>
-</li>
-<li><a href=#python-client>Python Client</a></li>
-<li><a href=#ruby-client>Ruby Client</a></li>
-<li><a href=#integration-with-squirrel-sql-client>Integration with SQuirrel SQL Client</a></li>
-<li><a href=#integration-with-sql-developer>Integration with SQL Developer</a></li>
-<li><a href=#integration-with-dbvissoftwares-dbvisualizer>Integration with DbVisSoftware&rsquo;s DbVisualizer</a></li>
-<li><a href=#advanced-features-for-integration-with-other-tools>Advanced Features for Integration with Other Tools</a>
-<ul>
-<li>
-<ul>
-<li><a href=#supporting-cookie-replay-in-http-mode>Supporting Cookie Replay in HTTP Mode</a></li>
-<li><a href=#using-2-way-ssl-in-http-mode>Using 2-way SSL in HTTP Mode</a></li>
-<li><a href=#passing-http-header-keyvalue-pairs-via-jdbc-driver>Passing HTTP Header Key/Value Pairs via JDBC Driver</a></li>
-<li><a href=#passing-custom-http-cookie-keyvalue-pairs-via-jdbc-driver>Passing Custom HTTP Cookie Key/Value Pairs via JDBC Driver</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
+<p>This page describes the different clients supported by <a href=https://hive.apache.org/docs/latest/admin/setting-up-hiveserver2/>HiveServer2</a>.</p>
 <h1 id=version-information>Version information</h1>
 <p>Introduced in Hive version 0.11. See <a href=https://issues.apache.org/jira/browse/HIVE-2935>HIVE-2935</a>.</p>
 <h1 id=beeline--command-line-shell>Beeline – Command Line Shell</h1>
 <p>HiveServer2 supports a command shell Beeline that works with HiveServer2. It&rsquo;s a JDBC client that is based on the SQLLine CLI (<a href=http://sqlline.sourceforge.net/>http://sqlline.sourceforge.net/</a>). There’s detailed <a href=http://sqlline.sourceforge.net/#manual>documentation</a> of SQLLine which is applicable to Beeline as well.</p>
-<p><a href=https://simhadri-g.github.io/hive-site/docs/latest/user/replacing-the-implementation-of-hive-cli-using-beeline/>Replacing the Implementation of Hive CLI Using Beeline</a></p>
-<p>The Beeline shell works in both embedded mode as well as remote mode. In the embedded mode, it runs an embedded Hive (similar to <a href=https://simhadri-g.github.io/hive-site/docs/latest/language/languagemanual-cli/>Hive CLI</a>) whereas remote mode is for connecting to a separate HiveServer2 process over Thrift. Starting in <a href=https://issues.apache.org/jira/browse/HIVE-7615>Hive 0.14</a>, when Beeline is used with HiveServer2, it also prints the log messages from HiveServer2 for queries it executes to STDERR. Remote HiveServer2 mode is recommended for production use, as it is more secure and doesn&rsquo;t require direct HDFS/metastore access to be granted for users.</p>
+<p><a href=https://hive.apache.org/docs/latest/user/replacing-the-implementation-of-hive-cli-using-beeline/>Replacing the Implementation of Hive CLI Using Beeline</a></p>
+<p>The Beeline shell works in both embedded mode as well as remote mode. In the embedded mode, it runs an embedded Hive (similar to <a href=https://hive.apache.org/docs/latest/language/languagemanual-cli/>Hive CLI</a>) whereas remote mode is for connecting to a separate HiveServer2 process over Thrift. Starting in <a href=https://issues.apache.org/jira/browse/HIVE-7615>Hive 0.14</a>, when Beeline is used with HiveServer2, it also prints the log messages from HiveServer2 for queries it executes to STDERR. Remote HiveServer2 mode is recommended for production use, as it is more secure and doesn&rsquo;t require direct HDFS/metastore access to be granted for users.</p>
 <p>In remote mode HiveServer2 only accepts valid Thrift calls – even in HTTP mode, the message body contains Thrift payloads.</p>
 <h3 id=beeline-example>Beeline Example</h3>
 <pre tabindex=0><code>% bin/beeline 
@@ -775,7 +707,7 @@ Please be aware that these output formats are deprecated and only maintained for
 </ul>
 <p>Special characters in *<code>sess_var_list, hive_conf_list, hive_var_list</code>*parameter values should be encoded with URL encoding if needed.</p>
 <h3 id=connection-url-for-remote-or-embedded-mode>Connection URL for Remote or Embedded Mode</h3>
-<p>The JDBC connection URL format has the prefix <code>jdbc:hive2://</code> and the Driver class is <code>org.apache.hive.jdbc.HiveDriver</code>. Note that this is different from the old <a href=https://simhadri-g.github.io/hive-site/docs/latest/admin/hiveserver/>HiveServer</a>.</p>
+<p>The JDBC connection URL format has the prefix <code>jdbc:hive2://</code> and the Driver class is <code>org.apache.hive.jdbc.HiveDriver</code>. Note that this is different from the old <a href=https://hive.apache.org/docs/latest/admin/hiveserver/>HiveServer</a>.</p>
 <ul>
 <li>For a remote server, the URL format is <code>jdbc:hive2://&lt;host>:&lt;port>/&lt;db>;initFile=&lt;file></code> (default port for HiveServer2 is 10000).</li>
 <li>For an embedded server, the URL format is <code>jdbc:hive2:///;</code>initFile=``(no host or port).</li>
@@ -798,7 +730,7 @@ Please be aware that these output formats are deprecated and only maintained for
 <p>In HTTP mode:  <code>jdbc:hive2://&lt;host>:&lt;port>/&lt;db>;ssl=true;sslTrustStore=&lt;trust_store_path>;trustStorePassword=&lt;trust_store_password>;transportMode=http;httpPath=&lt;http_endpoint></code>.</p>
 <p>For versions earlier than 0.14, see the <a href=#version-note>version note</a> above.</p>
 <h3 id=connection-url-when-zookeeper-service-discovery-is-enabled>Connection URL When ZooKeeper Service Discovery Is Enabled</h3>
-<p>ZooKeeper-based service discovery introduced in Hive 0.14.0 (<a href=https://issues.apache.org/jira/browse/HIVE-7395>HIVE-7935</a>) enables high availability and rolling upgrade for HiveServer2. A JDBC URL that specifies needs to be used to make use of these features. That is, at least in <code>hive-site.xml</code> or other configuration files for HiveServer2, <code>hive.server2.support.dynamic.service.discovery</code> should be set to <code>true</code>, and <code>hive.zookeeper.quorum</code> should be defined to point to several started Zookeeper Servers. Reference <a href=https://simhadri-g.github.io/hive-site/docs/latest/user/configuration-properties/>Configuration Properties</a> .</p>
+<p>ZooKeeper-based service discovery introduced in Hive 0.14.0 (<a href=https://issues.apache.org/jira/browse/HIVE-7395>HIVE-7935</a>) enables high availability and rolling upgrade for HiveServer2. A JDBC URL that specifies needs to be used to make use of these features. That is, at least in <code>hive-site.xml</code> or other configuration files for HiveServer2, <code>hive.server2.support.dynamic.service.discovery</code> should be set to <code>true</code>, and <code>hive.zookeeper.quorum</code> should be defined to point to several started Zookeeper Servers. Reference <a href=https://hive.apache.org/docs/latest/user/configuration-properties/>Configuration Properties</a> .</p>
 <p>The minimal configuration example is as follows.</p>
 <pre tabindex=0><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;configuration&gt;
@@ -1166,7 +1098,7 @@ java -cp $CLASSPATH HiveJdbcClient
 <p>In the case of LDAP, CUSTOM or PAM authentication, the client needs to pass a valid user name and password to the JDBC connection API.</p>
 <pre tabindex=0><code>To use sasl.qop, add the following to the sessionconf part of your Hive JDBC hive connection string, e.g.
 </code></pre><pre tabindex=0><code>jdbc:hive://hostname/dbname;sasl.qop=auth-int
-</code></pre><p>For more information, see <a href=https://simhadri-g.github.io/hive-site/docs/latest/admin/setting-up-hiveserver2/>Setting Up HiveServer2</a>.</p>
+</code></pre><p>For more information, see <a href=https://hive.apache.org/docs/latest/admin/setting-up-hiveserver2/>Setting Up HiveServer2</a>.</p>
 <h3 id=multi-user-scenarios-and-programmatic-login-to-kerberos-kdc>Multi-User Scenarios and Programmatic Login to Kerberos KDC</h3>
 <p>In the current approach of using Kerberos you need to have a valid Kerberos ticket in the ticket cache before connecting. This entails a static login (using kinit, key tab or ticketcache) and the restriction of one Kerberos user per client. These restrictions limit the usage in middleware systems and other multi-user scenarios, and in scenarios where the client wants to login programmatically to Kerberos KDC.</p>
 <p>One way to mitigate the problem of multi-user scenarios is with secure proxy users (see <a href=https://issues.apache.org/jira/browse/HIVE-5155>HIVE-5155</a>). Starting in Hive 0.13.0, support for secure proxy users has two components:</p>
@@ -1325,7 +1257,6 @@ See examples in <a href=https://github.com/apache/hive/blob/master/beeline/src/
 <p>JDBC connection URL: </p>
 <p><code>jdbc:hive2://&lt;host>:&lt;port>/&lt;db>;transportMode=http;httpPath=&lt;http_endpoint>;http.cookie.&lt;name1>=&lt;value1>;http.cookie.&lt;name2>=&lt;value2></code></p>
 <p>When the above URL is specified, Beeline will call underlying requests to add HTTP cookie in the request header, and will set it to <em></em>=<em></em> and <em></em>=<em></em>. </p>
-<p>Save</p>
 </div>
 <footer class=docs-footer>
 <div class=docs-feedback>
@@ -1424,7 +1355,7 @@ See examples in <a href=https://github.com/apache/hive/blob/master/beeline/src/
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -1440,19 +1371,19 @@ privacy policy</a>. See upcoming
 If you discover any
 <a href=https://www.apache.org/security/>security</a> vulnerabilities, please
 report them privately. Finally,
-<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+<a href=https://www.apache.org/foundation/thanks.html>thanks
 </a> to the sponsors who
-<a href=https://www.apache.org/foundation/contributing.html>
+<a href=https://www.apache.org/foundation/sponsorship.html>
 donate</a> to the Apache Foundation.
 </p>
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>

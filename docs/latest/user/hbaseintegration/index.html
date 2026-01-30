@@ -8,15 +8,15 @@
 <meta name=author content>
 <title>Apache Hive : HBaseIntegration</title>
 <link rel=icon href=/images/hive.svg sizes=any type=image/svg+xml>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/hive-theme.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/font-awesome.all.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/bootstrap.min.css>
-<link rel=stylesheet href=https://simhadri-g.github.io/hive-site//css/termynal.css>
-<link rel=apple-touch-icon sizes=180x180 href=https://simhadri-g.github.io/hive-site//images/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://simhadri-g.github.io/hive-site//images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://simhadri-g.github.io/hive-site//images/favicon-16x16.png>
-<link rel=manifest href=https://simhadri-g.github.io/hive-site//images/site.webmanifest>
-<link rel=mask-icon href=https://simhadri-g.github.io/hive-site//images/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://hive.apache.org/css/hive-theme.css>
+<link rel=stylesheet href=https://hive.apache.org/css/font-awesome.all.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/bootstrap.min.css>
+<link rel=stylesheet href=https://hive.apache.org/css/termynal.css>
+<link rel=apple-touch-icon sizes=180x180 href=https://hive.apache.org/images/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hive.apache.org/images/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://hive.apache.org/images/favicon-16x16.png>
+<link rel=manifest href=https://hive.apache.org/images/site.webmanifest>
+<link rel=mask-icon href=https://hive.apache.org/images/safari-pinned-tab.svg color=#5bbad5>
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <script>var _paq=window._paq=window._paq||[];_paq.push(['disableCookies']),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="https://analytics.apache.org/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','30']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
@@ -28,10 +28,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class=container-fluid>
 <div class=navbar-brand-wrapper>
-<a href=https://simhadri-g.github.io/hive-site/ class=navbar-logo>
-<img src=https://simhadri-g.github.io/hive-site//images/hive.svg width=50 height=30 alt="Apache Hive Logo">
+<a href=https://hive.apache.org class=navbar-logo>
+<img src=https://hive.apache.org/images/hive.svg width=50 height=30 alt="Apache Hive Logo">
 </a>
-<a class=navbar-brand href=https://simhadri-g.github.io/hive-site/>Apache Hive</a>
+<a class=navbar-brand href=https://hive.apache.org>Apache Hive</a>
 </div>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <span class=navbar-toggler-icon></span>
@@ -39,7 +39,7 @@
 <div class="collapse navbar-collapse" id=navbarSupportedContent>
 <ul class="navbar-nav me-auto">
 <li class=nav-item>
-<a class=nav-link href=https://simhadri-g.github.io/hive-site//general/downloads>
+<a class=nav-link href=https://hive.apache.org/general/downloads>
 Releases
 </a>
 </li>
@@ -48,9 +48,9 @@ Releases
 Documentation
 </a>
 <ul class=dropdown-menu aria-labelledby=docsDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/latest/>Latest</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//docs/javadocs/>Javadocs</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/LanguageManual>Language Manual</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/>Latest</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/javadocs/>Javadocs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/docs/latest/language/languagemanual>Language Manual</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -59,7 +59,7 @@ General
 </a>
 <ul class=dropdown-menu aria-labelledby=generalDropdown>
 <li><a class=dropdown-item href=https://www.apache.org/licenses/LICENSE-2.0.html>License</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//general/privacypolicy/>Privacy Policy</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/general/privacypolicy/>Privacy Policy</a></li>
 <li><a class=dropdown-item href=/general/poweredby/>Powered by</a></li>
 </ul>
 </li>
@@ -68,13 +68,12 @@ General
 Development
 </a>
 <ul class=dropdown-menu aria-labelledby=devDropdown>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/gettingstarted/>Getting Started</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/quickstart/>Quickstart with Docker</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/desingdocs/>Design Docs</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/gettingstarted/>Getting Started</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/quickstart/>Quickstart with Docker</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/desingdocs/>Design Docs</a></li>
 <li><a class=dropdown-item href=https://issues.apache.org/jira/projects/HIVE/issues>Hive JIRA</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HiveDeveloperFAQ>Hive Developer FAQ</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/Hive+PreCommit+Patch+Testing>Precommit Patch Testing</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//development/versioncontrol/>Version Control</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/hivedeveloperfaq>Hive Developer FAQ</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/development/versioncontrol/>Version Control</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown">
@@ -83,12 +82,12 @@ Community
 </a>
 <ul class=dropdown-menu aria-labelledby=communityDropdown>
 <li><a class=dropdown-item href=/community/becomingcommitter/>Becoming A Committer</a></li>
-<li><a class=dropdown-item href=https://cwiki.apache.org/confluence/display/Hive/HowToContribute>How To Contribute</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/resources/howtocontribute>How To Contribute</a></li>
 <li><a class=dropdown-item href=/community/resources/>Resources</a></li>
 <li><a class=dropdown-item href=/community/meetings/>Meetings</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/mailinglists/>Mailing Lists</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/issuetracking/>Issue Tracking</a></li>
-<li><a class=dropdown-item href=https://simhadri-g.github.io/hive-site//community/people/>People</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/mailinglists/>Mailing Lists</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/issuetracking/>Issue Tracking</a></li>
+<li><a class=dropdown-item href=https://hive.apache.org/community/people/>People</a></li>
 <li><hr class=dropdown-divider></li>
 <li><a class=dropdown-item href=/community/bylaws/>By Laws</a></li>
 <li><a class=dropdown-item href=/community/resources/howtorelease/>How To Release</a></li>
@@ -190,51 +189,13 @@ Last updated: December 12, 2024
 <p>This page documents the Hive/HBase integration support originally introduced in <a href=https://issues.apache.org/jira/browse/HIVE-705>HIVE-705</a>. This feature allows Hive QL statements to access <a href=http://hadoop.apache.org/hbase>HBase</a> tables for both read (SELECT) and write (INSERT). It is even possible to combine access to HBase tables with native Hive tables via joins and unions.</p>
 <p>A presentation is available from the <a href="http://wiki.apache.org/hadoop/Hive/Presentations?action=AttachFile&do=get&target=HiveHBase-HUG10.ppt">HBase HUG10 Meetup</a></p>
 <p>This feature is a work in progress, and suggestions for its improvement are very welcome.</p>
-<aside class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#apache-hive--hbase-integration>Apache Hive : HBase Integration</a>
-<ul>
-<li><a href=#version-information>Version Information</a>
-<ul>
-<li><a href=#avro-data-stored-in-hbase-columns>Avro Data Stored in HBase Columns</a></li>
-</ul>
-</li>
-<li><a href=#storage-handlers>Storage Handlers</a></li>
-<li><a href=#usage>Usage</a></li>
-<li><a href=#column-mapping>Column Mapping</a>
-<ul>
-<li><a href=#multiple-columns-and-families>Multiple Columns and Families</a></li>
-<li><a href=#hive-map-to-hbase-column-family>Hive MAP to HBase Column Family</a></li>
-<li><a href=#hive-map-to-hbase-column-prefix>Hive MAP to HBase Column Prefix</a></li>
-<li><a href=#illegal-hive-primitive-to-hbase-column-family>Illegal: Hive Primitive to HBase Column Family</a></li>
-<li><a href=#example-with-binary-columns>Example with Binary Columns</a></li>
-<li><a href=#simple-composite-row-keys>Simple Composite Row Keys</a></li>
-<li><a href=#complex-composite-row-keys-and-hbasekeyfactory>Complex Composite Row Keys and HBaseKeyFactory</a></li>
-<li><a href=#avro-data-stored-in-hbase-columns-1>Avro Data Stored in HBase Columns</a></li>
-</ul>
-</li>
-<li><a href=#put-timestamps>Put Timestamps</a></li>
-<li><a href=#key-uniqueness>Key Uniqueness</a></li>
-<li><a href=#overwrite>Overwrite</a></li>
-<li><a href=#potential-followups>Potential Followups</a></li>
-<li><a href=#build>Build</a></li>
-<li><a href=#tests>Tests</a></li>
-<li><a href=#links>Links</a></li>
-<li><a href=#acknowledgements>Acknowledgements</a></li>
-<li><a href=#open-issues-jira>Open Issues (JIRA)</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
 <h2 id=version-information>Version Information</h2>
 <h3 id=avro-data-stored-in-hbase-columns>Avro Data Stored in HBase Columns</h3>
 <p>As of Hive 0.9.0 the HBase integration requires at least HBase 0.92, earlier versions of Hive were working with HBase 0.89/0.90</p>
 <p>Version information</p>
 <p>Hive 1.x will remain compatible with HBase 0.98.x and lower versions. Hive 2.x will be compatible with HBase 1.x and higher. (See <a href=https://issues.apache.org/jira/browse/HIVE-10990>HIVE-10990</a> for details.) Consumers wanting to work with HBase 1.x using Hive 1.x will need to compile Hive 1.x stream code themselves.</p>
 <h2 id=storage-handlers>Storage Handlers</h2>
-<p>Before proceeding, please read <a href=https://simhadri-g.github.io/hive-site/development/desingdocs/storagehandlers/>StorageHandlers</a> for an overview of the generic storage handler framework on which HBase integration depends.</p>
+<p>Before proceeding, please read <a href=https://hive.apache.org/development/desingdocs/storagehandlers/>StorageHandlers</a> for an overview of the generic storage handler framework on which HBase integration depends.</p>
 <h2 id=usage>Usage</h2>
 <p>The storage handler is built as an independent module, <code>hive-hbase-handler-x.y.z.jar</code>, which must be available on the Hive client auxpath, along with HBase, Guava and ZooKeeper jars. It also requires the correct configuration property to be set in order to connect to the right HBase master. See <a href=http://hadoop.apache.org/hbase/docs/current/api/overview-summary.html#overview_description>the HBase documentation</a> for how to set up an HBase cluster.</p>
 <p>Here&rsquo;s an example using CLI from a source build environment, targeting a single-node HBase server. (Note that the jar locations and names have changed in Hive 0.9.0, so for earlier releases, some changes are needed.)</p>
@@ -269,7 +230,7 @@ ROW                          COLUMN+CELL
 0 row(s) in 0.0060 seconds
 
 </code></pre><p>Notice that even though a column name &ldquo;val&rdquo; is specified in the mapping, only the column family name &ldquo;cf1&rdquo; appears in the DESCRIBE output in the HBase shell. This is because in HBase, only column families (not columns) are known in the table-level metadata; column names within a column family are only present at the per-row level.</p>
-<p>Here&rsquo;s how to move data from Hive into the HBase table (see <a href=https://simhadri-g.github.io/hive-site/development/gettingstarted-latest/>GettingStarted</a> for how to create the example table <code>pokes</code> in Hive first):</p>
+<p>Here&rsquo;s how to move data from Hive into the HBase table (see <a href=https://hive.apache.org/development/gettingstarted-latest/>GettingStarted</a> for how to create the example table <code>pokes</code> in Hive first):</p>
 <pre tabindex=0><code>INSERT OVERWRITE TABLE hbase_table_1 SELECT * FROM pokes WHERE foo=98;
 
 </code></pre><p>Use HBase shell to verify that the data actually got loaded:</p>
@@ -520,7 +481,7 @@ SELECT COUNT(1) FROM pokes3 WHERE foo=498;
 <ul>
 <li>more flexible column mapping (HIVE-806, HIVE-1245)</li>
 <li>default column mapping in cases where no mapping spec is given</li>
-<li>filter pushdown and indexing (see <a href=https://simhadri-g.github.io/hive-site/development/desingdocs/filterpushdowndev/>FilterPushdownDev</a> and <a href=https://simhadri-g.github.io/hive-site/development/desingdocs/indexdev/>IndexDev</a>)</li>
+<li>filter pushdown and indexing (see <a href=https://hive.apache.org/development/desingdocs/filterpushdowndev/>FilterPushdownDev</a> and <a href=https://hive.apache.org/development/desingdocs/indexdev/>IndexDev</a>)</li>
 <li>expose timestamp attribute, possibly also with support for treating it as a partition key</li>
 <li>allow per-table hbase.master configuration</li>
 <li>run profiler and minimize any per-row overhead in column mapping</li>
@@ -539,7 +500,7 @@ SELECT COUNT(1) FROM pokes3 WHERE foo=498;
 </code></pre><p>An Eclipse launch template remains to be defined.</p>
 <h2 id=links>Links</h2>
 <ul>
-<li>For information on how to bulk load data from Hive into HBase, see <a href=https://simhadri-g.github.io/hive-site/development/desingdocs/hbasebulkload/>HBaseBulkLoad</a>.</li>
+<li>For information on how to bulk load data from Hive into HBase, see <a href=https://hive.apache.org/development/desingdocs/hbasebulkload/>HBaseBulkLoad</a>.</li>
 <li>For another project which adds SQL-like query language support on top of HBase, see <a href=http://www.hbql.com>HBQL</a> (unrelated to Hive).</li>
 </ul>
 <h2 id=acknowledgements>Acknowledgements</h2>
@@ -826,7 +787,6 @@ SELECT COUNT(1) FROM pokes3 WHERE foo=498;
 </tr>
 </tbody>
 </table>
-<p><a href="https://cwiki.apache.org/confluence/plugins/servlet/applinks/oauth/login-dance/authorize?applicationLinkID=5aa69414-a9e9-3523-82ec-879b028fb15b">Authenticate</a> to retrieve your issues</p>
 <p>Showing 20 out of
 <a href="https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&jqlQuery=project%20=%20HIVE%20AND%20component%20in%20%28%22HBase%20Handler%22%29%20and%20Resolution%20=%20unresolved&tempMax=1000&src=confmacro">80 issues</a></p>
 <p> </p>
@@ -899,7 +859,7 @@ SELECT COUNT(1) FROM pokes3 WHERE foo=498;
 <div class=row>
 <div class=col-3>
 <a href=https://www.apache.org/>
-<img src=https://simhadri-g.github.io/hive-site//images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
+<img src=https://hive.apache.org/images/asf_logo.png width=270 height=100 alt="Apache Software Foundation"></a>
 </a>
 </div>
 <div class=col-9>
@@ -915,19 +875,19 @@ privacy policy</a>. See upcoming
 If you discover any
 <a href=https://www.apache.org/security/>security</a> vulnerabilities, please
 report them privately. Finally,
-<a href=https://www.apache.org/foundation/sponsorship.html>thanks
+<a href=https://www.apache.org/foundation/thanks.html>thanks
 </a> to the sponsors who
-<a href=https://www.apache.org/foundation/contributing.html>
+<a href=https://www.apache.org/foundation/sponsorship.html>
 donate</a> to the Apache Foundation.
 </p>
 </div>
 </div>
 <div class="copyright row">
-<a href=https://simhadri-g.github.io/hive-site/ style=color:grey>
+<a href=https://hive.apache.org style=color:grey>
 The contents of this website are © 2023 Apache Software Foundation under the terms of the Apache License v2. Apache Hive and its logo are trademarks of the Apache Software Foundation.
 </a>
 </div>
 </footer>
-<script src=https://simhadri-g.github.io/hive-site//js/bootstrap.bundle.min.js></script>
+<script src=https://hive.apache.org/js/bootstrap.bundle.min.js></script>
 </body>
 </html>
